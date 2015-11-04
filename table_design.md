@@ -15,6 +15,7 @@ Goal: support simple v0 draft app (no support for scoring yet)
 * name
 * commissioner_id (User fk)
 * conference_id (FootballConference fk)
+* draft_start_date
 
 ###FantasyLeagueMembership###
 
@@ -55,19 +56,13 @@ Notes:
 
 ##Draft##
 
-###FantasyDraft###
-
-* id
-* start_date
-* fantasy_league_id (FantasyLeague fk)
-
 ###FantasyDraftOrder###
 
 * fantasy_draft_id (FantasyDraft fk)
 * user_id (User fk)
 * order (number)
 
-###DraftPicks###
+###DraftPick###
 
 * fantasy_draft_id (FantasyDraft fk)
 * user_id (User fk)
