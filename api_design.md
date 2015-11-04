@@ -20,44 +20,71 @@
 
 ###Login###
 
+
 *GET - /api/auth (get user)*
+
 return: { user_id: <user_id> } || null
 
+
 *PUT - /api/auth/login (login)*
+
 body: { email: <email>, pass: <pass> }
+
 return: 200 { user_id: <user_id> }
 
+
 *DELETE - /api/auth/logout (logout)*
+
 return: 200 (for success)
 
+
 *POST - /api/auth/register (register new user)*
+
 post: { email: <email>, pass: <pass>, pass_repeat: <pass> }
+
 return 200 { user_id: <user_id> }
 
+
 *[P2] GET - /api/auth/confirm/<confirmation_code> (email confirmation)*
+
 if not expired: return 200 (for success)
+
 else return 498 (token expired), automatically sends another email
+
 
 ###Generic###
 
+
 *GET - /api/league/<league_id>*
+
 { <FantasyLeague> }
 
+
 *GET - /api/league/<league_id>/fantasy_players*
+
 { fantasy_players: { email: <email>, team: { name: <team_name> } } }
 
+
 *GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*
+
 i.e. { football_players: [{ <FootballPlayer> }] }
+
 
 ###Draft###
 
 *GET - /api/league/<league_id>/draft_order*
-{ draft_order: { <FantasyDraftOrder> }
+
+{ draft_order: { <FantasyDraftOrder> } }
+
 
 *GET - /api/league/<league_id>/draft_picks*
+
 { draft_picks: [<DraftPick>, <DraftPick>, etc.] } (draft picks should be ordered)
 
+
 *POST - /api/league/<league_id>/draft_picks*
+
 body: { football_player_id: <football_player_id>, pick_number: <pick_number> }
+
 side effect: server broadcasts socket.io message “draft:changed”
 
