@@ -1,7 +1,8 @@
-import app from './app';
+import App from './App';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  app,
+  <App />,
   document.getElementById('appFrame')
 );

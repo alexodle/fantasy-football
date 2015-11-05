@@ -1,12 +1,13 @@
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./js/index.js",
+  entry: "./app/js/index.jsx",
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: 'distd',
+    path: 'dist',
+    publicPath: 'dist',
     filename: 'bundle.js'
   },
   module: {
@@ -30,7 +31,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: 'views/',
-    publicPath: 'dist/'
+    contentBase: 'app/views/',
+    publicPath: '/dist/'
   }
 };
