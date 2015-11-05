@@ -12,8 +12,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx($|\?)/,
-        loaders: ['babel'],
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/
       }
     ]
@@ -28,5 +28,9 @@ module.exports = {
     new HtmlwebpackPlugin({
       title: 'Fantasy Football App'
     })
-  ]
+  ],
+  devServer: {
+    contentBase: 'views/',
+    publicPath: 'dist/'
+  }
 };
