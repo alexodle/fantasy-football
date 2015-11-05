@@ -59,6 +59,8 @@ docs/_build/
 # PyBuilder
 target/
 
-## Node
-
+# Node
 node_modules/
+
+# Vim temp files
+*.swp
