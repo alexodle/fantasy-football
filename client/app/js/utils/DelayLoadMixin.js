@@ -23,7 +23,7 @@ export default {
       },
 
       [`on${capitalizedActionName}Failed`]() {
-        state.footballPlayers = LoadingStates.LOAD_FAILED;
+        state[stateKey] = LoadingStates.LOAD_FAILED;
         this.trigger(state);
       }
 
