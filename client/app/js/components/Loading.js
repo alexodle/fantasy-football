@@ -1,9 +1,10 @@
 import React from 'react';
+import CircularProgress from 'material-ui/lib/circular-progress';
 
 const Loading = React.createClass({
 
   render: function () {
-    return (<img src='/img/gears.gif' width='120px' height='120px' />);
+    return (<CircularProgress mode='indeterminate' />);
   }
 
 });

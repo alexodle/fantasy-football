@@ -2,41 +2,40 @@ import _ from 'lodash';
 import Actions from './actions/Actions';
 import AjaxComponent from './components/AjaxComponent';
 import FootballPlayerStore from './stores/FootballPlayerStore';
-import HelloWorldStore from './stores/HelloWorldStore';
+import LoadActions from './actions/LoadActions';
+import RaisedButton from 'material-ui/lib/raised-button';
 import React from 'react';
 import Reflux from 'reflux';
+import {Tab, Tabs} from 'material-ui/lib/tabs';
 
 const POSITON_DISPLAY_ORDER = ['QB', 'RB', 'WR', 'TE', 'K']
 
 const App = React.createClass({
 
   mixins: [
-    Reflux.connect(HelloWorldStore, 'helloWorld'),
     Reflux.connect(FootballPlayerStore, 'footballPlayers')
   ],
 
   render() {
-    const {helloWorld, footballPlayers} = this.state;
+    const {footballPlayers} = this.state;
     const playersByPosition = _.groupBy(footballPlayers.footballPlayers, 'position');
     return (
       <div>
-        <p>Text: {helloWorld.text}</p>
-        <p><button type='button' onClick={this.onClick}>Say hello</button></p>
-        <br/>
+        <h1>Players</h1>
+        <RaisedButton label="Refresh Players" primary={true} onClick={this.refreshPlayers} /><br /><br />
         <AjaxComponent loadingState={footballPlayers.footballPlayers}>
-          <div>
+          <Tabs>
             {_.map(POSITON_DISPLAY_ORDER, function (pos) {
               const positonPlayers = _.sortBy(playersByPosition[pos], 'name');
               return (
-                <div key={pos}>
-                  <h2>{pos}s</h2>
+                <Tab key={pos} label={pos}>
                   {_.map(positonPlayers, function (fp) {
                     return (<span key={fp.id}>{fp.name}<br /></span>);
                   })}
-                </div>
+                </Tab>
               );
             })}
-          </div>
+          </Tabs>
         </AjaxComponent>
       </div>
     );
@@ -44,6 +43,10 @@ const App = React.createClass({
 
   onClick() {
     Actions.sayHello();
+  },
+
+  refreshPlayers() {
+    LoadActions.loadFootballPlayers();
   }
 
 });
