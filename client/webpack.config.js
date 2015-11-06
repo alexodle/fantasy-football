@@ -1,12 +1,13 @@
 var HtmlwebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
-  entry: "./app/js/index.jsx",
+  entry: path.resolve('./app/js/index.jsx'),
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: 'dist',
+    path: path.resolve('./dist'),
     publicPath: 'dist',
     filename: 'bundle.js'
   },
@@ -29,9 +30,5 @@ module.exports = {
     new HtmlwebpackPlugin({
       title: 'Fantasy Football App'
     })
-  ],
-  devServer: {
-    contentBase: 'app/views/',
-    publicPath: '/dist/'
-  }
+  ]
 };
