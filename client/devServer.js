@@ -12,7 +12,7 @@ var expressApp = express();
 
 var compiler = webpack(webpackConfig);
 var webpackDevServer = new WebpackDevServer(compiler, {
-  contentBase: path.resolve('./app/views/'),
+  contentBase: path.resolve('./app/static/'),
   publicPath: '/dist/',
   proxy: { '/api/*': 'http://localhost:8081/' },
   hot: true,

@@ -3,7 +3,7 @@ import React from 'react';
 const Loading = React.createClass({
 
   render: function () {
-    return (<span>Loading...</span>);
+    return (<img src='/img/gears.gif' width='120px' height='120px' />);
   }
 
 });
