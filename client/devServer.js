@@ -6,6 +6,7 @@ var webpackConfig = require('./webpack.config.js');
 var WebpackDevServer = require('webpack-dev-server');
 
 var FILES_DIR = path.resolve('./test/mockserver');
+var ARTIFICIAL_DELAY = 1000;
 
 var expressApp = express();
 
@@ -13,7 +14,13 @@ var compiler = webpack(webpackConfig);
 var webpackDevServer = new WebpackDevServer(compiler, {
   contentBase: path.resolve('./app/views/'),
   publicPath: '/dist/',
-  proxy: { '/api/*': 'http://localhost:8081/' }
+  proxy: { '/api/*': 'http://localhost:8081/' },
+  hot: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
+  stats: { colors: true }
 });
 
 expressApp.get('/api/*', function(req, res) {
@@ -27,9 +34,11 @@ expressApp.get('/api/*', function(req, res) {
       res.sendStatus(404);
       return;
     }
-    var json = {};
-    json[dataType] = JSON.parse(data);
-    res.json(json);
+    setTimeout(function () {
+      var json = {};
+      json[dataType] = JSON.parse(data);
+      res.json(json);
+    }, ARTIFICIAL_DELAY);
   });
 });
 

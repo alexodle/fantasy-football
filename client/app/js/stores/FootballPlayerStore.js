@@ -1,32 +1,18 @@
-import Actions from '../actions/Actions';
+import LoadActions from '../actions/LoadActions';
 import Reflux from 'reflux';
-
-const TEMP_PLAYERS = [
-  { id: 1, name: "Football Player A", position: "QB", football_team_id: 1 }
-];
+import {LoadingStates} from '../Constants';
+import DelayLoadMixin from '../utils/DelayLoadMixin';
 
 let state = {
-  index: 0
+  footballPlayers: LoadingStates.NOT_LOADED
 };
 
-function getVisibleState() {
-  return {
-    text: TEXTS[state.index % TEXTS.length]
-  };
-}
+const FootballPlayerStore = Reflux.createStore({
 
-const HelloWorldStore = Reflux.createStore({
-  listenables: Actions,
+  mixins: [DelayLoadMixin.create(state, 'footballPlayers', LoadActions, 'loadFootballPlayers')],
 
-  getInitialState() {
-    return getVisibleState();
-  },
-
-  onSayHello() {
-    state.index++;
-    this.trigger(getVisibleState());
-  }
+  listenables: LoadActions
 
 });
 
-export default HelloWorldStore;
+export default FootballPlayerStore;
