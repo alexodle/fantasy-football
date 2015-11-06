@@ -61,14 +61,9 @@ Returns all the leagues which I am a member of
 { fantasy_leagues: [ <FantasyLeague>, ... ]}
 
 
-*GET - /api/league/<league_id>*
-
-{ <FantasyLeague> }
-
-
 *GET - /api/league/<league_id>/fantasy_players*
 
-{ fantasy_players: { email: <email>, team: { name: <team_name> } } }
+{ fantasy_players: { email: <email>, name: <name>, team: { name: <team_name>, short_name: <team_short_name> } } }
 
 
 *GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*

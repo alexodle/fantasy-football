@@ -7,6 +7,7 @@ Goal: support simple v0 draft app (no support for scoring yet)
 ###User###
 
 * id
+* email
 * name
 
 ###FantasyLeague###
@@ -25,7 +26,8 @@ Goal: support simple v0 draft app (no support for scoring yet)
 ###FantasyTeam###
 
 * id
-* name
+* name (i.e. Phantasy Phalcons)
+* short_name (i.e. PHPH)
 * fantasy_league_id (FantasyLeague fk)
 * owner_id (User fk)
 
