@@ -7,6 +7,7 @@ Fantasy football web application, initially targeted at PAC-12 NCAAF.
 * React
 * Reflux
 * Socket.io
+* Webpack
 
 # Resources
 * https://flask-socketio.readthedocs.org/en/latest/
