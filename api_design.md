@@ -54,6 +54,12 @@ else return 498 (token expired), automatically sends another email
 
 ###Generic###
 
+*GET - /api/league/member*
+
+Returns all the leagues which I am a member of
+
+{ fantasy_leagues: [ <FantasyLeague>, ... ]}
+
 
 *GET - /api/league/<league_id>*
 
