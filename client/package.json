@@ -23,14 +23,8 @@
   },
   "dependencies": {
     "lodash": "^3.10.1",
-    "material-ui": "^0.13.1",
     "react": "^0.14.2",
-    "react-addons-create-fragment": "^0.14.2",
-    "react-addons-pure-render-mixin": "^0.14.2",
-    "react-addons-transition-group": "^0.14.2",
-    "react-addons-update": "^0.14.2",
     "react-dom": "^0.14.2",
-    "react-tap-event-plugin": "^0.2.1",
     "reflux": "^0.3.0",
     "superagent": "^1.4.0"
   },
