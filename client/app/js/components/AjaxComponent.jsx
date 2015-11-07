@@ -1,19 +1,21 @@
-import Loading from './Loading'
+import Loading from './Loading';
 import React from 'react';
 import {LoadingStates} from '../Constants';
 
 const AjaxComponent = React.createClass({
 
   propTypes: {
-    children: React.PropTypes.element.isRequired,
+    ChildClass: React.PropTypes.func.isRequired,
+    childClassProps: React.PropTypes.object,
     loadingState: React.PropTypes.any.isRequired
   },
 
   render() {
-    if (this.props.loadingState === LoadingStates.LOADING) {
+    const {ChildClass, childClassProps, loadingState} = this.props;
+    if (loadingState === LoadingStates.LOADING) {
       return (<Loading />);
     } else {
-      return this.props.children;
+      return (<ChildClass {...childClassProps} />);
     }
   }
 
