@@ -13,8 +13,6 @@ const UserStore = Reflux.createStore({
     DelayLoadStoreMixin.create(state, 'user', LoadActions.loadUser)
   ],
 
-  listenables: LoadActions,
-
   getState() {
     return state;
   }

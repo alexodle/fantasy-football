@@ -13,9 +13,7 @@ const FootballPlayerStore = Reflux.createStore({
     DelayLoadStoreMixin.create(
       state, 'footballPlayers', LoadActions.loadFootballPlayers
     )
-  ],
-
-  listenables: LoadActions
+  ]
 
 });
 

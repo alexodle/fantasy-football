@@ -1,12 +1,18 @@
+var _ = require('lodash');
 var express = require('express');
-var fs = require("fs");
+var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var WebpackDevServer = require('webpack-dev-server');
 
 var FILES_DIR = path.resolve('./test/mockserver');
-var ARTIFICIAL_DELAY = 1000;
+var ARTIFICIAL_DELAY_LOW = 200;
+var ARTIFICIAL_DELAY_HIGH = 2000;
+
+function getArtificialDelay() {
+  return _.random(ARTIFICIAL_DELAY_LOW, ARTIFICIAL_DELAY_HIGH);
+}
 
 var expressApp = express();
 
@@ -38,7 +44,7 @@ expressApp.get('/api/*', function(req, res) {
       var json = {};
       json[dataType] = JSON.parse(data);
       res.json(json);
-    }, ARTIFICIAL_DELAY);
+    }, getArtificialDelay());
   });
 });
 

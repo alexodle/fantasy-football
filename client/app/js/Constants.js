@@ -27,10 +27,24 @@ export const FlexPositions = [
 ];
 
 export const ModelShapes = {
+
   FootballPlayer: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     position: PropTypes.oneOf(_.keys(Positions)).isRequired,
     football_team_id: PropTypes.number.isRequired
+  }),
+
+  DraftPick: PropTypes.shape({
+    fantasy_draft_id: PropTypes.number.isRequired,
+    user_id: PropTypes.number.isRequired,
+    football_player_id: PropTypes.number.isRequired,
+    pick_number: PropTypes.number.isRequired
   })
+
 };
+
+export const ChildrenPropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(PropTypes.node),
+  PropTypes.node
+]);

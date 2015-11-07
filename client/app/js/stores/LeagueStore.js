@@ -13,8 +13,6 @@ const FootballPlayerStore = Reflux.createStore({
     DelayLoadStoreMixin.create(state, 'draftPicks', LoadActions.loadLeague)
   ],
 
-  listenables: LoadActions,
-
   getState() {
     return state;
   }
