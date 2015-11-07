@@ -13,13 +13,18 @@ let state = {
 const DraftStore = Reflux.createStore({
 
   mixins: [
-    DelayLoadStoreMixin.createMany(state, [
-      ['draftPicks', LoadActions.loadDraftPicks],
-      ['draftOrder', LoadActions.loadDraftOrder]
+    DelayLoadStoreMixin.create(state, [{
+        stateKey: 'draftPicks',
+        action: LoadActions.loadDraftPicks,
+        onComplete: 'onLoadDraftPicksCompleted'
+      }, {
+        stateKey: 'draftOrder',
+        action: LoadActions.loadDraftOrder
+      }
     ])
   ],
 
-  listenables: [LoadActions, DraftActions],
+  listenables: [DraftActions],
 
   onDraftPlayer() {
     state.isPostingDraftPick = true;

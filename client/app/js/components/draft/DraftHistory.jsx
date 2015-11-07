@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import {ModelShapes} from '../../Constants';
+import FootballPlayerStore from '../../stores/FootballPlayerStore';
 
 const DraftHistory = React.createClass({
 
@@ -19,12 +20,13 @@ const DraftHistory = React.createClass({
         </thead>
         <tbody>
           {_.map(draftPicks, function (dp) {
+            const footballPlayer = FootballPlayerStore.getPlayerById(dp.football_player_id);
             return (
               <tr key={dp.pick_number}>
                 <td>{dp.pick_number}</td>
                 <td>{dp.user_id}</td>
-                <td>{dp.football_player_id}</td>
-                <td>TODO</td>
+                <td>{footballPlayer.name}</td>
+                <td>{footballPlayer.position}</td>
               </tr>
             );
           })}

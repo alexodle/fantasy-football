@@ -10,7 +10,10 @@ const state = {
 const FootballPlayerStore = Reflux.createStore({
 
   mixins: [
-    DelayLoadStoreMixin.create(state, 'draftPicks', LoadActions.loadLeague)
+    DelayLoadStoreMixin.create(state, {
+      stateKey: 'draftPicks',
+      action: LoadActions.loadLeague
+    })
   ],
 
   getState() {
