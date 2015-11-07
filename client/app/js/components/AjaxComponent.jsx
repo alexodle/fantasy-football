@@ -6,7 +6,7 @@ const AjaxComponent = React.createClass({
 
   propTypes: {
     children: React.PropTypes.element.isRequired,
-    loadingState: React.PropTypes.any
+    loadingState: React.PropTypes.any.isRequired
   },
 
   render() {
