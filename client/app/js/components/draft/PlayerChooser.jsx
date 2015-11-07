@@ -57,7 +57,10 @@ const PlayerChooser = React.createClass({
               onChange={this._onSelectedPlayerChange}
           >
             {_.map(positionPlayers, function (fp) {
-              return (<option key={fp.id} value={fp.id}>{fp.name}</option>);
+              return (
+                <option key={fp.id} value={fp.id}>
+                  {`${fp.name} (${fp.position})`}
+                </option>);
             })}
           </select>
         </div>
