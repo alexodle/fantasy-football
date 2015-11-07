@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, {PropTypes} from 'react';
+import {Button, ButtonGroup} from 'react-bootstrap/lib';
 
 const PositionChooser = React.createClass({
 
@@ -13,19 +14,18 @@ const PositionChooser = React.createClass({
     const {positions, value} = this.props;
     return (
       <div>
-        <ul>
+        <ButtonGroup>
           {_.map(positions, (p) => {
             return (
-              <li key={p}>
-                <a
-                    href=''
-                    onClick={_.partial(this._onChange, p)}
-                    enabled={value !== p}
-                >{p}</a>
-              </li>
+              <Button
+                  key={p}
+                  className={value === p ? 'active' : ''}
+                  onClick={_.partial(this._onChange, p)}
+              >{p}
+              </Button>
             );
           })}
-        </ul>
+        </ButtonGroup>
       </div>
     );
   },

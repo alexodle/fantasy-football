@@ -14,7 +14,7 @@ const App = React.createClass({
     const {footballPlayersStore} = this.state;
     const footballPlayers = footballPlayersStore.footballPlayers;
     return (
-      <div>
+      <div className='container'>
         <AjaxComponent
             loadingState={footballPlayers}
             ChildClass={PlayerChooser}
