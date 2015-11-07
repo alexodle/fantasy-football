@@ -3,6 +3,8 @@ import PositionChooser from './PositionChooser';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import {ModelShapes, PositionDisplayOrder, Positions, FlexPositions} from '../../Constants';
+import {Button} from 'react-bootstrap/lib';
+import DraftActions from '../../actions/DraftActions';
 
 const ALL_POSITION = 'All';
 const DEFAULT_POSITION = ALL_POSITION;
@@ -18,13 +20,14 @@ const PlayerChooser = React.createClass({
 
   getInitialState() {
     return {
-      currentPosition: DEFAULT_POSITION
+      currentPosition: DEFAULT_POSITION,
+      selectedPlayerId: null
     };
   },
 
   render() {
     const {footballPlayers} = this.props;
-    const {currentPosition} = this.state;
+    const {currentPosition, selectedPlayerId} = this.state;
 
     let positionPlayers;
     if (currentPosition === ALL_POSITION) {
@@ -47,18 +50,37 @@ const PlayerChooser = React.createClass({
         />
         <p>Number of players: <b>{positionPlayers.length}</b></p>
         <div className='form-group'>
-          <select className='form-control' size={20}>
+          <select
+              className='form-control'
+              size={20}
+              value={selectedPlayerId}
+              onChange={this._onSelectedPlayerChange}
+          >
             {_.map(positionPlayers, function (fp) {
               return (<option key={fp.id} value={fp.id}>{fp.name}</option>);
             })}
           </select>
         </div>
+        <Button type='submit' disabled={!selectedPlayerId} onClick={this._onPick}>
+          Draft
+        </Button>
       </div>
     );
   },
 
   _onPositionChange(p) {
-    this.setState({ currentPosition: p });
+    this.setState({ currentPosition: p, selectedPlayerId: null });
+  },
+
+  _onSelectedPlayerChange(ev) {
+    this.setState({ selectedPlayerId: ev.target.value });
+  },
+
+  _onPick() {
+    const {selectedPlayerId} = this.state;
+    if (selectedPlayerId) {
+      DraftActions.draftPlayer(selectedPlayerId);
+    }
   }
 
 });

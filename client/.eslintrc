@@ -34,7 +34,8 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 0,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+    "no-unused-vars": [2, {"args": "after-used", "argsIgnorePattern": "^_"}]
   },
   "env": {
       "node": true
