@@ -3,7 +3,7 @@ import Reflux from 'reflux';
 import {LoadingStates} from '../Constants';
 import DelayLoadStoreMixin from '../utils/DelayLoadStoreMixin';
 
-let state = {
+const state = {
   footballPlayers: LoadingStates.NOT_LOADED
 };
 
