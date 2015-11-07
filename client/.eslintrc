@@ -4,6 +4,7 @@
   "plugins": ["react"],
   "rules": {
     "strict": 0,
+    "semi": [2, "always"],
     "react/display-name": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 1,
@@ -25,7 +26,7 @@
     "react/no-did-update-set-state": 1,
     "react/no-direct-mutation-state": 1,
     "react/no-multi-comp": 1,
-    "react/no-set-state": 1,
+    "react/no-set-state": 0,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 0,
     "react/prop-types": 1,
