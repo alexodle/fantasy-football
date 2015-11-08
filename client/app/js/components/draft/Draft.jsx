@@ -24,7 +24,10 @@ const Draft = React.createClass({
           <AjaxComponent
               loadingState={[footballPlayers, draftPicks, draftOrder]}
               ChildClass={PlayerChooser}
-              childClassProps={{ footballPlayers: footballPlayers }}
+              childClassProps={{
+                draftPicks: draftPicks,
+                footballPlayers: footballPlayers
+              }}
           />
         </FFPanel>
         <FFPanel title='Draft history'>
