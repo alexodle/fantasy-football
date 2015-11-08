@@ -15,8 +15,8 @@ const PlayerChooser = React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired,
-    draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired
+    draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
+    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired
   },
 
   getInitialState() {
