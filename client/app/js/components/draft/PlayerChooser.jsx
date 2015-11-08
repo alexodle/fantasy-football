@@ -50,7 +50,6 @@ const PlayerChooser = React.createClass({
       .sortBy('name')
       .value();
 
-
     return (
       <div>
         <PositionChooser
