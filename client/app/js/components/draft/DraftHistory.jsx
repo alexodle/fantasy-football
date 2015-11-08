@@ -1,9 +1,12 @@
 import _ from 'lodash';
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {ModelShapes} from '../../Constants';
 import FootballPlayerStore from '../../stores/FootballPlayerStore';
 
 const DraftHistory = React.createClass({
+
+  mixins: [PureRenderMixin],
 
   propTypes: {
     draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired
