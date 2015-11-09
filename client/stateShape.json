@@ -1,0 +1,49 @@
+// Example state shape for the client
+//
+// Goals:
+//   - keep as flat as possible (but arrays of ids are ok)
+//   - keep UI state and preserved state separate
+//   - default is to index entities by id
+//
+// State kept by router
+//   - current league
+{
+  "client": {
+
+    "current_user": 1 // user_id || null
+
+  },
+  "server": {
+    "entities": {
+
+      "users": {
+        "1": {/* <User>*/}
+      },
+
+      "fantasy_leagues": {
+        "1": {
+          // <FantasyLeague>,
+          // teams: [1, 2, 3] // team_ids
+        }
+      },
+
+      "fantasy_teams": {
+        "1": {/*<FantasyTeam>*/}
+      },
+
+      "football_players": {
+        "1": {/*<FootballPlayer>*/}
+      },
+
+      "drafts": {
+        // indexed by league_id
+        "1": {
+          "order": [{/*<FantasyDraftOrder>*/}], // in order
+          "picks": [{/*<DraftPick>*/}] // in order
+        }
+      }
+
+    }
+
+  }
+}
