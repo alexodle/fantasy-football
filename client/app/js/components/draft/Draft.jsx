@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import PlayerChooser from './PlayerChooser';
 import Reflux from 'reflux';
@@ -17,7 +18,17 @@ const Draft = React.createClass({
   render() {
     const {footballPlayersStore, draftStore} = this.state;
     const {footballPlayers} = footballPlayersStore;
-    const {draftPicks, draftOrder} = draftStore;
+    const {draftPicks} = draftStore;
+
+    // Filter out players who have already been picked
+    let availableFootballPlayers = footballPlayers;
+    if (!_.isEmpty(draftPicks)) {
+      const draftPicksById = _.indexBy(draftPicks, 'football_player_id');
+      availableFootballPlayers = _.reject(footballPlayers, function (fp) {
+        return !!draftPicksById[fp.id];
+      });
+    }
+
     return (
       <div>
         <FFPanel title='Pick your player'>

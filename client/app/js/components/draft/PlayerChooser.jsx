@@ -15,7 +15,6 @@ const PlayerChooser = React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
     footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired
   },
 
@@ -27,26 +26,21 @@ const PlayerChooser = React.createClass({
   },
 
   render() {
-    const {footballPlayers, draftPicks} = this.props;
+    const {footballPlayers} = this.props;
     const {currentPosition, selectedPlayerId} = this.state;
 
-    let positionPlayers;
-    if (currentPosition === ALL_POSITION) {
-      positionPlayers = footballPlayers;
-    } else if (currentPosition === Positions.FLEX) {
-      positionPlayers = _.filter(footballPlayers, function (fp) {
+    // Filter players by current position
+    let wrappedPositionPlayers = _(footballPlayers);
+    if (currentPosition === Positions.FLEX) {
+      wrappedPositionPlayers = wrappedPositionPlayers.filter(function (fp) {
         return _.contains(FlexPositions, fp.position);
       });
-    } else {
-      positionPlayers = _.where(footballPlayers, { position: currentPosition });
+    } else if (currentPosition !== ALL_POSITION) {
+      wrappedPositionPlayers = wrappedPositionPlayers.where({
+        position: currentPosition
+      });
     }
-
-    // Filter out picked players and sort
-    const draftPicksById = _.indexBy(draftPicks, 'football_player_id');
-    positionPlayers = _(positionPlayers)
-      .reject(function (fp) {
-        return !!draftPicksById[fp.id];
-      })
+    const positionPlayers = wrappedPositionPlayers
       .sortBy('name')
       .value();
 
