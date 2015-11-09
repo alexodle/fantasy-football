@@ -28,6 +28,20 @@ export const FlexPositions = [
 
 export const ModelShapes = {
 
+  User: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    email: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }),
+
+  FantasyLeague: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    commissioner_id: PropTypes.number.isRequired,
+    conference_id: PropTypes.number.isRequired,
+    draft_start_date: PropTypes.instanceOf(Date).isRequired
+  }),
+
   FootballPlayer: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
