@@ -22,19 +22,17 @@ const Draft = React.createClass({
       <div>
         <FFPanel title='Pick your player'>
           <AjaxComponent
-              loadingState={[footballPlayers, draftPicks, draftOrder]}
               ChildClass={PlayerChooser}
-              childClassProps={{
-                draftPicks: draftPicks,
-                footballPlayers: footballPlayers
-              }}
+              childClassProps={{ footballPlayers: availableFootballPlayers }}
           />
         </FFPanel>
         <FFPanel title='Draft history'>
           <AjaxComponent
-              loadingState={[footballPlayers, draftPicks]}
               ChildClass={DraftHistory}
-              childClassProps={{ draftPicks: draftPicks }}
+              childClassProps={{
+                draftPicks: draftPicks,
+                userLookup: userStore.userLookup
+              }}
           />
         </FFPanel>
       </div>
