@@ -29,8 +29,9 @@
     "react-addons-pure-render-mixin": "^0.14.2",
     "react-bootstrap": "^0.27.3",
     "react-dom": "^0.14.2",
+    "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc4",
-    "reflux": "^0.3.0",
+    "redux": "^3.0.4",
     "superagent": "^1.4.0"
   },
   "devDependencies": {
@@ -47,6 +48,7 @@
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
     "load-grunt-tasks": "^3.3.0",
+    "redux-devtools": "^2.1.5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
