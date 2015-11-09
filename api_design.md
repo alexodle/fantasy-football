@@ -21,7 +21,7 @@
 ###Login###
 
 
-*GET - /api/auth (get user)*
+*GET - /api/user (get user)*
 
 return: { user_id: <user_id> } || null
 
@@ -54,7 +54,7 @@ else return 498 (token expired), automatically sends another email
 
 ###Generic###
 
-*GET - /api/league/member*
+*GET - /api/user/league*
 
 Returns all the leagues which I am a member of
 
@@ -63,7 +63,7 @@ Returns all the leagues which I am a member of
 
 *GET - /api/league/<league_id>/fantasy_players*
 
-{ fantasy_players: { email: <email>, name: <name>, team: { name: <team_name>, short_name: <team_short_name> } } }
+{ fantasy_players: [{ <User>, team: <FantasyTeam> }, ...] }
 
 
 *GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*
