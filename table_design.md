@@ -58,15 +58,13 @@ Notes:
 
 ##Draft##
 
-###FantasyDraftOrder###
+###DraftOrder###
 
-* fantasy_draft_id (FantasyDraft fk)
 * user_id (User fk)
 * order (number)
 
 ###DraftPick###
 
-* fantasy_draft_id (FantasyDraft fk)
 * user_id (User fk)
 * football_player_id (FootballPlayer id)
 * pick_number
