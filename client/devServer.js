@@ -9,6 +9,10 @@ var WebpackDevServer = require('webpack-dev-server');
 var FILES_DIR = path.resolve('./test/mockserver');
 var ARTIFICIAL_DELAY_LOW = 200;
 var ARTIFICIAL_DELAY_HIGH = 3000;
+var PORTS = {
+  webpack: 4000,
+  api: 4001
+};
 
 function getArtificialDelay() {
   return _.random(ARTIFICIAL_DELAY_LOW, ARTIFICIAL_DELAY_HIGH);
@@ -20,7 +24,7 @@ var compiler = webpack(webpackConfig);
 var webpackDevServer = new WebpackDevServer(compiler, {
   contentBase: path.resolve('./app/static/'),
   publicPath: '/dist/',
-  proxy: { '/api/*': 'http://localhost:8081/' },
+  proxy: { '/api/*': 'http://localhost:' + PORTS.api + '/' },
   hot: true,
   watchOptions: {
     aggregateTimeout: 300,
@@ -50,5 +54,5 @@ expressApp.get('/api/*', function(req, res) {
   });
 });
 
-webpackDevServer.listen(8080, 'localhost', function() {});
-expressApp.listen(8081, function () {});
+webpackDevServer.listen(PORTS.webpack, 'localhost', function() {});
+expressApp.listen(PORTS.api, function () {});

@@ -22,4 +22,4 @@ npm install
 npm start
 ```
 
-Navigate to http://localhost:8080. Note that any changes to the js app code will be picked up if you refresh the page in your browser. Any changes to devServer.js will require a server restart.
+Navigate to http://localhost:4000. Note that any changes to the js app code will be picked up if you refresh the page in your browser. Any changes to devServer.js will require a server restart.

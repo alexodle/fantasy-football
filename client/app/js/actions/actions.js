@@ -10,7 +10,7 @@ import {
 import request from 'superagent';
 import { ACTIVE, SUCCEEDED, FAILED } from './AsyncActionStates';
 
-const DEFAULT_BODY_KEY = 'data';
+const DATA_KEY = 'data';
 
 export function loadDraftOrder(fantasyLeagueId) {
   return buildAsyncAction({
@@ -55,8 +55,7 @@ export function loadMyLeagues() {
 export const loadUser = function () {
   return buildAsyncAction({
     actionType: LOAD_USER,
-    url: '/api/auth/',
-    bodyKey: 'user_id'
+    url: '/api/user/'
   });
 };
 
@@ -69,7 +68,6 @@ function buildAsyncAction({
   actionType,
   url,
   extraProps = {},
-  bodyKey = DEFAULT_BODY_KEY,
   parser = _.identity
 }) {
   return function (dispatch) {
@@ -83,7 +81,7 @@ function buildAsyncAction({
           return;
         }
 
-        let result = res.body[bodyKey];
+        let result = res.body[DATA_KEY];
         if (_.isArray(result)) {
           result = _.map(result, parser);
         } else {

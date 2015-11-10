@@ -23,7 +23,7 @@
 
 *GET - /api/user (get user)*
 
-return: { user_id: <user_id> } || null
+return: { <User> } || null
 
 
 *PUT - /api/auth/login (login)*

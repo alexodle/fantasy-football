@@ -1,3 +1,10 @@
+//
+// Initial state for the store. In the future, we can bootstrap this with JSON
+// data stamped to the page.
+//
+// SEE: stateShape.json for documentation on how this state is filled out
+//
+
 const META = {
   isFetching: false,
   didInvalidate: true,
@@ -10,12 +17,7 @@ export default {
   entities: {
     current_user: null,
     users: {},
-    fantasy_leagues: {
-      "1": {
-        // ...<FantasyLeague>,
-        // teams: [1, 2, 3] // team_ids
-      }
-    },
+    fantasy_leagues: {},
     fantasy_teams: {},
     football_players: {},
     drafts: {}
