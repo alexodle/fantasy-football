@@ -58,29 +58,29 @@ else return 498 (token expired), automatically sends another email
 
 Returns all the leagues which I am a member of
 
-{ fantasy_leagues: [ <FantasyLeague>, ... ]}
+{ data: [ <FantasyLeague>, ... ]}
 
 
 *GET - /api/league/<league_id>/fantasy_players*
 
-{ fantasy_players: [{ <User>, team: <FantasyTeam> }, ...] }
+{ data: [{ <User>, team: <FantasyTeam> }, ...] }
 
 
 *GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*
 
-i.e. { football_players: [{ <FootballPlayer> }] }
+i.e. { data: [{ <FootballPlayer> }] }
 
 
 ###Draft###
 
 *GET - /api/league/<league_id>/draft_order*
 
-{ draft_order: { <FantasyDraftOrder> } }
+{ data: { <FantasyDraftOrder> } }
 
 
 *GET - /api/league/<league_id>/draft_picks*
 
-{ draft_picks: [<DraftPick>, <DraftPick>, etc.] } (draft picks should be ordered)
+{ data: [<DraftPick>, <DraftPick>, etc.] } (draft picks should be ordered)
 
 
 *POST - /api/league/<league_id>/draft_picks*
