@@ -23,7 +23,7 @@
 
 *GET - /api/user (get user)*
 
-return: { <User> } || null
+return: { data: { <User> } } || null (if not logged in)
 
 
 *PUT - /api/auth/login (login)*
