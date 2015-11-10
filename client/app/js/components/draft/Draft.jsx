@@ -1,22 +1,42 @@
-import _ from 'lodash';
-import React from 'react';
+//import _ from 'lodash';
+import React from 'react';/*
 import PlayerChooser from './PlayerChooser';
-import Reflux from 'reflux';
-import FootballPlayerStore from '../../stores/FootballPlayerStore';
-import DraftStore from '../../stores/DraftStore';
 import AjaxComponent from '../AjaxComponent';
 import FFPanel from '../FFPanel';
-import DraftHistory from './DraftHistory';
+import DraftHistory from './DraftHistory';*/
+import {connect} from 'react-redux';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import {
+  loadDraftOrder,
+  loadDraftPicks,
+  loadFantasyPlayers,
+  loadFootballPlayers,
+  loadMyLeagues,
+  loadUser
+} from '../../actions/actions';
 
 const Draft = React.createClass({
 
-  mixins: [
-    Reflux.connect(FootballPlayerStore, 'footballPlayersStore'),
-    Reflux.connect(DraftStore, 'draftStore')
-  ],
+  mixins: [PureRenderMixin],
+
+  propTypes: {
+    dispatch: React.PropTypes.func.isRequired
+  },
+
+  componentDidMount() {
+    const {dispatch} = this.props;
+    dispatch(loadDraftOrder(1));
+    dispatch(loadDraftPicks(1));
+    dispatch(loadFantasyPlayers(1));
+    dispatch(loadFootballPlayers(1));
+    dispatch(loadMyLeagues());
+    dispatch(loadUser());
+  },
 
   render() {
-    const {footballPlayersStore, draftStore} = this.state;
+    return <pre>{JSON.stringify(this.props, null, 2)}</pre>;
+
+    /*const {footballPlayersStore, draftStore} = this.state;
     const {footballPlayers} = footballPlayersStore;
     const {draftPicks} = draftStore;
 
@@ -47,9 +67,13 @@ const Draft = React.createClass({
           />
         </FFPanel>
       </div>
-    );
+    );*/
   }
 
 });
 
-export default Draft;
+function selectState(state) {
+  return state;
+}
+
+export default connect(selectState)(Draft);

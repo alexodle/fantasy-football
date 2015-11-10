@@ -2,12 +2,6 @@ import _ from 'lodash';
 import keyMirror from 'fbjs/lib/keyMirror';
 import {PropTypes} from 'react';
 
-export const LoadingStates = {
-  LOADING: Symbol('LOADING'),
-  NOT_LOADED: Symbol('NOT_LOADED'),
-  LOAD_FAILED: Symbol('LOAD_FAILED')
-};
-
 export const Positions = keyMirror({
   QB: null,
   RB: null,
