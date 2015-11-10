@@ -5,7 +5,7 @@ Fantasy football web application, initially targeted at PAC-12 NCAAF.
 * Flask
 * Lodash
 * React
-* Reflux
+* Redux/React-Redux
 * Socket.io
 * Webpack
 
