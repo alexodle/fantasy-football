@@ -34,7 +34,12 @@ const Draft = React.createClass({
   },
 
   render() {
-    return <pre>{JSON.stringify(this.props, null, 2)}</pre>;
+    return (
+      <div>
+        <h1>Here is the current state:</h1>
+        <pre>{JSON.stringify(this.props, null, 2)}</pre>
+      </div>
+    );
 
     /*const {footballPlayersStore, draftStore} = this.state;
     const {footballPlayers} = footballPlayersStore;
