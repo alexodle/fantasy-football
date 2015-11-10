@@ -92,6 +92,7 @@ function buildAsyncAction({
         dispatch({
           type: actionType,
           state: SUCCEEDED,
+          lastUpdated: Date.now(),
           result,
           ...extraProps
         });

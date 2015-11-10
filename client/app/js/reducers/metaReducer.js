@@ -10,7 +10,7 @@ import {
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
 
 export default function metaReducer(meta, action) {
-  const metaUpdate = getMetaUpdate(action.state);
+  const metaUpdate = getMetaUpdate(action);
   return {
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
@@ -70,16 +70,16 @@ function leaguesReducer(leagues, action, metaUpdate) {
   }
 }
 
-function getMetaUpdate(actionState) {
-  switch (actionState) {
+function getMetaUpdate(action) {
+  switch (action.state) {
     case ACTIVE:
       return { isFetching: true };
     case SUCCEEDED:
       return {
         isFetching: false,
         didInvalidate: false,
-        didFailFetching: false
-        // lastUpdated: null (TODO)
+        didFailFetching: false,
+        lastUpdated: action.lastUpdated
       };
     case FAILED:
       return {
