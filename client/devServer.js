@@ -8,7 +8,7 @@ var WebpackDevServer = require('webpack-dev-server');
 
 var FILES_DIR = path.resolve('./test/mockserver');
 var ARTIFICIAL_DELAY_LOW = 200;
-var ARTIFICIAL_DELAY_HIGH = 2000;
+var ARTIFICIAL_DELAY_HIGH = 3000;
 
 function getArtificialDelay() {
   return _.random(ARTIFICIAL_DELAY_LOW, ARTIFICIAL_DELAY_HIGH);
@@ -31,9 +31,11 @@ var webpackDevServer = new WebpackDevServer(compiler, {
 
 expressApp.get('/api/*', function(req, res) {
   var reqPath = req.path.substring(1);
+  if (reqPath.endsWith('/')) {
+    reqPath = reqPath.substring(0, reqPath.length - 1);
+  }
 
   var filePath = path.join(FILES_DIR, reqPath) + '.json';
-  var dataType = path.basename(filePath, '.json');
 
   fs.readFile(filePath, 'utf8', function (err, data) {
     if (err) {
@@ -41,9 +43,9 @@ expressApp.get('/api/*', function(req, res) {
       return;
     }
     setTimeout(function () {
-      var json = {};
-      json[dataType] = JSON.parse(data);
-      res.json(json);
+      res.json({
+        data: JSON.parse(data)
+      });
     }, getArtificialDelay());
   });
 });
