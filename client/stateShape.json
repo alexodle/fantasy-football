@@ -1,3 +1,4 @@
+//
 // Example state shape for the client
 //
 // Goals:
@@ -7,43 +8,81 @@
 //
 // State kept by router
 //   - current league
+//
+// META: {
+//   "isFetching": false,
+//   "didInvalidate": false,
+//   "lastUpdated": 1439478405547,
+// }
+//
 {
   "client": {
 
-    "current_user": 1 // user_id || null
+  },
+
+  "entities": {
+
+    "current_user": 1,
+
+    "users": {
+      "1": {/* ...<User> */}
+    },
+
+    "fantasy_leagues": {
+      "1": {
+        // ...<FantasyLeague>,
+        // teams: [1, 2, 3] // team_ids
+      }
+    },
+
+    "fantasy_teams": {
+      "1": {/* ...<FantasyTeam> */}
+    },
+
+    "football_players": {
+      "1": {/* ...<FootballPlayer> */}
+    },
+
+    "drafts": {
+      // indexed by league_id
+      "1": {
+        "order": [{/* ...<FantasyDraftOrder> */}], // in order
+        "picks": [{/* ...<DraftPick> */}] // in order
+      }
+    }
 
   },
-  "server": {
-    "entities": {
 
-      "users": {
-        "1": {/* <User>*/}
-      },
+  "meta": {
 
-      "fantasy_leagues": {
-        "1": {
-          // <FantasyLeague>,
-          // teams: [1, 2, 3] // team_ids
-        }
-      },
+    "current_user": {/* ...<META> */},
 
-      "fantasy_teams": {
-        "1": {/*<FantasyTeam>*/}
-      },
+    "my_leagues": {
+      // ...<META>,
+      "items": [1, 2, 3]
+    },
 
-      "football_players": {
-        "1": {/*<FootballPlayer>*/}
-      },
+    "leagues": {
+      "1": {
+        // ...<META>,
 
-      "drafts": {
-        // indexed by league_id
-        "1": {
-          "order": [{/*<FantasyDraftOrder>*/}], // in order
-          "picks": [{/*<DraftPick>*/}] // in order
+        "draft": {
+          "order": {/* ...<META> */},
+          "picks": {/* ...<META> */}
+        },
+
+        "fantasy_players": {
+          // ...<META>,
+          "items": [1, 2, 3]
+        },
+
+        "football_players": {
+          // ...<META>,
+          "items": [1, 2, 3]
         }
       }
-
     }
 
   }
+
 }
