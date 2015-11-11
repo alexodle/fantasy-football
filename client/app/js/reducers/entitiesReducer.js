@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {
+  DRAFT_PLAYER,
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
@@ -7,13 +8,35 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
-import { SUCCEEDED } from '../actions/AsyncActionStates';
+import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
 
-export default function entitiesReducer(entities, action) {
-  if (action.state !== SUCCEEDED) {
-    return entities;
+function activeStateReducer(entities, action) {
+  switch (action.type) {
+
+    case DRAFT_PLAYER:
+      const newPicks = entities.drafts[action.league_id].picks.concat([action.data]);
+      return _.merge({}, entities, { drafts: {
+        [action.league_id]: { picks: newPicks }
+      } });
+
+    default:
+      return entities;
   }
+}
 
+function failedStateReducer(entities, action) {
+  switch (action.type) {
+
+    case DRAFT_PLAYER:
+      // HIHI TODO
+      return entities;
+
+    default:
+      return entities;
+  }
+}
+
+function successStateReducer(entities, action) {
   switch (action.type) {
 
     case LOAD_DRAFT_ORDER:
@@ -46,5 +69,15 @@ export default function entitiesReducer(entities, action) {
 
     default:
       return entities;
+  }
+}
+
+export default function entitiesReducer(entities, action) {
+  if (action.state === ACTIVE) {
+    return activeStateReducer(entities, action);
+  } else if (action.state === FAILED) {
+    return failedStateReducer(entities, action);
+  } else { // if (action.state === SUCCESS) {
+    return successStateReducer(entities, action);
   }
 }

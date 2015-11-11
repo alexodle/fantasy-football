@@ -9,11 +9,12 @@ const DraftHistory = React.createClass({
 
   propTypes: {
     draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
-    footballPlayerLookup: React.PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired
+    footballPlayerLookup: React.PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired,
+    userLookup: React.PropTypes.objectOf(ModelShapes.User).isRequired
   },
 
   render() {
-    const {draftPicks, footballPlayerLookup} = this.props;
+    const {draftPicks, footballPlayerLookup, userLookup} = this.props;
     return (
       <table className='table'>
         <thead>
@@ -24,10 +25,11 @@ const DraftHistory = React.createClass({
         <tbody>
           {_.map(draftPicks, function (dp) {
             const footballPlayer = footballPlayerLookup[dp.football_player_id];
+            const user = userLookup[dp.user_id];
             return (
               <tr key={dp.pick_number}>
-                <td>{dp.pick_number}</td>
-                <td>{dp.user_id}</td>
+                <td>{dp.pick_number + 1}</td>
+                <td>{user.name}</td>
                 <td>{footballPlayer.name}</td>
                 <td>{footballPlayer.position}</td>
               </tr>

@@ -55,11 +55,12 @@ const Draft = React.createClass({
           {!loaded ? <Loading /> :
             <PlayerChooser
                 onPick={this._onPick}
+                userLookup={users}
                 footballPlayers={availableFootballPlayers}
             />
           }
         </FFPanel>
-        <FFPanel title='Draft this.history'>
+        <FFPanel title='Draft history'>
           {!loaded ? <Loading /> :
             <DraftHistory
                 draftPicks={draft.picks}
