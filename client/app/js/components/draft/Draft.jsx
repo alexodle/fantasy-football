@@ -13,7 +13,8 @@ import {
   loadFootballPlayers,
   loadMyLeagues,
   loadUser
-} from '../../actions/actions';
+} from '../../actions/LoadActions';
+import {draftFootballPlayer} from '../../actions/PostActions';
 import {hasLoaded} from '../../utils/loadingUtils';
 import Loading from '../Loading';
 import {ModelShapes} from '../../Constants';
@@ -52,9 +53,13 @@ const Draft = React.createClass({
       <div>
         <FFPanel title='Pick your player'>
           {!loaded ? <Loading /> :
-            <PlayerChooser footballPlayers={availableFootballPlayers} />}
+            <PlayerChooser
+                onPick={this._onPick}
+                footballPlayers={availableFootballPlayers}
+            />
+          }
         </FFPanel>
-        <FFPanel title='Draft history'>
+        <FFPanel title='Draft this.history'>
           {!loaded ? <Loading /> :
             <DraftHistory
                 draftPicks={draft.picks}
@@ -64,6 +69,12 @@ const Draft = React.createClass({
           }
         </FFPanel>
       </div>
+    );
+  },
+
+  _onPick: function (footballPlayerId) {
+    this.props.dispatch(
+      draftFootballPlayer(HACKHACK_LEAGUE_ID, footballPlayerId)
     );
   }
 

@@ -14,7 +14,8 @@ const PlayerChooser = React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired
+    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired,
+    onPick: PropTypes.func.isRequired
   },
 
   getInitialState() {
@@ -84,8 +85,7 @@ const PlayerChooser = React.createClass({
   _onPick() {
     const {selectedPlayerId} = this.state;
     if (selectedPlayerId) {
-      // DraftActions.draftPlayer(selectedPlayerId);
-      return;
+      this.props.onPick(selectedPlayerId);
     }
   }
 
