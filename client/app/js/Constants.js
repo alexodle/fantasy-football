@@ -20,6 +20,13 @@ export const FlexPositions = [
   'RB', 'WR', 'TE'
 ];
 
+export const MetaShape = PropTypes.shape({
+  isFetching: PropTypes.bool.isRequired,
+  didInvalidate: PropTypes.bool.isRequired,
+  didFailFetching: PropTypes.bool.isRequired,
+  lastUpdated: PropTypes.number
+});
+
 export const ModelShapes = {
 
   User: PropTypes.shape({
@@ -48,6 +55,11 @@ export const ModelShapes = {
     user_id: PropTypes.number.isRequired,
     football_player_id: PropTypes.number.isRequired,
     pick_number: PropTypes.number.isRequired
+  }),
+
+  DraftOrder: PropTypes.shape({
+    user_id: PropTypes.number.isRequired,
+    order: PropTypes.number.isRequired
   })
 
 };
