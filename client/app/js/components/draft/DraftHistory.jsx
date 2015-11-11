@@ -2,18 +2,18 @@ import _ from 'lodash';
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {ModelShapes} from '../../Constants';
-import FootballPlayerStore from '../../stores/FootballPlayerStore';
 
 const DraftHistory = React.createClass({
 
   mixins: [PureRenderMixin],
 
   propTypes: {
-    draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired
+    draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
+    footballPlayerLookup: React.PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired
   },
 
   render() {
-    const {draftPicks} = this.props;
+    const {draftPicks, footballPlayerLookup} = this.props;
     return (
       <table className='table'>
         <thead>
@@ -23,7 +23,7 @@ const DraftHistory = React.createClass({
         </thead>
         <tbody>
           {_.map(draftPicks, function (dp) {
-            const footballPlayer = FootballPlayerStore.getPlayerById(dp.football_player_id);
+            const footballPlayer = footballPlayerLookup[dp.football_player_id];
             return (
               <tr key={dp.pick_number}>
                 <td>{dp.pick_number}</td>

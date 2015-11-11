@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import React, {PropTypes} from 'react';/*
+import React, {PropTypes} from 'react';
 import PlayerChooser from './PlayerChooser';
-import AjaxComponent from '../AjaxComponent';
+//import AjaxComponent from '../AjaxComponent';
 import FFPanel from '../FFPanel';
-import DraftHistory from './DraftHistory';*/
+import DraftHistory from './DraftHistory';
 import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {
@@ -31,8 +31,9 @@ const Draft = React.createClass({
       picks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
       order: PropTypes.arrayOf(ModelShapes.DraftOrder).isRequired
     }),
-    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
-    loaded: PropTypes.bool.isRequired
+    footballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
+    loaded: PropTypes.bool.isRequired,
+    users: PropTypes.objectOf(ModelShapes.User)
   },
 
   componentWillMount() {
@@ -46,49 +47,24 @@ const Draft = React.createClass({
   },
 
   render() {
-    if (!this.props.loaded) {
-      return <Loading />;
-    }
-
-    return (
-      <div>
-        <h1>Here is the current state:</h1>
-        <pre>{JSON.stringify(this.props, null, 2)}</pre>
-      </div>
-    );
-
-    /*const {footballPlayersStore, draftStore} = this.state;
-    const {footballPlayers} = footballPlayersStore;
-    const {draftPicks} = draftStore;
-
-    // Filter out players who have already been picked
-    let availableFootballPlayers = footballPlayers;
-    if (!_.isEmpty(draftPicks)) {
-      const draftPicksById = _.indexBy(draftPicks, 'football_player_id');
-      availableFootballPlayers = _.reject(footballPlayers, function (fp) {
-        return !!draftPicksById[fp.id];
-      });
-    }
-
+    const {loaded, availableFootballPlayers, draft, users, footballPlayers} = this.props;
     return (
       <div>
         <FFPanel title='Pick your player'>
-          <AjaxComponent
-              ChildClass={PlayerChooser}
-              childClassProps={{ footballPlayers: availableFootballPlayers }}
-          />
+          {!loaded ? <Loading /> :
+            <PlayerChooser footballPlayers={availableFootballPlayers} />}
         </FFPanel>
         <FFPanel title='Draft history'>
-          <AjaxComponent
-              ChildClass={DraftHistory}
-              childClassProps={{
-                draftPicks: draftPicks,
-                userLookup: userStore.userLookup
-              }}
-          />
+          {!loaded ? <Loading /> :
+            <DraftHistory
+                draftPicks={draft.picks}
+                userLookup={users}
+                footballPlayerLookup={footballPlayers}
+            />
+          }
         </FFPanel>
       </div>
-    );*/
+    );
   }
 
 });
@@ -96,14 +72,15 @@ const Draft = React.createClass({
 function selectState(state) {
   const leagueMeta = state.meta.leagues[HACKHACK_LEAGUE_ID] || {};
 
-  const loaded = (
+  const loaded = !!(
     leagueMeta.draft &&
     hasLoaded(leagueMeta.football_players) &&
     hasLoaded(leagueMeta.draft.order) &&
-    hasLoaded(leagueMeta.draft.picks)
+    hasLoaded(leagueMeta.draft.picks) &&
+    hasLoaded(leagueMeta.fantasy_players)
   );
 
-  let draft, footballPlayers, availableFootballPlayers;
+  let draft, footballPlayers, availableFootballPlayers, users;
   if (loaded) {
     draft = state.entities.drafts[HACKHACK_LEAGUE_ID];
 
@@ -120,13 +97,16 @@ function selectState(state) {
       .pick(availableFootballPlayerIds)
       .values()
       .value();
+
+    users = state.entities.users;
   }
 
   return {
     loaded,
     draft,
     footballPlayers,
-    availableFootballPlayers
+    availableFootballPlayers,
+    users
   };
 }
 
