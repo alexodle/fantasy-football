@@ -22,6 +22,7 @@ Goal: support simple v0 draft app (no support for scoring yet)
 
 * user_id (User fk)
 * fantasy_league_id (FantasyLeague fk)
+* timestamp
 
 ###FantasyTeam###
 
@@ -60,11 +61,13 @@ Notes:
 
 ###DraftOrder###
 
+* fantasy_league_id (FantasyLeague fk)
 * user_id (User fk)
 * order (number)
 
 ###DraftPick###
 
+* fantasy_league_id (FantasyLeague fk)
 * user_id (User fk)
 * football_player_id (FootballPlayer id)
 * pick_number
