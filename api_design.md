@@ -21,9 +21,9 @@
 ###Login###
 
 
-*GET - /api/auth (get user)*
+*GET - /api/user (get user)*
 
-return: { user_id: <user_id> } || null
+return: { data: { <User> } } || null (if not logged in)
 
 
 *PUT - /api/auth/login (login)*
@@ -54,32 +54,33 @@ else return 498 (token expired), automatically sends another email
 
 ###Generic###
 
+*GET - /api/user/league*
 
-*GET - /api/league/<league_id>*
+Returns all the leagues which I am a member of
 
-{ <FantasyLeague> }
+{ data: [ <FantasyLeague>, ... ]}
 
 
 *GET - /api/league/<league_id>/fantasy_players*
 
-{ fantasy_players: { email: <email>, team: { name: <team_name> } } }
+{ data: [{ <User>, team: <FantasyTeam> }, ...] }
 
 
 *GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*
 
-i.e. { football_players: [{ <FootballPlayer> }] }
+i.e. { data: [{ <FootballPlayer> }] }
 
 
 ###Draft###
 
 *GET - /api/league/<league_id>/draft_order*
 
-{ draft_order: { <FantasyDraftOrder> } }
+{ data: { <FantasyDraftOrder> } }
 
 
 *GET - /api/league/<league_id>/draft_picks*
 
-{ draft_picks: [<DraftPick>, <DraftPick>, etc.] } (draft picks should be ordered)
+{ data: [<DraftPick>, <DraftPick>, etc.] } (draft picks should be ordered)
 
 
 *POST - /api/league/<league_id>/draft_picks*

@@ -1,0 +1,87 @@
+//
+// Example state shape for the client
+//
+// Goals:
+//   - keep as flat as possible (but arrays of ids are ok)
+//   - keep UI state and preserved state separate
+//   - default is to index entities by id
+//
+// State kept by router
+//   - current league
+//
+// META: {
+//   "isFetching": false,
+//   "didInvalidate": false,
+//   "lastUpdated": 1439478405547,
+// }
+//
+{
+  "client": {
+
+  },
+
+  "entities": {
+
+    "current_user": 1,
+
+    "users": {
+      "1": {/* ...<User> */}
+    },
+
+    "fantasy_leagues": {
+      "1": {
+        // ...<FantasyLeague>,
+        // teams: [1, 2, 3] // team_ids
+      }
+    },
+
+    "fantasy_teams": {
+      "1": {/* ...<FantasyTeam> */}
+    },
+
+    "football_players": {
+      "1": {/* ...<FootballPlayer> */}
+    },
+
+    "drafts": {
+      // indexed by league_id
+      "1": {
+        "order": [{/* ...<FantasyDraftOrder> */}], // in order
+        "picks": [{/* ...<DraftPick> */}] // in order
+      }
+    }
+
+  },
+
+  "meta": {
+
+    "current_user": {/* ...<META> */},
+
+    "my_leagues": {
+      // ...<META>,
+      "items": [1, 2, 3]
+    },
+
+    "leagues": {
+      "1": {
+
+        "draft": {
+          "order": {/* ...<META> */},
+          "picks": {/* ...<META> */}
+        },
+
+        "fantasy_players": {
+          // ...<META>,
+          "items": [1, 2, 3]
+        },
+
+        "football_players": {
+          // ...<META>,
+          "items": [1, 2, 3]
+        }
+      }
+    }
+
+  }
+
+}
