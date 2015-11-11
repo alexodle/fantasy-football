@@ -22,9 +22,9 @@ export default function entitiesReducer(entities, action) {
       } });
 
     case LOAD_DRAFT_PICKS:
-      return _.merge({}, entities, {
+      return _.merge({}, entities, { drafts: {
         [action.league_id]: { picks: _.sortBy(action.result, 'pick_number') }
-      });
+      } });
 
     case LOAD_FANTASY_PLAYERS:
       return _.merge({}, entities, {
