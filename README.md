@@ -19,9 +19,20 @@ cd server/
 virtualenv venv
 ```
 
-Activate the Virtual Environment
+Activate the Virtual Environment and Install Requirements
 ```
 source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Build the Develment Database
+```
+python manage.py db_rebuild
+```
+
+Launch the Python Shell with Database Context (i.e., Models with Fake Data)
+```
+python manage.py shell
 ```
 
 # Working on the client
