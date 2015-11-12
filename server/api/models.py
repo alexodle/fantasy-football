@@ -160,7 +160,7 @@ def load_user(user_id):
 class FantasyLeague(db.Model):
     __tablename__ = 'fantasy_leagues'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), unique=True, index=True)
+    name = db.Column(db.String(255), index=True)
     draft_start_date = db.Column(db.DateTime)
 
     # foriegn keys
@@ -177,22 +177,24 @@ class FantasyLeague(db.Model):
                                    lazy='dynamic')
 
     @staticmethod
-    def generate_fake(count=10):
+    def generate_fake(count=20):
         from random import seed, randint
         import forgery_py
 
         seed()
         user_count = User.query.count()
+        conference_count = FootballConference.query.count()
         for i in range(count):
             u = User.query.offset(randint(0, user_count - 1)).first()
-            f = FantasyLeague(
-                name=forgery_py.lorem_ipsum.word(),
-                commissioner=u,
-                # TODO: add conference reference
+            c = FootballConference.query.\
+                offset(randint(0, conference_count - 1)).first()
+            fl = FantasyLeague(
+                name=forgery_py.name.company_name(),
                 draft_start_date=forgery_py.date.date(past=False),
+                commissioner=u,
+                conference=c,
             )
-            db.session.add(f)
-            db.session.commit()
+            db.session.add(fl)
 
 
 class FantasyTeam(db.Model):
@@ -207,8 +209,24 @@ class FantasyTeam(db.Model):
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     @staticmethod
-    def generate_fake(count=10):
-        pass
+    def generate_fake(count=50):
+        from random import seed, randint
+        import forgery_py
+
+        seed()
+        user_count = User.query.count()
+        league_count = FantasyLeague.query.count()
+        for i in range(count):
+            u = User.query.offset(randint(0, user_count - 1)).first()
+            fl = FantasyLeague.query.\
+                offset(randint(0, league_count - 1)).first()
+            ft = FantasyTeam(
+                name=forgery_py.name.company_name(),
+                short_name=forgery_py.internet.user_name(),
+                fantasy_league=fl,
+                owner=u,
+            )
+            db.session.add(ft)
 
 
 class FootballPlayer(db.Model):
@@ -226,8 +244,20 @@ class FootballPlayer(db.Model):
                                   lazy='dynamic')
 
     @staticmethod
-    def generate_fake(count=10):
-        pass
+    def generate_fake(count=500):
+        from random import seed, randint
+        import forgery_py
+
+        seed()
+        team_count = FootballTeam.query.count()
+        for i in range(count):
+            ft = FootballTeam.query.offset(randint(0, team_count - 1)).first()
+            fp = FootballPlayer(
+                name=forgery_py.name.full_name(),
+                position=forgery_py.name.job_title(),
+                football_team=ft,
+            )
+            db.session.add(fp)
 
 
 class FootballTeam(db.Model):
@@ -240,11 +270,24 @@ class FootballTeam(db.Model):
                               db.ForeignKey('football_conferences.id'))
 
     # backrefs
-    players = db.relationship('FootballPlayer', backref='team', lazy='dynamic')
+    players = db.relationship('FootballPlayer', backref='football_team',
+                              lazy='dynamic')
 
     @staticmethod
-    def generate_fake(count=10):
-        pass
+    def generate_fake(count=80):
+        from random import seed, randint
+        import forgery_py
+
+        seed()
+        conference_count = FootballConference.query.count()
+        for i in range(count):
+            fc = FootballConference.query.\
+                offset(randint(0, conference_count - 1)).first()
+            ft = FootballTeam(
+                name=forgery_py.name.company_name(),
+                conference=fc,
+            )
+            db.session.add(ft)
 
 
 class FootballConference(db.Model):
@@ -255,10 +298,24 @@ class FootballConference(db.Model):
     # backrefs
     football_teams = db.relationship('FootballTeam', backref='conference',
                                      lazy='dynamic')
+    fantasy_leagues = db.relationship('FantasyLeague', backref='conference',
+                                      lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=10):
-        pass
+        from sqlalchemy.exc import IntegrityError
+        from random import seed
+        import forgery_py
+
+        seed()
+        for i in range(count):
+            fc = FootballConference(name=forgery_py.name.company_name())
+            db.session.add(fc)
+            # conference might not be random, in which case rollback
+            try:
+                db.session.commit()
+            except IntegrityError:
+                db.session.rollback()
 
 
 class DraftOrder(db.Model):
@@ -273,8 +330,23 @@ class DraftOrder(db.Model):
                         primary_key=True)
 
     @staticmethod
-    def generate_fake(count=10):
-        pass
+    def generate_fake(rounds=5):
+        # loop through every league, then every team and assign draft order
+        leauges = FantasyLeague.query.all()
+        for league in leauges:
+            teams = league.fantasy_teams.all()
+
+            round = 1
+            while round <= rounds:
+                for idx, team in enumerate(teams):
+                    user = team.owner
+                    do = DraftOrder(
+                        order=(idx+1) + ((round-1)*len(teams)),
+                        fantasy_league=league,
+                        user=user,
+                    )
+                    db.session.add(do)
+                round += 1
 
 
 class DraftPick(db.Model):
@@ -292,5 +364,24 @@ class DraftPick(db.Model):
                                    primary_key=True)
 
     @staticmethod
-    def generate_fake(count=10):
-        pass
+    def generate_fake():
+        # loop through every league, then every team and assign draft order
+        leauges = FantasyLeague.query.all()
+        for league in leauges:
+            # get all draft orders for specific league
+            draft_orders = league.draft_orders\
+                .order_by(DraftOrder.order.asc()).all()
+
+            # get all players from all teams in conference
+            players = FootballPlayer.query.join(FootballTeam)\
+                .filter(FootballTeam.conference == league.conference).all()
+
+            for idx, pick in enumerate(draft_orders):
+                if players:  # check that there are players left in the draft
+                    dp = DraftPick(
+                        pick_number=idx+1,
+                        fantasy_league=league,
+                        user=pick.user,
+                        football_player=players.pop()
+                    )
+                    db.session.add(dp)
