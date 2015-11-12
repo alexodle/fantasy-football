@@ -86,6 +86,7 @@ const PlayerChooser = React.createClass({
     const {selectedPlayerId} = this.state;
     if (selectedPlayerId) {
       this.props.onPick(_.parseInt(selectedPlayerId));
+      this.setState({ selectedPlayerId: null });
     }
   }
 
