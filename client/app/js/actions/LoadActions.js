@@ -8,7 +8,7 @@ import {
   LOAD_USER
 } from './ActionTypes';
 import request from 'superagent';
-import { ACTIVE, SUCCEEDED, FAILED } from './AsyncActionStates';
+import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 
 const DATA_KEY = 'data';
 
@@ -79,7 +79,7 @@ export function loadMyLeagues() {
   });
 }
 
-export const loadUser = function () {
+export function loadUser() {
   return buildAsyncAction({
     actionType: LOAD_USER,
     url: '/api/user/',
@@ -87,7 +87,7 @@ export const loadUser = function () {
       return state.meta.my_leagues;
     }
   });
-};
+}
 
 function parseLeague(league) {
   league.draft_start_date = new Date(league.draft_start_date);

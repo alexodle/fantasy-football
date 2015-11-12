@@ -4,7 +4,6 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import {ModelShapes, PositionDisplayOrder, Positions, FlexPositions} from '../../Constants';
 import {Button} from 'react-bootstrap/lib';
-import DraftActions from '../../actions/DraftActions';
 
 const ALL_POSITION = 'All';
 const DEFAULT_POSITION = ALL_POSITION;
@@ -15,7 +14,8 @@ const PlayerChooser = React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired
+    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired,
+    onPick: PropTypes.func.isRequired
   },
 
   getInitialState() {
@@ -85,7 +85,7 @@ const PlayerChooser = React.createClass({
   _onPick() {
     const {selectedPlayerId} = this.state;
     if (selectedPlayerId) {
-      DraftActions.draftPlayer(selectedPlayerId);
+      this.props.onPick(_.parseInt(selectedPlayerId));
     }
   }
 

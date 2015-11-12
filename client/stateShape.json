@@ -22,7 +22,7 @@
 
   "entities": {
 
-    "current_user": 1,
+    "current_user": {/* ...<User> */},
 
     "users": {
       "1": {/* ...<User> */}
