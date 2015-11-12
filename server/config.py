@@ -16,6 +16,7 @@ class Config(object):
     DASHBOARD_ADMIN = os.environ.get('DASHBOARD_ADMIN', 'admin@insights.com')
     POSTS_PER_PAGE = 5
     FOLLOWERS_PER_PAGE = 10
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
     @staticmethod
     def init_app(app):
