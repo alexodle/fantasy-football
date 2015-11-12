@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, {PropTypes} from 'react';
 import PlayerChooser from './PlayerChooser';
-//import AjaxComponent from '../AjaxComponent';
 import FFPanel from '../FFPanel';
 import DraftHistory from './DraftHistory';
 import {connect} from 'react-redux';
@@ -18,6 +17,7 @@ import {draftFootballPlayer} from '../../actions/PostActions';
 import {hasLoaded} from '../../utils/loadingUtils';
 import Loading from '../Loading';
 import {ModelShapes} from '../../Constants';
+import TeamDraftView from './TeamDraftView';
 
 const HACKHACK_LEAGUE_ID = 1;
 
@@ -27,11 +27,13 @@ const Draft = React.createClass({
 
   propTypes: {
     availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
+    currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
     draft: PropTypes.shape({
       picks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
       order: PropTypes.arrayOf(ModelShapes.DraftOrder).isRequired
     }),
+    fantasyLeague: ModelShapes.FantasyLeague,
     footballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
     loaded: PropTypes.bool.isRequired,
     users: PropTypes.objectOf(ModelShapes.User)
@@ -48,7 +50,15 @@ const Draft = React.createClass({
   },
 
   render() {
-    const {loaded, availableFootballPlayers, draft, users, footballPlayers} = this.props;
+    const {
+      availableFootballPlayers,
+      currentUser,
+      draft,
+      fantasyLeague,
+      footballPlayers,
+      loaded,
+      users
+    } = this.props;
     return (
       <div>
         <FFPanel title='Pick your player'>
@@ -60,6 +70,18 @@ const Draft = React.createClass({
             />
           }
         </FFPanel>
+
+        <FFPanel title='My team'>
+          {!loaded ? <Loading /> :
+            <TeamDraftView
+                draftPicks={draft.picks}
+                fantasyLeague={fantasyLeague}
+                footballPlayerLookup={footballPlayers}
+                user={currentUser}
+            />
+          }
+        </FFPanel>
+
         <FFPanel title='Draft history'>
           {!loaded ? <Loading /> :
             <DraftHistory
@@ -86,14 +108,17 @@ function selectState(state) {
 
   const loaded = !!(
     leagueMeta.draft &&
+    hasLoaded(state.meta.current_user) &&
+    hasLoaded(state.meta.my_leagues) &&
     hasLoaded(leagueMeta.football_players) &&
     hasLoaded(leagueMeta.draft.order) &&
     hasLoaded(leagueMeta.draft.picks) &&
     hasLoaded(leagueMeta.fantasy_players)
   );
 
-  let draft, footballPlayers, availableFootballPlayers, users;
+  let draft, footballPlayers, availableFootballPlayers, users, fantasyLeague, currentUser;
   if (loaded) {
+    fantasyLeague = state.entities.fantasy_leagues[HACKHACK_LEAGUE_ID];
     draft = state.entities.drafts[HACKHACK_LEAGUE_ID];
 
     footballPlayers = _(state.entities.football_players)
@@ -111,13 +136,16 @@ function selectState(state) {
       .value();
 
     users = state.entities.users;
+    currentUser = users[state.meta.current_user.id];
   }
 
   return {
-    loaded,
-    draft,
-    footballPlayers,
     availableFootballPlayers,
+    currentUser,
+    draft,
+    fantasyLeague,
+    footballPlayers,
+    loaded,
     users
   };
 }

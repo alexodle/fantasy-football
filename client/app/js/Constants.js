@@ -40,7 +40,16 @@ export const ModelShapes = {
     name: PropTypes.string.isRequired,
     commissioner_id: PropTypes.number.isRequired,
     conference_id: PropTypes.number.isRequired,
-    draft_start_date: PropTypes.instanceOf(Date).isRequired
+    draft_start_date: PropTypes.instanceOf(Date).isRequired,
+    team_reqs: PropTypes.shape({
+      [Positions.QB]: PropTypes.number.isRequired,
+      [Positions.RB]: PropTypes.number.isRequired,
+      [Positions.WR]: PropTypes.number.isRequired,
+      [Positions.TE]: PropTypes.number.isRequired,
+      [Positions.FLEX]: PropTypes.number.isRequired,
+      [Positions.K]: PropTypes.number.isRequired,
+      [Positions['D/ST']]: PropTypes.number.isRequired
+    }).isRequired
   }),
 
   FootballPlayer: PropTypes.shape({

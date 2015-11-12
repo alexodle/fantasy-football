@@ -29,6 +29,7 @@ function failedStateReducer(entities, action) {
 
     case DRAFT_PLAYER:
       // HIHI TODO
+      // (probably just going to show a global modal that has a refresh button)
       return entities;
 
     default:

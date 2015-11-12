@@ -22,6 +22,9 @@ function currentUserReducer(current_user, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_USER:
+      if (action.state === SUCCEEDED) {
+        return { ...metaUpdate, id: action.result.id };
+      }
       return metaUpdate;
 
     default:

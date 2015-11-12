@@ -30,6 +30,7 @@
       "1": {
         // ...<FantasyLeague>,
         // teams: [1, 2, 3] // team_ids
+        // team_reqs: { QB: 1, RB: 2, ...}
       }
     },
 
