@@ -173,7 +173,7 @@ class FantasyLeague(db.Model):
                                     lazy='dynamic')
     draft_picks = db.relationship('DraftPick', backref='fantasy_league',
                                   lazy='dynamic')
-    draft_orders = db.relationship('DraftPick', backref='fantasy_league',
+    draft_orders = db.relationship('DraftOrder', backref='fantasy_league',
                                    lazy='dynamic')
 
     @staticmethod
@@ -236,7 +236,8 @@ class FootballTeam(db.Model):
     name = db.Column(db.String(255))
 
     # foriegn keys
-    conference_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    conference_id = db.Column(db.Integer,
+                              db.ForeignKey('football_conferences.id'))
 
     # backrefs
     players = db.relationship('FootballPlayer', backref='team', lazy='dynamic')
