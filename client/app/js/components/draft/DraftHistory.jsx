@@ -15,6 +15,11 @@ const DraftHistory = React.createClass({
 
   render() {
     const {draftPicks, footballPlayerLookup, userLookup} = this.props;
+
+    const reverseDraftPicks = _(draftPicks)
+      .sortBy('pick_number')
+      .reverse()
+      .value();
     return (
       <table className='table'>
         <thead>
@@ -23,7 +28,7 @@ const DraftHistory = React.createClass({
           </tr>
         </thead>
         <tbody>
-          {_.map(draftPicks, function (dp) {
+          {_.map(reverseDraftPicks, function (dp) {
             const footballPlayer = footballPlayerLookup[dp.football_player_id];
             const user = userLookup[dp.user_id];
             return (
