@@ -22,8 +22,6 @@
 
   "entities": {
 
-    "current_user": {/* ...<User> */},
-
     "users": {
       "1": {/* ...<User> */}
     },
@@ -55,7 +53,10 @@
 
   "meta": {
 
-    "current_user": {/* ...<META> */},
+    "current_user": {
+      // ...<META>
+      "id": 1
+    },
 
     "my_leagues": {
       // ...<META>,
@@ -72,7 +73,10 @@
 
         "fantasy_players": {
           // ...<META>,
-          "items": [1, 2, 3]
+          "items": [{
+            "user_id": 1,
+            "fantasy_team_id": 1
+          }]
         },
 
         "football_players": {

@@ -6,7 +6,7 @@ export function draftFootballPlayer(fantasyLeagueId, footballPlayerId) {
   return function (dispatch, getState) {
     const state = getState();
     const pickNumber = state.entities.drafts[fantasyLeagueId].picks.length;
-    const currentUserId = state.entities.current_user.id;
+    const currentUserId = state.meta.current_user.id;
     const data = {
       fantasy_league_id: fantasyLeagueId,
       football_player_id: footballPlayerId,

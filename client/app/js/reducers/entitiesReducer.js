@@ -65,7 +65,9 @@ function successStateReducer(entities, action) {
       });
 
     case LOAD_USER:
-      return _.merge({}, entities, { current_user: action.result });
+      return _.merge({}, entities, { users: {
+        [action.result.id]: action.result
+      } });
 
     default:
       return entities;

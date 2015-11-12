@@ -15,7 +15,6 @@ const META = {
 export default {
   client: {},
   entities: {
-    current_user: null,
     users: {},
     fantasy_leagues: {},
     fantasy_teams: {},
