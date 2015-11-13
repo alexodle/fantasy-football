@@ -16,7 +16,7 @@ const App = React.createClass({
         <div className='page-header'>
           <h1>Fantasy Football <small></small></h1>
         </div>
-        <div className='row'>
+        <div>
           {!children ? null :
             <Provider store={store}>
               {this.props.children}

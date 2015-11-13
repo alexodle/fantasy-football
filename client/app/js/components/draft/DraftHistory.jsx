@@ -21,7 +21,7 @@ const DraftHistory = React.createClass({
       .reverse()
       .value();
     return (
-      <table className='table'>
+      <table className='table table-condensed'>
         <thead>
           <tr>
             <th>#</th><th>User</th><th>Player</th><th>Position</th>

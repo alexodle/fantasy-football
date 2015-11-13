@@ -94,43 +94,52 @@ const Draft = React.createClass({
     }
 
     return (
-      <div>
-        <FFPanel title='Draft HQ'>
-          {!loaded ? <Loading /> :
-            isMyPick ? (
-              <PlayerChooser
-                  onPick={this._onPick}
-                  userLookup={users}
-                  footballPlayers={availableFootballPlayers}
-              />) : (
-              <DraftStatus
-                  currentDraftOrder={currentDraftOrder}
-                  userLookup={users}
-              />)
-          }
-        </FFPanel>
+      <section>
+        <div className='row'>
+          <div className='col-md-6'>
+            <FFPanel title='Draft HQ'>
+              {!loaded ? <Loading /> :
+                isMyPick ? (
+                  <PlayerChooser
+                      onPick={this._onPick}
+                      userLookup={users}
+                      footballPlayers={availableFootballPlayers}
+                  />) : (
+                  <DraftStatus
+                      currentDraftOrder={currentDraftOrder}
+                      userLookup={users}
+                  />)
+              }
+            </FFPanel>
+          </div>
+          <div className='col-md-6'>
+            <FFPanel title='My team'>
+              {!loaded ? <Loading /> :
+                <TeamDraftView
+                    draftPicks={draft.picks}
+                    fantasyLeague={fantasyLeague}
+                    footballPlayerLookup={footballPlayers}
+                    user={currentUser}
+                />
+              }
+            </FFPanel>
+          </div>
+        </div>
 
-        <FFPanel title='My team'>
-          {!loaded ? <Loading /> :
-            <TeamDraftView
-                draftPicks={draft.picks}
-                fantasyLeague={fantasyLeague}
-                footballPlayerLookup={footballPlayers}
-                user={currentUser}
-            />
-          }
-        </FFPanel>
-
-        <FFPanel title='Draft history'>
-          {!loaded ? <Loading /> :
-            <DraftHistory
-                draftPicks={draft.picks}
-                userLookup={users}
-                footballPlayerLookup={footballPlayers}
-            />
-          }
-        </FFPanel>
-      </div>
+        <div className='row'>
+          <div className='col-md-12'>
+            <FFPanel title='Draft history'>
+              {!loaded ? <Loading /> :
+                <DraftHistory
+                    draftPicks={draft.picks}
+                    userLookup={users}
+                    footballPlayerLookup={footballPlayers}
+                />
+              }
+            </FFPanel>
+          </div>
+        </div>
+      </section>
     );
   },
 

@@ -36,7 +36,7 @@ export default React.createClass({
 
     return (
       <div>
-        <table className='table'>
+        <table className='table table-condensed'>
           <caption>Starters</caption>
           <thead>
             <tr>
@@ -62,7 +62,7 @@ export default React.createClass({
             })}
           </tbody>
         </table>
-        <table className='table'>
+        <table className='table table-condensed'>
           <caption>Bench</caption>
           <tbody>
             {_.map(bench, function (pick) {
