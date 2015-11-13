@@ -18,6 +18,7 @@ import {hasLoaded} from '../../utils/loadingUtils';
 import Loading from '../Loading';
 import {ModelShapes} from '../../Constants';
 import TeamDraftView from './TeamDraftView';
+import DraftStatus from './DraftStatus';
 
 const HACKHACK_LEAGUE_ID = 1;
 
@@ -59,15 +60,27 @@ const Draft = React.createClass({
       loaded,
       users
     } = this.props;
+
+    let currentDraftOrder, isMyPick;
+    if (loaded) {
+      currentDraftOrder = draft.order[draft.picks.length];
+      isMyPick = currentUser.id === currentDraftOrder.user_id;
+    }
+
     return (
       <div>
-        <FFPanel title='Pick your player'>
+        <FFPanel title='Draft HQ'>
           {!loaded ? <Loading /> :
-            <PlayerChooser
-                onPick={this._onPick}
-                userLookup={users}
-                footballPlayers={availableFootballPlayers}
-            />
+            isMyPick ? (
+              <PlayerChooser
+                  onPick={this._onPick}
+                  userLookup={users}
+                  footballPlayers={availableFootballPlayers}
+              />) : (
+              <DraftStatus
+                  currentDraftOrder={currentDraftOrder}
+                  userLookup={users}
+              />)
           }
         </FFPanel>
 
