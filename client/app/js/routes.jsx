@@ -9,7 +9,7 @@ export default (
   <Router>
     <Route path="/" component={App}>
       <IndexRoute component={LeagueChooser} />
-      <Route path="draft" component={Draft} />
+      <Route path="draft/:leagueId" component={Draft} />
     </Route>
   </Router>
 );

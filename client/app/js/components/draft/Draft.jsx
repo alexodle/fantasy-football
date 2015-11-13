@@ -16,53 +16,79 @@ import {
 import {draftFootballPlayer} from '../../actions/PostActions';
 import {hasLoaded} from '../../utils/loadingUtils';
 import Loading from '../Loading';
-import {ModelShapes} from '../../Constants';
 import TeamDraftView from './TeamDraftView';
 import DraftStatus from './DraftStatus';
-
-const HACKHACK_LEAGUE_ID = 1;
 
 const Draft = React.createClass({
 
   mixins: [PureRenderMixin],
 
   propTypes: {
-    availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
-    currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
-    draft: PropTypes.shape({
-      picks: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
-      order: PropTypes.arrayOf(ModelShapes.DraftOrder).isRequired
-    }),
-    fantasyLeague: ModelShapes.FantasyLeague,
-    footballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
-    loaded: PropTypes.bool.isRequired,
-    users: PropTypes.objectOf(ModelShapes.User)
+    params: PropTypes.shape({
+      leagueId: PropTypes.string.isRequired
+    }).isRequired,
+    storeState: PropTypes.object.isRequired // TODO
   },
 
   componentWillMount() {
-    const {dispatch} = this.props;
-    dispatch(loadDraftOrder(HACKHACK_LEAGUE_ID));
-    dispatch(loadDraftPicks(HACKHACK_LEAGUE_ID));
-    dispatch(loadFantasyPlayers(HACKHACK_LEAGUE_ID));
-    dispatch(loadFootballPlayers(HACKHACK_LEAGUE_ID));
+    const {dispatch, params} = this.props;
+    const {leagueId} = params;
+
+    dispatch(loadDraftOrder(leagueId));
+    dispatch(loadDraftPicks(leagueId));
+    dispatch(loadFantasyPlayers(leagueId));
+    dispatch(loadFootballPlayers(leagueId));
     dispatch(loadMyLeagues());
     dispatch(loadUser());
   },
 
   render() {
-    const {
-      availableFootballPlayers,
-      currentUser,
-      draft,
-      fantasyLeague,
-      footballPlayers,
-      loaded,
-      users
-    } = this.props;
+    const {storeState, params} = this.props;
+    const {leagueId} = params;
 
-    let currentDraftOrder, isMyPick;
+    const leagueMeta = storeState.meta.leagues[leagueId] || {};
+
+    const loaded = !!(
+      leagueMeta.draft &&
+      hasLoaded(storeState.meta.current_user) &&
+      hasLoaded(storeState.meta.my_leagues) &&
+      hasLoaded(leagueMeta.football_players) &&
+      hasLoaded(leagueMeta.draft.order) &&
+      hasLoaded(leagueMeta.draft.picks) &&
+      hasLoaded(leagueMeta.fantasy_players)
+    );
+
+    let draft,
+        footballPlayers,
+        availableFootballPlayers,
+        users,
+        fantasyLeague,
+        currentUser,
+        currentDraftOrder,
+        isMyPick;
+
     if (loaded) {
+      fantasyLeague = storeState.entities.fantasy_leagues[leagueId];
+      draft = storeState.entities.drafts[leagueId];
+
+      footballPlayers = _(storeState.entities.football_players)
+        .pick(leagueMeta.football_players.items)
+        .value();
+
+      // Filter out players who have already been picked
+      const availableFootballPlayerIds = _.difference(
+        leagueMeta.football_players.items,
+        _.pluck(draft.picks, 'football_player_id')
+      );
+      availableFootballPlayers = _(footballPlayers)
+        .pick(availableFootballPlayerIds)
+        .values()
+        .value();
+
+      users = storeState.entities.users;
+      currentUser = users[storeState.meta.current_user.id];
+
       currentDraftOrder = draft.order[draft.picks.length];
       isMyPick = currentUser.id === currentDraftOrder.user_id;
     }
@@ -109,58 +135,16 @@ const Draft = React.createClass({
   },
 
   _onPick: function (footballPlayerId) {
-    this.props.dispatch(
-      draftFootballPlayer(HACKHACK_LEAGUE_ID, footballPlayerId)
-    );
+    const {dispatch, params} = this.props;
+    const {leagueId} = params;
+
+    dispatch(draftFootballPlayer(leagueId, footballPlayerId));
   }
 
 });
 
 function selectState(state) {
-  const leagueMeta = state.meta.leagues[HACKHACK_LEAGUE_ID] || {};
-
-  const loaded = !!(
-    leagueMeta.draft &&
-    hasLoaded(state.meta.current_user) &&
-    hasLoaded(state.meta.my_leagues) &&
-    hasLoaded(leagueMeta.football_players) &&
-    hasLoaded(leagueMeta.draft.order) &&
-    hasLoaded(leagueMeta.draft.picks) &&
-    hasLoaded(leagueMeta.fantasy_players)
-  );
-
-  let draft, footballPlayers, availableFootballPlayers, users, fantasyLeague, currentUser;
-  if (loaded) {
-    fantasyLeague = state.entities.fantasy_leagues[HACKHACK_LEAGUE_ID];
-    draft = state.entities.drafts[HACKHACK_LEAGUE_ID];
-
-    footballPlayers = _(state.entities.football_players)
-      .pick(leagueMeta.football_players.items)
-      .value();
-
-    // Filter out players who have already been picked
-    const availableFootballPlayerIds = _.difference(
-      leagueMeta.football_players.items,
-      _.pluck(draft.picks, 'football_player_id')
-    );
-    availableFootballPlayers = _(footballPlayers)
-      .pick(availableFootballPlayerIds)
-      .values()
-      .value();
-
-    users = state.entities.users;
-    currentUser = users[state.meta.current_user.id];
-  }
-
-  return {
-    availableFootballPlayers,
-    currentUser,
-    draft,
-    fantasyLeague,
-    footballPlayers,
-    loaded,
-    users
-  };
+  return { storeState: state };
 }
 
 export default connect(selectState)(Draft);

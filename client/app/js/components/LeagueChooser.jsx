@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import Loading from './Loading';
 import FFPanel from './FFPanel';
 import {ModelShapes} from '../Constants';
+import {Link} from 'react-router';
 
 const LeagueChooser = React.createClass({
 
@@ -34,7 +35,7 @@ const LeagueChooser = React.createClass({
             {_.map(sortedLeagues, function (league) {
               return (
                 <li key={league.id}>
-                  {league.name}
+                  <Link to={`/draft/${league.id}`}>{league.name}</Link>
                 </li>
               );
             })}
