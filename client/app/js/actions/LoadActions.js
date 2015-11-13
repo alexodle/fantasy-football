@@ -11,14 +11,17 @@ import request from 'superagent';
 import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 import {Positions} from '../Constants';
 
-const TEMPTEMP_HARDCODED_TEAM_REQS = {
-  [Positions.QB]: 1,
-  [Positions.RB]: 2,
-  [Positions.WR]: 2,
-  [Positions.TE]: 1,
-  [Positions.FLEX]: 1,
-  [Positions.K]: 1,
-  [Positions['D/ST']]: 1
+const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
+  max_team_size: 14,
+  team_reqs: {
+    [Positions.QB]: 1,
+    [Positions.RB]: 2,
+    [Positions.WR]: 2,
+    [Positions.TE]: 1,
+    [Positions.FLEX]: 1,
+    [Positions.K]: 1,
+    [Positions['D/ST']]: 1
+  }
 };
 
 const DATA_KEY = 'data';
@@ -102,7 +105,7 @@ export function loadUser() {
 
 function parseLeague(league) {
   league.draft_start_date = new Date(league.draft_start_date);
-  league.team_reqs = { ...TEMPTEMP_HARDCODED_TEAM_REQS };
+  league.rules = { ...TEMPTEMP_HARDCODED_LEAGUE_RULES };
   return league;
 }
 

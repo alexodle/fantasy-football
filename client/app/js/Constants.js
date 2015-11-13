@@ -41,14 +41,17 @@ export const ModelShapes = {
     commissioner_id: PropTypes.number.isRequired,
     conference_id: PropTypes.number.isRequired,
     draft_start_date: PropTypes.instanceOf(Date).isRequired,
-    team_reqs: PropTypes.shape({
-      [Positions.QB]: PropTypes.number.isRequired,
-      [Positions.RB]: PropTypes.number.isRequired,
-      [Positions.WR]: PropTypes.number.isRequired,
-      [Positions.TE]: PropTypes.number.isRequired,
-      [Positions.FLEX]: PropTypes.number.isRequired,
-      [Positions.K]: PropTypes.number.isRequired,
-      [Positions['D/ST']]: PropTypes.number.isRequired
+    rules: PropTypes.shape({
+      max_team_size: PropTypes.number.isRequired,
+      team_reqs: PropTypes.shape({
+        [Positions.QB]: PropTypes.number.isRequired,
+        [Positions.RB]: PropTypes.number.isRequired,
+        [Positions.WR]: PropTypes.number.isRequired,
+        [Positions.TE]: PropTypes.number.isRequired,
+        [Positions.FLEX]: PropTypes.number.isRequired,
+        [Positions.K]: PropTypes.number.isRequired,
+        [Positions['D/ST']]: PropTypes.number.isRequired
+      }).isRequired
     }).isRequired
   }),
 
@@ -78,3 +81,6 @@ export const ChildrenPropType = PropTypes.oneOfType([
   PropTypes.arrayOf(PropTypes.node),
   PropTypes.node
 ]);
+
+export const IS_LOADING = 'IS_LOADING';
+export const FAILED_LOADING = 'FAILED_LOADING';

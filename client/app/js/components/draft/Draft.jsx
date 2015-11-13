@@ -33,7 +33,7 @@ const Draft = React.createClass({
 
   componentWillMount() {
     const {dispatch, params} = this.props;
-    const {leagueId} = params;
+    const leagueId = _.parseInt(params.leagueId);
 
     dispatch(loadDraftOrder(leagueId));
     dispatch(loadDraftPicks(leagueId));
@@ -45,7 +45,7 @@ const Draft = React.createClass({
 
   render() {
     const {storeState, params} = this.props;
-    const {leagueId} = params;
+    const leagueId = _.parseInt(params.leagueId);
 
     const leagueMeta = storeState.meta.leagues[leagueId] || {};
 
@@ -145,7 +145,7 @@ const Draft = React.createClass({
 
   _onPick: function (footballPlayerId) {
     const {dispatch, params} = this.props;
-    const {leagueId} = params;
+    const leagueId = _.parseInt(params.leagueId);
 
     dispatch(draftFootballPlayer(leagueId, footballPlayerId));
   }

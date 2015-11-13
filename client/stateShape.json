@@ -29,8 +29,11 @@
     "fantasy_leagues": {
       "1": {
         // ...<FantasyLeague>,
-        // teams: [1, 2, 3] // team_ids
-        // team_reqs: { QB: 1, RB: 2, ...}
+        "teams": [1, 2, 3], // team_ids
+        "rules": {
+          "team_reqs": { "QB": 1, "RB": 2/*, ... */},
+          "max_team_size": 20
+        }
       }
     },
 
@@ -64,7 +67,7 @@
       "items": [1, 2, 3]
     },
 
-    "leagues": {
+    "fantasy_leagues": {
       "1": {
 
         "draft": {

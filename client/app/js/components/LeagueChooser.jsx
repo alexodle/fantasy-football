@@ -1,12 +1,13 @@
 import _ from 'lodash';
 import React, {PropTypes} from 'react';
 import {loadMyLeagues, loadUser} from '../actions/LoadActions';
-import {hasLoaded} from '../utils/loadingUtils';
 import {connect} from 'react-redux';
 import Loading from './Loading';
 import FFPanel from './FFPanel';
 import {ModelShapes} from '../Constants';
 import {Link} from 'react-router';
+import {selectCurrentUser, selectMyLeagues} from '../selectors/selectors';
+import {reduceLoadState} from '../selectors/selectorUtils';
 
 const LeagueChooser = React.createClass({
 
@@ -48,22 +49,15 @@ const LeagueChooser = React.createClass({
 });
 
 function selectState(state) {
-  const loaded = (
-    hasLoaded(state.meta.current_user) &&
-    hasLoaded(state.meta.my_leagues)
-  );
-
-  let myLeagues, currentUser;
-  if (loaded) {
-    myLeagues = _.pick(state.entities.fantasy_leagues, state.meta.my_leagues.items);
-    currentUser = state.entities.users[state.meta.current_user];
-  }
-
-  return {
-    currentUser,
-    loaded,
-    myLeagues
+  const selection = {
+    currentUser: selectCurrentUser(state),
+    myLeagues: selectMyLeagues(state),
+    loaded: true
   };
+  if (reduceLoadState(..._.values(selection))) {
+    return { loaded: false };
+  }
+  return selection;
 }
 
 export default connect(selectState)(LeagueChooser);

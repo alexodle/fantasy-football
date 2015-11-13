@@ -17,22 +17,33 @@ export default React.createClass({
 
   render() {
     const {draftPicks, fantasyLeague, user, footballPlayerLookup} = this.props;
-    const teamReqs = fantasyLeague.team_reqs;
+    const {team_reqs, max_team_size} = fantasyLeague.rules;
 
-    const myPicksByPosition = _(draftPicks)
-      .where({ user_id: user.id })
+    const myPicks = _.where(draftPicks, { user_id: user.id });
+
+    let bench = [];
+    let myPicksByPosition = _(myPicks)
       .groupBy(function (dp) {
         return footballPlayerLookup[dp.football_player_id].position;
       })
-      .value();
 
-    const bench = _(myPicksByPosition)
+      // Shove excess players onto the bench
       .map(function (picks, p) {
-        return _.drop(picks, teamReqs[p]);
+        const nAllowed = team_reqs[p];
+        bench.push.apply(bench, _.drop(picks, nAllowed));
+        return _.take(picks, nAllowed);
       })
-      .flatten()
-      .sortBy('pick_number')
       .value();
+    bench = _.sortBy(bench, 'pick_number');
+
+    // Ensure we draft positions of need if we're running out of picks
+    const nPlayersNeeded = max_team_size - bench.length;
+    const nPicksLeft = max_team_size - myPicks.length;
+    if (nPicksLeft === nPlayersNeeded) {
+      myPicksByPosition = _.pick(myPicksByPosition, function (picks, p) {
+        return picks.length < team_reqs[p];
+      });
+    }
 
     return (
       <div>
@@ -48,7 +59,7 @@ export default React.createClass({
           <tbody>
             {_.map(PositionDisplayOrder, function (p) {
               const positionPicks = myPicksByPosition[p] || [];
-              return _.times(teamReqs[p], function (i) {
+              return _.times(team_reqs[p], function (i) {
                 const pick = positionPicks[i];
                 const footballPlayer = pick && footballPlayerLookup[pick.football_player_id];
                 return (
