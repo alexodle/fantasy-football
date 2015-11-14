@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {ModelShapes, PositionDisplayOrder} from '../../Constants';
 
 const POSITION_WIDTH='20%';
@@ -11,41 +11,27 @@ export default React.createClass({
   displayName: 'TeamDraftView',
 
   propTypes: {
-    draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
-    fantasyLeague: ModelShapes.FantasyLeague.isRequired,
-    footballPlayerLookup: React.PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired,
-    user: ModelShapes.User.isRequired
+    draftPickBuckets: PropTypes.shape({
+      picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
+      bench: PropTypes.arrayOf(ModelShapes.DraftPick)
+    }),
+    footballPlayerLookup: PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired,
+    league: ModelShapes.FantasyLeague
   },
 
   render() {
-    const {draftPicks, fantasyLeague, user, footballPlayerLookup} = this.props;
-    const {team_reqs, max_team_size} = fantasyLeague.rules;
+    const {draftPickBuckets, footballPlayerLookup, league} = this.props;
+    const {picksByPosition, bench} = draftPickBuckets;
+    const {team_reqs} = league.rules;
 
-    const myPicks = _.where(draftPicks, { user_id: user.id });
-
-    let bench = [];
-    let myPicksByPosition = _(myPicks)
-      .groupBy(function (dp) {
-        return footballPlayerLookup[dp.football_player_id].position;
-      })
-
-      // Shove excess players onto the bench
-      .mapValues(function (picks, p) {
-        const nAllowed = team_reqs[p];
-        bench.push.apply(bench, _.drop(picks, nAllowed));
-        return _.take(picks, nAllowed);
-      })
-      .value();
-    bench = _.sortBy(bench, 'pick_number');
-
-    // Ensure we draft positions of need if we're running out of picks
+    /*// Ensure we draft positions of need if we're running out of picks
     const nPlayersNeeded = max_team_size - bench.length;
     const nPicksLeft = max_team_size - myPicks.length;
     if (nPicksLeft === nPlayersNeeded) {
       myPicksByPosition = _.pick(myPicksByPosition, function (picks, p) {
         return picks.length < team_reqs[p];
       });
-    }
+    }*/
 
     return (
       <div>
@@ -60,7 +46,7 @@ export default React.createClass({
           </thead>
           <tbody>
             {_.map(PositionDisplayOrder, function (p) {
-              const positionPicks = myPicksByPosition[p] || [];
+              const positionPicks = picksByPosition[p] || [];
               return _.times(team_reqs[p], function (i) {
                 const pick = positionPicks[i];
                 const footballPlayer = pick && footballPlayerLookup[pick.football_player_id];

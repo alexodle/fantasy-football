@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export default function bucketTeam({
+export function bucketTeam({
   userDraftPicks,
   footballPlayerLookup,
   teamReqs
@@ -12,13 +12,14 @@ export default function bucketTeam({
       })
 
       // Shove excess players onto the bench
-      .map(function (picks, p) {
+      .mapValues(function (picks, p) {
         const nAllowed = teamReqs[p];
         bench.push.apply(bench, _.drop(picks, nAllowed));
         return _.take(picks, nAllowed);
       })
       .value();
 
+    // We like our benches sorted
     bench = _.sortBy(bench, 'pick_number');
 
     return {

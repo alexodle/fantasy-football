@@ -11,7 +11,8 @@ import {
   selectLeagueDraftPicks,
   selectDraftableFootballPlayers,
   selectCurrentDraftOrder,
-  selectIsMyPick
+  selectIsMyPick,
+  selectMyDraftPickBuckets
 } from '../../selectors/draftSelectors';
 import {
   selectLeagueUsers,
@@ -49,6 +50,10 @@ const Draft = React.createClass({
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
     loaded: PropTypes.bool.isRequired,
+    myDraftPickBuckets: PropTypes.shape({
+      picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
+      bench: PropTypes.arrayOf(ModelShapes.DraftPick)
+    }),
     users: PropTypes.objectOf(ModelShapes.User)
   },
 
@@ -72,6 +77,7 @@ const Draft = React.createClass({
       fantasyLeague,
       isMyPick,
       loaded,
+      myDraftPickBuckets,
       users
     } = this.props;
     return (
@@ -97,10 +103,9 @@ const Draft = React.createClass({
             <FFPanel title='My team'>
               {!loaded ? <Loading /> :
                 <TeamDraftView
-                    draftPicks={draftPicks}
-                    fantasyLeague={fantasyLeague}
+                    draftPickBuckets={myDraftPickBuckets}
                     footballPlayerLookup={allFootballPlayers}
-                    user={currentUser}
+                    league={fantasyLeague}
                 />
               }
             </FFPanel>
@@ -143,6 +148,7 @@ function selectState(state) {
     isMyPick: selectIsMyPick(state),
     leagueId: selectCurrentFantasyLeagueId(state),
     loaded: true,
+    myDraftPickBuckets: selectMyDraftPickBuckets(state),
     users: selectLeagueUsers(state)
   };
   if (reduceEntityLoadState(selection)) {

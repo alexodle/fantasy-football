@@ -6,9 +6,11 @@ import {
 import {
   selectCurrentFantasyLeagueId,
   selectLeagueFootballPlayers,
-  selectCurrentUser
+  selectCurrentUser,
+  selectFantasyLeague
 } from './selectors';
 import {createFFSelector} from './selectorUtils';
+import {bucketTeam} from '../logic/draftLogic';
 
 export const selectDrafts = state => state.entities.drafts;
 
@@ -52,3 +54,21 @@ export const selectIsMyPick = createFFSelector({
     return currentDraftOrder.user_id === currentUser.id;
   }
 });
+
+export const selectMyDraftPickBuckets = createFFSelector({
+  selectors: [
+    selectLeagueFootballPlayers,
+    selectLeagueDraftPicks,
+    selectCurrentUser,
+    selectFantasyLeague
+  ],
+  selector: function (leagueFootballPlayers, leagueDraftPicks, currentUser, fantasyLeague) {
+    const myPicks = _.where(leagueDraftPicks, { user_id: currentUser.id });
+    return bucketTeam({
+      userDraftPicks: myPicks,
+      footballPlayerLookup: leagueFootballPlayers,
+      teamReqs: fantasyLeague.rules.team_reqs
+    });
+  }
+});
+
