@@ -12,40 +12,43 @@ import {createFFSelector} from './selectorUtils';
 
 export const selectDrafts = state => state.entities.drafts;
 
-export const selectLeagueDraftPicks = createFFSelector([
-  selectLeagueDraftPicksMeta,
-  selectDrafts,
-  selectCurrentFantasyLeagueId
-  ], function (_draftPicksMeta, drafts, currentFantasyLeagueId) {
-    return drafts[currentFantasyLeagueId].draft.picks;
-  });
+export const selectLeagueDraftPicks = createFFSelector({
+  metaSelectors: [selectLeagueDraftPicksMeta],
+  selectors: [selectDrafts, selectCurrentFantasyLeagueId],
+  selector: function (_draftPicksMeta, drafts, currentFantasyLeagueId) {
+    return drafts[currentFantasyLeagueId].picks;
+  }
+});
 
-export const selectLeagueDraftOrder = createFFSelector([
-  selectLeagueDraftOrderMeta,
-  selectDrafts,
-  selectCurrentFantasyLeagueId
-  ], function (_draftOrderMeta, drafts, currentFantasyLeagueId) {
-    return drafts[currentFantasyLeagueId].draft.order;
-  });
+export const selectLeagueDraftOrder = createFFSelector({
+  metaSelectors: [selectLeagueDraftOrderMeta],
+  selectors: [selectDrafts, selectCurrentFantasyLeagueId],
+  selector: function (_draftOrderMeta, drafts, currentFantasyLeagueId) {
+    return drafts[currentFantasyLeagueId].order;
+  }
+});
 
-export const selectDraftableFootballPlayers = createFFSelector([
-  selectLeagueFootballPlayers,
-  selectLeagueDraftPicks
-  ], function (leagueFootballPlayers, leagueDraftPicks) {
+export const selectDraftableFootballPlayers = createFFSelector({
+  selectors: [selectLeagueFootballPlayers, selectLeagueFootballPlayers],
+  selector: function (leagueFootballPlayers, leagueDraftPicks) {
     const draftedPlayerIds = _.pluck(leagueDraftPicks, 'football_player_id');
-    return _.omit(leagueFootballPlayers, draftedPlayerIds);
-  });
+    return _(leagueFootballPlayers)
+      .omit(draftedPlayerIds)
+      .values()
+      .value();
+  }
+});
 
-export const selectCurrentDraftOrder = createFFSelector([
-  selectLeagueDraftOrder,
-  selectLeagueDraftPicks
-  ], function (leagueDraftOrder, leagueDraftPicks) {
+export const selectCurrentDraftOrder = createFFSelector({
+  selectors: [selectLeagueDraftOrder, selectLeagueDraftPicks],
+  selector: function (leagueDraftOrder, leagueDraftPicks) {
     return leagueDraftOrder[leagueDraftPicks.length];
-  });
+  }
+});
 
-export const selectIsMyPick = createFFSelector([
-  selectCurrentDraftOrder,
-  selectCurrentUser
-  ], function (currentDraftOrder, currentUser) {
+export const selectIsMyPick = createFFSelector({
+  selectors: [selectCurrentDraftOrder, selectCurrentUser],
+  selector: function (currentDraftOrder, currentUser) {
     return currentDraftOrder.user_id === currentUser.id;
-  });
+  }
+});

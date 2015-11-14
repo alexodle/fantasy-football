@@ -14,7 +14,7 @@ export default function metaReducer(meta, action) {
   return {
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
-    leagues: leaguesReducer(meta.leagues, action, metaUpdate)
+    fantasy_leagues: leaguesReducer(meta.fantasy_leagues, action, metaUpdate)
   };
 }
 

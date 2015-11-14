@@ -8,6 +8,8 @@ const PICK_WIDTH='20%';
 
 export default React.createClass({
 
+  displayName: 'TeamDraftView',
+
   propTypes: {
     draftPicks: React.PropTypes.arrayOf(ModelShapes.DraftPick).isRequired,
     fantasyLeague: ModelShapes.FantasyLeague.isRequired,
@@ -28,7 +30,7 @@ export default React.createClass({
       })
 
       // Shove excess players onto the bench
-      .map(function (picks, p) {
+      .mapValues(function (picks, p) {
         const nAllowed = team_reqs[p];
         bench.push.apply(bench, _.drop(picks, nAllowed));
         return _.take(picks, nAllowed);

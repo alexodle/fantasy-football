@@ -1,10 +1,3 @@
-import _ from 'lodash';
-import React, {PropTypes} from 'react';
-import PlayerChooser from './PlayerChooser';
-import FFPanel from '../FFPanel';
-import DraftHistory from './DraftHistory';
-import {connect} from 'react-redux';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {
   loadDraftOrder,
   loadDraftPicks,
@@ -13,28 +6,54 @@ import {
   loadMyLeagues,
   loadUser
 } from '../../actions/LoadActions';
+import {
+  selectLeagueDraftOrder,
+  selectLeagueDraftPicks,
+  selectDraftableFootballPlayers,
+  selectCurrentDraftOrder,
+  selectIsMyPick
+} from '../../selectors/draftSelectors';
+import {
+  selectLeagueUsers,
+  selectFantasyLeague,
+  selectCurrentUser,
+  selectCurrentFantasyLeagueId,
+  selectLeagueFootballPlayers
+} from '../../selectors/selectors';
+import React, {PropTypes} from 'react';
+import PlayerChooser from './PlayerChooser';
+import FFPanel from '../FFPanel';
+import DraftHistory from './DraftHistory';
+import {connect} from 'react-redux';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {draftFootballPlayer} from '../../actions/PostActions';
-import {hasLoaded} from '../../utils/loadingUtils';
 import Loading from '../Loading';
 import TeamDraftView from './TeamDraftView';
 import DraftStatus from './DraftStatus';
+import {reduceEntityLoadState} from '../../selectors/selectorUtils';
+import {ModelShapes} from '../../Constants';
 
 const Draft = React.createClass({
 
   mixins: [PureRenderMixin],
 
   propTypes: {
+    allFootballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
+    availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
+    currentDraftOrder: ModelShapes.DraftOrder,
+    currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
-    params: PropTypes.shape({
-      leagueId: PropTypes.string.isRequired
-    }).isRequired,
-    storeState: PropTypes.object.isRequired // TODO
+    draftOrder: PropTypes.arrayOf(ModelShapes.DraftOrder),
+    draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
+    fantasyLeague: ModelShapes.FantasyLeague,
+    isMyPick: PropTypes.bool,
+    leagueId: PropTypes.number.isRequired,
+    loaded: PropTypes.bool.isRequired,
+    users: PropTypes.objectOf(ModelShapes.User)
   },
 
-  componentWillMount() {
-    const {dispatch, params} = this.props;
-    const leagueId = _.parseInt(params.leagueId);
-
+  componentDidMount() {
+    const {dispatch, leagueId} = this.props;
     dispatch(loadDraftOrder(leagueId));
     dispatch(loadDraftPicks(leagueId));
     dispatch(loadFantasyPlayers(leagueId));
@@ -44,55 +63,17 @@ const Draft = React.createClass({
   },
 
   render() {
-    const {storeState, params} = this.props;
-    const leagueId = _.parseInt(params.leagueId);
-
-    const leagueMeta = storeState.meta.leagues[leagueId] || {};
-
-    const loaded = !!(
-      leagueMeta.draft &&
-      hasLoaded(storeState.meta.current_user) &&
-      hasLoaded(storeState.meta.my_leagues) &&
-      hasLoaded(leagueMeta.football_players) &&
-      hasLoaded(leagueMeta.draft.order) &&
-      hasLoaded(leagueMeta.draft.picks) &&
-      hasLoaded(leagueMeta.fantasy_players)
-    );
-
-    let draft,
-        footballPlayers,
-        availableFootballPlayers,
-        users,
-        fantasyLeague,
-        currentUser,
-        currentDraftOrder,
-        isMyPick;
-
-    if (loaded) {
-      fantasyLeague = storeState.entities.fantasy_leagues[leagueId];
-      draft = storeState.entities.drafts[leagueId];
-
-      footballPlayers = _(storeState.entities.football_players)
-        .pick(leagueMeta.football_players.items)
-        .value();
-
-      // Filter out players who have already been picked
-      const availableFootballPlayerIds = _.difference(
-        leagueMeta.football_players.items,
-        _.pluck(draft.picks, 'football_player_id')
-      );
-      availableFootballPlayers = _(footballPlayers)
-        .pick(availableFootballPlayerIds)
-        .values()
-        .value();
-
-      users = storeState.entities.users;
-      currentUser = users[storeState.meta.current_user.id];
-
-      currentDraftOrder = draft.order[draft.picks.length];
-      isMyPick = currentUser.id === currentDraftOrder.user_id;
-    }
-
+    const {
+      allFootballPlayers,
+      availableFootballPlayers,
+      currentDraftOrder,
+      currentUser,
+      draftPicks,
+      fantasyLeague,
+      isMyPick,
+      loaded,
+      users
+    } = this.props;
     return (
       <section>
         <div className='row'>
@@ -116,9 +97,9 @@ const Draft = React.createClass({
             <FFPanel title='My team'>
               {!loaded ? <Loading /> :
                 <TeamDraftView
-                    draftPicks={draft.picks}
+                    draftPicks={draftPicks}
                     fantasyLeague={fantasyLeague}
-                    footballPlayerLookup={footballPlayers}
+                    footballPlayerLookup={allFootballPlayers}
                     user={currentUser}
                 />
               }
@@ -131,9 +112,9 @@ const Draft = React.createClass({
             <FFPanel title='Draft history'>
               {!loaded ? <Loading /> :
                 <DraftHistory
-                    draftPicks={draft.picks}
+                    draftPicks={draftPicks}
                     userLookup={users}
-                    footballPlayerLookup={footballPlayers}
+                    footballPlayerLookup={allFootballPlayers}
                 />
               }
             </FFPanel>
@@ -144,16 +125,30 @@ const Draft = React.createClass({
   },
 
   _onPick: function (footballPlayerId) {
-    const {dispatch, params} = this.props;
-    const leagueId = _.parseInt(params.leagueId);
-
+    const {dispatch, leagueId} = this.props;
     dispatch(draftFootballPlayer(leagueId, footballPlayerId));
   }
 
 });
 
 function selectState(state) {
-  return { storeState: state };
+  var selection = {
+    allFootballPlayers: selectLeagueFootballPlayers(state),
+    availableFootballPlayers: selectDraftableFootballPlayers(state),
+    currentDraftOrder: selectCurrentDraftOrder(state),
+    currentUser: selectCurrentUser(state),
+    draftOrder: selectLeagueDraftOrder(state),
+    draftPicks: selectLeagueDraftPicks(state),
+    fantasyLeague: selectFantasyLeague(state),
+    isMyPick: selectIsMyPick(state),
+    leagueId: selectCurrentFantasyLeagueId(state),
+    loaded: true,
+    users: selectLeagueUsers(state)
+  };
+  if (reduceEntityLoadState(selection)) {
+    return { loaded: false, leagueId: selection.leagueId };
+  }
+  return selection;
 }
 
 export default connect(selectState)(Draft);

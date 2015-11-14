@@ -2,15 +2,20 @@ import _ from 'lodash';
 import {selectFantasyLeague} from './selectors';
 
 function getMetaFromCurrentLeague(state, path) {
-  const leagueId = selectFantasyLeague(state);
+  const leagueId = selectFantasyLeague(state).id;
   if (leagueId) {
-    return _.get(state, `state.meta.fantasy_leagues[${leagueId}].${path}`, {});
+    return _.get(state, `meta.fantasy_leagues[${leagueId}].${path}`, {});
   }
   return {};
 }
 
-export const selectCurrentUserMeta = state => state.meta.current_user;
-export const selectMyLeaguesMeta = state => state.meta.my_leagues;
+export function selectCurrentUserMeta(state) {
+  return state.meta.current_user;
+}
+
+export function selectMyLeaguesMeta(state) {
+  return state.meta.my_leagues;
+}
 
 export function selectLeagueFootballPlayersMeta(state) {
   return getMetaFromCurrentLeague(state, 'football_players');

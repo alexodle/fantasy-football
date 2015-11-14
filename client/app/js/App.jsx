@@ -1,6 +1,4 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import store from './store';
 import {ChildrenPropType} from './Constants';
 
 const App = React.createClass({
@@ -17,11 +15,7 @@ const App = React.createClass({
           <h1>Fantasy Football <small></small></h1>
         </div>
         <div>
-          {!children ? null :
-            <Provider store={store}>
-              {this.props.children}
-            </Provider>
-          }
+          {children}
         </div>
       </div>
     );

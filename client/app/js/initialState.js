@@ -8,7 +8,7 @@
 const META = {
   isFetching: false,
   didInvalidate: true,
-  didFailFetching: true,
+  didFailFetching: false,
   lastUpdated: null
 };
 
@@ -24,6 +24,7 @@ export default {
   meta: {
     current_user: { ...META },
     my_leagues: { ...META, items: null },
-    leagues: {}
-  }
+    fantasy_leagues: {}
+  },
+  router: null
 };

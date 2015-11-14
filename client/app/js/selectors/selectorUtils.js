@@ -3,27 +3,16 @@ import {hasLoaded, hasFailed} from '../utils/loadingUtils';
 import {IS_LOADING, FAILED_LOADING} from '../Constants';
 import {createSelector} from 'reselect';
 
-export function createFFSelector(selectors, handler) {
-  const wrappedHandler = ensureLoaded(handler);
-  return createSelector(selectors, wrappedHandler);
+export function createFFSelector({metaSelectors = [], selectors = [], selector}) {
+  const wrappedHandler = ensureLoaded(metaSelectors.length, selectors.length, selector);
+  return createSelector(metaSelectors.concat(selectors), wrappedHandler);
 }
 
-/**
- * For all possible load states, find the most important.
- * If none are found, return false.
- *
- * Order of importance: FAILED_LOADING, IS_LOADING
- */
-export function reduceLoadState(...params) {
-  var loadState = false;
-  _.forEach(params, function (param) {
-    if (_.isUndefined(param)) {
-      loadState = IS_LOADING;
-      return;
-    }
+export function reduceEntityLoadState(possibleLoadStates) {
+  let loadState = false;
 
-    let testValue = isMeta(param) ? calcLoadState(testValue) : param;
-    switch (testValue) {
+  _.forEach(possibleLoadStates, function (testLoadState) {
+    switch (testLoadState) {
       case IS_LOADING:
         loadState = IS_LOADING;
         break;
@@ -32,32 +21,59 @@ export function reduceLoadState(...params) {
         return false; // exit loop
     }
   });
+
   return loadState;
 }
 
-function ensureLoaded(selector) {
+function reduceMetaLoadState(metas) {
+  let loadState = false;
+
+  _.forEach(metas, function (metaValue) {
+    let testLoadState = calcMetaLoadState(metaValue);
+    switch (testLoadState) {
+      case IS_LOADING:
+        loadState = IS_LOADING;
+        break;
+      case FAILED_LOADING:
+        loadState = FAILED_LOADING;
+        return false; // exit loop
+    }
+  });
+
+  return loadState;
+}
+
+function reduceLoadState(metaLength, selectorLength, params) {
+  const metaLoadState = reduceMetaLoadState(_.take(params, metaLength));
+  if (metaLoadState === FAILED_LOADING) return metaLoadState;
+
+  const entityLoadState = reduceEntityLoadState(_.takeRight(params, selectorLength));
+  if (entityLoadState === FAILED_LOADING) return entityLoadState;
+
+  if (metaLoadState === IS_LOADING) return metaLoadState;
+  if (entityLoadState === IS_LOADING) return entityLoadState;
+
+  return false;
+}
+
+function ensureLoaded(metaLength, selectorLength, selector) {
   return function(...params) {
-    const loadState = reduceLoadState(...params);
+    const loadState = reduceLoadState(metaLength, selectorLength, params);
     if (loadState) return loadState;
 
     return selector(...params);
   };
 }
 
-/** Duck test for meta object */
-function isMeta(possibleMeta) {
-  return !!(possibleMeta && _.has(possibleMeta, 'isFetching'));
-}
-
 /**
  * Returns a IS_LOADING, FAILED_LOADING for the given meta. If the given meta is
  * not loading, returns false.
  */
-function calcLoadState(meta) {
-  if (hasLoaded(meta)) {
-    return IS_LOADING;
-  } else if (hasFailed(meta)) {
+function calcMetaLoadState(meta) {
+  if (hasFailed(meta)) {
     return FAILED_LOADING;
+  } else if (!meta || _.isEmpty(meta) || !hasLoaded(meta)) {
+    return IS_LOADING;
   }
   return false;
 }

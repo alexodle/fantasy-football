@@ -7,7 +7,7 @@ import FFPanel from './FFPanel';
 import {ModelShapes} from '../Constants';
 import {Link} from 'react-router';
 import {selectCurrentUser, selectMyLeagues} from '../selectors/selectors';
-import {reduceLoadState} from '../selectors/selectorUtils';
+import {reduceEntityLoadState} from '../selectors/selectorUtils';
 
 const LeagueChooser = React.createClass({
 
@@ -20,7 +20,7 @@ const LeagueChooser = React.createClass({
     myLeagues: PropTypes.objectOf(ModelShapes.FantasyLeague)
   },
 
-  componentWillMount() {
+  componentDidMount() {
     const {dispatch} = this.props;
     dispatch(loadMyLeagues());
     dispatch(loadUser());
@@ -54,7 +54,7 @@ function selectState(state) {
     myLeagues: selectMyLeagues(state),
     loaded: true
   };
-  if (reduceLoadState(..._.values(selection))) {
+  if (reduceEntityLoadState(selection)) {
     return { loaded: false };
   }
   return selection;
