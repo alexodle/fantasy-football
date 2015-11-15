@@ -45,6 +45,7 @@ const Draft = React.createClass({
     availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
     currentDraftOrder: ModelShapes.DraftOrder,
     dispatch: PropTypes.func.isRequired,
+    draftOrder: PropTypes.arrayOf(ModelShapes.DraftOrder),
     draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
     fantasyLeague: ModelShapes.FantasyLeague,
     ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
@@ -74,6 +75,7 @@ const Draft = React.createClass({
       allFootballPlayers,
       availableFootballPlayers,
       currentDraftOrder,
+      draftOrder,
       draftPicks,
       fantasyLeague,
       ineligibleDraftPositions,
@@ -85,6 +87,20 @@ const Draft = React.createClass({
     } = this.props;
     return (
       <section>
+        <div className='row'>
+          <div className='col-md-12'>
+            <FFPanel title='Draft order'>
+              {!loaded ? <Loading /> :
+                <DraftOrderView
+                    currentDraftOrder={currentDraftOrder}
+                    draftOrder={draftOrder}
+                    userLookup={users}
+                />
+              }
+            </FFPanel>
+          </div>
+        </div>
+
         <div className='row'>
           <div className='col-md-6'>
             <FFPanel title='Draft HQ'>
@@ -147,6 +163,7 @@ function selectState(state) {
     ineligibleDraftPositions: selectIneligibleDraftPositions(state),
     currentDraftOrder: selectCurrentDraftOrder(state),
     draftPicks: selectLeagueDraftPicks(state),
+    draftOrder: selectLeagueDraftOrder(state),
     fantasyLeague: selectFantasyLeague(state),
     isMyPick: selectIsMyPick(state),
     leagueId: selectCurrentFantasyLeagueId(state),
