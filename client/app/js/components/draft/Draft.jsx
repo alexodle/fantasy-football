@@ -7,32 +7,34 @@ import {
   loadUser
 } from '../../actions/LoadActions';
 import {
-  selectLeagueDraftPicks,
-  selectDraftableFootballPlayers,
   selectCurrentDraftOrder,
-  selectIsMyPick,
-  selectMyDraftPickBuckets,
+  selectDraftableFootballPlayers,
   selectIneligibleDraftPositions,
-  selectMaxBenchSize
+  selectIsMyPick,
+  selectLeagueDraftOrder,
+  selectLeagueDraftPicks,
+  selectMaxBenchSize,
+  selectMyDraftPickBuckets
 } from '../../selectors/draftSelectors';
 import {
-  selectLeagueUsers,
-  selectFantasyLeague,
   selectCurrentFantasyLeagueId,
-  selectLeagueFootballPlayers
+  selectFantasyLeague,
+  selectLeagueFootballPlayers,
+  selectLeagueUsers
 } from '../../selectors/selectors';
-import React, {PropTypes} from 'react';
-import PlayerChooser from './PlayerChooser';
-import FFPanel from '../FFPanel';
 import DraftHistory from './DraftHistory';
-import {connect} from 'react-redux';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {draftFootballPlayer} from '../../actions/PostActions';
-import Loading from '../Loading';
-import TeamDraftView from './TeamDraftView';
+import DraftOrderView from './DraftOrderView';
 import DraftStatus from './DraftStatus';
-import {reduceEntityLoadState} from '../../selectors/selectorUtils';
+import FFPanel from '../FFPanel';
+import Loading from '../Loading';
+import PlayerChooser from './PlayerChooser';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React, {PropTypes} from 'react';
+import TeamDraftView from './TeamDraftView';
+import {connect} from 'react-redux';
+import {draftFootballPlayer} from '../../actions/PostActions';
 import {ModelShapes} from '../../Constants';
+import {reduceEntityLoadState} from '../../selectors/selectorUtils';
 
 const Draft = React.createClass({
 
