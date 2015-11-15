@@ -11,7 +11,7 @@ import {
 } from './selectors';
 import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
-import {Positions} from '../Constants';
+import {Positions, FlexPositions} from '../Constants';
 
 export const selectDrafts = state => state.entities.drafts;
 
@@ -95,8 +95,16 @@ export const selectIneligibleDraftPositions = createFFSelector({
       return [];
     } else {
       const {team_reqs} = fantasyLeague.rules;
+      const flexIsOpen = (
+        !picksByPosition[Positions.FLEX] ||
+        picksByPosition[Positions.FLEX].length < team_reqs[Positions.FLEX]
+      );
       return _.reject(Positions, function (p) {
-        return !picksByPosition[p] || picksByPosition[p].length < team_reqs[p];
+        return (
+          !picksByPosition[p] ||
+          picksByPosition[p].length < team_reqs[p] ||
+          (flexIsOpen && _.contains(FlexPositions, p))
+        );
       });
     }
   }
