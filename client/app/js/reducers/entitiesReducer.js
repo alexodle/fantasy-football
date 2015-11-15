@@ -4,6 +4,7 @@ import {
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
+  LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
   LOAD_USER
@@ -53,6 +54,11 @@ function successStateReducer(entities, action) {
     case LOAD_FANTASY_PLAYERS:
       return _.merge({}, entities, {
         users: _.indexBy(action.result, 'id')
+      });
+
+    case LOAD_FANTASY_TEAMS:
+      return _.merge({}, entities, {
+        fantasy_teams: _.indexBy(action.result, 'id')
       });
 
     case LOAD_FOOTBALL_PLAYERS:

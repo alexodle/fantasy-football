@@ -2,6 +2,7 @@ import {
   loadDraftOrder,
   loadDraftPicks,
   loadFantasyPlayers,
+  loadFantasyTeams,
   loadFootballPlayers,
   loadMyLeagues,
   loadUser
@@ -65,6 +66,7 @@ const Draft = React.createClass({
     dispatch(loadDraftOrder(leagueId));
     dispatch(loadDraftPicks(leagueId));
     dispatch(loadFantasyPlayers(leagueId));
+    dispatch(loadFantasyTeams(leagueId));
     dispatch(loadFootballPlayers(leagueId));
     dispatch(loadMyLeagues());
     dispatch(loadUser());

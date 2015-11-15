@@ -3,6 +3,7 @@ import {
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
+  LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
   LOAD_USER
@@ -63,6 +64,20 @@ export function loadFantasyPlayers(fantasyLeagueId) {
       return (
         state.meta[fantasyLeagueId] &&
         state.meta[fantasyLeagueId].fantasy_players
+      );
+    }
+  });
+}
+
+export function loadFantasyTeams(fantasyLeagueId) {
+  return buildAsyncAction({
+    actionType: LOAD_FANTASY_TEAMS,
+    url: `/api/league/${fantasyLeagueId}/fantasy_teams/`,
+    extraProps: { league_id: fantasyLeagueId },
+    getMeta: function (state) {
+      return (
+        state.meta[fantasyLeagueId] &&
+        state.meta[fantasyLeagueId].fantasy_teams
       );
     }
   });

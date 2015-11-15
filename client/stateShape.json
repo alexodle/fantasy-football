@@ -77,10 +77,12 @@
 
         "fantasy_players": {
           // ...<META>,
-          "items": [{
-            "user_id": 1,
-            "fantasy_team_id": 1
-          }]
+          "items": [1, 2, 3]
+        },
+
+        "fantasy_teams": {
+          // ...<META>,
+          "items": [1, 2, 3]
         },
 
         "football_players": {

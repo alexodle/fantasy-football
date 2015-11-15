@@ -3,6 +3,7 @@ import {
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
+  LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
   LOAD_USER
@@ -58,6 +59,12 @@ function leaguesReducer(leagues, action, metaUpdate) {
 
     case LOAD_FANTASY_PLAYERS:
       return _.merge({}, leagues, { [action.league_id]: { fantasy_players: {
+        ...metaUpdate,
+        items: _.pluck(action.result, 'id')
+      } } });
+
+    case LOAD_FANTASY_TEAMS:
+      return _.merge({}, leagues, { [action.league_id]: { fantasy_teams: {
         ...metaUpdate,
         items: _.pluck(action.result, 'id')
       } } });

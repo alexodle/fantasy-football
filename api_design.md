@@ -61,12 +61,7 @@ Returns all the leagues which I am a member of
 { data: [ <FantasyLeague>, ... ]}
 
 
-*GET - /api/league/<league_id>/fantasy_players*
-
-{ data: [{ <User>, team: <FantasyTeam> }, ...] }
-
-
-*GET - /api/league/<league_id>/(football_teams|football_conferences|football_players)*
+*GET - /api/league/<league_id>/(fantasy_players|fantasy_teams|football_teams|football_conferences|football_players)*
 
 i.e. { data: [{ <FootballPlayer> }] }
 
