@@ -1,29 +1,30 @@
 import _ from 'lodash';
+import {Positions, FlexPositions} from '../Constants';
+
+const {FLEX} = Positions;
 
 export function bucketTeam({
   userDraftPicks,
   footballPlayerLookup,
   teamReqs
 }) {
-    let bench = [];
-    const picksByPosition = _(userDraftPicks)
-      .groupBy(function (dp) {
-        return footballPlayerLookup[dp.football_player_id].position;
-      })
+  const picksByPosition = _.mapValues(Positions, function () { return []; });
+  const bench = [];
 
-      // Shove excess players onto the bench
-      .mapValues(function (picks, p) {
-        const nAllowed = teamReqs[p];
-        bench.push.apply(bench, _.drop(picks, nAllowed));
-        return _.take(picks, nAllowed);
-      })
-      .value();
+  _.forEach(userDraftPicks, function (dp) {
+    var position = footballPlayerLookup[dp.football_player_id].position;
 
-    // We like our benches sorted
-    bench = _.sortBy(bench, 'pick_number');
+    if (picksByPosition[position].length < teamReqs[position]) {
+      picksByPosition[position].push(dp);
+    } else if (picksByPosition[FLEX].length < teamReqs[FLEX] && _.contains(FlexPositions, position)) {
+      picksByPosition[FLEX].push(dp);
+    } else {
+      bench.push(dp);
+    }
+  });
 
-    return {
-      picksByPosition,
-      bench
-    };
+  return {
+    picksByPosition,
+    bench
+  };
 }
