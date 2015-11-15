@@ -82,7 +82,7 @@ export const selectMaxBenchSize = createFFSelector({
 /**
  * Ensure we draft positions of need if we're running out of picks
  */
-const selectDraftablePositions = createFFSelector({
+export const selectIneligibleDraftPositions = createFFSelector({
   selectors: [
     selectMyDraftPickBuckets,
     selectFantasyLeague,
@@ -92,10 +92,10 @@ const selectDraftablePositions = createFFSelector({
   selector: function (myDraftPickBuckets, fantasyLeague, myDraftPicks, maxBenchSize) {
     const {picksByPosition, bench} = myDraftPickBuckets;
     if (bench.length < maxBenchSize) {
-      return _.values(Positions);
+      return [];
     } else {
       const {team_reqs} = fantasyLeague.rules;
-      return _.filter(Positions, function (p) {
+      return _.reject(Positions, function (p) {
         return !picksByPosition[p] || picksByPosition[p].length < team_reqs[p];
       });
     }
@@ -106,14 +106,14 @@ export const selectDraftableFootballPlayers = createFFSelector({
   selectors: [
     selectLeagueFootballPlayers,
     selectLeagueDraftPicks,
-    selectDraftablePositions
+    selectIneligibleDraftPositions
   ],
-  selector: function (leagueFootballPlayers, leagueDraftPicks, draftablePositions) {
+  selector: function (leagueFootballPlayers, leagueDraftPicks, ineligibleDraftPositions) {
     const draftedPlayerIds = _.pluck(leagueDraftPicks, 'football_player_id');
     return _(leagueFootballPlayers)
       .omit(draftedPlayerIds)
       .omit(function (fp) {
-        return !_.contains(draftablePositions, fp.position);
+        return _.contains(ineligibleDraftPositions, fp.position);
       })
       .values()
       .value();

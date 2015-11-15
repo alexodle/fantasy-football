@@ -5,13 +5,14 @@ import {Button, ButtonGroup} from 'react-bootstrap/lib';
 const PositionChooser = React.createClass({
 
   propTypes: {
+    ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
     onChange: PropTypes.func.isRequired,
     positions: PropTypes.arrayOf(PropTypes.string).isRequired,
     value: PropTypes.string.isRequired
   },
 
   render() {
-    const {positions, value} = this.props;
+    const {ineligibleDraftPositions, positions, value} = this.props;
     return (
       <div>
         <ButtonGroup>
@@ -20,6 +21,7 @@ const PositionChooser = React.createClass({
               <Button
                   key={p}
                   className={value === p ? 'active' : ''}
+                  disabled={_.contains(ineligibleDraftPositions, p)}
                   onClick={_.partial(this._onChange, p)}
               >{p}
               </Button>

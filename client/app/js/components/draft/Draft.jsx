@@ -11,7 +11,8 @@ import {
   selectDraftableFootballPlayers,
   selectCurrentDraftOrder,
   selectIsMyPick,
-  selectMyDraftPickBuckets
+  selectMyDraftPickBuckets,
+  selectIneligibleDraftPositions
 } from '../../selectors/draftSelectors';
 import {
   selectLeagueUsers,
@@ -43,6 +44,7 @@ const Draft = React.createClass({
     dispatch: PropTypes.func.isRequired,
     draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
     fantasyLeague: ModelShapes.FantasyLeague,
+    ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
     loaded: PropTypes.bool.isRequired,
@@ -70,6 +72,7 @@ const Draft = React.createClass({
       currentDraftOrder,
       draftPicks,
       fantasyLeague,
+      ineligibleDraftPositions,
       isMyPick,
       loaded,
       myDraftPickBuckets,
@@ -84,8 +87,8 @@ const Draft = React.createClass({
                 isMyPick ? (
                   <PlayerChooser
                       onPick={this._onPick}
-                      userLookup={users}
                       footballPlayers={availableFootballPlayers}
+                      ineligibleDraftPositions={ineligibleDraftPositions}
                   />) : (
                   <DraftStatus
                       currentDraftOrder={currentDraftOrder}
@@ -135,6 +138,7 @@ function selectState(state) {
   var selection = {
     allFootballPlayers: selectLeagueFootballPlayers(state),
     availableFootballPlayers: selectDraftableFootballPlayers(state),
+    ineligibleDraftPositions: selectIneligibleDraftPositions(state),
     currentDraftOrder: selectCurrentDraftOrder(state),
     draftPicks: selectLeagueDraftPicks(state),
     fantasyLeague: selectFantasyLeague(state),

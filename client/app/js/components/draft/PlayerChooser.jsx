@@ -15,6 +15,7 @@ const PlayerChooser = React.createClass({
 
   propTypes: {
     footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired,
+    ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
     onPick: PropTypes.func.isRequired
   },
 
@@ -25,8 +26,14 @@ const PlayerChooser = React.createClass({
     };
   },
 
+  componentWillReceiveProps(nextProps) {
+    if (_.contains(nextProps.ineligibleDraftPositions, this.state.currentPosition)) {
+      this.setState({ currentPosition: DEFAULT_POSITION });
+    }
+  },
+
   render() {
-    const {footballPlayers} = this.props;
+    const {footballPlayers, ineligibleDraftPositions} = this.props;
     const {currentPosition, selectedPlayerId} = this.state;
 
     // Filter players by current position
@@ -50,6 +57,7 @@ const PlayerChooser = React.createClass({
             onChange={this._onPositionChange}
             positions={MyPositionDisplayOrder}
             value={this.state.currentPosition}
+            ineligibleDraftPositions={ineligibleDraftPositions}
         />
         <p>Number of players: <b>{positionPlayers.length}</b></p>
         <div className='form-group'>

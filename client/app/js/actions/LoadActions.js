@@ -12,7 +12,7 @@ import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 import {Positions} from '../Constants';
 
 const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
-  max_team_size: 14,
+  max_team_size: 11,
   team_reqs: {
     [Positions.QB]: 1,
     [Positions.RB]: 2,
