@@ -7,8 +7,8 @@ var webpackConfig = require('./webpack.config.js');
 var WebpackDevServer = require('webpack-dev-server');
 
 var FILES_DIR = path.resolve('./test/mockserver');
-var ARTIFICIAL_DELAY_LOW = 200;
-var ARTIFICIAL_DELAY_HIGH = 3000;
+var ARTIFICIAL_DELAY_LOW = 1;
+var ARTIFICIAL_DELAY_HIGH = 400;
 var PORTS = {
   webpack: 4000,
   api: 4001

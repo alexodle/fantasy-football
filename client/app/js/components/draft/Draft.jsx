@@ -12,7 +12,8 @@ import {
   selectCurrentDraftOrder,
   selectIsMyPick,
   selectMyDraftPickBuckets,
-  selectIneligibleDraftPositions
+  selectIneligibleDraftPositions,
+  selectMaxBenchSize
 } from '../../selectors/draftSelectors';
 import {
   selectLeagueUsers,
@@ -48,6 +49,7 @@ const Draft = React.createClass({
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
     loaded: PropTypes.bool.isRequired,
+    maxBenchSize: PropTypes.number,
     myDraftPickBuckets: PropTypes.shape({
       picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
       bench: PropTypes.arrayOf(ModelShapes.DraftPick)
@@ -75,6 +77,7 @@ const Draft = React.createClass({
       ineligibleDraftPositions,
       isMyPick,
       loaded,
+      maxBenchSize,
       myDraftPickBuckets,
       users
     } = this.props;
@@ -104,6 +107,7 @@ const Draft = React.createClass({
                     draftPickBuckets={myDraftPickBuckets}
                     footballPlayerLookup={allFootballPlayers}
                     league={fantasyLeague}
+                    maxBenchSize={maxBenchSize}
                 />
               }
             </FFPanel>
@@ -145,6 +149,7 @@ function selectState(state) {
     isMyPick: selectIsMyPick(state),
     leagueId: selectCurrentFantasyLeagueId(state),
     loaded: true,
+    maxBenchSize: selectMaxBenchSize(state),
     myDraftPickBuckets: selectMyDraftPickBuckets(state),
     users: selectLeagueUsers(state)
   };

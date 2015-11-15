@@ -12,15 +12,16 @@ export default React.createClass({
 
   propTypes: {
     draftPickBuckets: PropTypes.shape({
-      picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
-      bench: PropTypes.arrayOf(ModelShapes.DraftPick)
-    }),
+      picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)).isRequired,
+      bench: PropTypes.arrayOf(ModelShapes.DraftPick).isRequired
+    }).isRequired,
     footballPlayerLookup: PropTypes.objectOf(ModelShapes.FootballPlayer).isRequired,
-    league: ModelShapes.FantasyLeague
+    league: ModelShapes.FantasyLeague.isRequired,
+    maxBenchSize: PropTypes.number.isRequired
   },
 
   render() {
-    const {draftPickBuckets, footballPlayerLookup, league} = this.props;
+    const {draftPickBuckets, footballPlayerLookup, league, maxBenchSize} = this.props;
     const {picksByPosition, bench} = draftPickBuckets;
     const {team_reqs} = league.rules;
 
@@ -55,15 +56,26 @@ export default React.createClass({
         <table className='table table-condensed'>
           <caption>Bench</caption>
           <tbody>
-            {_.map(bench, function (pick) {
-              const footballPlayer = footballPlayerLookup[pick.football_player_id];
-              return (
-                <tr key={pick.pick_number}>
-                  <td style={{width: POSITION_WIDTH}}>{footballPlayer.position}</td>
-                  <td style={{width: PLAYER_WIDTH}}>{footballPlayer.name}</td>
-                  <td style={{width: PICK_WIDTH}}>{pick.pick_number + 1}</td>
-                </tr>
-              );
+            {_.times(maxBenchSize, function (i) {
+              const pick = bench[i];
+              if (pick) {
+                const footballPlayer = footballPlayerLookup[pick.football_player_id];
+                return (
+                  <tr key={i}>
+                    <td style={{width: POSITION_WIDTH}}>{footballPlayer.position}</td>
+                    <td style={{width: PLAYER_WIDTH}}>{footballPlayer.name}</td>
+                    <td style={{width: PICK_WIDTH}}>{pick.pick_number + 1}</td>
+                  </tr>
+                );
+              } else {
+                return (
+                  <tr key={i}>
+                    <td style={{width: POSITION_WIDTH}}>&nbsp;</td>
+                    <td style={{width: PLAYER_WIDTH}}>&nbsp;</td>
+                    <td style={{width: PICK_WIDTH}}>&nbsp;</td>
+                  </tr>
+                );
+              }
             })}
           </tbody>
         </table>
