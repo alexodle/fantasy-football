@@ -24,15 +24,6 @@ export default React.createClass({
     const {picksByPosition, bench} = draftPickBuckets;
     const {team_reqs} = league.rules;
 
-    /*// Ensure we draft positions of need if we're running out of picks
-    const nPlayersNeeded = max_team_size - bench.length;
-    const nPicksLeft = max_team_size - myPicks.length;
-    if (nPicksLeft === nPlayersNeeded) {
-      myPicksByPosition = _.pick(myPicksByPosition, function (picks, p) {
-        return picks.length < team_reqs[p];
-      });
-    }*/
-
     return (
       <div>
         <table className='table table-condensed'>

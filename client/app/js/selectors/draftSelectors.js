@@ -11,6 +11,7 @@ import {
 } from './selectors';
 import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
+import {Positions} from '../Constants';
 
 export const selectDrafts = state => state.entities.drafts;
 
@@ -30,17 +31,6 @@ export const selectLeagueDraftOrder = createFFSelector({
   }
 });
 
-export const selectDraftableFootballPlayers = createFFSelector({
-  selectors: [selectLeagueFootballPlayers, selectLeagueFootballPlayers],
-  selector: function (leagueFootballPlayers, leagueDraftPicks) {
-    const draftedPlayerIds = _.pluck(leagueDraftPicks, 'football_player_id');
-    return _(leagueFootballPlayers)
-      .omit(draftedPlayerIds)
-      .values()
-      .value();
-  }
-});
-
 export const selectCurrentDraftOrder = createFFSelector({
   selectors: [selectLeagueDraftOrder, selectLeagueDraftPicks],
   selector: function (leagueDraftOrder, leagueDraftPicks) {
@@ -55,20 +45,77 @@ export const selectIsMyPick = createFFSelector({
   }
 });
 
+export const selectMyDraftPicks = createFFSelector({
+ selectors: [selectLeagueDraftPicks, selectCurrentUser],
+ selector: function (leagueDraftPicks, currentUser) {
+    return _.where(leagueDraftPicks, { user_id: currentUser.id });
+ }
+});
+
 export const selectMyDraftPickBuckets = createFFSelector({
   selectors: [
     selectLeagueFootballPlayers,
-    selectLeagueDraftPicks,
-    selectCurrentUser,
-    selectFantasyLeague
+    selectFantasyLeague,
+    selectMyDraftPicks
   ],
-  selector: function (leagueFootballPlayers, leagueDraftPicks, currentUser, fantasyLeague) {
-    const myPicks = _.where(leagueDraftPicks, { user_id: currentUser.id });
+  selector: function (leagueFootballPlayers, fantasyLeague, myDraftPicks) {
     return bucketTeam({
-      userDraftPicks: myPicks,
+      userDraftPicks: myDraftPicks,
       footballPlayerLookup: leagueFootballPlayers,
       teamReqs: fantasyLeague.rules.team_reqs
     });
   }
 });
 
+export const selectMaxBenchSize = createFFSelector({
+  selectors: [selectFantasyLeague],
+  selector: function (fantasyLeague) {
+    const {rules} = fantasyLeague;
+    const {team_reqs, max_team_size} = rules;
+    const nonBenchMaxSize = _.reduce(team_reqs, function (total, n) {
+      return total + n;
+    });
+    return max_team_size - nonBenchMaxSize;
+  }
+});
+
+/**
+ * Ensure we draft positions of need if we're running out of picks
+ */
+const selectDraftablePositions = createFFSelector({
+  selectors: [
+    selectMyDraftPickBuckets,
+    selectFantasyLeague,
+    selectMyDraftPicks,
+    selectMaxBenchSize
+  ],
+  selector: function (myDraftPickBuckets, fantasyLeague, myDraftPicks, maxBenchSize) {
+    const {picksByPosition, bench} = myDraftPickBuckets;
+    if (bench.length < maxBenchSize) {
+      return _.values(Positions);
+    } else {
+      const {team_reqs} = fantasyLeague.rules;
+      return _.filter(Positions, function (p) {
+        return !picksByPosition[p] || picksByPosition[p].length < team_reqs[p];
+      });
+    }
+  }
+});
+
+export const selectDraftableFootballPlayers = createFFSelector({
+  selectors: [
+    selectLeagueFootballPlayers,
+    selectLeagueDraftPicks,
+    selectDraftablePositions
+  ],
+  selector: function (leagueFootballPlayers, leagueDraftPicks, draftablePositions) {
+    const draftedPlayerIds = _.pluck(leagueDraftPicks, 'football_player_id');
+    return _(leagueFootballPlayers)
+      .omit(draftedPlayerIds)
+      .omit(function (fp) {
+        return !_.contains(draftablePositions, fp.position);
+      })
+      .values()
+      .value();
+  }
+});

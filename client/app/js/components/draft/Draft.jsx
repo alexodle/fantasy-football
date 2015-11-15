@@ -7,7 +7,6 @@ import {
   loadUser
 } from '../../actions/LoadActions';
 import {
-  selectLeagueDraftOrder,
   selectLeagueDraftPicks,
   selectDraftableFootballPlayers,
   selectCurrentDraftOrder,
@@ -17,7 +16,6 @@ import {
 import {
   selectLeagueUsers,
   selectFantasyLeague,
-  selectCurrentUser,
   selectCurrentFantasyLeagueId,
   selectLeagueFootballPlayers
 } from '../../selectors/selectors';
@@ -42,9 +40,7 @@ const Draft = React.createClass({
     allFootballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
     availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
     currentDraftOrder: ModelShapes.DraftOrder,
-    currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
-    draftOrder: PropTypes.arrayOf(ModelShapes.DraftOrder),
     draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
     fantasyLeague: ModelShapes.FantasyLeague,
     isMyPick: PropTypes.bool,
@@ -72,7 +68,6 @@ const Draft = React.createClass({
       allFootballPlayers,
       availableFootballPlayers,
       currentDraftOrder,
-      currentUser,
       draftPicks,
       fantasyLeague,
       isMyPick,
@@ -141,8 +136,6 @@ function selectState(state) {
     allFootballPlayers: selectLeagueFootballPlayers(state),
     availableFootballPlayers: selectDraftableFootballPlayers(state),
     currentDraftOrder: selectCurrentDraftOrder(state),
-    currentUser: selectCurrentUser(state),
-    draftOrder: selectLeagueDraftOrder(state),
     draftPicks: selectLeagueDraftPicks(state),
     fantasyLeague: selectFantasyLeague(state),
     isMyPick: selectIsMyPick(state),
