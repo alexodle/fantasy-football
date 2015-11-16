@@ -1,5 +1,18 @@
 import React from 'react';
 import {ModelShapes} from '../../Constants';
+import {createFFSelector} from '../../selectors/selectorUtils';
+import {selectCurrentDraftOrder} from '../../selectors/draftSelectors';
+import {selectLeagueUsers} from '../../selectors/selectors';
+
+export const draftStatusSelector = createFFSelector({
+  selectors: [selectCurrentDraftOrder, selectLeagueUsers],
+  selector: function (currentDraftOrder, leagueUsers) {
+    return {
+      currentDraftOrder: currentDraftOrder,
+      userLookup: leagueUsers
+    };
+  }
+});
 
 export default React.createClass({
 
@@ -16,7 +29,9 @@ export default React.createClass({
     return (
       <div>
         <p className='draft-status'>
-          On the clock with pick #{currentDraftOrder.order + 1}: <b>{user.name}</b>
+          On the clock with pick #{currentDraftOrder.order + 1}: <b>
+            {user.team.name} ({user.name})
+          </b>
         </p>
       </div>
     );

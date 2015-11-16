@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
-import {ModelShapes} from '../../Constants';
 import {createFFSelector} from '../../selectors/selectorUtils';
-import {selectLeagueUsers} from '../../selectors/selectors';
+import {ModelShapes} from '../../Constants';
 import {selectCurrentDraftOrder, selectLeagueDraftOrder} from '../../selectors/draftSelectors';
+import {selectLeagueUsers} from '../../selectors/selectors';
 
 const PICKS_BEFORE = 3;
 const PICKS_AFTER = 9;
