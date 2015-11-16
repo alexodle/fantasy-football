@@ -2,9 +2,23 @@ import _ from 'lodash';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import {ModelShapes} from '../../Constants';
+import {createFFSelector} from '../../selectors/selectorUtils';
+import {selectLeagueUsers} from '../../selectors/selectors';
+import {selectCurrentDraftOrder, selectLeagueDraftOrder} from '../../selectors/draftSelectors';
 
 const PICKS_BEFORE = 3;
 const PICKS_AFTER = 9;
+
+export const draftOrderViewSelector = createFFSelector({
+  selectors: [selectCurrentDraftOrder, selectLeagueDraftOrder, selectLeagueUsers],
+  selector: function (currentDraftOrder, leagueDraftOrder, leagueUsers) {
+    return {
+      currentDraftOrder: currentDraftOrder,
+      draftOrder: leagueDraftOrder,
+      userLookup: leagueUsers
+    };
+  }
+});
 
 export default React.createClass({
 

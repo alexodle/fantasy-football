@@ -12,8 +12,6 @@ import {
   selectDraftableFootballPlayers,
   selectIneligibleDraftPositions,
   selectIsMyPick,
-  selectLeagueDraftOrder,
-  selectLeagueDraftPicks,
   selectMaxBenchSize,
   selectMyDraftPickBuckets
 } from '../../selectors/draftSelectors';
@@ -24,7 +22,7 @@ import {
   selectLeagueUsers
 } from '../../selectors/selectors';
 import DraftHistory, {draftHistorySelector} from './DraftHistory';
-import DraftOrderView from './DraftOrderView';
+import DraftOrderView, {draftOrderViewSelector} from './DraftOrderView';
 import DraftStatus from './DraftStatus';
 import FFPanel from '../FFPanel';
 import Loading from '../Loading';
@@ -49,8 +47,7 @@ const Draft = React.createClass({
     currentDraftOrder: ModelShapes.DraftOrder,
     dispatch: PropTypes.func.isRequired,
     draftHistoryProps: PropTypes.any,
-    draftOrder: PropTypes.arrayOf(ModelShapes.DraftOrder),
-    draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
+    draftOrderViewProps: PropTypes.any,
     fantasyLeague: ModelShapes.FantasyLeague,
     ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
     isMyPick: PropTypes.bool,
@@ -81,8 +78,7 @@ const Draft = React.createClass({
       availableFootballPlayers,
       currentDraftOrder,
       draftHistoryProps,
-      draftOrder,
-      draftPicks,
+      draftOrderViewProps,
       fantasyLeague,
       ineligibleDraftPositions,
       isMyPick,
@@ -97,11 +93,7 @@ const Draft = React.createClass({
           <div className='col-md-12'>
             <FFPanel title='Draft order'>
               {!loaded ? <Loading /> :
-                <DraftOrderView
-                    currentDraftOrder={currentDraftOrder}
-                    draftOrder={draftOrder}
-                    userLookup={users}
-                />
+                <DraftOrderView {...draftOrderViewProps} />
               }
             </FFPanel>
           </div>
@@ -165,8 +157,7 @@ function selectState(state) {
     ineligibleDraftPositions: selectIneligibleDraftPositions(state),
     currentDraftOrder: selectCurrentDraftOrder(state),
     draftHistoryProps: draftHistorySelector(state),
-    draftPicks: selectLeagueDraftPicks(state),
-    draftOrder: selectLeagueDraftOrder(state),
+    draftOrderViewProps: draftOrderViewSelector(state),
     fantasyLeague: selectFantasyLeague(state),
     isMyPick: selectIsMyPick(state),
     leagueId: selectCurrentFantasyLeagueId(state),
