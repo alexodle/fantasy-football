@@ -3,6 +3,10 @@ import {Positions, FlexPositions} from '../Constants';
 
 const {FLEX} = Positions;
 
+/**
+ * During drafting, buckets your players into positions, making it easy to
+ * tell which positions are elgigible to be drafted.
+ */
 export function bucketTeam({
   userDraftPicks,
   footballPlayerLookup,
