@@ -27,12 +27,23 @@ export const MetaShape = PropTypes.shape({
   lastUpdated: PropTypes.number
 });
 
+const FantasyTeamModelShape = PropTypes.shape({
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  short_name: PropTypes.string.isRequired,
+  fantasy_league_id: PropTypes.number.isRequired,
+  owner_id: PropTypes.number.isRequired
+});
+
 export const ModelShapes = {
+
+  FantasyTeam: FantasyTeamModelShape,
 
   User: PropTypes.shape({
     id: PropTypes.number.isRequired,
     email: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    team: FantasyTeamModelShape
   }),
 
   FantasyLeague: PropTypes.shape({

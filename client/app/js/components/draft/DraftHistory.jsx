@@ -24,7 +24,7 @@ const DraftHistory = React.createClass({
       <table className='table table-condensed'>
         <thead>
           <tr>
-            <th>#</th><th>User</th><th>Player</th><th>Position</th>
+            <th>#</th><th>Team</th><th>Player</th><th>Position</th>
           </tr>
         </thead>
         <tbody>
@@ -34,7 +34,7 @@ const DraftHistory = React.createClass({
             return (
               <tr key={dp.pick_number}>
                 <td>{dp.pick_number + 1}</td>
-                <td>{user.name}</td>
+                <td>{user.team.name}</td>
                 <td>{footballPlayer.name}</td>
                 <td>{footballPlayer.position}</td>
               </tr>

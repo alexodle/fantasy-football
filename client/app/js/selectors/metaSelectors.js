@@ -25,6 +25,10 @@ export function selectLeagueFantasyPlayersMeta(state) {
   return getMetaFromCurrentLeague(state, 'fantasy_players');
 }
 
+export function selectLeagueFantasyTeamsMeta(state) {
+  return getMetaFromCurrentLeague(state, 'fantasy_teams');
+}
+
 export function selectLeagueDraftOrderMeta(state) {
   return getMetaFromCurrentLeague(state, 'draft.order');
 }

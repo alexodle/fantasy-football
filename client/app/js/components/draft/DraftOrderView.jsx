@@ -30,7 +30,7 @@ export default React.createClass({
                 key={o.order}
                 className={'list-group-item' + (isActive ? ' active' : '')}
             >
-              (#{o.order + 1}) {userLookup[o.user_id].name}
+              (#{o.order + 1}) {userLookup[o.user_id].team.short_name}
             </li>
           );
         })}
