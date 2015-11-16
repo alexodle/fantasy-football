@@ -2,12 +2,24 @@ import _ from 'lodash';
 import PositionChooser from './PositionChooser';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
-import {ModelShapes, PositionDisplayOrder, Positions, FlexPositions} from '../../Constants';
 import {Button} from 'react-bootstrap/lib';
+import {createFFSelector} from '../../selectors/selectorUtils';
+import {ModelShapes, PositionDisplayOrder, Positions, FlexPositions} from '../../Constants';
+import {selectDraftableFootballPlayers, selectIneligibleDraftPositions} from '../../selectors/draftSelectors';
 
 const ALL_POSITION = 'All';
 const DEFAULT_POSITION = ALL_POSITION;
 const MyPositionDisplayOrder = [ALL_POSITION].concat(PositionDisplayOrder);
+
+export const playerChooserSelector = createFFSelector({
+  selectors: [selectDraftableFootballPlayers, selectIneligibleDraftPositions],
+  selector: function (draftableFootballPlayers, ineligibleDraftPositions) {
+    return {
+      footballPlayers: draftableFootballPlayers,
+      ineligibleDraftPositions: ineligibleDraftPositions
+    };
+  }
+});
 
 export default React.createClass({
 

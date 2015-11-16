@@ -8,8 +8,6 @@ import {
   loadUser
 } from '../../actions/LoadActions';
 import {
-  selectDraftableFootballPlayers,
-  selectIneligibleDraftPositions,
   selectIsMyPick,
   selectMaxBenchSize,
   selectMyDraftPickBuckets
@@ -24,7 +22,7 @@ import DraftOrderView, {draftOrderViewSelector} from './DraftOrderView';
 import DraftStatus, {draftStatusSelector} from './DraftStatus';
 import FFPanel from '../FFPanel';
 import Loading from '../Loading';
-import PlayerChooser from './PlayerChooser';
+import PlayerChooser, {playerChooserSelector} from './PlayerChooser';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import TeamDraftView from './TeamDraftView';
@@ -41,13 +39,11 @@ const Draft = React.createClass({
 
   propTypes: {
     allFootballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
-    availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
     dispatch: PropTypes.func.isRequired,
-    draftHistoryProps: PropTypes.any,
-    draftOrderViewProps: PropTypes.any,
-    draftStatusProps: PropTypes.any,
+    draftHistoryProps: PropTypes.any.isRequired,
+    draftOrderViewProps: PropTypes.any.isRequired,
+    draftStatusProps: PropTypes.any.isRequired,
     fantasyLeague: ModelShapes.FantasyLeague,
-    ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
     loaded: PropTypes.bool.isRequired,
@@ -55,7 +51,8 @@ const Draft = React.createClass({
     myDraftPickBuckets: PropTypes.shape({
       picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
       bench: PropTypes.arrayOf(ModelShapes.DraftPick)
-    })
+    }),
+    playerChooserProps: PropTypes.any.isRequired
   },
 
   componentDidMount() {
@@ -72,16 +69,15 @@ const Draft = React.createClass({
   render() {
     const {
       allFootballPlayers,
-      availableFootballPlayers,
       draftHistoryProps,
       draftOrderViewProps,
       draftStatusProps,
       fantasyLeague,
-      ineligibleDraftPositions,
       isMyPick,
       loaded,
       maxBenchSize,
-      myDraftPickBuckets
+      myDraftPickBuckets,
+      playerChooserProps
     } = this.props;
     return (
       <section>
@@ -100,12 +96,10 @@ const Draft = React.createClass({
             <FFPanel title='Draft HQ'>
               {!loaded ? <Loading /> :
                 isMyPick ? (
-                  <PlayerChooser
-                      onPick={this._onPick}
-                      footballPlayers={availableFootballPlayers}
-                      ineligibleDraftPositions={ineligibleDraftPositions}
-                  />) : (
-                  <DraftStatus {...draftStatusProps} />)
+                  <PlayerChooser {...playerChooserProps} onPick={this._onPick} />
+                ) : (
+                  <DraftStatus {...draftStatusProps} />
+                )
               }
             </FFPanel>
           </div>
@@ -146,8 +140,6 @@ const Draft = React.createClass({
 function selectState(state) {
   var selection = {
     allFootballPlayers: selectLeagueFootballPlayers(state),
-    availableFootballPlayers: selectDraftableFootballPlayers(state),
-    ineligibleDraftPositions: selectIneligibleDraftPositions(state),
     draftHistoryProps: draftHistorySelector(state),
     draftOrderViewProps: draftOrderViewSelector(state),
     draftStatusProps: draftStatusSelector(state),
@@ -156,7 +148,8 @@ function selectState(state) {
     leagueId: selectCurrentFantasyLeagueId(state),
     loaded: true,
     maxBenchSize: selectMaxBenchSize(state),
-    myDraftPickBuckets: selectMyDraftPickBuckets(state)
+    myDraftPickBuckets: selectMyDraftPickBuckets(state),
+    playerChooserProps: playerChooserSelector(state)
   };
   if (reduceEntityLoadState(selection)) {
     return { loaded: false, leagueId: selection.leagueId };
