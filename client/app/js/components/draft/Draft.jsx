@@ -23,7 +23,7 @@ import {
   selectLeagueFootballPlayers,
   selectLeagueUsers
 } from '../../selectors/selectors';
-import DraftHistory from './DraftHistory';
+import DraftHistory, {draftHistorySelector} from './DraftHistory';
 import DraftOrderView from './DraftOrderView';
 import DraftStatus from './DraftStatus';
 import FFPanel from '../FFPanel';
@@ -48,6 +48,7 @@ const Draft = React.createClass({
     availableFootballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer),
     currentDraftOrder: ModelShapes.DraftOrder,
     dispatch: PropTypes.func.isRequired,
+    draftHistoryProps: PropTypes.any,
     draftOrder: PropTypes.arrayOf(ModelShapes.DraftOrder),
     draftPicks: PropTypes.arrayOf(ModelShapes.DraftPick),
     fantasyLeague: ModelShapes.FantasyLeague,
@@ -79,6 +80,7 @@ const Draft = React.createClass({
       allFootballPlayers,
       availableFootballPlayers,
       currentDraftOrder,
+      draftHistoryProps,
       draftOrder,
       draftPicks,
       fantasyLeague,
@@ -140,11 +142,7 @@ const Draft = React.createClass({
           <div className='col-md-12'>
             <FFPanel title='Draft history'>
               {!loaded ? <Loading /> :
-                <DraftHistory
-                    draftPicks={draftPicks}
-                    userLookup={users}
-                    footballPlayerLookup={allFootballPlayers}
-                />
+                <DraftHistory {...draftHistoryProps} />
               }
             </FFPanel>
           </div>
@@ -166,6 +164,7 @@ function selectState(state) {
     availableFootballPlayers: selectDraftableFootballPlayers(state),
     ineligibleDraftPositions: selectIneligibleDraftPositions(state),
     currentDraftOrder: selectCurrentDraftOrder(state),
+    draftHistoryProps: draftHistorySelector(state),
     draftPicks: selectLeagueDraftPicks(state),
     draftOrder: selectLeagueDraftOrder(state),
     fantasyLeague: selectFantasyLeague(state),

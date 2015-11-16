@@ -1,7 +1,21 @@
 import _ from 'lodash';
-import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react';
+import {createFFSelector} from '../../selectors/selectorUtils';
 import {ModelShapes} from '../../Constants';
+import {selectLeagueUsers, selectLeagueFootballPlayers} from '../../selectors/selectors';
+import {selectLeagueDraftPicks} from '../../selectors/draftSelectors';
+
+export const draftHistorySelector = createFFSelector({
+  selectors: [selectLeagueDraftPicks, selectLeagueUsers, selectLeagueFootballPlayers],
+  selector: function (leagueDraftPicks, leagueUsers, leagueFootballPlayers) {
+    return {
+      draftPicks: leagueDraftPicks,
+      userLookup: leagueUsers,
+      footballPlayerLookup: leagueFootballPlayers
+    };
+  }
+});
 
 export default React.createClass({
 
