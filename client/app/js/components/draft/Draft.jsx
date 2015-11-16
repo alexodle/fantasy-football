@@ -39,6 +39,8 @@ import {reduceEntityLoadState} from '../../selectors/selectorUtils';
 
 const Draft = React.createClass({
 
+  displayName: 'Draft',
+
   mixins: [PureRenderMixin],
 
   propTypes: {

@@ -3,7 +3,9 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {ModelShapes} from '../../Constants';
 
-const DraftHistory = React.createClass({
+export default React.createClass({
+
+  displayName: 'DraftHistory',
 
   mixins: [PureRenderMixin],
 
@@ -46,5 +48,3 @@ const DraftHistory = React.createClass({
   }
 
 });
-
-export default DraftHistory;

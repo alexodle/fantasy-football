@@ -9,7 +9,9 @@ const ALL_POSITION = 'All';
 const DEFAULT_POSITION = ALL_POSITION;
 const MyPositionDisplayOrder = [ALL_POSITION].concat(PositionDisplayOrder);
 
-const PlayerChooser = React.createClass({
+export default React.createClass({
+
+  displayName: 'PlayerChooser',
 
   mixins: [PureRenderMixin],
 
@@ -99,5 +101,3 @@ const PlayerChooser = React.createClass({
   }
 
 });
-
-export default PlayerChooser;

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import {ModelShapes} from '../../Constants';
 
@@ -8,6 +9,8 @@ const PICKS_AFTER = 9;
 export default React.createClass({
 
   displayName: 'DraftOrderView',
+
+  mixins: [PureRenderMixin],
 
   propTypes: {
     currentDraftOrder: ModelShapes.DraftOrder.isRequired,
