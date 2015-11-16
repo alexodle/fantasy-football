@@ -72,3 +72,15 @@ export const selectLeagueFootballPlayers = createFFSelector({
     return _.pick(footballPlayers, footballPlayersMeta.items);
   }
 });
+
+export const selectMaxBenchSize = createFFSelector({
+  selectors: [selectFantasyLeague],
+  selector: function (fantasyLeague) {
+    const {rules} = fantasyLeague;
+    const {team_reqs, max_team_size} = rules;
+    const nonBenchMaxSize = _.reduce(team_reqs, function (total, n) {
+      return total + n;
+    });
+    return max_team_size - nonBenchMaxSize;
+  }
+});

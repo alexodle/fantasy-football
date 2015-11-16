@@ -7,16 +7,6 @@ import {
   loadMyLeagues,
   loadUser
 } from '../../actions/LoadActions';
-import {
-  selectIsMyPick,
-  selectMaxBenchSize,
-  selectMyDraftPickBuckets
-} from '../../selectors/draftSelectors';
-import {
-  selectCurrentFantasyLeagueId,
-  selectFantasyLeague,
-  selectLeagueFootballPlayers
-} from '../../selectors/selectors';
 import DraftHistory, {draftHistorySelector} from './DraftHistory';
 import DraftOrderView, {draftOrderViewSelector} from './DraftOrderView';
 import DraftStatus, {draftStatusSelector} from './DraftStatus';
@@ -25,11 +15,12 @@ import Loading from '../Loading';
 import PlayerChooser, {playerChooserSelector} from './PlayerChooser';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
-import TeamDraftView from './TeamDraftView';
+import TeamDraftView, {teamDraftViewSelector} from './TeamDraftView';
 import {connect} from 'react-redux';
 import {draftFootballPlayer} from '../../actions/PostActions';
-import {ModelShapes} from '../../Constants';
 import {reduceEntityLoadState} from '../../selectors/selectorUtils';
+import {selectCurrentFantasyLeagueId} from '../../selectors/selectors';
+import {selectIsMyPick} from '../../selectors/draftSelectors';
 
 const Draft = React.createClass({
 
@@ -38,21 +29,15 @@ const Draft = React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    allFootballPlayers: PropTypes.objectOf(ModelShapes.FootballPlayer),
     dispatch: PropTypes.func.isRequired,
-    draftHistoryProps: PropTypes.any.isRequired,
-    draftOrderViewProps: PropTypes.any.isRequired,
-    draftStatusProps: PropTypes.any.isRequired,
-    fantasyLeague: ModelShapes.FantasyLeague,
+    draftHistoryProps: PropTypes.any,
+    draftOrderViewProps: PropTypes.any,
+    draftStatusProps: PropTypes.any,
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
     loaded: PropTypes.bool.isRequired,
-    maxBenchSize: PropTypes.number,
-    myDraftPickBuckets: PropTypes.shape({
-      picksByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.DraftPick)),
-      bench: PropTypes.arrayOf(ModelShapes.DraftPick)
-    }),
-    playerChooserProps: PropTypes.any.isRequired
+    playerChooserProps: PropTypes.any,
+    teamDraftViewProps: PropTypes.any
   },
 
   componentDidMount() {
@@ -68,16 +53,13 @@ const Draft = React.createClass({
 
   render() {
     const {
-      allFootballPlayers,
       draftHistoryProps,
       draftOrderViewProps,
       draftStatusProps,
-      fantasyLeague,
       isMyPick,
       loaded,
-      maxBenchSize,
-      myDraftPickBuckets,
-      playerChooserProps
+      playerChooserProps,
+      teamDraftViewProps
     } = this.props;
     return (
       <section>
@@ -106,12 +88,7 @@ const Draft = React.createClass({
           <div className='col-md-6'>
             <FFPanel title='My team'>
               {!loaded ? <Loading /> :
-                <TeamDraftView
-                    draftPickBuckets={myDraftPickBuckets}
-                    footballPlayerLookup={allFootballPlayers}
-                    league={fantasyLeague}
-                    maxBenchSize={maxBenchSize}
-                />
+                <TeamDraftView {...teamDraftViewProps} />
               }
             </FFPanel>
           </div>
@@ -139,17 +116,14 @@ const Draft = React.createClass({
 
 function selectState(state) {
   var selection = {
-    allFootballPlayers: selectLeagueFootballPlayers(state),
     draftHistoryProps: draftHistorySelector(state),
     draftOrderViewProps: draftOrderViewSelector(state),
     draftStatusProps: draftStatusSelector(state),
-    fantasyLeague: selectFantasyLeague(state),
     isMyPick: selectIsMyPick(state),
     leagueId: selectCurrentFantasyLeagueId(state),
     loaded: true,
-    maxBenchSize: selectMaxBenchSize(state),
-    myDraftPickBuckets: selectMyDraftPickBuckets(state),
-    playerChooserProps: playerChooserSelector(state)
+    playerChooserProps: playerChooserSelector(state),
+    teamDraftViewProps: teamDraftViewSelector(state)
   };
   if (reduceEntityLoadState(selection)) {
     return { loaded: false, leagueId: selection.leagueId };

@@ -1,10 +1,30 @@
 import _ from 'lodash';
 import React, {PropTypes} from 'react';
+import {createFFSelector} from '../../selectors/selectorUtils';
 import {ModelShapes, PositionDisplayOrder} from '../../Constants';
+import {selectLeagueFootballPlayers, selectFantasyLeague, selectMaxBenchSize} from '../../selectors/selectors';
+import {selectMyDraftPickBuckets} from '../../selectors/draftSelectors';
 
 const POSITION_WIDTH='20%';
 const PLAYER_WIDTH='60%';
 const PICK_WIDTH='20%';
+
+export const teamDraftViewSelector = createFFSelector({
+  selectors: [
+    selectMyDraftPickBuckets,
+    selectLeagueFootballPlayers,
+    selectFantasyLeague,
+    selectMaxBenchSize
+  ],
+  selector: function (myDraftPickBuckets, leagueFootballPlayers, fantasyLeague, maxBenchSize) {
+    return {
+      draftPickBuckets: myDraftPickBuckets,
+      footballPlayerLookup: leagueFootballPlayers,
+      league: fantasyLeague,
+      maxBenchSize
+    };
+  }
+});
 
 export default React.createClass({
 

@@ -5,9 +5,10 @@ import {
 } from './metaSelectors';
 import {
   selectCurrentFantasyLeagueId,
-  selectLeagueFootballPlayers,
   selectCurrentUser,
-  selectFantasyLeague
+  selectFantasyLeague,
+  selectLeagueFootballPlayers,
+  selectMaxBenchSize
 } from './selectors';
 import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
@@ -64,18 +65,6 @@ export const selectMyDraftPickBuckets = createFFSelector({
       footballPlayerLookup: leagueFootballPlayers,
       teamReqs: fantasyLeague.rules.team_reqs
     });
-  }
-});
-
-export const selectMaxBenchSize = createFFSelector({
-  selectors: [selectFantasyLeague],
-  selector: function (fantasyLeague) {
-    const {rules} = fantasyLeague;
-    const {team_reqs, max_team_size} = rules;
-    const nonBenchMaxSize = _.reduce(team_reqs, function (total, n) {
-      return total + n;
-    });
-    return max_team_size - nonBenchMaxSize;
   }
 });
 

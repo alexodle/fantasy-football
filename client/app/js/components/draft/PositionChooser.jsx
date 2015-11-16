@@ -2,7 +2,14 @@ import _ from 'lodash';
 import React, {PropTypes} from 'react';
 import {Button, ButtonGroup} from 'react-bootstrap/lib';
 
-const PositionChooser = React.createClass({
+///
+/// NO NEED FOR A SELECTOR DEFINITION HERE. THIS IS JUST USED BY PlayerChooser,
+/// WHICH IS NOT A SMART COMPONENT.
+///
+
+export default React.createClass({
+
+  displayName: 'PositionChooser',
 
   propTypes: {
     ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
@@ -38,5 +45,3 @@ const PositionChooser = React.createClass({
   }
 
 });
-
-export default PositionChooser;
