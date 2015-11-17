@@ -21,7 +21,7 @@ export function createFFComponentSelector(stateMap) {
     });
 
     const loadState = reduceEntityLoadState(selection);
-    selection = _.omit(stateMap, isLoadState);
+    selection = _.omit(selection, isLoadState);
 
     selection.loadState = loadState;
 

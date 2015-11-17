@@ -21,7 +21,6 @@ import {draftFootballPlayer} from '../../actions/PostActions';
 import {createFFComponentSelector} from '../../selectors/selectorUtils';
 import {selectCurrentFantasyLeagueId} from '../../selectors/selectors';
 import {selectIsMyPick} from '../../selectors/draftSelectors';
-import {IS_LOADING, FAILED_LOADING} from '../../selectors/selectorUtils';
 
 const Draft = React.createClass({
 
@@ -64,7 +63,7 @@ const Draft = React.createClass({
     } = this.props;
 
     // TODO: distinguish between failed and loading loadState
-    const loaded = !!loadState;
+    const loaded = !loadState;
     return (
       <section>
         <div className='row'>
