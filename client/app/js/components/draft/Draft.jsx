@@ -17,8 +17,9 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import TeamDraftView, {teamDraftViewSelector} from './TeamDraftView';
 import {connect} from 'react-redux';
-import {draftFootballPlayer} from '../../actions/PostActions';
 import {createFFComponentSelector} from '../../selectors/selectorUtils';
+import {draftFootballPlayer} from '../../actions/PostActions';
+import {LoadStateShape} from '../../Constants';
 import {selectCurrentFantasyLeagueId} from '../../selectors/selectors';
 import {selectIsMyPick} from '../../selectors/draftSelectors';
 
@@ -35,7 +36,7 @@ const Draft = React.createClass({
     draftStatusProps: PropTypes.any,
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
-    loadState: PropTypes.bool.isRequired,
+    loadState: LoadStateShape,
     playerChooserProps: PropTypes.any,
     teamDraftViewProps: PropTypes.any
   },

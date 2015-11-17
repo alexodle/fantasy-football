@@ -1,13 +1,13 @@
 import _ from 'lodash';
-import React, {PropTypes} from 'react';
-import {loadMyLeagues, loadUser} from '../actions/LoadActions';
-import {connect} from 'react-redux';
-import Loading from './Loading';
 import FFPanel from './FFPanel';
-import {ModelShapes} from '../Constants';
+import Loading from './Loading';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {createFFComponentSelector} from '../selectors/selectorUtils';
 import {Link} from 'react-router';
+import {loadMyLeagues, loadUser} from '../actions/LoadActions';
+import {ModelShapes, LoadStateShape} from '../Constants';
 import {selectCurrentUser, selectMyLeagues} from '../selectors/selectors';
-import {reduceEntityLoadState} from '../selectors/selectorUtils';
 
 const LeagueChooser = React.createClass({
 
@@ -16,7 +16,7 @@ const LeagueChooser = React.createClass({
   propTypes: {
     currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
-    loaded: PropTypes.bool.isRequired,
+    loadState: LoadStateShape,
     myLeagues: PropTypes.objectOf(ModelShapes.FantasyLeague)
   },
 
@@ -27,8 +27,12 @@ const LeagueChooser = React.createClass({
   },
 
   render() {
-    const {loaded, myLeagues} = this.props;
+    const {myLeagues, loadState} = this.props;
     const sortedLeagues = _.sortBy(myLeagues, 'name');
+
+    // TODO: distinguish between failed and loading loadState
+    const loaded = !loadState;
+
     return (
       <FFPanel title='My leagues'>
         {!loaded ? <Loading /> :
@@ -48,16 +52,10 @@ const LeagueChooser = React.createClass({
 
 });
 
-function selectState(state) {
-  const selection = {
-    currentUser: selectCurrentUser(state),
-    myLeagues: selectMyLeagues(state),
-    loaded: true
-  };
-  if (reduceEntityLoadState(selection)) {
-    return { loaded: false };
-  }
-  return selection;
-}
 
-export default connect(selectState)(LeagueChooser);
+const selector = createFFComponentSelector({
+  currentUser: selectCurrentUser,
+  myLeagues: selectMyLeagues
+});
+
+export default connect(selector)(LeagueChooser);
