@@ -98,3 +98,5 @@ export const ChildrenPropType = PropTypes.oneOfType([
 
 export const IS_LOADING = 'IS_LOADING';
 export const FAILED_LOADING = 'FAILED_LOADING';
+
+export const LoadStateShape = PropTypes.oneOf([false, IS_LOADING, FAILED_LOADING]);

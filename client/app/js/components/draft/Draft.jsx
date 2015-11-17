@@ -18,9 +18,10 @@ import React, {PropTypes} from 'react';
 import TeamDraftView, {teamDraftViewSelector} from './TeamDraftView';
 import {connect} from 'react-redux';
 import {draftFootballPlayer} from '../../actions/PostActions';
-import {reduceEntityLoadState} from '../../selectors/selectorUtils';
+import {createFFComponentSelector} from '../../selectors/selectorUtils';
 import {selectCurrentFantasyLeagueId} from '../../selectors/selectors';
 import {selectIsMyPick} from '../../selectors/draftSelectors';
+import {IS_LOADING, FAILED_LOADING} from '../../selectors/selectorUtils';
 
 const Draft = React.createClass({
 
@@ -35,7 +36,7 @@ const Draft = React.createClass({
     draftStatusProps: PropTypes.any,
     isMyPick: PropTypes.bool,
     leagueId: PropTypes.number.isRequired,
-    loaded: PropTypes.bool.isRequired,
+    loadState: PropTypes.bool.isRequired,
     playerChooserProps: PropTypes.any,
     teamDraftViewProps: PropTypes.any
   },
@@ -57,10 +58,13 @@ const Draft = React.createClass({
       draftOrderViewProps,
       draftStatusProps,
       isMyPick,
-      loaded,
+      loadState,
       playerChooserProps,
       teamDraftViewProps
     } = this.props;
+
+    // TODO: distinguish between failed and loading loadState
+    const loaded = !!loadState;
     return (
       <section>
         <div className='row'>
@@ -114,21 +118,14 @@ const Draft = React.createClass({
 
 });
 
-function selectState(state) {
-  var selection = {
-    draftHistoryProps: draftHistorySelector(state),
-    draftOrderViewProps: draftOrderViewSelector(state),
-    draftStatusProps: draftStatusSelector(state),
-    isMyPick: selectIsMyPick(state),
-    leagueId: selectCurrentFantasyLeagueId(state),
-    loaded: true,
-    playerChooserProps: playerChooserSelector(state),
-    teamDraftViewProps: teamDraftViewSelector(state)
-  };
-  if (reduceEntityLoadState(selection)) {
-    return { loaded: false, leagueId: selection.leagueId };
-  }
-  return selection;
-}
+const selector = createFFComponentSelector({
+  draftHistoryProps: draftHistorySelector,
+  draftOrderViewProps: draftOrderViewSelector,
+  draftStatusProps: draftStatusSelector,
+  isMyPick: selectIsMyPick,
+  leagueId: selectCurrentFantasyLeagueId,
+  playerChooserProps: playerChooserSelector,
+  teamDraftViewProps: teamDraftViewSelector
+});
 
-export default connect(selectState)(Draft);
+export default connect(selector)(Draft);

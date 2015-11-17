@@ -3,6 +3,32 @@ import {hasLoaded, hasFailed} from '../utils/loadingUtils';
 import {IS_LOADING, FAILED_LOADING} from '../Constants';
 import {createSelector} from 'reselect';
 
+function isLoadState(o) {
+  return o === IS_LOADING || o === FAILED_LOADING;
+}
+
+/**
+ * Fills in the given state map, and includes a loadState property with either
+ * false, IS_LOADING, or FAILED_LOADING
+ */
+export function createFFComponentSelector(stateMap) {
+  return function (state) {
+    let selection = _.mapValues(stateMap, function (v) {
+      if (_.isFunction(v)) {
+        return v(state);
+      }
+      return v;
+    });
+
+    const loadState = reduceEntityLoadState(selection);
+    selection = _.omit(stateMap, isLoadState);
+
+    selection.loadState = loadState;
+
+    return selection;
+  };
+}
+
 export function createFFSelector({metaSelectors = [], selectors = [], selector}) {
   const wrappedHandler = ensureLoaded(metaSelectors.length, selectors.length, selector);
   return createSelector(metaSelectors.concat(selectors), wrappedHandler);
