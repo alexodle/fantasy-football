@@ -1,20 +1,20 @@
-import _ from 'lodash';
 import {selectFantasyLeague} from './selectors';
+import Immutable from 'immutable';
 
 function getMetaFromCurrentLeague(state, path) {
   const leagueId = selectFantasyLeague(state).id;
   if (leagueId) {
-    return _.get(state, `meta.fantasy_leagues[${leagueId}].${path}`, {});
+    return state.getIn(['meta', 'fantasy_leagues', leagueId].concat(path), Immutable.Map());
   }
-  return {};
+  return Immutable.Map();
 }
 
 export function selectCurrentUserMeta(state) {
-  return state.meta.current_user;
+  return state.getIn(['meta', 'current_user']);
 }
 
 export function selectMyLeaguesMeta(state) {
-  return state.meta.my_leagues;
+  return state.getIn(['meta', 'my_leagues']);
 }
 
 export function selectLeagueFootballPlayersMeta(state) {

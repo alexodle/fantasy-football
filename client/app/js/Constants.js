@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import keyMirror from 'fbjs/lib/keyMirror';
 import {PropTypes} from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
 export const Positions = keyMirror({
   QB: null,

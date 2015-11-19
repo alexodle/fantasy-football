@@ -22,7 +22,15 @@ export function createFFComponentSelector(stateMap) {
 
     // Remove all load state values from the selection. That way components
     // don't have to handle load state strings in their propTypes.
-    selection = _.omit(selection, isLoadState);
+    selection = _(selection)
+      .omit(isLoadState)
+      .mapValues(function (v) {
+        if (v && _.isFunction(v.toJS)) {
+          return v.toJS();
+        }
+        return v;
+      })
+      .value();
 
     // Include the loadState so components have a single property to decide what
     // to do
@@ -120,7 +128,7 @@ function ensureLoaded(metaLength, selectorLength, selector) {
 function calcMetaLoadState(meta) {
   if (hasFailed(meta)) {
     return FAILED_LOADING;
-  } else if (!meta || _.isEmpty(meta) || !hasLoaded(meta)) {
+  } else if (!meta || meta.isEmpty() || !hasLoaded(meta)) {
     return IS_LOADING;
   }
   return false;
@@ -129,4 +137,3 @@ function calcMetaLoadState(meta) {
 function isLoadState(o) {
   return o === IS_LOADING || o === FAILED_LOADING;
 }
-

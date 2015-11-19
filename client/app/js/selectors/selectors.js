@@ -7,11 +7,12 @@ import {
   selectMyLeaguesMeta
 } from './metaSelectors';
 import {createFFSelector} from './selectorUtils';
+import {keyIn} from '../utils/immutableUtils';
 
-const selectUsers = state => state.entities.users;
-const selectFootballPlayers = state => state.entities.football_players;
-const selectFantasyLeagues = state => state.entities.fantasy_leagues;
-const selectFantasyTeams = state => state.entities.fantasy_teams;
+const selectUsers = state => state.getIn(['entities', 'users']);
+const selectFootballPlayers = state => state.getIn(['entities', 'football_players']);
+const selectFantasyLeagues = state => state.getIn(['entities', 'fantasy_leagues']);
+const selectFantasyTeams = state => state.getIn(['entities', 'fantasy_teams']);
 
 const selectLeagueFantasyTeamsByUser = createFFSelector({
   metaSelectors: [selectLeagueFantasyTeamsMeta],
@@ -32,7 +33,7 @@ export const selectCurrentUser = createFFSelector({
   metaSelectors: [selectCurrentUserMeta],
   selectors: [selectUsers],
   selector: function (currentUserMeta, users) {
-    return users[currentUserMeta.id];
+    return users.get(currentUserMeta.get('id'));
   }
 });
 
@@ -40,7 +41,7 @@ export const selectMyLeagues = createFFSelector({
   metaSelectors: [selectMyLeaguesMeta],
   selectors: [selectFantasyLeagues],
   selector: function (myLeaguesMeta, fantasyLeagues) {
-    return _.pick(fantasyLeagues, myLeaguesMeta.items);
+    return fantasyLeagues.filter(keyIn(myLeaguesMeta.get('items')));
   }
 });
 

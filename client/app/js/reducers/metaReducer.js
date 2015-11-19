@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
@@ -8,15 +7,17 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
+import _ from 'lodash';
+import Immutable from 'immutable';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
 
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
-  return {
-    current_user: currentUserReducer(meta.current_user, action, metaUpdate),
-    my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
-    fantasy_leagues: leaguesReducer(meta.fantasy_leagues, action, metaUpdate)
-  };
+  return Immutable.Map({
+    current_user: currentUserReducer(meta.get('current_user'), action, metaUpdate),
+    my_leagues: myLeaguesReducer(meta.get('my_leagues'), action, metaUpdate),
+    fantasy_leagues: leaguesReducer(meta.get('fantasy_leagues'), action, metaUpdate)
+  });
 }
 
 function currentUserReducer(current_user, action, metaUpdate) {
@@ -24,9 +25,9 @@ function currentUserReducer(current_user, action, metaUpdate) {
 
     case LOAD_USER:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, id: action.result.id };
+        return Immutable.fromJS({ ...metaUpdate, id: action.result.id });
       }
-      return metaUpdate;
+      return Immutable.Map(metaUpdate);
 
     default:
       return current_user;
@@ -37,7 +38,10 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_MY_LEAGUES:
-      return { ...metaUpdate, items: _.pluck(action.result, 'id') };
+      return Immutable.fromJS({
+        ...metaUpdate,
+        items: _.pluck(action.result, 'id')
+      });
 
     default:
       return myLeagues;
@@ -48,32 +52,28 @@ function leaguesReducer(leagues, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_DRAFT_ORDER:
-      return _.merge({}, leagues, {
-        [action.league_id]: { draft: { order: metaUpdate } }
-       });
+      return leagues.setIn([action.league_id, 'draft', 'order'], metaUpdate);
 
     case LOAD_DRAFT_PICKS:
-      return _.merge({}, leagues, {
-        [action.league_id]: { draft: { picks: metaUpdate } }
-       });
+      return leagues.setIn([action.league_id, 'draft', 'picks'], metaUpdate);
 
     case LOAD_FANTASY_PLAYERS:
-      return _.merge({}, leagues, { [action.league_id]: { fantasy_players: {
+      return leagues.setIn([action.league_id, 'fantasy_players'], {
         ...metaUpdate,
         items: _.pluck(action.result, 'id')
-      } } });
+      });
 
     case LOAD_FANTASY_TEAMS:
-      return _.merge({}, leagues, { [action.league_id]: { fantasy_teams: {
+      return leagues.setIn([action.league_id, 'fantasy_teams'], {
         ...metaUpdate,
         items: _.pluck(action.result, 'id')
-      } } });
+      });
 
     case LOAD_FOOTBALL_PLAYERS:
-      return _.merge({}, leagues, { [action.league_id]: { football_players: {
+      return leagues.setIn([action.league_id, 'football_players'], {
         ...metaUpdate,
         items: _.pluck(action.result, 'id')
-      } } });
+      });
 
     default:
       return leagues;

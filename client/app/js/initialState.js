@@ -5,6 +5,8 @@
 // SEE: stateShape.json for documentation on how this state is filled out
 //
 
+import Immutable from 'immutable';
+
 const META = {
   isFetching: false,
   didInvalidate: true,
@@ -12,7 +14,7 @@ const META = {
   lastUpdated: null
 };
 
-export default {
+const initialState = Immutable.fromJS({
   client: {},
   entities: {
     users: {},
@@ -25,6 +27,10 @@ export default {
     current_user: { ...META },
     my_leagues: { ...META, items: null },
     fantasy_leagues: {}
-  },
-  router: null
-};
+  }
+});
+
+// Ensure router state stays raw since we don't own it
+initialState.router = null;
+
+export default initialState;

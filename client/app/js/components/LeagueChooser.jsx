@@ -28,7 +28,6 @@ const LeagueChooser = React.createClass({
 
   render() {
     const {myLeagues, loadState} = this.props;
-    const sortedLeagues = _.sortBy(myLeagues, 'name');
 
     // TODO: distinguish between failed and loading loadState
     const loaded = !loadState;
@@ -37,13 +36,16 @@ const LeagueChooser = React.createClass({
       <FFPanel title='My leagues'>
         {!loaded ? <Loading /> :
           <ul>
-            {_.map(sortedLeagues, function (league) {
-              return (
-                <li key={league.id}>
-                  <Link to={`/draft/${league.id}`}>{league.name}</Link>
-                </li>
-              );
-            })}
+            {_(myLeagues)
+              .sortBy('name')
+              .map(function (league) {
+                return (
+                  <li key={league.id}>
+                    <Link to={`/draft/${league.id}`}>{league.name}</Link>
+                  </li>
+                );
+              })
+              .value()}
           </ul>
         }
       </FFPanel>

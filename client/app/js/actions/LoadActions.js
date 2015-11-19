@@ -103,7 +103,7 @@ export function loadMyLeagues() {
     url: '/api/user/fantasy_leagues/',
     parser: parseLeague,
     getMeta: function (state) {
-      return state.meta.my_leagues;
+      return state.getIn(['meta', 'my_leagues']);
     }
   });
 }
@@ -113,7 +113,7 @@ export function loadUser() {
     actionType: LOAD_USER,
     url: '/api/user/',
     getMeta: function (state) {
-      return state.meta.my_leagues;
+      return state.getIn(['meta', 'my_leagues']);
     }
   });
 }
@@ -125,12 +125,12 @@ function parseLeague(league) {
 }
 
 function shouldFetch(meta) {
-  if (!meta || !meta.lastUpdated) {
+  if (!meta || !meta.get('lastUpdated')) {
     return true;
-  } else if (meta.isFetching) {
+  } else if (meta.get('isFetching')) {
     return false;
   } else {
-    return meta.didInvalidate;
+    return meta.get('didInvalidate');
   }
 }
 
