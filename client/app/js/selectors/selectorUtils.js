@@ -19,10 +19,9 @@ export function createFFComponentSelector(stateMap) {
 
     // Reduce all load states down to the most significant
     const loadState = reduceEntityLoadState(selection);
-
-    // Remove all load state values from the selection. That way components
-    // don't have to handle load state strings in their propTypes.
-    selection = _.omit(selection, isLoadState);
+    if (loadState) {
+      selection = {};
+    }
 
     // Include the loadState so components have a single property to decide what
     // to do
@@ -125,8 +124,3 @@ function calcMetaLoadState(meta) {
   }
   return false;
 }
-
-function isLoadState(o) {
-  return o === IS_LOADING || o === FAILED_LOADING;
-}
-

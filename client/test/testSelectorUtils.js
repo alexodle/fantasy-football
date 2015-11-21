@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import chai from 'chai';
-import {createFFSelector} from '../app/js/selectors/selectorUtils';
+import {createFFSelector, createFFComponentSelector} from '../app/js/selectors/selectorUtils';
 import {IS_LOADING, FAILED_LOADING} from '../app/js/Constants';
 
 chai.should();
@@ -11,7 +11,8 @@ chai.should();
 const LOADING_STATES = {
   loadingStates: {
     loading: IS_LOADING,
-    failed: FAILED_LOADING
+    failed: FAILED_LOADING,
+    succeeded: { anthing: 'works here' }
   },
   metas: {
     metaNull: null,
@@ -23,6 +24,7 @@ const LOADING_STATES = {
 
 const loadingEntitySelector = (state) => state.loadingStates.loading;
 const failedEntitySelector = (state) => state.loadingStates.failed;
+const succeededEntitySelector = (state) => state.loadingStates.succeeded;
 
 const nullMetaSelector = (state) => state.metas.metaNull;
 const failedMetaSelector = (state) => state.metas.metaFailed;
@@ -40,6 +42,41 @@ function failIfReached() {
 }
 
 describe('draftLogic', () => {
+
+  describe('createFFComponentSelector', () => {
+
+    it('evaluates any functions included in spec', () => {
+      createFFComponentSelector({
+        f1: failedMetaSelector,
+        f2: notLoadedMetaSelector,
+        nonF1: 'wassup tho'
+      })(LOADING_STATES)
+      .should.eql({
+        f1: failedMetaSelector(LOADING_STATES),
+        f2: notLoadedMetaSelector(LOADING_STATES),
+        nonF1: 'wassup tho',
+        loadState: false
+      });
+    });
+
+    it('sets loadState to IS_LOADING if any values are loading', () => {
+      createFFComponentSelector({
+        f1: loadingEntitySelector,
+        f2: succeededEntitySelector
+      })(LOADING_STATES)
+      .should.eql({ loadState: IS_LOADING });
+    });
+
+    it('sets loadState to FAILED_LOADING if any values have failed', () => {
+      createFFComponentSelector({
+        f1: loadingEntitySelector,
+        f2: succeededEntitySelector,
+        f3: failedEntitySelector
+      })(LOADING_STATES)
+      .should.eql({ loadState: FAILED_LOADING });
+    });
+
+  });
 
   describe('createFFSelector', () => {
 
