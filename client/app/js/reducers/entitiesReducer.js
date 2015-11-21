@@ -10,15 +10,15 @@ import {
   LOAD_USER
 } from '../actions/ActionTypes';
 import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
+import update from 'react-addons-update';
 
 function activeStateReducer(entities, action) {
   switch (action.type) {
 
     case DRAFT_PLAYER:
-      const newPicks = entities.drafts[action.league_id].picks.concat([action.data]);
-      return _.merge({}, entities, { drafts: {
-        [action.league_id]: { picks: newPicks }
-      } });
+      return update(entities, {
+        drafts: { [action.league_id]: { picks: { $push: [action.data] } } }
+      });
 
     default:
       return entities;
@@ -38,43 +38,47 @@ function failedStateReducer(entities, action) {
   }
 }
 
+function ensureDraft(entities, action) {
+  return update(entities, {
+    drafts: { [action.league_id]: { $apply: (draft) => draft || {} } }
+  });
+}
+
 function successStateReducer(entities, action) {
+  let value;
   switch (action.type) {
 
     case LOAD_DRAFT_ORDER:
-      return _.merge({}, entities, { drafts: {
-        [action.league_id]: { order: _.sortBy(action.result, 'order') }
-      } });
+      value = _.sortBy(action.result, 'order');
+      return update(ensureDraft(entities, action), {
+        drafts: { [action.league_id]: { order: { $set: value } } }
+      });
 
     case LOAD_DRAFT_PICKS:
-      return _.merge({}, entities, { drafts: {
-        [action.league_id]: { picks: _.sortBy(action.result, 'pick_number') }
-      } });
+      value = _.sortBy(action.result, 'pick_number');
+      return update(ensureDraft(entities, action), {
+        drafts: { [action.league_id]: { picks: { $set: value } } }
+      });
 
     case LOAD_FANTASY_PLAYERS:
-      return _.merge({}, entities, {
-        users: _.indexBy(action.result, 'id')
-      });
+      value = _.indexBy(action.result, 'id');
+      return update(entities, { users: { $set: value } });
 
     case LOAD_FANTASY_TEAMS:
-      return _.merge({}, entities, {
-        fantasy_teams: _.indexBy(action.result, 'id')
-      });
+      value = _.indexBy(action.result, 'id');
+      return update(entities, { fantasy_teams: { $set: value } });
 
     case LOAD_FOOTBALL_PLAYERS:
-      return _.merge({}, entities, {
-        football_players: _.indexBy(action.result, 'id')
-      });
+      value = _.indexBy(action.result, 'id');
+      return update(entities, { football_players: { $set: value } });
 
     case LOAD_MY_LEAGUES:
-      return _.merge({}, entities, {
-        fantasy_leagues: _.indexBy(action.result, 'id')
-      });
+      value = _.indexBy(action.result, 'id');
+      return update(entities, { fantasy_leagues: { $set: value } });
 
     case LOAD_USER:
-      return _.merge({}, entities, { users: {
-        [action.result.id]: action.result
-      } });
+      value = action.result;
+      return update(entities, { users: { [value.id]: { $set: value } } });
 
     default:
       return entities;
