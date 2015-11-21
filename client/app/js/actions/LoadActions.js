@@ -24,6 +24,15 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
     [Positions['D/ST']]: 1
   }
 };
+import {
+  selectLeagueDraftOrderMeta,
+  selectLeagueDraftPicksMeta,
+  selectLeagueFantasyPlayersMeta,
+  selectLeagueFantasyTeamsMeta,
+  selectLeagueFootballPlayersMeta,
+  selectMyLeaguesMeta,
+  selectCurrentUserMeta
+} from '../selectors/metaSelectors';
 
 const DATA_KEY = 'data';
 
@@ -33,10 +42,7 @@ export function loadDraftOrder(fantasyLeagueId) {
     url: `/api/league/${fantasyLeagueId}/draft_order/`,
     extraProps: { league_id: fantasyLeagueId },
     getMeta: function (state) {
-      return (
-        state.meta[fantasyLeagueId] &&
-        state.meta[fantasyLeagueId].draft.order
-      );
+      return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
     }
   });
 }
@@ -47,10 +53,7 @@ export function loadDraftPicks(fantasyLeagueId) {
     url: `/api/league/${fantasyLeagueId}/draft_picks/`,
     extraProps: { league_id: fantasyLeagueId },
     getMeta: function (state) {
-      return (
-        state.meta[fantasyLeagueId] &&
-        state.meta[fantasyLeagueId].draft.picks
-      );
+      return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
     }
   });
 }
@@ -61,10 +64,7 @@ export function loadFantasyPlayers(fantasyLeagueId) {
     url: `/api/league/${fantasyLeagueId}/fantasy_players/`,
     extraProps: { league_id: fantasyLeagueId },
     getMeta: function (state) {
-      return (
-        state.meta[fantasyLeagueId] &&
-        state.meta[fantasyLeagueId].fantasy_players
-      );
+      return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
     }
   });
 }
@@ -75,10 +75,7 @@ export function loadFantasyTeams(fantasyLeagueId) {
     url: `/api/league/${fantasyLeagueId}/fantasy_teams/`,
     extraProps: { league_id: fantasyLeagueId },
     getMeta: function (state) {
-      return (
-        state.meta[fantasyLeagueId] &&
-        state.meta[fantasyLeagueId].fantasy_teams
-      );
+      return selectLeagueFantasyTeamsMeta(state, fantasyLeagueId);
     }
   });
 }
@@ -89,10 +86,7 @@ export function loadFootballPlayers(fantasyLeagueId) {
     url: `/api/league/${fantasyLeagueId}/football_players/`,
     extraProps: { league_id: fantasyLeagueId },
     getMeta: function (state) {
-      return (
-        state.meta[fantasyLeagueId] &&
-        state.meta[fantasyLeagueId].football_players
-      );
+      return selectLeagueFootballPlayersMeta(state, fantasyLeagueId);
     }
   });
 }
@@ -102,9 +96,7 @@ export function loadMyLeagues() {
     actionType: LOAD_MY_LEAGUES,
     url: '/api/user/fantasy_leagues/',
     parser: parseLeague,
-    getMeta: function (state) {
-      return state.meta.my_leagues;
-    }
+    getMeta: selectMyLeaguesMeta
   });
 }
 
@@ -112,9 +104,7 @@ export function loadUser() {
   return buildAsyncAction({
     actionType: LOAD_USER,
     url: '/api/user/',
-    getMeta: function (state) {
-      return state.meta.my_leagues;
-    }
+    getMeta: selectCurrentUserMeta
   });
 }
 
