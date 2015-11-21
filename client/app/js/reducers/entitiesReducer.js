@@ -39,8 +39,9 @@ function failedStateReducer(entities, action) {
 }
 
 function ensureDraft(entities, action) {
+  if (entities.drafts[action.league_id]) return entities;
   return update(entities, {
-    drafts: { [action.league_id]: { $apply: (draft) => draft || {} } }
+    drafts: { [action.league_id]: { $set: {} } }
   });
 }
 
