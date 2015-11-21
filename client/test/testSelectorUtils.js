@@ -64,7 +64,10 @@ describe('draftLogic', () => {
         f1: loadingEntitySelector,
         f2: succeededEntitySelector
       })(LOADING_STATES)
-      .should.eql({ loadState: IS_LOADING });
+      .should.eql({
+        loadState: IS_LOADING,
+        f2: succeededEntitySelector(LOADING_STATES)
+      });
     });
 
     it('sets loadState to FAILED_LOADING if any values have failed', () => {
@@ -73,7 +76,10 @@ describe('draftLogic', () => {
         f2: succeededEntitySelector,
         f3: failedEntitySelector
       })(LOADING_STATES)
-      .should.eql({ loadState: FAILED_LOADING });
+      .should.eql({
+        loadState: FAILED_LOADING,
+        f2: succeededEntitySelector(LOADING_STATES)
+      });
     });
 
   });
