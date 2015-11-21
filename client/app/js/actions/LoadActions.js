@@ -41,7 +41,7 @@ export function loadDraftOrder(fantasyLeagueId) {
     actionType: LOAD_DRAFT_ORDER,
     url: `/api/league/${fantasyLeagueId}/draft_order/`,
     extraProps: { league_id: fantasyLeagueId },
-    getMeta: function (state) {
+    metaSelector: function (state) {
       return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
     }
   });
@@ -52,7 +52,7 @@ export function loadDraftPicks(fantasyLeagueId) {
     actionType: LOAD_DRAFT_PICKS,
     url: `/api/league/${fantasyLeagueId}/draft_picks/`,
     extraProps: { league_id: fantasyLeagueId },
-    getMeta: function (state) {
+    metaSelector: function (state) {
       return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
     }
   });
@@ -63,7 +63,7 @@ export function loadFantasyPlayers(fantasyLeagueId) {
     actionType: LOAD_FANTASY_PLAYERS,
     url: `/api/league/${fantasyLeagueId}/fantasy_players/`,
     extraProps: { league_id: fantasyLeagueId },
-    getMeta: function (state) {
+    metaSelector: function (state) {
       return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
     }
   });
@@ -74,7 +74,7 @@ export function loadFantasyTeams(fantasyLeagueId) {
     actionType: LOAD_FANTASY_TEAMS,
     url: `/api/league/${fantasyLeagueId}/fantasy_teams/`,
     extraProps: { league_id: fantasyLeagueId },
-    getMeta: function (state) {
+    metaSelector: function (state) {
       return selectLeagueFantasyTeamsMeta(state, fantasyLeagueId);
     }
   });
@@ -85,7 +85,7 @@ export function loadFootballPlayers(fantasyLeagueId) {
     actionType: LOAD_FOOTBALL_PLAYERS,
     url: `/api/league/${fantasyLeagueId}/football_players/`,
     extraProps: { league_id: fantasyLeagueId },
-    getMeta: function (state) {
+    metaSelector: function (state) {
       return selectLeagueFootballPlayersMeta(state, fantasyLeagueId);
     }
   });
@@ -96,7 +96,7 @@ export function loadMyLeagues() {
     actionType: LOAD_MY_LEAGUES,
     url: '/api/user/fantasy_leagues/',
     parser: parseLeague,
-    getMeta: selectMyLeaguesMeta
+    metaSelector: selectMyLeaguesMeta
   });
 }
 
@@ -104,7 +104,7 @@ export function loadUser() {
   return buildAsyncAction({
     actionType: LOAD_USER,
     url: '/api/user/',
-    getMeta: selectCurrentUserMeta
+    metaSelector: selectCurrentUserMeta
   });
 }
 
@@ -127,12 +127,12 @@ function shouldFetch(meta) {
 function buildAsyncAction({
   actionType,
   url,
-  getMeta,
+  metaSelector,
   extraProps = {},
   parser = _.identity
 }) {
   return function (dispatch, getState) {
-    const meta = getMeta(getState());
+    const meta = metaSelector(getState());
     if (!shouldFetch(meta)) {
       return;
     }

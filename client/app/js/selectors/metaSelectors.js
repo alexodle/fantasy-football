@@ -1,12 +1,19 @@
 import _ from 'lodash';
-import {selectFantasyLeague} from './selectors';
 
-function getMetaFromCurrentLeague(state, path) {
-  const leagueId = selectFantasyLeague(state).id;
-  if (leagueId) {
-    return _.get(state, `meta.fantasy_leagues[${leagueId}].${path}`, {});
-  }
-  return {};
+function getMetaFromLeague(state, leagueId, path) {
+  return _.get(state, `meta.fantasy_leagues[${leagueId}].${path}`, {});
+}
+
+function ensureFantasyLeagueId(fn) {
+  return function (state, leagueId = null) {
+    // Hack to avoid circular dependency
+    const selectors = require('./selectors');
+
+    leagueId = leagueId || selectors.selectFantasyLeague(state).id;
+    if (!leagueId) return {};
+
+    return fn(state, leagueId);
+  };
 }
 
 export function selectCurrentUserMeta(state) {
@@ -17,22 +24,22 @@ export function selectMyLeaguesMeta(state) {
   return state.meta.my_leagues;
 }
 
-export function selectLeagueFootballPlayersMeta(state) {
-  return getMetaFromCurrentLeague(state, 'football_players');
-}
+export const selectLeagueFootballPlayersMeta = ensureFantasyLeagueId(function (state, leagueId) {
+  return getMetaFromLeague(state, leagueId, 'football_players');
+});
 
-export function selectLeagueFantasyPlayersMeta(state) {
-  return getMetaFromCurrentLeague(state, 'fantasy_players');
-}
+export const selectLeagueFantasyPlayersMeta = ensureFantasyLeagueId(function (state, leagueId) {
+  return getMetaFromLeague(state, leagueId, 'fantasy_players');
+});
 
-export function selectLeagueFantasyTeamsMeta(state) {
-  return getMetaFromCurrentLeague(state, 'fantasy_teams');
-}
+export const selectLeagueFantasyTeamsMeta = ensureFantasyLeagueId(function (state, leagueId) {
+  return getMetaFromLeague(state, leagueId, 'fantasy_teams');
+});
 
-export function selectLeagueDraftOrderMeta(state) {
-  return getMetaFromCurrentLeague(state, 'draft.order');
-}
+export const selectLeagueDraftOrderMeta = ensureFantasyLeagueId(function (state, leagueId) {
+  return getMetaFromLeague(state, leagueId, 'draft.order');
+});
 
-export function selectLeagueDraftPicksMeta(state) {
-  return getMetaFromCurrentLeague(state, 'draft.picks');
-}
+export const selectLeagueDraftPicksMeta = ensureFantasyLeagueId(function (state, leagueId) {
+  return getMetaFromLeague(state, leagueId, 'draft.picks');
+});
