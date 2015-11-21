@@ -1,0 +1,128 @@
+import _ from 'lodash';
+import chai from 'chai';
+import {createFFSelector} from '../app/js/selectors/selectorUtils';
+import {IS_LOADING, FAILED_LOADING} from '../app/js/Constants';
+
+chai.should();
+
+// Tests can use this as the "state" objects. This kills two birds with one
+// stone, as it allows us to test that state is being passed through to our
+// selectors AND it makes it easy to return the states we want.
+const LOADING_STATES = {
+  loadingStates: {
+    loading: IS_LOADING,
+    failed: FAILED_LOADING
+  },
+  metas: {
+    metaNull: null,
+    metaFailed: { didFailFetching: true },
+    metaNotLoaded: { lastUpdated: null },
+    metaLoaded: { lastUpdated: 1234 }
+  }
+};
+
+const loadingEntitySelector = (state) => state.loadingStates.loading;
+const failedEntitySelector = (state) => state.loadingStates.failed;
+
+const nullMetaSelector = (state) => state.metas.metaNull;
+const failedMetaSelector = (state) => state.metas.metaFailed;
+const notLoadedMetaSelector = (state) => state.metas.metaNotLoaded;
+const loadedMetaSelector = (state) => state.metas.metaLoaded;
+
+function createLoadedMetaSelectorWith(props) {
+  return function (state) {
+    return { ...props, ...loadedMetaSelector(state) };
+  };
+}
+
+function failIfReached() {
+  throw new Error("Should not have gotten here!");
+}
+
+describe('draftLogic', () => {
+
+  describe('createFFSelector', () => {
+
+    it('not loaded if meta does not exist', () => {
+      createFFSelector({
+        metaSelectors: [nullMetaSelector, loadedMetaSelector],
+        selector: failIfReached
+      })(LOADING_STATES)
+      .should.eql(IS_LOADING);
+    });
+
+    it('not loaded if lastUpdated is null', () => {
+      createFFSelector({
+        metaSelectors: [notLoadedMetaSelector, loadedMetaSelector],
+        selector: failIfReached
+      })(LOADING_STATES)
+      .should.eql(IS_LOADING);
+    });
+
+    it('failed if didFailFetching', () => {
+      createFFSelector({
+        metaSelectors: [notLoadedMetaSelector, failedMetaSelector, loadedMetaSelector],
+        selector: failIfReached
+      })(LOADING_STATES)
+      .should.eql(FAILED_LOADING);
+    });
+
+    it('returns selector value if loaded', () => {
+      createFFSelector({
+        metaSelectors: [loadedMetaSelector],
+        selector: (loadedMeta) => loadedMeta.lastUpdated
+      })(LOADING_STATES)
+      .should.eql(1234);
+    });
+
+    it('returns selector no meta selectors exist', () => {
+      createFFSelector({ selector: () => 'Hey there' })(LOADING_STATES)
+      .should.eql('Hey there');
+    });
+
+    it('returns loading if an entity selector is loading', () => {
+      createFFSelector({
+        selectors: [loadingEntitySelector],
+        selector: failIfReached
+      })(LOADING_STATES)
+      .should.eql(IS_LOADING);
+    });
+
+    it('returns failed if any entity selector is failed', () => {
+      createFFSelector({
+        selectors: [loadingEntitySelector, failedEntitySelector],
+        selector: failIfReached
+      })(LOADING_STATES)
+      .should.eql(FAILED_LOADING);
+    });
+
+    it('returns failed if any entity selector is failed', () => {
+      // Arbitrarily return 'loadingStates' from LOADING_STATES and ensure we
+      // get it from our ffSelector
+      createFFSelector({
+        selectors: [_.identity],
+        selector: (state) => state.loadingStates
+      })(LOADING_STATES)
+      .should.eql(LOADING_STATES.loadingStates);
+    });
+
+    it('passes in selector values in the order they are asked for', () => {
+      createFFSelector({
+        metaSelectors: [
+          createLoadedMetaSelectorWith({ data: 'meta hi' }),
+          createLoadedMetaSelectorWith({ value: 'meta hello' })
+        ],
+        selectors: [_.constant('hi'), _.constant('hello')],
+        selector: (...params) => params
+      })(LOADING_STATES)
+      .should.eql([
+        { data: 'meta hi', ...LOADING_STATES.metas.metaLoaded },
+        { value: 'meta hello', ...LOADING_STATES.metas.metaLoaded },
+        'hi',
+        'hello'
+      ]);
+    });
+
+  });
+
+});

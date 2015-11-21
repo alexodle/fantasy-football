@@ -51,7 +51,7 @@ export function createFFSelector({metaSelectors = [], selectors = [], selector})
  * state. FAILED_LOADING is more significant than IS_LOADING. If there are no
  * load states, returns false.
  */
-export function reduceEntityLoadState(possibleLoadStates) {
+function reduceEntityLoadState(possibleLoadStates) {
   let loadState = false;
 
   _.forEach(possibleLoadStates, function (testLoadState) {
