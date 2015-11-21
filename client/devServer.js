@@ -6,7 +6,7 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var WebpackDevServer = require('webpack-dev-server');
 
-var FILES_DIR = path.resolve('./test/mockserver');
+var FILES_DIR = path.resolve('./mockserver');
 var ARTIFICIAL_DELAY_LOW = 1;
 var ARTIFICIAL_DELAY_HIGH = 400;
 var PORTS = {
