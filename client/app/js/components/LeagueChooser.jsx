@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import FFPanel from './FFPanel';
 import Loading from './Loading';
 import React, {PropTypes} from 'react';
@@ -36,16 +35,16 @@ const LeagueChooser = React.createClass({
       <FFPanel title='My leagues'>
         {!loaded ? <Loading /> :
           <ul>
-            {_(myLeagues)
-              .sortBy('name')
+            {myLeagues.toSeq()
+              .sortBy(l => l.get('name'))
               .map(function (league) {
                 return (
-                  <li key={league.id}>
-                    <Link to={`/draft/${league.id}`}>{league.name}</Link>
+                  <li key={league.get('id')}>
+                    <Link to={`/draft/${league.get('id')}`}>{league.get('name')}</Link>
                   </li>
                 );
               })
-              .value()}
+              .toArray()}
           </ul>
         }
       </FFPanel>

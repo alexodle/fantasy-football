@@ -22,15 +22,7 @@ export function createFFComponentSelector(stateMap) {
 
     // Remove all load state values from the selection. That way components
     // don't have to handle load state strings in their propTypes.
-    selection = _(selection)
-      .omit(isLoadState)
-      .mapValues(function (v) {
-        if (v && _.isFunction(v.toJS)) {
-          return v.toJS();
-        }
-        return v;
-      })
-      .value();
+    selection = _.omit(selection, isLoadState);
 
     // Include the loadState so components have a single property to decide what
     // to do

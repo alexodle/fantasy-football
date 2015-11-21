@@ -11,6 +11,7 @@ import {
 import request from 'superagent';
 import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 import {Positions} from '../Constants';
+import Immutable from 'immutable';
 
 const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
   max_team_size: 11,
@@ -157,7 +158,7 @@ function buildAsyncAction({
           type: actionType,
           state: SUCCEEDED,
           lastUpdated: Date.now(),
-          result,
+          result: Immutable.fromJS(result),
           ...extraProps
         });
       });

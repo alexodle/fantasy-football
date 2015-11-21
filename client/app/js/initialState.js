@@ -14,7 +14,7 @@ const META = {
   lastUpdated: null
 };
 
-const initialState = Immutable.fromJS({
+const immutableState = Immutable.fromJS({
   client: {},
   entities: {
     users: {},
@@ -30,7 +30,9 @@ const initialState = Immutable.fromJS({
   }
 });
 
-// Ensure router state stays raw since we don't own it
-initialState.router = null;
+export default {
+  immutable: immutableState,
 
-export default initialState;
+  // router cannot be immutable since we don't own it
+  router: null
+};

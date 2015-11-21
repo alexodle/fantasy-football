@@ -7,13 +7,12 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
-import _ from 'lodash';
 import Immutable from 'immutable';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
 
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
-  return Immutable.Map({
+  return meta.merge({
     current_user: currentUserReducer(meta.get('current_user'), action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.get('my_leagues'), action, metaUpdate),
     fantasy_leagues: leaguesReducer(meta.get('fantasy_leagues'), action, metaUpdate)
@@ -25,9 +24,9 @@ function currentUserReducer(current_user, action, metaUpdate) {
 
     case LOAD_USER:
       if (action.state === SUCCEEDED) {
-        return Immutable.fromJS({ ...metaUpdate, id: action.result.id });
+        return metaUpdate.set('id', action.result.id);
       }
-      return Immutable.Map(metaUpdate);
+      return metaUpdate;
 
     default:
       return current_user;
@@ -38,14 +37,21 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_MY_LEAGUES:
-      return Immutable.fromJS({
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      });
+      return Immutable.fromJS(includeItems(metaUpdate, action));
 
     default:
       return myLeagues;
   }
+}
+
+function includeItems(metaUpdate, action) {
+  if (action.result) {
+    return metaUpdate.set('items', action.result
+      .toSeq()
+      .map(v => v.get('id'))
+      .toList());
+  }
+  return metaUpdate;
 }
 
 function leaguesReducer(leagues, action, metaUpdate) {
@@ -58,22 +64,13 @@ function leaguesReducer(leagues, action, metaUpdate) {
       return leagues.setIn([action.league_id, 'draft', 'picks'], metaUpdate);
 
     case LOAD_FANTASY_PLAYERS:
-      return leagues.setIn([action.league_id, 'fantasy_players'], {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      });
+      return leagues.setIn([action.league_id, 'fantasy_players'], includeItems(metaUpdate, action));
 
     case LOAD_FANTASY_TEAMS:
-      return leagues.setIn([action.league_id, 'fantasy_teams'], {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      });
+      return leagues.setIn([action.league_id, 'fantasy_teams'], includeItems(metaUpdate, action));
 
     case LOAD_FOOTBALL_PLAYERS:
-      return leagues.setIn([action.league_id, 'football_players'], {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      });
+      return leagues.setIn([action.league_id, 'football_players'], includeItems(metaUpdate, action));
 
     default:
       return leagues;
@@ -83,19 +80,19 @@ function leaguesReducer(leagues, action, metaUpdate) {
 function getMetaUpdate(action) {
   switch (action.state) {
     case ACTIVE:
-      return { isFetching: true };
+      return Immutable.Map({ isFetching: true });
     case SUCCEEDED:
-      return {
+      return Immutable.Map({
         isFetching: false,
         didInvalidate: false,
         didFailFetching: false,
         lastUpdated: action.lastUpdated
-      };
+      });
     case FAILED:
-      return {
+      return Immutable.Map({
         isFetching: false,
         didFailFetching: true
-      };
+      });
     default:
       return;
   }

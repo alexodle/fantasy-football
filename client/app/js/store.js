@@ -7,10 +7,10 @@ import {reduxReactRouter} from 'redux-router';
 const middlewares = [thunkMiddleware];
 
 // Great for debugging
-if (process.env.NODE_ENV !== 'production') {
+/*if (process.env.NODE_ENV !== 'production') {
   const loggerMiddleware = require('redux-logger')();
   middlewares.push(loggerMiddleware);
-}
+}*/
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(...middlewares),

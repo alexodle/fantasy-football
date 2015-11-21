@@ -8,8 +8,8 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
-import _ from 'lodash';
 import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
+import {indexBy} from '../utils/immutableUtils';
 
 function activeStateReducer(entities, action) {
   switch (action.type) {
@@ -39,22 +39,22 @@ function successStateReducer(entities, action) {
   switch (action.type) {
 
     case LOAD_DRAFT_ORDER:
-      return entities.setIn(['drafts', action.league_id, 'order'], _.sortBy(action.result, 'order'));
+      return entities.setIn(['drafts', action.league_id, 'order'], action.result.sortBy(o => o.order));
 
     case LOAD_DRAFT_PICKS:
-      return entities.setIn(['drafts', action.league_id, 'picks'], _.sortBy(action.result, 'pick_number'));
+      return entities.setIn(['drafts', action.league_id, 'picks'], action.result.sortBy(o => o.pick_number));
 
     case LOAD_FANTASY_PLAYERS:
-      return entities.merge({ users: _.indexBy(action.result, 'id') });
+      return entities.merge({ users: indexBy(action.result, 'id') });
 
     case LOAD_FANTASY_TEAMS:
-      return entities.merge({ fantasy_teams: _.indexBy(action.result, 'id') });
+      return entities.merge({ fantasy_teams: indexBy(action.result, 'id') });
 
     case LOAD_FOOTBALL_PLAYERS:
-      return entities.merge({ football_players: _.indexBy(action.result, 'id') });
+      return entities.merge({ football_players: indexBy(action.result, 'id') });
 
     case LOAD_MY_LEAGUES:
-      return entities.merge({ fantasy_leagues: _.indexBy(action.result, 'id') });
+      return entities.merge({ fantasy_leagues: indexBy(action.result, 'id') });
 
     case LOAD_USER:
       return entities.setIn(['users', action.result.id], action.result);

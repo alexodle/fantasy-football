@@ -13,14 +13,16 @@ import {
 import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
 import {Positions, FlexPositions} from '../Constants';
+import Immutable from 'immutable';
+import {keyIn} from '../utils/immutableUtils';
 
-export const selectDrafts = state => state.entities.drafts;
+export const selectDrafts = state => state.immutable.getIn(['entities', 'drafts']);
 
 export const selectLeagueDraftPicks = createFFSelector({
   metaSelectors: [selectLeagueDraftPicksMeta],
   selectors: [selectDrafts, selectCurrentFantasyLeagueId],
   selector: function (_draftPicksMeta, drafts, currentFantasyLeagueId) {
-    return drafts[currentFantasyLeagueId].picks;
+    return drafts.getIn([currentFantasyLeagueId, 'picks']);
   }
 });
 
@@ -28,28 +30,28 @@ export const selectLeagueDraftOrder = createFFSelector({
   metaSelectors: [selectLeagueDraftOrderMeta],
   selectors: [selectDrafts, selectCurrentFantasyLeagueId],
   selector: function (_draftOrderMeta, drafts, currentFantasyLeagueId) {
-    return drafts[currentFantasyLeagueId].order;
+    return drafts.getIn([currentFantasyLeagueId, 'order']);
   }
 });
 
 export const selectCurrentDraftOrder = createFFSelector({
   selectors: [selectLeagueDraftOrder, selectLeagueDraftPicks],
   selector: function (leagueDraftOrder, leagueDraftPicks) {
-    return leagueDraftOrder[leagueDraftPicks.length];
+    return leagueDraftOrder.get(leagueDraftPicks.length);
   }
 });
 
 export const selectIsMyPick = createFFSelector({
   selectors: [selectCurrentDraftOrder, selectCurrentUser],
   selector: function (currentDraftOrder, currentUser) {
-    return currentDraftOrder.user_id === currentUser.id;
+    return currentDraftOrder.get('user_id') === currentUser.get('id');
   }
 });
 
 export const selectMyDraftPicks = createFFSelector({
  selectors: [selectLeagueDraftPicks, selectCurrentUser],
  selector: function (leagueDraftPicks, currentUser) {
-    return _.where(leagueDraftPicks, { user_id: currentUser.id });
+    return leagueDraftPicks.filter(dp => dp.user_id === currentUser.get('id'));
  }
 });
 
@@ -63,7 +65,7 @@ export const selectMyDraftPickBuckets = createFFSelector({
     return bucketTeam({
       userDraftPicks: myDraftPicks,
       footballPlayerLookup: leagueFootballPlayers,
-      teamReqs: fantasyLeague.rules.team_reqs
+      teamReqs: fantasyLeague.get('rules').get('team_reqs')
     });
   }
 });
@@ -80,21 +82,21 @@ export const selectIneligibleDraftPositions = createFFSelector({
   ],
   selector: function (myDraftPickBuckets, fantasyLeague, myDraftPicks, maxBenchSize) {
     const {picksByPosition, bench} = myDraftPickBuckets;
-    if (bench.length < maxBenchSize) {
-      return [];
+    if (bench.size() < maxBenchSize) {
+      return Immutable.List();
     } else {
-      const {team_reqs} = fantasyLeague.rules;
+      const teamReqs = fantasyLeague.getIn(['rules', 'team_reqs']);
       const flexIsOpen = (
-        !picksByPosition[Positions.FLEX] ||
-        picksByPosition[Positions.FLEX].length < team_reqs[Positions.FLEX]
+        !picksByPosition.get(Positions.FLEX) ||
+        picksByPosition.get(Positions.FLEX).size() < teamReqs.get(Positions.FLEX)
       );
-      return _.reject(Positions, function (p) {
+      return Immutable.Set(_.reject(Positions, function (p) {
         return (
-          !picksByPosition[p] ||
-          picksByPosition[p].length < team_reqs[p] ||
+          !picksByPosition.get(p) ||
+          picksByPosition.get(p).size() < teamReqs.get(p) ||
           (flexIsOpen && _.contains(FlexPositions, p))
         );
-      });
+      }));
     }
   }
 });
@@ -106,13 +108,13 @@ export const selectDraftableFootballPlayers = createFFSelector({
     selectIneligibleDraftPositions
   ],
   selector: function (leagueFootballPlayers, leagueDraftPicks, ineligibleDraftPositions) {
-    const draftedPlayerIds = _.pluck(leagueDraftPicks, 'football_player_id');
-    return _(leagueFootballPlayers)
-      .omit(draftedPlayerIds)
-      .omit(function (fp) {
-        return _.contains(ineligibleDraftPositions, fp.position);
-      })
-      .values()
-      .value();
+    const draftedPlayerIds = leagueDraftPicks.toSeq()
+      .map(dp => dp.get('football_player_id'))
+      .toList();
+
+    return leagueFootballPlayers.toSeq()
+      .filter(keyIn(draftedPlayerIds))
+      .filter(fp => ineligibleDraftPositions.has(fp.get('position')))
+      .toList();
   }
 });

@@ -9,19 +9,19 @@ import {
 import {createFFSelector} from './selectorUtils';
 import {keyIn} from '../utils/immutableUtils';
 
-const selectUsers = state => state.getIn(['entities', 'users']);
-const selectFootballPlayers = state => state.getIn(['entities', 'football_players']);
-const selectFantasyLeagues = state => state.getIn(['entities', 'fantasy_leagues']);
-const selectFantasyTeams = state => state.getIn(['entities', 'fantasy_teams']);
+const selectUsers = state => state.immutable.getIn(['entities', 'users']);
+const selectFootballPlayers = state => state.immutable.getIn(['entities', 'football_players']);
+const selectFantasyLeagues = state => state.immutable.getIn(['entities', 'fantasy_leagues']);
+const selectFantasyTeams = state => state.immutable.getIn(['entities', 'fantasy_teams']);
 
 const selectLeagueFantasyTeamsByUser = createFFSelector({
   metaSelectors: [selectLeagueFantasyTeamsMeta],
   selectors: [selectFantasyTeams],
   selector: function (leagueFantasyTeamsMeta, fantasyTeams) {
-    return _(fantasyTeams)
-      .pick(leagueFantasyTeamsMeta.items)
-      .indexBy('owner_id')
-      .value();
+    return fantasyTeams.toSeq()
+      .filter(keyIn(leagueFantasyTeamsMeta.get('items')))
+      .mapKeys((k, v) => v.get('owner_id'))
+      .toMap();
   }
 });
 
@@ -49,7 +49,7 @@ export const selectFantasyLeague = createFFSelector({
   metaSelectors: [selectMyLeaguesMeta],
   selectors: [selectCurrentFantasyLeagueId, selectFantasyLeagues],
   selector: function (myLeaguesMeta, currentFantasyLeagueId, fantasyLeagues) {
-    return fantasyLeagues[currentFantasyLeagueId];
+    return fantasyLeagues.get(currentFantasyLeagueId.toString());
   }
 });
 
@@ -57,12 +57,12 @@ export const selectLeagueUsers = createFFSelector({
   metaSelectors: [selectLeagueFantasyPlayersMeta],
   selectors: [selectUsers, selectLeagueFantasyTeamsByUser],
   selector: function (leagueFantasyPlayersMeta, users, leagueFantasyTeamsByUser) {
-    return _(users)
-      .pick(leagueFantasyPlayersMeta.items)
-      .mapValues(function (user) {
-        return { ...user, team: leagueFantasyTeamsByUser[user.id] };
+    return users.toSeq()
+      .filter(keyIn(leagueFantasyPlayersMeta.get('items')))
+      .map(function (user) {
+        return user.set('team', leagueFantasyTeamsByUser.get(user.id));
       })
-      .value();
+      .toMap();
   }
 });
 
@@ -70,18 +70,17 @@ export const selectLeagueFootballPlayers = createFFSelector({
   metaSelectors: [selectLeagueFootballPlayersMeta],
   selectors: [selectFootballPlayers],
   selector: function (footballPlayersMeta, footballPlayers) {
-    return _.pick(footballPlayers, footballPlayersMeta.items);
+    return footballPlayers.filter(keyIn(footballPlayersMeta.get('items')));
   }
 });
 
 export const selectMaxBenchSize = createFFSelector({
   selectors: [selectFantasyLeague],
   selector: function (fantasyLeague) {
-    const {rules} = fantasyLeague;
-    const {team_reqs, max_team_size} = rules;
-    const nonBenchMaxSize = _.reduce(team_reqs, function (total, n) {
-      return total + n;
-    });
-    return max_team_size - nonBenchMaxSize;
+    const rules = fantasyLeague.get('rules');
+    const teamReqs = rules.get('team_reqs');
+    const maxTeamSize = rules.get('max_team_size');
+    const nonBenchMaxSize = teamReqs.reduce((total, n) => total + n);
+    return maxTeamSize - nonBenchMaxSize;
   }
 });
