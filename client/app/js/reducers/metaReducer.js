@@ -8,6 +8,7 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
+import update from 'react-addons-update';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
 
 export default function metaReducer(meta, action) {
@@ -15,7 +16,7 @@ export default function metaReducer(meta, action) {
   return {
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
-    fantasy_leagues: leaguesReducer(meta.fantasy_leagues, action, metaUpdate)
+    fantasy_leagues: leaguesReducer(ensureLeague(meta.fantasy_leagues, action), action, metaUpdate)
   };
 }
 
@@ -44,36 +45,39 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
   }
 }
 
+function ensureLeague(leagues, action) {
+  if (!action.league_id || leagues[action.league_id]) return leagues;
+  return update(leagues, { [action.league_id]: { $set: { draft: {} } } } );
+}
+
+function updateLeagueEntity(leagues, entityType, action, metaUpdate) {
+  const value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
+  return update(leagues, {
+    [action.league_id]: { [entityType]: { $set: value } }
+  });
+}
+
 function leaguesReducer(leagues, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_DRAFT_ORDER:
-      return _.merge({}, leagues, {
-        [action.league_id]: { draft: { order: metaUpdate } }
-       });
+      return update(leagues, {
+        [action.league_id]: { draft: { order: { $set: metaUpdate } } }
+      });
 
     case LOAD_DRAFT_PICKS:
-      return _.merge({}, leagues, {
-        [action.league_id]: { draft: { picks: metaUpdate } }
-       });
+      return update(leagues, {
+        [action.league_id]: { draft: { picks: { $set: metaUpdate } } }
+      });
 
     case LOAD_FANTASY_PLAYERS:
-      return _.merge({}, leagues, { [action.league_id]: { fantasy_players: {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      } } });
+      return updateLeagueEntity(leagues, 'fantasy_players', action, metaUpdate);
 
     case LOAD_FANTASY_TEAMS:
-      return _.merge({}, leagues, { [action.league_id]: { fantasy_teams: {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      } } });
+      return updateLeagueEntity(leagues, 'fantasy_teams', action, metaUpdate);
 
     case LOAD_FOOTBALL_PLAYERS:
-      return _.merge({}, leagues, { [action.league_id]: { football_players: {
-        ...metaUpdate,
-        items: _.pluck(action.result, 'id')
-      } } });
+      return updateLeagueEntity(leagues, 'football_players', action, metaUpdate);
 
     default:
       return leagues;

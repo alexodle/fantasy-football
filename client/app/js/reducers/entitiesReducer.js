@@ -9,8 +9,8 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../actions/ActionTypes';
-import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
 import update from 'react-addons-update';
+import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
 
 function activeStateReducer(entities, action) {
   switch (action.type) {
