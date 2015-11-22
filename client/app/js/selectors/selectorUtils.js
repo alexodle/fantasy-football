@@ -43,7 +43,11 @@ export function createFFComponentSelector(stateMap) {
  */
 export function createFFSelector({metaSelectors = [], selectors = [], selector}) {
   const wrappedHandler = ensureLoaded(metaSelectors.length, selectors.length, selector);
-  return createSelector(metaSelectors.concat(selectors), wrappedHandler);
+  const selectorImpl = createSelector(metaSelectors.concat(selectors), wrappedHandler);
+  return function (state) {
+    const value = selectorImpl(state);
+    return value;
+  };
 }
 
 /**
