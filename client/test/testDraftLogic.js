@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import chai from 'chai';
 import {bucketTeam} from '../app/js/logic/draftLogic';
+import {newDraftPick, newFootballPlayer} from './testUtils';
 import {Positions} from '../app/js/Constants';
 
 chai.should();
@@ -16,24 +17,6 @@ const TEAM_REQS = {
 };
 
 const EMPTY_BUCKETS = _.mapValues(Positions, () => []);
-
-function newDraftPick({leagueId = 1, userId = 1, fpId, pickNumber}) {
-  return {
-    fantasy_league_id: leagueId,
-    user_id: userId,
-    football_player_id: fpId,
-    pick_number: pickNumber
-  };
-}
-
-function newFootballPlayer({name = 'FB Player {{id}}', footballTeamId = 1, id, pos}) {
-  return {
-    id,
-    name: name.replace('{{id}}', id),
-    position: pos,
-    football_team_id: footballTeamId
-  };
-}
 
 describe('draftLogic', () => {
 
