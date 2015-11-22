@@ -42,7 +42,9 @@ export default React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    if (_.contains(nextProps.ineligibleDraftPositions, this.state.currentPosition)) {
+    const {draftableFootballPlayersByPosition} = nextProps;
+    const {currentPosition} = this.state;
+    if (_.isEmpty(draftableFootballPlayersByPosition[currentPosition])) {
       this.setState({ currentPosition: DEFAULT_POSITION });
     }
   },
@@ -64,7 +66,10 @@ export default React.createClass({
       positionPlayers = _.sortBy(draftableFootballPlayersByPosition[currentPosition], 'name');
     }
 
-    const ineligibleDraftPositions = _.filter(ineligibleDraftPositions, _.isEmpty);
+    const ineligibleDraftPositions = _(draftableFootballPlayersByPosition)
+      .pick(_.isEmpty)
+      .keys()
+      .value();
 
     return (
       <div>
