@@ -72,7 +72,6 @@ describe('draftSelectors', () => {
 
   describe('selectIneligibleDraftPositions', () => {
 
-
     it('does not eliminate positions if bench is not full', () => {
       selectIneligibleDraftPositions(state).should.eql([]);
     });
@@ -88,6 +87,25 @@ describe('draftSelectors', () => {
       );
       state.meta.fantasy_leagues[1].football_players.items.push(3, 4);
       selectIneligibleDraftPositions(state).should.eql([Positions.QB]);
+    });
+
+    it('removes positions when flex and bench are full', () => {
+      _.merge(state.entities.football_players, _.indexBy([
+        newFootballPlayer({ id: 3, pos: Positions.RB }),
+        newFootballPlayer({ id: 4, pos: Positions.RB }),
+        newFootballPlayer({ id: 5, pos: Positions.TE })
+      ], 'id'));
+      state.entities.drafts[1].picks.push(
+        newDraftPick({ fpId: 3, pickNumber: 3 }),
+        newDraftPick({ fpId: 4, pickNumber: 4 }),
+        newDraftPick({ fpId: 5, pickNumber: 5 })
+      );
+      state.meta.fantasy_leagues[1].football_players.items.push(3, 4, 5);
+      selectIneligibleDraftPositions(state).should.eql([
+        Positions.RB,
+        Positions.TE,
+        Positions.FLEX
+      ]);
     });
 
   });
