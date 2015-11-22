@@ -4,20 +4,22 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import React, {PropTypes} from 'react';
 import {Button} from 'react-bootstrap/lib';
 import {createFFSelector} from '../../selectors/selectorUtils';
-import {ModelShapes, PositionDisplayOrder, Positions, FlexPositions} from '../../Constants';
-import {selectDraftableFootballPlayers, selectIneligibleDraftPositions} from '../../selectors/draftSelectors';
+import {ModelShapes, PositionDisplayOrder, Positions} from '../../Constants';
+import {selectDraftableFootballPlayersByPosition} from '../../selectors/draftSelectors';
 
 const ALL_POSITION = 'All';
 const DEFAULT_POSITION = ALL_POSITION;
 const MyPositionDisplayOrder = [ALL_POSITION].concat(PositionDisplayOrder);
 
+const POSITIONS_WITHOUT_FLEX = _(Positions)
+  .values()
+  .without(Positions.FLEX)
+  .value();
+
 export const playerChooserSelector = createFFSelector({
-  selectors: [selectDraftableFootballPlayers, selectIneligibleDraftPositions],
-  selector: function (draftableFootballPlayers, ineligibleDraftPositions) {
-    return {
-      footballPlayers: draftableFootballPlayers,
-      ineligibleDraftPositions: ineligibleDraftPositions
-    };
+  selectors: [selectDraftableFootballPlayersByPosition],
+  selector: function (draftableFootballPlayersByPosition) {
+    return { draftableFootballPlayersByPosition };
   }
 });
 
@@ -28,8 +30,7 @@ export default React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    footballPlayers: PropTypes.arrayOf(ModelShapes.FootballPlayer).isRequired,
-    ineligibleDraftPositions: PropTypes.arrayOf(PropTypes.string),
+    draftableFootballPlayersByPosition: PropTypes.objectOf(PropTypes.arrayOf(ModelShapes.FootballPlayer)),
     onPick: PropTypes.func.isRequired
   },
 
@@ -47,30 +48,30 @@ export default React.createClass({
   },
 
   render() {
-    const {footballPlayers, ineligibleDraftPositions} = this.props;
+    const {draftableFootballPlayersByPosition} = this.props;
     const {currentPosition, selectedPlayerId} = this.state;
 
     // Filter players by current position
-    let wrappedPositionPlayers = _(footballPlayers);
-    if (currentPosition === Positions.FLEX) {
-      wrappedPositionPlayers = wrappedPositionPlayers.filter(function (fp) {
-        return _.contains(FlexPositions, fp.position);
-      });
-    } else if (currentPosition !== ALL_POSITION) {
-      wrappedPositionPlayers = wrappedPositionPlayers.where({
-        position: currentPosition
-      });
+    let positionPlayers = null;
+    if (currentPosition === ALL_POSITION) {
+      positionPlayers = _(draftableFootballPlayersByPosition)
+        .pick(POSITIONS_WITHOUT_FLEX)
+        .values()
+        .flatten()
+        .sortBy('name')
+        .value();
+    } else {
+      positionPlayers = _.sortBy(draftableFootballPlayersByPosition[currentPosition], 'name');
     }
-    const positionPlayers = wrappedPositionPlayers
-      .sortBy('name')
-      .value();
+
+    const ineligibleDraftPositions = _.filter(ineligibleDraftPositions, _.isEmpty);
 
     return (
       <div>
         <PositionChooser
             onChange={this._onPositionChange}
             positions={MyPositionDisplayOrder}
-            value={this.state.currentPosition}
+            value={currentPosition}
             ineligibleDraftPositions={ineligibleDraftPositions}
         />
         <p>Number of players: <b>{positionPlayers.length}</b></p>

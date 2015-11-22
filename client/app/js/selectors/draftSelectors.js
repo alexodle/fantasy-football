@@ -14,6 +14,8 @@ import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
 import {Positions, FlexPositions} from '../Constants';
 
+const EMPTY_POSITIONS = _.mapValues(Positions, () => []);
+
 export const selectDrafts = state => state.entities.drafts;
 
 export const selectLeagueDraftPicks = createFFSelector({
@@ -114,5 +116,18 @@ export const selectDraftableFootballPlayers = createFFSelector({
       })
       .values()
       .value();
+  }
+});
+
+export const selectDraftableFootballPlayersByPosition = createFFSelector({
+  selectors: [selectDraftableFootballPlayers],
+  selector: function (draftableFootballPlayers) {
+    const byPosition = _.groupBy(draftableFootballPlayers, 'position');
+    const flexes = _(byPosition)
+      .pick(FlexPositions)
+      .values()
+      .flatten()
+      .value();
+    return { ...EMPTY_POSITIONS, ...byPosition, [Positions.FLEX]: flexes };
   }
 });

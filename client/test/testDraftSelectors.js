@@ -1,6 +1,10 @@
 import _ from 'lodash';
 import chai from 'chai';
-import {selectIneligibleDraftPositions, selectDraftableFootballPlayers} from '../app/js/selectors/draftSelectors';
+import {
+  selectIneligibleDraftPositions,
+  selectDraftableFootballPlayers,
+  selectDraftableFootballPlayersByPosition
+} from '../app/js/selectors/draftSelectors';
 import {Positions} from '../app/js/Constants';
 import {newDraftPick, newFootballPlayer} from './testUtils';
 
@@ -126,6 +130,24 @@ describe('draftSelectors', () => {
       selectDraftableFootballPlayers(state).should.eql([
         fbPlayers[6], fbPlayers[7]
       ]);
+    });
+
+  });
+
+  describe('selectDraftableFootballPlayersByPosition', () => {
+
+    it('buckets players by position', () => {
+      const fbPlayers = state.entities.football_players;
+
+      selectDraftableFootballPlayersByPosition(state).should.eql({
+        [Positions.QB]: [fbPlayers[6], fbPlayers[7]],
+        [Positions.RB]: [fbPlayers[3], fbPlayers[4]],
+        [Positions.WR]: [],
+        [Positions.TE]: [fbPlayers[5]],
+        [Positions.FLEX]: [fbPlayers[3], fbPlayers[4], fbPlayers[5]],
+        [Positions.K]: [],
+        [Positions['D/ST']]: []
+      });
     });
 
   });

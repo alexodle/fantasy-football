@@ -20,7 +20,7 @@ import {connect} from 'react-redux';
 import {createFFComponentSelector} from '../../selectors/selectorUtils';
 import {draftFootballPlayer} from '../../actions/PostActions';
 import {LoadStateShape} from '../../Constants';
-import {selectCurrentFantasyLeagueId} from '../../selectors/selectors';
+import {selectCurrentFantasyLeagueId} from '../../selectors/routeSelectors';
 import {selectIsMyPick} from '../../selectors/draftSelectors';
 
 const Draft = React.createClass({
