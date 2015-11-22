@@ -7,6 +7,7 @@ import {
   selectMyLeaguesMeta
 } from './metaSelectors';
 import {createFFSelector} from './selectorUtils';
+import {selectCurrentFantasyLeagueId} from './routeSelectors';
 
 const selectUsers = state => state.entities.users;
 const selectFootballPlayers = state => state.entities.football_players;
@@ -23,10 +24,6 @@ const selectLeagueFantasyTeamsByUser = createFFSelector({
       .value();
   }
 });
-
-export function selectCurrentFantasyLeagueId(state) {
-  return _.parseInt(state.router.params.leagueId);
-}
 
 export const selectCurrentUser = createFFSelector({
   metaSelectors: [selectCurrentUserMeta],

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import {selectCurrentFantasyLeagueId} from './routeSelectors';
 
 function getMetaFromLeague(state, leagueId, path) {
   return _.get(state, `meta.fantasy_leagues[${leagueId}].${path}`, {});
@@ -6,10 +7,7 @@ function getMetaFromLeague(state, leagueId, path) {
 
 function ensureFantasyLeagueId(fn) {
   return function (state, leagueId = null) {
-    // Hack to avoid circular dependency
-    const selectors = require('./selectors');
-
-    leagueId = leagueId || selectors.selectFantasyLeague(state).id;
+    leagueId = leagueId || selectCurrentFantasyLeagueId(state);
     if (!leagueId) return {};
 
     return fn(state, leagueId);

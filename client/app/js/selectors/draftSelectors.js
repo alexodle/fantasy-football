@@ -4,12 +4,12 @@ import {
   selectLeagueDraftPicksMeta
 } from './metaSelectors';
 import {
-  selectCurrentFantasyLeagueId,
   selectCurrentUser,
   selectFantasyLeague,
   selectLeagueFootballPlayers,
   selectMaxBenchSize
 } from './selectors';
+import {selectCurrentFantasyLeagueId} from './routeSelectors';
 import {createFFSelector} from './selectorUtils';
 import {bucketTeam} from '../logic/draftLogic';
 import {Positions, FlexPositions} from '../Constants';
