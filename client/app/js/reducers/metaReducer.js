@@ -27,7 +27,7 @@ function currentUserReducer(current_user, action, metaUpdate) {
       if (action.state === SUCCEEDED) {
         return { ...metaUpdate, id: action.result.id };
       }
-      return metaUpdate;
+      return { ...current_user, ...metaUpdate };
 
     default:
       return current_user;

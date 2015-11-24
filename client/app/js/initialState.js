@@ -5,7 +5,7 @@
 // SEE: stateShape.json for documentation on how this state is filled out
 //
 
-const META = {
+export const DEFAULT_META = {
   isFetching: false,
   didInvalidate: true,
   didFailFetching: false,
@@ -22,8 +22,8 @@ export default {
     drafts: {}
   },
   meta: {
-    current_user: { ...META },
-    my_leagues: { ...META, items: null },
+    current_user: { ...DEFAULT_META },
+    my_leagues: { ...DEFAULT_META, items: null },
     fantasy_leagues: {}
   },
   router: null
