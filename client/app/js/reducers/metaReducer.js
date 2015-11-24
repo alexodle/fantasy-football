@@ -12,6 +12,17 @@ import update from 'react-addons-update';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
 import {DEFAULT_FANTASY_LEAGUE} from '../initialState';
 
+const DRAFT_ENTITY_MAP = {
+  [LOAD_DRAFT_ORDER]: 'order',
+  [LOAD_DRAFT_PICKS]: 'picks'
+};
+
+const LEAGUE_ENTITY_MAP = {
+  [LOAD_FANTASY_PLAYERS]: 'fantasy_players',
+  [LOAD_FANTASY_TEAMS]: 'fantasy_teams',
+  [LOAD_FOOTBALL_PLAYERS]: 'football_players'
+};
+
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
   return {
@@ -55,13 +66,7 @@ function ensureLeague(leagues, action) {
 }
 
 function leagueEntityReducer(leagues, action, metaUpdate) {
-  const leagueEntityMap = {
-    [LOAD_FANTASY_PLAYERS]: 'fantasy_players',
-    [LOAD_FANTASY_TEAMS]: 'fantasy_teams',
-    [LOAD_FOOTBALL_PLAYERS]: 'football_players'
-  };
-
-  const leagueEntity = leagueEntityMap[action.type];
+  const leagueEntity = LEAGUE_ENTITY_MAP[action.type];
   if (leagueEntity) {
     let value = metaUpdate;
     if (action.state === SUCCEEDED) {
@@ -75,12 +80,7 @@ function leagueEntityReducer(leagues, action, metaUpdate) {
 }
 
 function draftEntityReducer(leagues, action, metaUpdate) {
-  const draftEntityMap = {
-    [LOAD_DRAFT_ORDER]: 'order',
-    [LOAD_DRAFT_PICKS]: 'picks'
-  };
-
-  const draftEntity = draftEntityMap[action.type];
+  const draftEntity = DRAFT_ENTITY_MAP[action.type];
   if (draftEntity) {
    return update(leagues, {
       [action.league_id]: { draft: { [draftEntity]: { $merge: metaUpdate } } }
