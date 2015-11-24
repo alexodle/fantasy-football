@@ -10,6 +10,7 @@ import {
 } from '../actions/ActionTypes';
 import update from 'react-addons-update';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
+import {DEFAULT_FANTASY_LEAGUE} from '../initialState';
 
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
@@ -38,7 +39,10 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_MY_LEAGUES:
-      return { ...metaUpdate, items: _.pluck(action.result, 'id') };
+      if (action.state === SUCCEEDED) {
+        return { ...metaUpdate, items: _.pluck(action.result, 'id') };
+      }
+      return { ...myLeagues, ...metaUpdate };
 
     default:
       return myLeagues;
@@ -47,13 +51,17 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
 
 function ensureLeague(leagues, action) {
   if (!action.league_id || leagues[action.league_id]) return leagues;
-  return update(leagues, { [action.league_id]: { $set: { draft: {} } } } );
+  return update(leagues, { [action.league_id]: { $set: DEFAULT_FANTASY_LEAGUE } } );
 }
 
 function updateLeagueEntity(leagues, entityType, action, metaUpdate) {
-  const value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
+  let value = metaUpdate;
+  if (action.state === SUCCEEDED) {
+    value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
+  }
+
   return update(leagues, {
-    [action.league_id]: { [entityType]: { $set: value } }
+    [action.league_id]: { [entityType]: { $merge: value } }
   });
 }
 
@@ -62,12 +70,12 @@ function leaguesReducer(leagues, action, metaUpdate) {
 
     case LOAD_DRAFT_ORDER:
       return update(leagues, {
-        [action.league_id]: { draft: { order: { $set: metaUpdate } } }
+        [action.league_id]: { draft: { order: { $merge: metaUpdate } } }
       });
 
     case LOAD_DRAFT_PICKS:
       return update(leagues, {
-        [action.league_id]: { draft: { picks: { $set: metaUpdate } } }
+        [action.league_id]: { draft: { picks: { $merge: metaUpdate } } }
       });
 
     case LOAD_FANTASY_PLAYERS:

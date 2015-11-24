@@ -12,6 +12,16 @@ export const DEFAULT_META = {
   lastUpdated: null
 };
 
+export const DEFAULT_FANTASY_LEAGUE = {
+  draft: {
+    order: { ...DEFAULT_META },
+    picks: { ...DEFAULT_META }
+  },
+  fantasy_players: { ...DEFAULT_META },
+  fantasy_teams: { ...DEFAULT_META },
+  football_players: { ...DEFAULT_META }
+};
+
 export default {
   client: {},
   entities: {
@@ -23,8 +33,8 @@ export default {
   },
   meta: {
     current_user: { ...DEFAULT_META },
-    my_leagues: { ...DEFAULT_META, items: null },
-    fantasy_leagues: {}
+    my_leagues: { ...DEFAULT_META },
+    fantasy_leagues: {} // Fill with DEFAULT_FANTASY_LEAGUE
   },
   router: null
 };
