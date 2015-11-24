@@ -54,42 +54,46 @@ function ensureLeague(leagues, action) {
   return update(leagues, { [action.league_id]: { $set: DEFAULT_FANTASY_LEAGUE } } );
 }
 
-function updateLeagueEntity(leagues, entityType, action, metaUpdate) {
-  let value = metaUpdate;
-  if (action.state === SUCCEEDED) {
-    value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
-  }
+function leagueEntityReducer(leagues, action, metaUpdate) {
+  const leagueEntityMap = {
+    [LOAD_FANTASY_PLAYERS]: 'fantasy_players',
+    [LOAD_FANTASY_TEAMS]: 'fantasy_teams',
+    [LOAD_FOOTBALL_PLAYERS]: 'football_players'
+  };
 
-  return update(leagues, {
-    [action.league_id]: { [entityType]: { $merge: value } }
-  });
+  const leagueEntity = leagueEntityMap[action.type];
+  if (leagueEntity) {
+    let value = metaUpdate;
+    if (action.state === SUCCEEDED) {
+      value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
+    }
+
+    return update(leagues, {
+      [action.league_id]: { [leagueEntity]: { $merge: value } }
+    });
+  }
+}
+
+function draftEntityReducer(leagues, action, metaUpdate) {
+  const draftEntityMap = {
+    [LOAD_DRAFT_ORDER]: 'order',
+    [LOAD_DRAFT_PICKS]: 'picks'
+  };
+
+  const draftEntity = draftEntityMap[action.type];
+  if (draftEntity) {
+   return update(leagues, {
+      [action.league_id]: { draft: { [draftEntity]: { $merge: metaUpdate } } }
+    });
+  }
 }
 
 function leaguesReducer(leagues, action, metaUpdate) {
-  switch (action.type) {
-
-    case LOAD_DRAFT_ORDER:
-      return update(leagues, {
-        [action.league_id]: { draft: { order: { $merge: metaUpdate } } }
-      });
-
-    case LOAD_DRAFT_PICKS:
-      return update(leagues, {
-        [action.league_id]: { draft: { picks: { $merge: metaUpdate } } }
-      });
-
-    case LOAD_FANTASY_PLAYERS:
-      return updateLeagueEntity(leagues, 'fantasy_players', action, metaUpdate);
-
-    case LOAD_FANTASY_TEAMS:
-      return updateLeagueEntity(leagues, 'fantasy_teams', action, metaUpdate);
-
-    case LOAD_FOOTBALL_PLAYERS:
-      return updateLeagueEntity(leagues, 'football_players', action, metaUpdate);
-
-    default:
-      return leagues;
-  }
+  return (
+    leagueEntityReducer(leagues, action, metaUpdate) ||
+    draftEntityReducer(leagues, action, metaUpdate) ||
+    leagues
+  );
 }
 
 function getMetaUpdate(action) {
