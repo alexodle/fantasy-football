@@ -1,21 +1,36 @@
-import React from 'react';
-import {ChildrenPropType} from './Constants';
+import Header, {headerSelector} from './components/Header';
+import React, {PropTypes} from 'react';
+import {ChildrenPropType, LoadStateShape} from './Constants';
+import {connect} from 'react-redux';
+import {createFFComponentSelector} from './selectors/selectorUtils';
+import {loadMyLeagues, loadUser} from './actions/LoadActions';
 
 const App = React.createClass({
 
+  displayName: 'App',
+
   propTypes: {
-    children: ChildrenPropType
+    children: ChildrenPropType,
+    dispatch: PropTypes.func.isRequired,
+    headerProps: PropTypes.any,
+    loadState: LoadStateShape
+  },
+
+  componentDidMount() {
+    const {dispatch} = this.props;
+    dispatch(loadMyLeagues());
+    dispatch(loadUser());
   },
 
   render() {
-    const {children} = this.props;
+    const {children, headerProps} = this.props;
     return (
       <div className='container'>
-        <div className='page-header'>
-          <h1>Fantasy Football <small></small></h1>
-        </div>
-        <div>
-          {children}
+        <Header {...headerProps} />
+        <div className='row'>
+          <div className='col-md-12'>
+            {children}
+          </div>
         </div>
       </div>
     );
@@ -23,4 +38,9 @@ const App = React.createClass({
 
 });
 
-export default App;
+
+const selector = createFFComponentSelector({
+  headerProps: headerSelector
+});
+
+export default connect(selector)(App);
