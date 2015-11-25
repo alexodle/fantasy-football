@@ -80,7 +80,7 @@ export const ModelShapes = {
     fantasy_league_id: PropTypes.number.isRequired,
     user_id: PropTypes.number.isRequired,
     football_player_id: PropTypes.number.isRequired,
-    pick_number: PropTypes.number.isRequired
+    order: PropTypes.number.isRequired
   }),
 
   DraftOrder: PropTypes.shape({

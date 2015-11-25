@@ -33,7 +33,7 @@ export default React.createClass({
     const {draftPicks, footballPlayerLookup, userLookup} = this.props;
 
     const reverseDraftPicks = _(draftPicks)
-      .sortBy('pick_number')
+      .sortBy('order')
       .reverse()
       .value();
     return (
@@ -48,8 +48,8 @@ export default React.createClass({
             const footballPlayer = footballPlayerLookup[dp.football_player_id];
             const user = userLookup[dp.user_id];
             return (
-              <tr key={dp.pick_number}>
-                <td>{dp.pick_number + 1}</td>
+              <tr key={dp.order}>
+                <td>{dp.order + 1}</td>
                 <td>{user.team.name}</td>
                 <td>{footballPlayer.name}</td>
                 <td>{footballPlayer.position}</td>

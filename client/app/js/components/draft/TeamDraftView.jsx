@@ -66,7 +66,7 @@ export default React.createClass({
                   <tr key={p + i}>
                     <td>{p}</td>
                     <td>{footballPlayer && footballPlayer.name}</td>
-                    <td>{pick && pick.pick_number + 1}</td>
+                    <td>{pick && pick.order + 1}</td>
                   </tr>
                 );
               });
@@ -84,7 +84,7 @@ export default React.createClass({
                   <tr key={i}>
                     <td style={{width: POSITION_WIDTH}}>{footballPlayer.position}</td>
                     <td style={{width: PLAYER_WIDTH}}>{footballPlayer.name}</td>
-                    <td style={{width: PICK_WIDTH}}>{pick.pick_number + 1}</td>
+                    <td style={{width: PICK_WIDTH}}>{pick.order + 1}</td>
                   </tr>
                 );
               } else {

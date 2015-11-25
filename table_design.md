@@ -70,4 +70,4 @@ Notes:
 * fantasy_league_id (FantasyLeague fk)
 * user_id (User fk)
 * football_player_id (FootballPlayer id)
-* pick_number
+* order

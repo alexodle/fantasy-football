@@ -10,7 +10,7 @@ export function draftFootballPlayer(fantasyLeagueId, footballPlayerId) {
     const data = {
       fantasy_league_id: fantasyLeagueId,
       football_player_id: footballPlayerId,
-      pick_number: pickNumber,
+      order: pickNumber,
       user_id: currentUserId
     };
     dispatch({

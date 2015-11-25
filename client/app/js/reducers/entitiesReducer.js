@@ -59,23 +59,29 @@ function loadBasicEntitiesReducer(entities, action) {
   }
 }
 
+function loadDraftEntitiesReducer(entities, action) {
+  const DRAFT_ENTITIES_MAP = {
+    [LOAD_DRAFT_ORDER]: 'order',
+    [LOAD_DRAFT_PICKS]: 'picks'
+  };
+  const entityType = DRAFT_ENTITIES_MAP[action.type];
+  if (entityType) {
+    const value = _.sortBy(action.result, 'order');
+      return update(ensureDraft(entities, action), {
+        drafts: { [action.league_id]: { [entityType]: { $set: value } } }
+      });
+  }
+}
+
 function successStateReducer(entities, action) {
-  const newEntities = loadBasicEntitiesReducer(entities, action);
+  const newEntities = (
+    loadBasicEntitiesReducer(entities, action) ||
+    loadDraftEntitiesReducer(entities, action)
+  );
   if (newEntities) return newEntities;
+
   let value;
   switch (action.type) {
-
-    case LOAD_DRAFT_ORDER:
-      value = _.sortBy(action.result, 'order');
-      return update(ensureDraft(entities, action), {
-        drafts: { [action.league_id]: { order: { $set: value } } }
-      });
-
-    case LOAD_DRAFT_PICKS:
-      value = _.sortBy(action.result, 'pick_number');
-      return update(ensureDraft(entities, action), {
-        drafts: { [action.league_id]: { picks: { $set: value } } }
-      });
 
     case LOAD_USER:
       value = action.result;

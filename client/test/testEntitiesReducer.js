@@ -19,10 +19,10 @@ chai.should();
 const FIRST_PICK = {
   fantasy_league_id: 1,
   football_player_id: 1,
-  pick_number: 1
+  order: 1
 };
 
-const INITIAL_ENTITIES = { ...initialState.entities, ...{
+const LOADED_ENTITIES = { ...initialState.entities, ...{
   drafts: { 1: { picks: [FIRST_PICK] } } }
 };
 
@@ -34,16 +34,16 @@ describe('entitiesReducer', () => {
       const pick = {
         fantasy_league_id: 1,
         football_player_id: 2,
-        pick_number: 2
+        order: 2
       };
-      entitiesReducer(INITIAL_ENTITIES, {
+      entitiesReducer(LOADED_ENTITIES, {
         type: DRAFT_PLAYER,
         state: ACTIVE,
         league_id: 1,
         data: pick
       })
       .should
-      .eql({ ...INITIAL_ENTITIES, drafts: { 1: { picks: [FIRST_PICK, pick] } } });
+      .eql({ ...LOADED_ENTITIES, drafts: { 1: { picks: [FIRST_PICK, pick] } } });
     });
 
     // TODO - what to do if this fails?
@@ -60,13 +60,32 @@ describe('entitiesReducer', () => {
         [LOAD_MY_LEAGUES, 'fantasy_leagues']
       ], ([actionType, entityName]) => {
         const result = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
-        entitiesReducer(INITIAL_ENTITIES, {
+        entitiesReducer(LOADED_ENTITIES, {
           type: actionType,
           state: SUCCEEDED,
-          result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          result: result
         })
         .should
-        .eql({ ...INITIAL_ENTITIES, [entityName]: _.indexBy(result, 'id') });
+        .eql({ ...LOADED_ENTITIES, [entityName]: _.indexBy(result, 'id') });
+      });
+    });
+
+    it('loads draft entities on SUCCESS', () => {
+      _.each([
+        [LOAD_DRAFT_ORDER, 'order'],
+        [LOAD_DRAFT_PICKS, 'picks']
+      ], ([actionType, entityName]) => {
+        const result = [{ order: 4 }, { order: 3 }, { order: 5 }, { order: 1 }];
+        entitiesReducer(initialState.entities, {
+          type: actionType,
+          state: SUCCEEDED,
+          result: result,
+          league_id: 1
+        })
+        .should
+        .eql({ ...initialState.entities, drafts: {
+          1: { [entityName]: _.sortBy(result, 'order')  }
+        } });
       });
     });
 

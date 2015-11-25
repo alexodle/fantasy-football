@@ -80,7 +80,7 @@ i.e. { data: [{ <FootballPlayer> }] }
 
 *POST - /api/league/<league_id>/draft_picks*
 
-body: { football_player_id: <football_player_id>, pick_number: <pick_number> }
+body: { football_player_id: <football_player_id>, order: <order> }
 
 side effect: server broadcasts socket.io message “draft:changed”
 
