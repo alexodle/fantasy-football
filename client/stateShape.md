@@ -10,8 +10,8 @@
 
 ## Default meta
 
-```
-META: {
+``` json
+{
   "isFetching": false,
   "didInvalidate": false,
   "didFailFetching": false,
@@ -21,7 +21,7 @@ META: {
 
 ## State shape
 
-```
+``` javascript
 {
   "client": {},
 
