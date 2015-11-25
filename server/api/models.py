@@ -351,7 +351,7 @@ class DraftOrder(db.Model):
 
 class DraftPick(db.Model):
     __tablename__ = 'draft_picks'
-    pick_number = db.Column(db.Integer, primary_key=True)
+    order = db.Column(db.Integer, primary_key=True)
 
     # foriegn keys
     fantasy_league_id = db.Column(db.Integer,
@@ -379,7 +379,7 @@ class DraftPick(db.Model):
             for idx, pick in enumerate(draft_orders):
                 if players:  # check that there are players left in the draft
                     dp = DraftPick(
-                        pick_number=idx+1,
+                        order=idx+1,
                         fantasy_league=league,
                         user=pick.user,
                         football_player=players.pop()
