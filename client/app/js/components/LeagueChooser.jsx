@@ -7,14 +7,13 @@ import {createFFComponentSelector} from '../selectors/selectorUtils';
 import {Link} from 'react-router';
 import {loadMyLeagues, loadUser} from '../actions/LoadActions';
 import {ModelShapes, LoadStateShape} from '../Constants';
-import {selectCurrentUser, selectMyLeagues} from '../selectors/selectors';
+import {selectMyLeagues} from '../selectors/selectors';
 
 const LeagueChooser = React.createClass({
 
   displayName: 'LeagueChooser',
 
   propTypes: {
-    currentUser: ModelShapes.User,
     dispatch: PropTypes.func.isRequired,
     loadState: LoadStateShape,
     myLeagues: PropTypes.objectOf(ModelShapes.FantasyLeague)
@@ -54,7 +53,6 @@ const LeagueChooser = React.createClass({
 
 
 const selector = createFFComponentSelector({
-  currentUser: selectCurrentUser,
   myLeagues: selectMyLeagues
 });
 
