@@ -1,24 +1,29 @@
-//
-// Example state shape for the client
-//
-// Goals:
-//   - keep as flat as possible (but arrays of ids are ok)
-//   - keep UI state and preserved state separate
-//   - default is to index entities by id
-//
-// State kept by router
-//   - current league
-//
-// META: {
-//   "isFetching": false,
-//   "didInvalidate": false,
-//   "lastUpdated": 1439478405547,
-// }
-//
-{
-  "client": {
+# Example state shape for the client
 
-  },
+## Goals:
+ * keep as flat as possible (but arrays of ids are ok)
+ * keep UI state and preserved state separate
+ * default is to index entities by id
+
+## State kept by router
+ * current league
+
+## Default meta
+
+```
+META: {
+  "isFetching": false,
+  "didInvalidate": false,
+  "didFailFetching": false,
+  "lastUpdated": 1439478405547,
+}
+```
+
+## State shape
+
+```
+{
+  "client": {},
 
   "entities": {
 
@@ -95,3 +100,4 @@
   }
 
 }
+```
