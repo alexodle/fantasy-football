@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {createFFComponentSelector} from './selectors/selectorUtils';
 import {loadMyLeagues, loadUser} from './actions/LoadActions';
 
+// noop
 const App = React.createClass({
 
   displayName: 'App',
