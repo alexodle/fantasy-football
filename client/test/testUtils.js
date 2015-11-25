@@ -3,7 +3,7 @@ export function newDraftPick({leagueId = 1, userId = 1, fpId, pickNumber}) {
     fantasy_league_id: leagueId,
     user_id: userId,
     football_player_id: fpId,
-    pick_number: pickNumber
+    order: pickNumber
   };
 }
 
