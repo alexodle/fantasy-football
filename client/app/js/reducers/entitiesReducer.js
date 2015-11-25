@@ -66,30 +66,29 @@ function loadDraftEntitiesReducer(entities, action) {
   };
   const entityType = DRAFT_ENTITIES_MAP[action.type];
   if (entityType) {
+    entities = ensureDraft(entities, action);
+
     const value = _.sortBy(action.result, 'order');
-      return update(ensureDraft(entities, action), {
-        drafts: { [action.league_id]: { [entityType]: { $set: value } } }
-      });
+    return update(entities, {
+      drafts: { [action.league_id]: { [entityType]: { $set: value } } }
+    });
+  }
+}
+
+function loadUserReducer(entities, action) {
+  if (action.type === LOAD_USER) {
+    const value = action.result;
+    return update(entities, { users: { [value.id]: { $set: value } } });
   }
 }
 
 function successStateReducer(entities, action) {
-  const newEntities = (
+  return (
     loadBasicEntitiesReducer(entities, action) ||
-    loadDraftEntitiesReducer(entities, action)
+    loadDraftEntitiesReducer(entities, action) ||
+    loadUserReducer(entities, action) ||
+    entities
   );
-  if (newEntities) return newEntities;
-
-  let value;
-  switch (action.type) {
-
-    case LOAD_USER:
-      value = action.result;
-      return update(entities, { users: { [value.id]: { $set: value } } });
-
-    default:
-      return entities;
-  }
 }
 
 export default function entitiesReducer(entities, action) {

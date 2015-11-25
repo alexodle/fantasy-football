@@ -89,6 +89,24 @@ describe('entitiesReducer', () => {
       });
     });
 
+    it('loads my user entitity on SUCCESS', () => {
+      const result = { id: 5 };
+      const currentUsers = [{ id: 1 }, { id: 2 }];
+      entitiesReducer({
+        ...initialState.entities,
+        users: _.indexBy(currentUsers, 'id')
+      }, {
+        type: LOAD_USER,
+        state: SUCCEEDED,
+        result: result
+      })
+      .should
+      .eql({
+        ...initialState.entities,
+        users: _.indexBy(currentUsers.concat([result]), 'id')
+      });
+    });
+
   });
 
 });
