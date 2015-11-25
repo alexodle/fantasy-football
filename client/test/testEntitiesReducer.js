@@ -11,7 +11,7 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from '../app/js/actions/ActionTypes';
-import {ACTIVE, SUCCEEDED, FAILED} from '../app/js/actions/AsyncActionStates';
+import {ACTIVE, SUCCEEDED} from '../app/js/actions/AsyncActionStates';
 import initialState from '../app/js/initialState';
 
 chai.should();
