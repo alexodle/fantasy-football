@@ -52,15 +52,22 @@ describe('entitiesReducer', () => {
 
   describe('load entities', () => {
 
-    it('loads fantasy players on SUCCESS', () => {
-      const result = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
-      entitiesReducer(INITIAL_ENTITIES, {
-        type: LOAD_FANTASY_TEAMS,
-        state: SUCCEEDED,
-        result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
-      })
-      .should
-      .eql({ ...INITIAL_ENTITIES, fantasy_teams: _.indexBy(result, 'id') });
+    it('loads basic entities on SUCCESS', () => {
+      _.each([
+        [LOAD_FANTASY_PLAYERS, 'users'],
+        [LOAD_FANTASY_TEAMS, 'fantasy_teams'],
+        [LOAD_FOOTBALL_PLAYERS, 'football_players'],
+        [LOAD_MY_LEAGUES, 'fantasy_leagues']
+      ], ([actionType, entityName]) => {
+        const result = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
+        entitiesReducer(INITIAL_ENTITIES, {
+          type: actionType,
+          state: SUCCEEDED,
+          result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+        })
+        .should
+        .eql({ ...INITIAL_ENTITIES, [entityName]: _.indexBy(result, 'id') });
+      });
     });
 
   });

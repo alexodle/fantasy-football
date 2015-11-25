@@ -45,7 +45,23 @@ function ensureDraft(entities, action) {
   });
 }
 
+function loadBasicEntitiesReducer(entities, action) {
+  const BASIC_ENTITIES_MAP = {
+    [LOAD_FANTASY_PLAYERS]: 'users',
+    [LOAD_FANTASY_TEAMS]: 'fantasy_teams',
+    [LOAD_FOOTBALL_PLAYERS]: 'football_players',
+    [LOAD_MY_LEAGUES]: 'fantasy_leagues'
+  };
+  const entityType = BASIC_ENTITIES_MAP[action.type];
+  if (entityType) {
+    const value = _.indexBy(action.result, 'id');
+    return update(entities, { [entityType]: { $set: value } });
+  }
+}
+
 function successStateReducer(entities, action) {
+  const newEntities = loadBasicEntitiesReducer(entities, action);
+  if (newEntities) return newEntities;
   let value;
   switch (action.type) {
 
@@ -60,22 +76,6 @@ function successStateReducer(entities, action) {
       return update(ensureDraft(entities, action), {
         drafts: { [action.league_id]: { picks: { $set: value } } }
       });
-
-    case LOAD_FANTASY_PLAYERS:
-      value = _.indexBy(action.result, 'id');
-      return update(entities, { users: { $set: value } });
-
-    case LOAD_FANTASY_TEAMS:
-      value = _.indexBy(action.result, 'id');
-      return update(entities, { fantasy_teams: { $set: value } });
-
-    case LOAD_FOOTBALL_PLAYERS:
-      value = _.indexBy(action.result, 'id');
-      return update(entities, { football_players: { $set: value } });
-
-    case LOAD_MY_LEAGUES:
-      value = _.indexBy(action.result, 'id');
-      return update(entities, { fantasy_leagues: { $set: value } });
 
     case LOAD_USER:
       value = action.result;
