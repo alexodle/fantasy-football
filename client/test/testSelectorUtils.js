@@ -139,7 +139,7 @@ describe('draftLogic', () => {
       .should.eql(FAILED_LOADING);
     });
 
-    it('returns failed if any entity selector is failed', () => {
+    it('returns selector value if nothing failed and everything still loaded', () => {
       // Arbitrarily return 'loadingStates' from LOADING_STATES and ensure we
       // get it from our ffSelector
       createFFSelector({
