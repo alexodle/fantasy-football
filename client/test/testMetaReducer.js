@@ -29,6 +29,10 @@ describe('metaReducer', () => {
 
   describe('leagues', () => {
 
+    it('should fail for testing', () => {
+      'hello'.should.eql('not hello');
+    });
+
     it('should initialize all league state on first league fetch', () => {
       metaReducer(initialState.meta, { type: LOAD_DRAFT_ORDER, state: ACTIVE, league_id: 1 })
       .should.eql({
