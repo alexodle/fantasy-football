@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import chai from 'chai';
 import entitiesReducer from '../app/js/reducers/entitiesReducer';
 import {
@@ -43,6 +44,23 @@ describe('entitiesReducer', () => {
       })
       .should
       .eql({ ...INITIAL_ENTITIES, drafts: { 1: { picks: [FIRST_PICK, pick] } } });
+    });
+
+    // TODO - what to do if this fails?
+
+  });
+
+  describe('load entities', () => {
+
+    it('loads fantasy players on SUCCESS', () => {
+      const result = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
+      entitiesReducer(INITIAL_ENTITIES, {
+        type: LOAD_FANTASY_TEAMS,
+        state: SUCCEEDED,
+        result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+      })
+      .should
+      .eql({ ...INITIAL_ENTITIES, fantasy_teams: _.indexBy(result, 'id') });
     });
 
   });
