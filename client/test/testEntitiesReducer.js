@@ -1,0 +1,50 @@
+import chai from 'chai';
+import entitiesReducer from '../app/js/reducers/entitiesReducer';
+import {
+  DRAFT_PLAYER,
+  LOAD_DRAFT_ORDER,
+  LOAD_DRAFT_PICKS,
+  LOAD_FANTASY_PLAYERS,
+  LOAD_FANTASY_TEAMS,
+  LOAD_FOOTBALL_PLAYERS,
+  LOAD_MY_LEAGUES,
+  LOAD_USER
+} from '../app/js/actions/ActionTypes';
+import {ACTIVE, SUCCEEDED, FAILED} from '../app/js/actions/AsyncActionStates';
+import initialState from '../app/js/initialState';
+
+chai.should();
+
+const FIRST_PICK = {
+  fantasy_league_id: 1,
+  football_player_id: 1,
+  pick_number: 1
+};
+
+const INITIAL_ENTITIES = { ...initialState.entities, ...{
+  drafts: { 1: { picks: [FIRST_PICK] } } }
+};
+
+describe('entitiesReducer', () => {
+
+  describe('draft player', () => {
+
+    it('should pre-emptively update when active', () => {
+      const pick = {
+        fantasy_league_id: 1,
+        football_player_id: 2,
+        pick_number: 2
+      };
+      entitiesReducer(INITIAL_ENTITIES, {
+        type: DRAFT_PLAYER,
+        state: ACTIVE,
+        league_id: 1,
+        data: pick
+      })
+      .should
+      .eql({ ...INITIAL_ENTITIES, drafts: { 1: { picks: [FIRST_PICK, pick] } } });
+    });
+
+  });
+
+});
