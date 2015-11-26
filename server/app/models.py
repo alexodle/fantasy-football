@@ -1,8 +1,9 @@
 import hashlib
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import current_app
+from flask import current_app, url_for
 from flask.ext.login import UserMixin, AnonymousUserMixin
+from app.exceptions import ValidationError
 from . import db, login_manager
 
 
@@ -162,6 +163,15 @@ class User(UserMixin, db.Model):
             return None
         return User.query.get(data['id'])
 
+    def to_json(self):
+        json_user = {
+            'url': url_for('api.get_user', id=self.id, _external=True),
+            'username': self.username,
+            'fantasy_leagues': url_for('api.get_user_fantasy_leagues',
+                                       id=self.id, _external=True),
+        }
+        return json_user
+
     def __repr__(self):
         return '<User %r>' % self.username
 
@@ -207,6 +217,27 @@ class FantasyLeague(db.Model):
     draft_orders = db.relationship('DraftOrder', backref='fantasy_league',
                                    lazy='dynamic')
 
+    def to_json(self):
+        json_fantasy_league = {
+            'url': url_for('api.get_fantasy_league', id=self.id,
+                           _external=True),
+            'name': self.name,
+            'draft_start_date': self.draft_start_date,
+            'commissioner': url_for('api.get_user', id=self.commissioner_id,
+                                    _external=True),
+            'conference': url_for('api.get_football_conference',
+                                  id=self.conference_id,
+                                  _external=True),
+        }
+        return json_fantasy_league
+
+    @staticmethod
+    def from_json(json_fantasy_league):
+        body = json_fantasy_league.get('body')
+        if body is None or body == '':
+            raise ValidationError('fantasy league does not have a body')
+        return FantasyLeague(body=body)
+
     @staticmethod
     def generate_fake(count=20):
         from random import seed, randint
@@ -214,16 +245,19 @@ class FantasyLeague(db.Model):
 
         seed()
         user_count = User.query.count()
+        user_offset = randint(0, user_count - 1)
         conference_count = FootballConference.query.count()
         for i in range(count):
-            u = User.query.offset(randint(0, user_count - 1)).first()
-            c = FootballConference.query.\
+            users = User.query.offset(user_offset).limit(10).all()
+            commiss = User.query.offset(user_offset).first()
+            con = FootballConference.query.\
                 offset(randint(0, conference_count - 1)).first()
             fl = FantasyLeague(
                 name=forgery_py.name.company_name(),
                 draft_start_date=forgery_py.date.date(past=False),
-                commissioner=u,
-                conference=c,
+                commissioner=commiss,
+                conference=con,
+                users=users,
             )
             db.session.add(fl)
 
@@ -347,6 +381,14 @@ class FootballConference(db.Model):
                 db.session.commit()
             except IntegrityError:
                 db.session.rollback()
+
+    def to_json(self):
+        json_football_conference = {
+            'url': url_for('api.get_football_conference', id=self.id,
+                           _external=True),
+            'name': self.name,
+        }
+        return json_football_conference
 
 
 class DraftOrder(db.Model):
