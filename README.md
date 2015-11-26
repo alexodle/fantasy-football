@@ -35,7 +35,12 @@ Build the Develment Database
 python manage.py db_rebuild
 ```
 
-Launch the Python Shell with Database Context (i.e., Models with Fake Data)
+Start the development server.
+```
+python manage.py runserver
+```
+
+(Optional) Launch the Python Shell with Database Context for debugging
 ```
 python manage.py shell
 ```
