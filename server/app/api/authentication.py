@@ -70,7 +70,7 @@ def get_token():
     verification. This ensures a client can't generate a new token using an
     expired token.
     """
-    if g.current_user.is_anonymous() or g.token_used:
+    if g.current_user.is_anonymous or g.token_used:
         return unauthorized('Invalid credentials')
     return jsonify({'token': g.current_user.generate_auth_token(
         expiration=3600), 'expiration': 3600})
