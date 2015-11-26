@@ -131,6 +131,37 @@ class User(UserMixin, db.Model):
         db.session.add(self)
         return True
 
+    def generate_auth_token(self, expiration):
+        """
+        Create an authorization token that's used to authenticate API requests.
+
+        The token is generated using the current User's id.
+
+        Arguments:
+        expiration -- the expiration of the token, in seconds
+        """
+        s = Serializer(current_app.config['SECRET_KEY'],
+                       expires_in=expiration)
+        return s.dumps({'id': self.id}).decode('ascii')
+
+    @staticmethod
+    def verify_auth_token(token):
+        """
+        Verify an authorization token that's used to authenticate API requests.
+
+        This method is implemented as a static method because the User will
+        only be known after verification is complete.
+
+        Arguments:
+        token -- the token generated using the user's id
+        """
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token)
+        except:
+            return None
+        return User.query.get(data['id'])
+
     def __repr__(self):
         return '<User %r>' % self.username
 
