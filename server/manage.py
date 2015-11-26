@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
-from api import create_app, db
-from api.models import User, FootballConference, FantasyLeague, FantasyTeam, \
+from app import create_app, db
+from app.models import User, FootballConference, FantasyLeague, FantasyTeam, \
     FootballPlayer, FootballTeam, DraftOrder, DraftPick
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
