@@ -34,6 +34,7 @@ implement Basic HTTPAuth.
 In order to keep the RESTful API stateless, every request is authenticated
 (i.e., there's no notion of a User "session" using cookies). To authenticate with
 the API, the client must send one of the following:
+
 1. *Email Address* and *Password* (e.g. `email:password`)
 2. *Token* (e.g. `token:`)
 3. Nothing (when no credentials are passed the server considers the user "Anonymous")
