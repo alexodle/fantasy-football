@@ -327,10 +327,9 @@ class FootballPlayer(db.Model):
                            _external=True),
             'name': self.name,
             'position': self.position,
-            # TODO: uncomment after get_football_team route is ready
-            # 'football_team': url_for('api.get_football_team',
-            #                          id=self.football_team_id,
-            #                          _external=True),
+            'football_team': url_for('api.get_football_team',
+                                     id=self.football_team_id,
+                                     _external=True),
         }
         return json_football_player
 
@@ -363,6 +362,20 @@ class FootballTeam(db.Model):
     # backrefs
     players = db.relationship('FootballPlayer', backref='football_team',
                               lazy='dynamic')
+
+    def to_json(self):
+        json_football_player = {
+            'url': url_for('api.get_football_team', id=self.id,
+                           _external=True),
+            'name': self.name,
+            'conference': url_for('api.get_football_conference', id=self.id,
+                                  _external=True),
+            'football_players': url_for(
+                'api.get_football_team_football_players',
+                id=self.id, _external=True
+            ),
+        }
+        return json_football_player
 
     @staticmethod
     def generate_fake(count=80):
