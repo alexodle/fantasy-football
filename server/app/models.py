@@ -273,6 +273,19 @@ class FantasyTeam(db.Model):
                                   db.ForeignKey('fantasy_leagues.id'))
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
+    def to_json(self):
+        json_fantasy_team = {
+            'url': url_for('api.get_fantasy_team', id=self.id,
+                           _external=True),
+            'name': self.name,
+            'short_name': self.short_name,
+            'fantasy_league': url_for('api.get_fantasy_league',
+                                      id=self.fantasy_league_id,
+                                      _external=True),
+            'owner': url_for('api.get_user', id=self.owner_id, _external=True),
+        }
+        return json_fantasy_team
+
     @staticmethod
     def generate_fake(count=50):
         from random import seed, randint

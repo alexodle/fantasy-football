@@ -49,7 +49,7 @@ authenticated request to the following endpoint:
 
 # Resource Endpoints
 
-## Users
+## User
 * **get_users**
   * Endpoint: `/api/users/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/`
@@ -60,7 +60,15 @@ authenticated request to the following endpoint:
   * Endpoint: `/api/users/<int:id>/fantasy_leagues/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/1/fantasy_leagues/`
 
-## FantasyLeagues
+## FantasyTeam
+* **get_fantasy_teams**
+  * Endpoint: `/api/fantasy_teams/`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_teams/`
+* **get_fantasy_team**
+  * Endpoint: `/api/fantasy_teams/<int:id>`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_teams/1`
+
+## FantasyLeague
 * **get_fantasy_leagues**
   * Endpoint: `/api/fantasy_leagues/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/`
@@ -68,7 +76,7 @@ authenticated request to the following endpoint:
   * Endpoint: `/api/fantasy_leagues/<int:id>`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1`
 
-## FootballConferences
+## FootballConference
 * **get_football_conferences**
   * Endpoint: `/api/football_conferences/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_conferences/`
