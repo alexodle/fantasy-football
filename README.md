@@ -40,6 +40,20 @@ Start the development server.
 python manage.py runserver
 ```
 
+Test the service using HTTPie.
+```
+# command for authenticated api requests using HTTPie
+http --json --auth <email>:<password> GET <api_endpoint>
+
+# get request for authentication token
+http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/token
+http --json --auth alex@gmail.com:password GET http://127.0.0.1:5000/api/token
+
+# get request for fantasy leagues
+http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/
+http --json --auth alex@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/
+```
+
 (Optional) Launch the Python Shell with Database Context for debugging
 ```
 python manage.py shell
