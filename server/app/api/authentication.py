@@ -2,7 +2,7 @@ from flask import g, jsonify
 from flask.ext.httpauth import HTTPBasicAuth
 from ..models import User, AnonymousUser
 from . import api
-from .errors import unauthorized
+from .errors import unauthorized, forbidden
 
 # initialize object for basic HTTP authentication
 auth = HTTPBasicAuth()
@@ -57,7 +57,10 @@ def before_request():
     """
     Protect all routes in the api Blueprint with login_required.
     """
-    pass
+    print g.current_user
+    if not g.current_user.is_anonymous and \
+            not g.current_user.confirmed:
+        return forbidden('Unconfirmed account')
 
 
 @api.route('/token')
