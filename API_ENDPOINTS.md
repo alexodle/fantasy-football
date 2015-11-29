@@ -10,8 +10,9 @@ The server provides two users for testing API Endpoints:
   * username: aodle56
   * password: password
 
-Curl or [HTTPie](https://github.com/jkbrzt/httpie) can be used to send HTTP requests to the server to test the
-Endpoints.  The commands below demonstrate how to issue commands using [HTTPie](https://github.com/jkbrzt/httpie).
+Curl or [HTTPie](https://github.com/jkbrzt/httpie) can be used to send HTTP
+requests to the server to test the Endpoints.  The commands below demonstrate
+how to issue commands using [HTTPie](https://github.com/jkbrzt/httpie).
 ```
 # general format for authenticated request to api using HTTPie
 http --json --auth <email>:<password> GET <api_endpoint>
@@ -38,6 +39,13 @@ the API, the client must send one of the following:
 1. **Email Address** and **Password** (e.g. `email:password`)
 2. **Token** (e.g. `token:`)
 3. Nothing (when no credentials are passed the server considers the user "Anonymous")
+
+The API supports token based Authentication to avoid having to pass sensitive
+information (e.g., *Email Address* and *Password*) with every request. To obtain
+a temporary token (with an expiration of 1 hour), the client can send an
+authenticated request to the following endpoint:
+
+* `/api/token`
 
 # Resource Endpoints
 
