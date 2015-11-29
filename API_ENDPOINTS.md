@@ -43,9 +43,11 @@ the API, the client must send one of the following:
 The API supports token based Authentication to avoid having to pass sensitive
 information (e.g., *Email Address* and *Password*) with every request. To obtain
 a temporary token (with an expiration of 1 hour), the client can send an
-authenticated request to the following endpoint:
+authenticated request using **email address** and **password** to the following endpoint:
 
-* `/api/token`
+* **get_token**
+  * Endpoint: `/api/token`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/token`
 
 # Resource Endpoints
 
