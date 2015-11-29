@@ -56,12 +56,12 @@ authenticated request to the following endpoint:
 
 ## FantasyLeagues
 * **get_fantasy_leagues**
-** `/api/fantasy_leagues/`
+  * `/api/fantasy_leagues/`
 * **get_fantasy_league**
-** `/api/fantasy_leagues/<int:id>`
+  * `/api/fantasy_leagues/<int:id>`
 
 ## FootballConferences
 * **get_football_conferences**
-** `/api/football_conferences/`
+  * `/api/football_conferences/`
 * **get_football_conference**
-** `/api/football_conferences/<int:id>`
+  * `/api/football_conferences/<int:id>`
