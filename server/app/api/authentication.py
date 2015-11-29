@@ -57,7 +57,6 @@ def before_request():
     """
     Protect all routes in the api Blueprint with login_required.
     """
-    print g.current_user
     if not g.current_user.is_anonymous and \
             not g.current_user.confirmed:
         return forbidden('Unconfirmed account')
