@@ -85,3 +85,11 @@ authenticated request using **email address** and **password** to the following 
 * **get_football_conference**
   * Endpoint: `/api/football_conferences/<int:id>`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_conferences/1`
+
+## FootballPlayer
+* **get_football_players**
+  * Endpoint: `/api/football_conferences/`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_players/`
+* **get_football_player**
+  * Endpoint: `/api/football_conferences/<int:id>`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_players/1`

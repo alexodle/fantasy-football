@@ -321,6 +321,19 @@ class FootballPlayer(db.Model):
     draft_picks = db.relationship('DraftPick', backref='football_player',
                                   lazy='dynamic')
 
+    def to_json(self):
+        json_football_player = {
+            'url': url_for('api.get_football_player', id=self.id,
+                           _external=True),
+            'name': self.name,
+            'position': self.position,
+            # TODO: uncomment after get_football_team route is ready
+            # 'football_team': url_for('api.get_football_team',
+            #                          id=self.football_team_id,
+            #                          _external=True),
+        }
+        return json_football_player
+
     @staticmethod
     def generate_fake(count=500):
         from random import seed, randint
