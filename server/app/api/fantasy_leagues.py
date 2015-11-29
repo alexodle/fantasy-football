@@ -11,5 +11,5 @@ def get_fantasy_leagues():
 
 @api.route('/fantasy_leagues/<int:id>')
 def get_fantasy_league(id):
-    fantasy_league = FantasyLeague.get_or_404(id)
+    fantasy_league = FantasyLeague.query.get_or_404(id)
     return jsonify(fantasy_league.to_json())
