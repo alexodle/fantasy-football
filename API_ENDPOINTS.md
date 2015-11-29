@@ -1,11 +1,11 @@
 # Testing the API
 The server provides two users for testing API Endpoints:
 
-1. Salim
+1. **Salim**
   * email: salim@gmail.com
   * username: salim
   * password: password
-2. Alex
+2. **Alex**
   * email: alex@gmail.com
   * username: aodle56
   * password: password
@@ -35,8 +35,8 @@ In order to keep the RESTful API stateless, every request is authenticated
 (i.e., there's no notion of a User "session" using cookies). To authenticate with
 the API, the client must send one of the following:
 
-1. *Email Address* and *Password* (e.g. `email:password`)
-2. *Token* (e.g. `token:`)
+1. **Email Address** and **Password** (e.g. `email:password`)
+2. **Token** (e.g. `token:`)
 3. Nothing (when no credentials are passed the server considers the user "Anonymous")
 
 # Resource Endpoints
