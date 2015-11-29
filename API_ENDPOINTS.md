@@ -1,5 +1,6 @@
 # Testing the API
 The server provides two users for testing API Endpoints:
+
 1. Salim
   * email: salim@gmail.com
   * username: salim
