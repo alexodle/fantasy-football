@@ -53,3 +53,15 @@ authenticated request to the following endpoint:
 * `/api/users/`
 * `/api/users/<int:id>`
 * `/api/users/<int:id>/fantasy_leagues/`
+
+## FantasyLeagues
+* **get_fantasy_leagues**
+** `/api/fantasy_leagues/`
+* **get_fantasy_league**
+** `/api/fantasy_leagues/<int:id>`
+
+## FootballConferences
+* **get_football_conferences**
+** `/api/football_conferences/`
+* **get_football_conference**
+** `/api/football_conferences/<int:id>`
