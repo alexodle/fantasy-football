@@ -441,6 +441,16 @@ class DraftOrder(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'),
                         primary_key=True)
 
+    def to_json(self):
+        json_draft_order = {
+            'url': url_for('api.get_fantasy_league_draft_orders',
+                           id=self.fantasy_league_id,
+                           _external=True),
+            'order': self.order,
+            'user': url_for('api.get_user', id=self.user_id, _external=True),
+        }
+        return json_draft_order
+
     @staticmethod
     def generate_fake(rounds=5):
         # loop through every league, then every team and assign draft order
