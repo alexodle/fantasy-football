@@ -50,15 +50,18 @@ authenticated request to the following endpoint:
 # Resource Endpoints
 
 ## Users
-* `/api/users/`
-* `/api/users/<int:id>`
-* `/api/users/<int:id>/fantasy_leagues/`
+* **get_users**
+  * Endpoint: `/api/users/`
+* **get_user**
+  * Endpoint: `/api/users/<int:id>`
+* **get_user_fantasy_leagues**
+  * Endpoint: `/api/users/<int:id>/fantasy_leagues/`
 
 ## FantasyLeagues
 * **get_fantasy_leagues**
-  * `/api/fantasy_leagues/`
+  * Endpoint: `/api/fantasy_leagues/`
 * **get_fantasy_league**
-  * `/api/fantasy_leagues/<int:id>`
+  * Endpoint: `/api/fantasy_leagues/<int:id>`
 
 ## FootballConferences
 * **get_football_conferences**
