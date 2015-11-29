@@ -10,8 +10,8 @@ The server provides two users for testing API Endpoints:
   * username: aodle56
   * password: password
 
-Curl or HTTPie can be used to send HTTP requests to the server to test the
-Endpoints.  The commands below demonstrate how to issue commands using HTTPie.
+Curl or [HTTPie](https://github.com/jkbrzt/httpie) can be used to send HTTP requests to the server to test the
+Endpoints.  The commands below demonstrate how to issue commands using [HTTPie](https://github.com/jkbrzt/httpie).
 ```
 # general format for authenticated request to api using HTTPie
 http --json --auth <email>:<password> GET <api_endpoint>
