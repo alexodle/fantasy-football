@@ -32,6 +32,7 @@ export default {
     drafts: {}
   },
   meta: {
+    auth: { ...DEFAULT_META },
     current_user: { ...DEFAULT_META },
     my_leagues: { ...DEFAULT_META },
     fantasy_leagues: {} // Fill with DEFAULT_FANTASY_LEAGUE

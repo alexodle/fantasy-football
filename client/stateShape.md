@@ -62,6 +62,11 @@
 
   "meta": {
 
+    "auth": {
+      // ...<META>
+      "token": "123456abcdef"
+    },
+
     "current_user": {
       // ...<META>
       "id": 1

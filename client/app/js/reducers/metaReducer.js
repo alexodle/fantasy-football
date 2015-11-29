@@ -26,6 +26,7 @@ const LEAGUE_ENTITY_MAP = {
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
   return {
+    auth: meta.auth, // TODO
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
     fantasy_leagues: leaguesReducer(ensureLeague(meta.fantasy_leagues, action), action, metaUpdate)
