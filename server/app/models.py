@@ -475,6 +475,22 @@ class DraftPick(db.Model):
                                    db.ForeignKey('football_players.id'),
                                    primary_key=True)
 
+    def to_json(self):
+        json_draft_pick = {
+            'url': url_for('api.get_fantasy_league_draft_picks',
+                           id=self.fantasy_league_id,
+                           _external=True),
+            'pick_number': self.pick_number,
+            'fantasy_league': url_for('api.get_fantasy_league',
+                                      id=self.fantasy_league_id,
+                                      _external=True),
+            'user': url_for('api.get_user', id=self.user_id, _external=True),
+            'football_player': url_for('api.get_football_player',
+                                       id=self.football_player_id,
+                                       _external=True),
+        }
+        return json_draft_pick
+
     @staticmethod
     def generate_fake():
         # loop through every league, then every team and assign draft order
