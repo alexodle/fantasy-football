@@ -22,6 +22,13 @@ def get_user_fantasy_leagues(id):
     return jsonify({'fantasy_leagues': [l.to_json() for l in fantasy_leagues]})
 
 
+@api.route('/users/<int:id>/fantasy_teams/')
+def get_user_fantasy_teams(id):
+    user = User.query.get_or_404(id)
+    fantasy_teams = user.fantasy_teams.all()
+    return jsonify({'fantasy_teams': [t.to_json() for t in fantasy_teams]})
+
+
 @api.route('/users/<int:id>/commissioned_leagues/')
 def get_user_commissioned_leagues(id):
     user = User.query.get_or_404(id)
