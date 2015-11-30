@@ -11,7 +11,8 @@ var ARTIFICIAL_DELAY_LOW = 1;
 var ARTIFICIAL_DELAY_HIGH = 400;
 var PORTS = {
   webpack: 4000,
-  api: 4001
+  devApi: 4001,
+  prodApi: 5000
 };
 
 function getArtificialDelay() {
@@ -24,7 +25,10 @@ var compiler = webpack(webpackConfig);
 var webpackDevServer = new WebpackDevServer(compiler, {
   contentBase: path.resolve('./app/static/'),
   publicPath: '/dist/',
-  proxy: { '/api/*': 'http://localhost:' + PORTS.api + '/' },
+  proxy: {
+    '/api/*': 'http://localhost:' + PORTS.prodApi + '/',
+    '/dev_api/*': 'http://localhost:' + PORTS.devApi + '/'
+  },
   hot: true,
   watchOptions: {
     aggregateTimeout: 300,
@@ -33,7 +37,7 @@ var webpackDevServer = new WebpackDevServer(compiler, {
   stats: { colors: true }
 });
 
-expressApp.get('/api/*', function(req, res) {
+expressApp.get('/dev_api/*', function(req, res) {
   var reqPath = req.path.substring(1);
   if (reqPath.endsWith('/')) {
     reqPath = reqPath.substring(0, reqPath.length - 1);
@@ -55,4 +59,4 @@ expressApp.get('/api/*', function(req, res) {
 });
 
 webpackDevServer.listen(PORTS.webpack, 'localhost', function() {});
-expressApp.listen(PORTS.api, function () {});
+expressApp.listen(PORTS.devApi, function () {});
