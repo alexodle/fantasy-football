@@ -14,6 +14,10 @@ function ensureFantasyLeagueId(fn) {
   };
 }
 
+export function selectAuthMeta(state) {
+  return state.meta.auth;
+}
+
 export function selectCurrentUserMeta(state) {
   return state.meta.current_user;
 }

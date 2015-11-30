@@ -1,5 +1,10 @@
 import _ from 'lodash';
+import request from 'superagent';
+import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
+import {Positions} from '../Constants';
+import {pushState} from 'redux-router';
 import {
+  LOAD_AUTH,
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
@@ -8,9 +13,16 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER
 } from './ActionTypes';
-import request from 'superagent';
-import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
-import {Positions} from '../Constants';
+import {
+  selectAuthMeta,
+  selectCurrentUserMeta,
+  selectLeagueDraftOrderMeta,
+  selectLeagueDraftPicksMeta,
+  selectLeagueFantasyPlayersMeta,
+  selectLeagueFantasyTeamsMeta,
+  selectLeagueFootballPlayersMeta,
+  selectMyLeaguesMeta
+} from '../selectors/metaSelectors';
 
 const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
   max_team_size: 11,
@@ -24,17 +36,19 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
     [Positions['D/ST']]: 1
   }
 };
-import {
-  selectLeagueDraftOrderMeta,
-  selectLeagueDraftPicksMeta,
-  selectLeagueFantasyPlayersMeta,
-  selectLeagueFantasyTeamsMeta,
-  selectLeagueFootballPlayersMeta,
-  selectMyLeaguesMeta,
-  selectCurrentUserMeta
-} from '../selectors/metaSelectors';
 
 const DATA_KEY = 'data';
+
+export function loadAuth(username, password, nextPath = '/') {
+  return buildAsyncAction({
+    actionType: LOAD_AUTH,
+    url: '/api/token',
+    auth: { u: username, p: password },
+    metaSelector: selectAuthMeta,
+    dataKey: 'token',
+    onSuccess: (dispatch, _getState) => dispatch(pushState(null, nextPath))
+  });
+}
 
 export function loadDraftOrder(fantasyLeagueId) {
   return buildAsyncAction({
@@ -128,8 +142,11 @@ function buildAsyncAction({
   actionType,
   url,
   metaSelector,
+  dataKey = DATA_KEY,
+  auth = null,
   extraProps = {},
-  parser = _.identity
+  parser = _.identity,
+  onSuccess = _.noop
 }) {
   return function (dispatch, getState) {
     const meta = metaSelector(getState());
@@ -138,8 +155,10 @@ function buildAsyncAction({
     }
 
     dispatch({ type: actionType, state: ACTIVE, ...extraProps });
-    request
-      .get(url)
+
+    let req = request.get(url);
+    req = (auth ? req.auth(auth.u, auth.p) : req);
+    req
       .set('Accept', 'application/json')
       .end(function (err, res) {
         if (err) {
@@ -147,7 +166,7 @@ function buildAsyncAction({
           return;
         }
 
-        let result = res.body[DATA_KEY];
+        let result = res.body[dataKey];
         if (_.isArray(result)) {
           result = _.map(result, parser);
         } else {
@@ -160,6 +179,8 @@ function buildAsyncAction({
           result,
           ...extraProps
         });
+
+        onSuccess && onSuccess(dispatch, getState);
       });
   };
 }

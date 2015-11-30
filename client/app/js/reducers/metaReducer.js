@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {
+  LOAD_AUTH,
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
@@ -26,11 +27,25 @@ const LEAGUE_ENTITY_MAP = {
 export default function metaReducer(meta, action) {
   const metaUpdate = getMetaUpdate(action);
   return {
-    auth: meta.auth, // TODO
+    auth: authReducer(meta.auth, action, metaUpdate),
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
     my_leagues: myLeaguesReducer(meta.my_leagues, action, metaUpdate),
     fantasy_leagues: leaguesReducer(ensureLeague(meta.fantasy_leagues, action), action, metaUpdate)
   };
+}
+
+function authReducer(auth, action, metaUpdate) {
+  switch (action.type) {
+
+    case LOAD_AUTH:
+      if (action.state === SUCCEEDED) {
+        return { ...metaUpdate, token: action.result };
+      }
+      return { ...auth, ...metaUpdate };
+
+    default:
+      return auth;
+  }
 }
 
 function currentUserReducer(current_user, action, metaUpdate) {
