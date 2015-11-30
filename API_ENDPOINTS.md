@@ -61,6 +61,9 @@ authenticated request using **email address** and **password** to the following 
 * **get_user_fantasy_leagues**
   * Endpoint: `/api/users/<int:id>/fantasy_leagues/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/1/fantasy_leagues/`
+* **get_user_commissioned_leagues**
+  * Endpoint: `/api/users/<int:id>/commissioned_leagues/`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/1/commissioned_leagues/`
 
 ## FantasyTeam
 * **get_fantasy_teams**
