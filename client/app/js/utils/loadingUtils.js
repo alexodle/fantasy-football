@@ -1,5 +1,5 @@
 export function hasLoaded(meta) {
-  return meta && meta.lastUpdated != null;
+  return meta && !hasFailed(meta) && meta.lastUpdated != null;
 }
 
 export function hasFailed(meta) {

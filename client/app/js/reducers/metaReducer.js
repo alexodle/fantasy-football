@@ -39,7 +39,7 @@ function authReducer(auth, action, metaUpdate) {
 
     case LOAD_AUTH:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, token: action.result };
+        return { ...metaUpdate, token: action.result, user: action.user };
       }
       return { ...auth, ...metaUpdate };
 

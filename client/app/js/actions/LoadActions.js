@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import request from 'superagent';
 import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
+import {hasLoaded} from '../utils/loadingUtils';
 import {Positions} from '../Constants';
 import {pushState} from 'redux-router';
 import {
@@ -46,6 +47,7 @@ export function loadAuth(username, password, nextPath = '/') {
     auth: { u: username, p: password },
     metaSelector: selectAuthMeta,
     dataKey: 'token',
+    extraProps: { user: username },
     onSuccess: (dispatch, _getState) => dispatch(pushState(null, nextPath))
   });
 }
@@ -53,7 +55,7 @@ export function loadAuth(username, password, nextPath = '/') {
 export function loadDraftOrder(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_DRAFT_ORDER,
-    url: `/api/league/${fantasyLeagueId}/draft_order/`,
+    url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
@@ -64,7 +66,7 @@ export function loadDraftOrder(fantasyLeagueId) {
 export function loadDraftPicks(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_DRAFT_PICKS,
-    url: `/api/league/${fantasyLeagueId}/draft_picks/`,
+    url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
@@ -75,7 +77,7 @@ export function loadDraftPicks(fantasyLeagueId) {
 export function loadFantasyPlayers(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FANTASY_PLAYERS,
-    url: `/api/league/${fantasyLeagueId}/fantasy_players/`,
+    url: `/dev_api/league/${fantasyLeagueId}/fantasy_players/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
@@ -86,7 +88,7 @@ export function loadFantasyPlayers(fantasyLeagueId) {
 export function loadFantasyTeams(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FANTASY_TEAMS,
-    url: `/api/league/${fantasyLeagueId}/fantasy_teams/`,
+    url: `/dev_api/league/${fantasyLeagueId}/fantasy_teams/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueFantasyTeamsMeta(state, fantasyLeagueId);
@@ -97,7 +99,7 @@ export function loadFantasyTeams(fantasyLeagueId) {
 export function loadFootballPlayers(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FOOTBALL_PLAYERS,
-    url: `/api/league/${fantasyLeagueId}/football_players/`,
+    url: `/dev_api/league/${fantasyLeagueId}/football_players/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueFootballPlayersMeta(state, fantasyLeagueId);
@@ -108,7 +110,7 @@ export function loadFootballPlayers(fantasyLeagueId) {
 export function loadMyLeagues() {
   return buildAsyncAction({
     actionType: LOAD_MY_LEAGUES,
-    url: '/api/user/fantasy_leagues/',
+    url: '/dev_api/user/fantasy_leagues/',
     parser: parseLeague,
     metaSelector: selectMyLeaguesMeta
   });
@@ -117,7 +119,7 @@ export function loadMyLeagues() {
 export function loadUser() {
   return buildAsyncAction({
     actionType: LOAD_USER,
-    url: '/api/user/',
+    url: '/dev_api/user/',
     metaSelector: selectCurrentUserMeta
   });
 }
@@ -155,6 +157,13 @@ function buildAsyncAction({
     }
 
     dispatch({ type: actionType, state: ACTIVE, ...extraProps });
+
+    if (!auth) {
+      const authMeta = selectAuthMeta(getState());
+      if (hasLoaded(authMeta)) {
+        auth = { u: authMeta.user, p: authMeta.token };
+      }
+    }
 
     let req = request.get(url);
     req = (auth ? req.auth(auth.u, auth.p) : req);

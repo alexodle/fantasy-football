@@ -64,7 +64,8 @@
 
     "auth": {
       // ...<META>
-      "token": "123456abcdef"
+      "token": "123456abcdef",
+      "user": "alex@gmail.com"
     },
 
     "current_user": {
