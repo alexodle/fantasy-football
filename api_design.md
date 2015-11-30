@@ -21,7 +21,7 @@
 ###Login###
 
 
-*GET - /api/user (get user)*
+*GET - /api/current_user (get user)*
 
 return: { data: { <User> } } || null (if not logged in)
 
