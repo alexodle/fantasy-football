@@ -30,6 +30,16 @@ def get_user_fantasy_league_draft_picks(user_id, league_id):
                     [p.to_json() for p in draft_picks]})
 
 
+@api.route('/users/<int:user_id>/fantasy_leagues/<int:league_id>/'
+           'draft_orders/')
+def get_user_fantasy_league_draft_orders(user_id, league_id):
+    user = User.query.get_or_404(user_id)
+    draft_orders = \
+        user.draft_orders.filter_by(fantasy_league_id=league_id).all()
+    return jsonify({'draft_orders':
+                    [o.to_json() for o in draft_orders]})
+
+
 @api.route('/users/<int:id>/fantasy_teams/')
 def get_user_fantasy_teams(id):
     user = User.query.get_or_404(id)
