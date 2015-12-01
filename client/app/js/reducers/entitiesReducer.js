@@ -54,7 +54,7 @@ function loadBasicEntitiesReducer(entities, action) {
   };
   const entityType = BASIC_ENTITIES_MAP[action.type];
   if (entityType) {
-    const value = _.indexBy(action.result, 'id');
+    const value = _.indexBy(action.payload, 'id');
     return update(entities, { [entityType]: { $set: value } });
   }
 }
@@ -68,7 +68,7 @@ function loadDraftEntitiesReducer(entities, action) {
   if (entityType) {
     entities = ensureDraft(entities, action);
 
-    const value = _.sortBy(action.result, 'order');
+    const value = _.sortBy(action.payload, 'order');
     return update(entities, {
       drafts: { [action.league_id]: { [entityType]: { $set: value } } }
     });
@@ -77,7 +77,7 @@ function loadDraftEntitiesReducer(entities, action) {
 
 function loadUserReducer(entities, action) {
   if (action.type === LOAD_USER) {
-    const value = action.result;
+    const value = action.payload;
     return update(entities, { users: { [value.id]: { $set: value } } });
   }
 }

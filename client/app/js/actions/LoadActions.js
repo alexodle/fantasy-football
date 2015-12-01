@@ -12,7 +12,8 @@ import {
   LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
-  LOAD_USER
+  LOAD_USER,
+  SET_UNAUTHENTICATED
 } from './ActionTypes';
 import {
   selectAuthMeta,
@@ -39,6 +40,7 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
 };
 
 const DATA_KEY = 'data';
+const AUTH_REQUIRED = 'AUTH_REQUIRED';
 
 export function loadAuth(username, password, nextPath = '/') {
   return buildAsyncAction({
@@ -55,6 +57,7 @@ export function loadAuth(username, password, nextPath = '/') {
 export function loadDraftOrder(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_DRAFT_ORDER,
+    auth: AUTH_REQUIRED,
     url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
@@ -66,6 +69,7 @@ export function loadDraftOrder(fantasyLeagueId) {
 export function loadDraftPicks(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_DRAFT_PICKS,
+    auth: AUTH_REQUIRED,
     url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
@@ -77,6 +81,7 @@ export function loadDraftPicks(fantasyLeagueId) {
 export function loadFantasyPlayers(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FANTASY_PLAYERS,
+    auth: AUTH_REQUIRED,
     url: `/dev_api/league/${fantasyLeagueId}/fantasy_players/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
@@ -88,6 +93,7 @@ export function loadFantasyPlayers(fantasyLeagueId) {
 export function loadFantasyTeams(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FANTASY_TEAMS,
+    auth: AUTH_REQUIRED,
     url: `/dev_api/league/${fantasyLeagueId}/fantasy_teams/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
@@ -99,6 +105,7 @@ export function loadFantasyTeams(fantasyLeagueId) {
 export function loadFootballPlayers(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FOOTBALL_PLAYERS,
+    auth: AUTH_REQUIRED,
     url: `/dev_api/league/${fantasyLeagueId}/football_players/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
@@ -110,6 +117,7 @@ export function loadFootballPlayers(fantasyLeagueId) {
 export function loadMyLeagues() {
   return buildAsyncAction({
     actionType: LOAD_MY_LEAGUES,
+    auth: AUTH_REQUIRED,
     url: '/dev_api/user/fantasy_leagues/',
     parser: parseLeague,
     metaSelector: selectMyLeaguesMeta
@@ -119,6 +127,7 @@ export function loadMyLeagues() {
 export function loadUser() {
   return buildAsyncAction({
     actionType: LOAD_USER,
+    auth: AUTH_REQUIRED,
     url: '/dev_api/user/',
     metaSelector: selectCurrentUserMeta
   });
@@ -140,17 +149,34 @@ function shouldFetch(meta) {
   }
 }
 
+// TODO: Separate REST/auth/http logic into separate function/file
 function buildAsyncAction({
   actionType,
   url,
   metaSelector,
   dataKey = DATA_KEY,
-  auth = null,
   extraProps = {},
   parser = _.identity,
-  onSuccess = _.noop
+  onSuccess = _.noop,
+
+  /**
+   * Two options:
+   * - AUTH_REQUIRED - we will require auth and pull from current state
+   * - { u: <username>, p: <password> } - we will use given auth (use for obtaining token)
+   */
+  auth = null
 }) {
-  return function (dispatch, getState) {
+  return function asyncAction(dispatch, getState) {
+    if (auth === AUTH_REQUIRED) {
+      const authMeta = selectAuthMeta(getState());
+      if (!hasLoaded(authMeta)) {
+        dispatch({ type: SET_UNAUTHENTICATED });
+        return;
+      }
+
+      auth = { u: authMeta.user, p: authMeta.token };
+    }
+
     const meta = metaSelector(getState());
     if (!shouldFetch(meta)) {
       return;
@@ -158,34 +184,34 @@ function buildAsyncAction({
 
     dispatch({ type: actionType, state: ACTIVE, ...extraProps });
 
-    if (!auth) {
-      const authMeta = selectAuthMeta(getState());
-      if (hasLoaded(authMeta)) {
-        auth = { u: authMeta.user, p: authMeta.token };
-      }
-    }
-
     let req = request.get(url);
     req = (auth ? req.auth(auth.u, auth.p) : req);
     req
       .set('Accept', 'application/json')
+      .set('X-Requested-With', 'XMLHttpRequest')
       .end(function (err, res) {
         if (err) {
-          dispatch({ type: actionType, state: FAILED, ...extraProps });
+          dispatch({
+            type: actionType,
+            state: FAILED,
+            status: res.statusCode,
+            ...extraProps
+          });
           return;
         }
 
-        let result = res.body[dataKey];
-        if (_.isArray(result)) {
-          result = _.map(result, parser);
+        let payload = res.body[dataKey];
+        if (_.isArray(payload)) {
+          payload = _.map(payload, parser);
         } else {
-          result = parser(result);
+          payload = parser(payload);
         }
         dispatch({
           type: actionType,
           state: SUCCEEDED,
           lastUpdated: Date.now(),
-          result,
+          status: res.statusCode,
+          payload,
           ...extraProps
         });
 

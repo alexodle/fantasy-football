@@ -17,7 +17,10 @@ def bad_request(message):
 
 def unauthorized(message):
     response = jsonify({'error': 'unauthorized', 'message': message})
-    response.status_code = 401
+
+    # HACK: should be 401, but this prevents the browser from showing the auth popup
+    response.status_code = 403
+
     return response
 
 

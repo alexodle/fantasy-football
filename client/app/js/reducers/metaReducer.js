@@ -7,7 +7,8 @@ import {
   LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
-  LOAD_USER
+  LOAD_USER,
+  SET_UNAUTHENTICATED
 } from '../actions/ActionTypes';
 import update from 'react-addons-update';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
@@ -25,7 +26,7 @@ const LEAGUE_ENTITY_MAP = {
 };
 
 export default function metaReducer(meta, action) {
-  const metaUpdate = getMetaUpdate(action);
+  const metaUpdate = getAsyncMetaUpdate(action);
   return {
     auth: authReducer(meta.auth, action, metaUpdate),
     current_user: currentUserReducer(meta.current_user, action, metaUpdate),
@@ -39,9 +40,12 @@ function authReducer(auth, action, metaUpdate) {
 
     case LOAD_AUTH:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, token: action.result, user: action.user };
+        return { ...metaUpdate, token: action.payload, user: action.user };
       }
       return { ...auth, ...metaUpdate };
+
+    case SET_UNAUTHENTICATED:
+      return { didInvalidate: true };
 
     default:
       return auth;
@@ -53,7 +57,7 @@ function currentUserReducer(current_user, action, metaUpdate) {
 
     case LOAD_USER:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, id: action.result.id };
+        return { ...metaUpdate, id: action.payload.id };
       }
       return { ...current_user, ...metaUpdate };
 
@@ -67,7 +71,7 @@ function myLeaguesReducer(myLeagues, action, metaUpdate) {
 
     case LOAD_MY_LEAGUES:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, items: _.pluck(action.result, 'id') };
+        return { ...metaUpdate, items: _.pluck(action.payload, 'id') };
       }
       return { ...myLeagues, ...metaUpdate };
 
@@ -86,7 +90,7 @@ function leagueEntityReducer(leagues, action, metaUpdate) {
   if (leagueEntity) {
     let value = metaUpdate;
     if (action.state === SUCCEEDED) {
-      value = { ...metaUpdate, items: _.pluck(action.result, 'id') };
+      value = { ...metaUpdate, items: _.pluck(action.payload, 'id') };
     }
 
     return update(leagues, {
@@ -112,7 +116,7 @@ function leaguesReducer(leagues, action, metaUpdate) {
   );
 }
 
-function getMetaUpdate(action) {
+function getAsyncMetaUpdate(action) {
   switch (action.state) {
     case ACTIVE:
       return { isFetching: true };
@@ -126,7 +130,8 @@ function getMetaUpdate(action) {
     case FAILED:
       return {
         isFetching: false,
-        didFailFetching: true
+        didFailFetching: true,
+        statusCode: action.status
       };
     default:
       return;

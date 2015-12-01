@@ -115,7 +115,7 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
         })
         .should
         .eql({
@@ -141,7 +141,7 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
         })
         .should
         .eql({
@@ -167,7 +167,7 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          result: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
         })
         .should
         .eql({
@@ -198,7 +198,7 @@ describe('metaReducer', () => {
         type: LOAD_USER,
         state: SUCCEEDED,
         lastUpdated: 123,
-        result: { id: 1 }
+        payload: { id: 1 }
       })
       .should.eql({ ...initialState.meta, current_user: { ...SUCCESS_META, id: 1 } });
     });
@@ -224,7 +224,7 @@ describe('metaReducer', () => {
         type: LOAD_MY_LEAGUES,
         state: SUCCEEDED,
         lastUpdated: 123,
-        result: [{ id: 1 }, { id: 2 }, { id: 3 }]
+        payload: [{ id: 1 }, { id: 2 }, { id: 3 }]
       })
       .should.eql({
         ...initialState.meta,

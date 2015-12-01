@@ -59,14 +59,14 @@ describe('entitiesReducer', () => {
         [LOAD_FOOTBALL_PLAYERS, 'football_players'],
         [LOAD_MY_LEAGUES, 'fantasy_leagues']
       ], ([actionType, entityName]) => {
-        const result = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
+        const payload = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }];
         entitiesReducer(LOADED_ENTITIES, {
           type: actionType,
           state: SUCCEEDED,
-          result: result
+          payload
         })
         .should
-        .eql({ ...LOADED_ENTITIES, [entityName]: _.indexBy(result, 'id') });
+        .eql({ ...LOADED_ENTITIES, [entityName]: _.indexBy(payload, 'id') });
       });
     });
 
@@ -75,22 +75,22 @@ describe('entitiesReducer', () => {
         [LOAD_DRAFT_ORDER, 'order'],
         [LOAD_DRAFT_PICKS, 'picks']
       ], ([actionType, entityName]) => {
-        const result = [{ order: 4 }, { order: 3 }, { order: 5 }, { order: 1 }];
+        const payload = [{ order: 4 }, { order: 3 }, { order: 5 }, { order: 1 }];
         entitiesReducer(initialState.entities, {
           type: actionType,
           state: SUCCEEDED,
-          result: result,
-          league_id: 1
+          league_id: 1,
+          payload
         })
         .should
         .eql({ ...initialState.entities, drafts: {
-          1: { [entityName]: _.sortBy(result, 'order')  }
+          1: { [entityName]: _.sortBy(payload, 'order')  }
         } });
       });
     });
 
     it('loads my user entitity on SUCCESS', () => {
-      const result = { id: 5 };
+      const payload = { id: 5 };
       const currentUsers = [{ id: 1 }, { id: 2 }];
       entitiesReducer({
         ...initialState.entities,
@@ -98,12 +98,12 @@ describe('entitiesReducer', () => {
       }, {
         type: LOAD_USER,
         state: SUCCEEDED,
-        result: result
+        payload
       })
       .should
       .eql({
         ...initialState.entities,
-        users: _.indexBy(currentUsers.concat([result]), 'id')
+        users: _.indexBy(currentUsers.concat([payload]), 'id')
       });
     });
 
