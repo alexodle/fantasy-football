@@ -92,6 +92,8 @@ const Login = React.createClass({
     const {email, password} = this.state;
     const {dispatch} = this.props;
     dispatch(loadAuth(email, password));
+
+    this.setState({ password: '' });
   }
 
 });
