@@ -131,7 +131,7 @@ function getAsyncMetaUpdate(action) {
       return {
         isFetching: false,
         didFailFetching: true,
-        statusCode: action.status
+        statusCode: action.statusCode
       };
     default:
       return;

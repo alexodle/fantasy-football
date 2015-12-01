@@ -194,7 +194,7 @@ function buildAsyncAction({
           dispatch({
             type: actionType,
             state: FAILED,
-            status: res.statusCode,
+            statusCode: res.statusCode,
             ...extraProps
           });
           return;
@@ -210,7 +210,7 @@ function buildAsyncAction({
           type: actionType,
           state: SUCCEEDED,
           lastUpdated: Date.now(),
-          status: res.statusCode,
+          statusCode: res.statusCode,
           payload,
           ...extraProps
         });

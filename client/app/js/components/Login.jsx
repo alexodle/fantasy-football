@@ -12,7 +12,7 @@ const Login = React.createClass({
     authMeta: PropTypes.shape({
       isFetching: PropTypes.bool.isRequired,
       didFailFetching: PropTypes.bool.isRequired,
-      status: PropTypes.number
+      statusCode: PropTypes.number
     }).isRequired,
     dispatch: PropTypes.func.isRequired
   },

@@ -21,7 +21,7 @@ const SUCCESS_META = {
   lastUpdated: 123
 };
 
-const FAILED_META = { ...DEFAULT_META, didFailFetching: true };
+const FAILED_META = { ...DEFAULT_META, didFailFetching: true, statusCode: 401 };
 
 chai.should();
 
@@ -204,7 +204,7 @@ describe('metaReducer', () => {
     });
 
     it('updates current user FAILED', () => {
-      metaReducer(initialState.meta, { type: LOAD_USER, state: FAILED })
+      metaReducer(initialState.meta, { type: LOAD_USER, state: FAILED, statusCode: 401 })
       .should
       .eql({ ...initialState.meta, current_user: FAILED_META });
     });
@@ -233,7 +233,7 @@ describe('metaReducer', () => {
     });
 
     it('updates my leagues FAILED', () => {
-      metaReducer(initialState.meta, { type: LOAD_MY_LEAGUES, state: FAILED })
+      metaReducer(initialState.meta, { type: LOAD_MY_LEAGUES, state: FAILED, statusCode: 401 })
       .should
       .eql({ ...initialState.meta, my_leagues: FAILED_META });
     });
