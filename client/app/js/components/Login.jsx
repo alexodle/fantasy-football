@@ -32,7 +32,7 @@ const Login = React.createClass({
     const {authMeta} = this.props;
     const prevAuthMeta = prevProps.authMeta;
     if (prevAuthMeta.isFetching && !authMeta.isFetching) {
-      this.refs.usernameInput.focus();
+      this.refs.usernameInput.select();
     }
   },
 
