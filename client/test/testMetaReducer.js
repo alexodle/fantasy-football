@@ -18,7 +18,8 @@ const SUCCESS_META = {
   isFetching: false,
   didInvalidate: false,
   didFailFetching: false,
-  lastUpdated: 123
+  lastUpdated: 123,
+  statusCode: 200
 };
 
 const FAILED_META = { ...DEFAULT_META, didFailFetching: true, statusCode: 401 };
@@ -52,7 +53,8 @@ describe('metaReducer', () => {
           type: LOAD_DRAFT_ORDER,
           state: SUCCEEDED,
           league_id: 1,
-          lastUpdated: 123
+          lastUpdated: 123,
+          statusCode: 200
         })
         .should.eql({
           ...initialState.meta,
@@ -76,7 +78,8 @@ describe('metaReducer', () => {
           type: LOAD_DRAFT_PICKS,
           state: SUCCEEDED,
           league_id: 1,
-          lastUpdated: 123
+          lastUpdated: 123,
+          statusCode: 200
         })
         .should.eql({
           ...initialState.meta,
@@ -115,7 +118,8 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }],
+          statusCode: 200
         })
         .should
         .eql({
@@ -141,7 +145,8 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }],
+          statusCode: 200
         })
         .should
         .eql({
@@ -167,7 +172,8 @@ describe('metaReducer', () => {
           state: SUCCEEDED,
           league_id: 1,
           lastUpdated: 123,
-          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }]
+          payload: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }],
+          statusCode: 200
         })
         .should
         .eql({
@@ -198,7 +204,8 @@ describe('metaReducer', () => {
         type: LOAD_USER,
         state: SUCCEEDED,
         lastUpdated: 123,
-        payload: { id: 1 }
+        payload: { id: 1 },
+        statusCode: 200
       })
       .should.eql({ ...initialState.meta, current_user: { ...SUCCESS_META, id: 1 } });
     });
@@ -224,7 +231,8 @@ describe('metaReducer', () => {
         type: LOAD_MY_LEAGUES,
         state: SUCCEEDED,
         lastUpdated: 123,
-        payload: [{ id: 1 }, { id: 2 }, { id: 3 }]
+        payload: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        statusCode: 200
       })
       .should.eql({
         ...initialState.meta,

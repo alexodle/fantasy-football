@@ -125,7 +125,8 @@ function getAsyncMetaUpdate(action) {
         isFetching: false,
         didInvalidate: false,
         didFailFetching: false,
-        lastUpdated: action.lastUpdated
+        lastUpdated: action.lastUpdated,
+        statusCode: action.statusCode
       };
     case FAILED:
       return {
