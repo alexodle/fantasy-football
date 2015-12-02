@@ -38,7 +38,7 @@ export default function requiresAuth(Component) {
   });
 
   const mapStateToProps = (state) => ({
-    isAuthenticated: !!state.meta.auth.lastUpdated,
+    isAuthenticated: !!state.meta.auth.lastUpdated && !state.meta.auth.didInvalidate,
     location: state.router.location
   });
 

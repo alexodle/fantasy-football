@@ -16,6 +16,7 @@
   "didInvalidate": false,
   "didFailFetching": false,
   "lastUpdated": 1439478405547,
+  "statusCode": 200
 }
 ```
 

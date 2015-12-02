@@ -24,6 +24,18 @@ const Login = React.createClass({
     };
   },
 
+  componentDidMount() {
+    this.refs.usernameInput.focus();
+  },
+
+  componentDidUpdate(prevProps) {
+    const {authMeta} = this.props;
+    const prevAuthMeta = prevProps.authMeta;
+    if (prevAuthMeta.isFetching && !authMeta.isFetching) {
+      this.refs.usernameInput.focus();
+    }
+  },
+
   render() {
     const {authMeta} = this.props;
     const {email, password} = this.state;
@@ -33,6 +45,7 @@ const Login = React.createClass({
 
     const isAuthError = authMeta.statusCode === 403;
 
+    const formErrorClass = isAuthError ? ' has-error' : '';
     return (
       <FFPanel title='Log in'>
         {!error ? null : (
@@ -43,19 +56,19 @@ const Login = React.createClass({
           </div>
         )}
         <form>
-          <div className='form-group'>
+          <div className={'form-group' + formErrorClass}>
             <label htmlFor='email'>Email address</label>
             <input
+                ref='usernameInput'
                 value={email}
                 type='email'
                 className='form-control'
                 id='email'
                 placeholder='Email'
                 onChange={this._onEmailChange}
-                disabled={disabled}
             />
           </div>
-          <div className='form-group'>
+          <div className={'form-group' + formErrorClass}>
             <label htmlFor='password'>Password</label>
             <input
                 value={password}
@@ -64,7 +77,6 @@ const Login = React.createClass({
                 id='password'
                 placeholder='Password'
                 onChange={this._onPasswordChange}
-                disabled={disabled}
             />
           </div>
           <button

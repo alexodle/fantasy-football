@@ -45,7 +45,7 @@ function authReducer(auth, action, metaUpdate) {
       return { ...auth, ...metaUpdate };
 
     case SET_UNAUTHENTICATED:
-      return { didInvalidate: true };
+      return { ...auth, didInvalidate: true };
 
     default:
       return auth;

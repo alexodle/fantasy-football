@@ -9,7 +9,8 @@ export const DEFAULT_META = {
   isFetching: false,
   didInvalidate: true,
   didFailFetching: false,
-  lastUpdated: null
+  lastUpdated: null,
+  statusCode: null
 };
 
 export const DEFAULT_FANTASY_LEAGUE = {
