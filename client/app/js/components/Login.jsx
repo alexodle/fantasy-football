@@ -48,6 +48,8 @@ const Login = React.createClass({
 
     const formErrorClass = isAuthError ? ' has-error' : '';
     return (
+      <div className='row'>
+      <div className='col-md-4'>
       <FFPanel title='Log in'>
         {!error ? null : (
           <div className='alert alert-danger' role='alert'>
@@ -88,6 +90,8 @@ const Login = React.createClass({
           >Log in</button>
         </form>
       </FFPanel>
+      </div>
+      </div>
     );
   },
 
