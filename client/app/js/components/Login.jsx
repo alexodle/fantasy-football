@@ -1,7 +1,8 @@
 import FFPanel from './FFPanel';
+import Loading from './Loading';
 import React, {PropTypes} from 'react';
-import {loadAuth} from '../actions/LoadActions';
 import {connect} from 'react-redux';
+import {loadAuth} from '../actions/LoadActions';
 import {selectAuthMeta} from '../selectors/metaSelectors';
 
 const Login = React.createClass({
@@ -40,56 +41,70 @@ const Login = React.createClass({
     const {authMeta} = this.props;
     const {email, password} = this.state;
 
-    const disabled = authMeta.isFetching || !email.length || !password.length;
-    const error = authMeta.didFailFetching;
+    let body = null;
 
-    const isAuthError = authMeta.statusCode === 403;
+    if (authMeta.isFetching) {
+      body = <Loading />;
 
-    const formErrorClass = isAuthError ? ' has-error' : '';
+    } else {
+      const disabled = !email.length || !password.length;
+      const error = authMeta.didFailFetching;
+
+      const isAuthError = authMeta.statusCode === 403;
+
+      const formErrorClass = isAuthError ? ' has-error' : '';
+
+      body = (
+        <div>
+          {!error ? null : (
+            <div className='alert alert-danger' role='alert'>
+              {isAuthError ?
+                'Bad username/password.' :
+                'Failed to connect! Try again.'}
+            </div>
+          )}
+          <form>
+            <div className={'form-group' + formErrorClass}>
+              <label htmlFor='email'>Email address</label>
+              <input
+                  ref='usernameInput'
+                  value={email}
+                  type='email'
+                  className='form-control'
+                  id='email'
+                  placeholder='Email'
+                  onChange={this._onEmailChange}
+              />
+            </div>
+            <div className={'form-group' + formErrorClass}>
+              <label htmlFor='password'>Password</label>
+              <input
+                  value={password}
+                  type='password'
+                  className='form-control'
+                  id='password'
+                  placeholder='Password'
+                  onChange={this._onPasswordChange}
+              />
+            </div>
+            <button
+                type='submit'
+                className='btn btn-default'
+                onClick={this._onLogin}
+                disabled={disabled}
+            >Log in</button>
+          </form>
+        </div>
+      );
+    }
+
     return (
       <div className='row'>
-      <div className='col-md-4'>
-      <FFPanel title='Log in'>
-        {!error ? null : (
-          <div className='alert alert-danger' role='alert'>
-            {isAuthError ?
-              'Bad username/password.' :
-              'Failed to connect! Try again.'}
-          </div>
-        )}
-        <form>
-          <div className={'form-group' + formErrorClass}>
-            <label htmlFor='email'>Email address</label>
-            <input
-                ref='usernameInput'
-                value={email}
-                type='email'
-                className='form-control'
-                id='email'
-                placeholder='Email'
-                onChange={this._onEmailChange}
-            />
-          </div>
-          <div className={'form-group' + formErrorClass}>
-            <label htmlFor='password'>Password</label>
-            <input
-                value={password}
-                type='password'
-                className='form-control'
-                id='password'
-                placeholder='Password'
-                onChange={this._onPasswordChange}
-            />
-          </div>
-          <button
-              type='submit'
-              className='btn btn-default'
-              onClick={this._onLogin}
-              disabled={disabled}
-          >Log in</button>
-        </form>
-      </FFPanel>
-      </div>
+        <div className='col-md-4 col-sm-12'>
+          <FFPanel title='Log in'>
+            {body}
+          </FFPanel>
+        </div>
       </div>
     );
   },
