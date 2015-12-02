@@ -40,7 +40,6 @@ const Login = React.createClass({
     const {authMeta} = this.props;
     const {email, password} = this.state;
 
-    const disabled = authMeta.isFetching;
     const disabled = authMeta.isFetching || !email.length || !password.length;
     const error = authMeta.didFailFetching;
 
