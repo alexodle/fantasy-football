@@ -5,6 +5,17 @@
 // SEE: stateShape.json for documentation on how this state is filled out
 //
 
+let initialAuth = window.localStorage.getItem('auth');
+if (initialAuth) {
+  try {
+    initialAuth = JSON.parse(initialAuth);
+  } catch (e) {
+    console.warn(`Could not parse auth: ${initialAuth}, ${e}`);
+    initialAuth = null;
+  }
+}
+initialAuth = initialAuth || { ...DEFAULT_META };
+
 export const DEFAULT_META = {
   isFetching: false,
   didInvalidate: true,
@@ -33,7 +44,7 @@ export default {
     drafts: {}
   },
   meta: {
-    auth: { ...DEFAULT_META },
+    auth: initialAuth,
     current_user: { ...DEFAULT_META },
     my_leagues: { ...DEFAULT_META },
     fantasy_leagues: {} // Fill with DEFAULT_FANTASY_LEAGUE

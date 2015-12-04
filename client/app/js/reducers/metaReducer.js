@@ -40,7 +40,9 @@ function authReducer(auth, action, metaUpdate) {
 
     case LOAD_AUTH:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, token: action.payload, user: action.user };
+        const newAuth = { ...metaUpdate, token: action.payload, user: action.user };
+        window.localStorage.setItem('auth', JSON.stringify(newAuth));
+        return newAuth;
       }
       return { ...auth, ...metaUpdate };
 
