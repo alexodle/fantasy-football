@@ -1,9 +1,9 @@
-import FFPanel from './FFPanel';
-import Loading from './Loading';
+import FFPanel from '../FFPanel';
+import Loading from '../Loading';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {loadAuth} from '../actions/LoadActions';
-import {selectAuthMeta} from '../selectors/metaSelectors';
+import {loadAuth} from '../../actions/LoadActions';
+import {selectAuthMeta} from '../../selectors/metaSelectors';
 
 const Login = React.createClass({
 
@@ -100,9 +100,14 @@ const Login = React.createClass({
 
     return (
       <div className='row'>
-        <div className='col-md-4 col-sm-12'>
+        <div className='col-md-6'>
           <FFPanel title='Log in'>
             {body}
+          </FFPanel>
+        </div>
+        <div className='col-md-6'>
+          <FFPanel title='Sign up'>
+            <p>TODO</p>
           </FFPanel>
         </div>
       </div>
