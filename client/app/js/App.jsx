@@ -4,6 +4,7 @@ import {ChildrenPropType, LoadStateShape} from './Constants';
 import {connect} from 'react-redux';
 import {createFFComponentSelector} from './selectors/selectorUtils';
 import {loadMyLeagues, loadUser} from './actions/LoadActions';
+import {logout} from './actions/AuthActions';
 
 const App = React.createClass({
 
@@ -26,7 +27,7 @@ const App = React.createClass({
     const {children, headerProps} = this.props;
     return (
       <div className='container'>
-        <Header {...headerProps} />
+        <Header {...headerProps} onLogout={this._onLogout} />
         <div className='row'>
           <div className='col-md-12'>
             {children}
@@ -34,6 +35,10 @@ const App = React.createClass({
         </div>
       </div>
     );
+  },
+
+  _onLogout() {
+    this.props.dispatch(logout());
   }
 
 });

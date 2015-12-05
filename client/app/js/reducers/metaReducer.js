@@ -1,6 +1,8 @@
 import _ from 'lodash';
+import update from 'react-addons-update';
+import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
+import {DEFAULT_FANTASY_LEAGUE, DEFAULT_META} from '../initialState';
 import {
-  LOAD_AUTH,
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
@@ -8,11 +10,10 @@ import {
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
   LOAD_USER,
+  LOGIN,
+  LOGOUT,
   SET_UNAUTHENTICATED
 } from '../actions/ActionTypes';
-import update from 'react-addons-update';
-import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
-import {DEFAULT_FANTASY_LEAGUE} from '../initialState';
 
 const DRAFT_ENTITY_MAP = {
   [LOAD_DRAFT_ORDER]: 'order',
@@ -38,13 +39,17 @@ export default function metaReducer(meta, action) {
 function authReducer(auth, action, metaUpdate) {
   switch (action.type) {
 
-    case LOAD_AUTH:
+    case LOGIN:
       if (action.state === SUCCEEDED) {
         const newAuth = { ...metaUpdate, token: action.payload, user: action.user };
         localStorage.setItem('auth', JSON.stringify(newAuth));
         return newAuth;
       }
       return { ...auth, ...metaUpdate };
+
+    case LOGOUT:
+      localStorage.removeItem('auth');
+      return { ...DEFAULT_META };
 
     case SET_UNAUTHENTICATED:
       return { ...auth, didInvalidate: true };
@@ -62,6 +67,9 @@ function currentUserReducer(current_user, action, metaUpdate) {
         return { ...metaUpdate, id: action.payload.id };
       }
       return { ...current_user, ...metaUpdate };
+
+    case LOGOUT:
+      return { ...DEFAULT_META };
 
     default:
       return current_user;

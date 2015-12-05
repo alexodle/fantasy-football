@@ -5,17 +5,6 @@
 // SEE: stateShape.json for documentation on how this state is filled out
 //
 
-let initialAuth = localStorage.getItem('auth');
-if (initialAuth) {
-  try {
-    initialAuth = JSON.parse(initialAuth);
-  } catch (e) {
-    console.warn(`Could not parse auth: ${initialAuth}, ${e}`);
-    initialAuth = null;
-  }
-}
-initialAuth = initialAuth || { ...DEFAULT_META };
-
 export const DEFAULT_META = {
   isFetching: false,
   didInvalidate: true,
@@ -33,6 +22,18 @@ export const DEFAULT_FANTASY_LEAGUE = {
   fantasy_teams: { ...DEFAULT_META },
   football_players: { ...DEFAULT_META }
 };
+
+let localStorageAuth = localStorage.getItem('auth');
+if (localStorageAuth) {
+  try {
+    localStorageAuth = JSON.parse(localStorageAuth);
+  } catch (e) {
+    console.warn(`Could not parse auth: ${localStorageAuth}, ${e}`);
+    localStorageAuth = null;
+  }
+}
+
+const initialAuth = { ...DEFAULT_META, ...(localStorageAuth || {}) };
 
 export default {
   client: {},

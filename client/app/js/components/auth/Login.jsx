@@ -2,7 +2,7 @@ import FFPanel from '../FFPanel';
 import Loading from '../Loading';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {loadAuth} from '../../actions/LoadActions';
+import {login} from '../../actions/AuthActions';
 import {selectAuthMeta} from '../../selectors/metaSelectors';
 
 const Login = React.createClass({
@@ -127,7 +127,7 @@ const Login = React.createClass({
 
     const {email, password} = this.state;
     const {dispatch} = this.props;
-    dispatch(loadAuth(email, password));
+    dispatch(login(email, password));
 
     this.setState({ password: '' });
   }

@@ -1,7 +1,7 @@
-import React from 'react';
-import {ModelShapes} from '../Constants';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React, {PropTypes} from 'react';
 import {createFFSelector} from '../selectors/selectorUtils';
+import {ModelShapes} from '../Constants';
 import {selectCurrentUser} from '../selectors/selectors';
 
 export const headerSelector = createFFSelector({
@@ -18,16 +18,29 @@ export default React.createClass({
   mixins: [PureRenderMixin],
 
   propTypes: {
-    currentUser: ModelShapes.User
+    currentUser: ModelShapes.User,
+    onLogout: PropTypes.func.isRequired
   },
 
   render() {
     const {currentUser} = this.props;
     return (
       <div className='page-header'>
-        <h1>Fantasy Football <small>{currentUser ? currentUser.name : ''}</small></h1>
+        <h1>
+          Fantasy Football <small>{currentUser ? currentUser.name : ''}</small>
+          {!currentUser ? null : (
+            <div className='pull-right'>
+              <small><a href='#' onClick={this._onLogout}>Logout</a></small>
+            </div>
+          )}
+        </h1>
       </div>
     );
+  },
+
+  _onLogout(e) {
+    e.preventDefault();
+    this.props.onLogout();
   }
 
 });
