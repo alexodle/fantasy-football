@@ -5,16 +5,13 @@
 // SEE: stateShape.json for documentation on how this state is filled out
 //
 
-let initialAuth = null;
-if (window.localStorage) {
-  initialAuth = window.localStorage.getItem('auth');
-  if (initialAuth) {
-    try {
-      initialAuth = JSON.parse(initialAuth);
-    } catch (e) {
-      console.warn(`Could not parse auth: ${initialAuth}, ${e}`);
-      initialAuth = null;
-    }
+let initialAuth = localStorage.getItem('auth');
+if (initialAuth) {
+  try {
+    initialAuth = JSON.parse(initialAuth);
+  } catch (e) {
+    console.warn(`Could not parse auth: ${initialAuth}, ${e}`);
+    initialAuth = null;
   }
 }
 initialAuth = initialAuth || { ...DEFAULT_META };

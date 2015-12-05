@@ -1,3 +1,5 @@
+import './setupTests';
+
 import chai from 'chai';
 import metaReducer from '../app/js/reducers/metaReducer';
 import {

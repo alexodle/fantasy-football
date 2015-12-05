@@ -1,3 +1,5 @@
+import './setupTests';
+
 import _ from 'lodash';
 import chai from 'chai';
 import entitiesReducer from '../app/js/reducers/entitiesReducer';

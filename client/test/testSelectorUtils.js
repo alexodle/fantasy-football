@@ -1,3 +1,5 @@
+import './setupTests';
+
 import _ from 'lodash';
 import chai from 'chai';
 import {createFFSelector, createFFComponentSelector} from '../app/js/selectors/selectorUtils';
