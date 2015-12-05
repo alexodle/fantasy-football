@@ -4,6 +4,14 @@
 //
 // SEE: stateShape.json for documentation on how this state is filled out
 //
+// IMPORTANT: initialState should NEVER contain any pre-loaded data. This is
+// important because we want to re-use it when we log out, which means it always
+// needs to be free of any actual data. For example, instead of looking for
+// saved auth information in localStorage and using it here, we have a separate
+// ACTION that does that for us, loadFromLocalStorage(). loadFromLocalStorage()
+// is called before rendering the App component, so it is awlays initialized
+// BEFORE rendering the app.
+//
 
 export const DEFAULT_META = {
   isFetching: false,
@@ -23,18 +31,6 @@ export const DEFAULT_FANTASY_LEAGUE = {
   football_players: { ...DEFAULT_META }
 };
 
-let localStorageAuth = localStorage.getItem('auth');
-if (localStorageAuth) {
-  try {
-    localStorageAuth = JSON.parse(localStorageAuth);
-  } catch (e) {
-    console.warn(`Could not parse auth: ${localStorageAuth}, ${e}`);
-    localStorageAuth = null;
-  }
-}
-
-const initialAuth = { ...DEFAULT_META, ...(localStorageAuth || {}) };
-
 export default {
   client: {},
   entities: {
@@ -45,7 +41,7 @@ export default {
     drafts: {}
   },
   meta: {
-    auth: initialAuth,
+    auth: { ...DEFAULT_META },
     current_user: { ...DEFAULT_META },
     my_leagues: { ...DEFAULT_META },
     fantasy_leagues: {} // Fill with DEFAULT_FANTASY_LEAGUE

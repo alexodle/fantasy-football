@@ -1,7 +1,11 @@
 import {selectAuthMeta} from '../selectors/metaSelectors';
 import {pushState} from 'redux-router';
 import buildAsyncAction from './buildAsyncAction';
-import {LOGIN, LOGOUT} from './ActionTypes';
+import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
+
+export function loadFromLocalStorage() {
+  return { type: LOAD_AUTH_FROM_LOCAL_STORAGE };
+}
 
 export function login(username, password, nextPath = '/') {
   return buildAsyncAction({

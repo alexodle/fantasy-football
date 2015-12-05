@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import update from 'react-addons-update';
 import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
-import {DEFAULT_FANTASY_LEAGUE, DEFAULT_META} from '../initialState';
+import {DEFAULT_FANTASY_LEAGUE} from '../initialState';
 import {
+  LOAD_AUTH_FROM_LOCAL_STORAGE,
   LOAD_DRAFT_ORDER,
   LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
@@ -11,7 +12,6 @@ import {
   LOAD_MY_LEAGUES,
   LOAD_USER,
   LOGIN,
-  LOGOUT,
   SET_UNAUTHENTICATED
 } from '../actions/ActionTypes';
 
@@ -39,6 +39,18 @@ export default function metaReducer(meta, action) {
 function authReducer(auth, action, metaUpdate) {
   switch (action.type) {
 
+    case LOAD_AUTH_FROM_LOCAL_STORAGE:
+      let localStorageAuth = localStorage.getItem('auth');
+      if (localStorageAuth) {
+        try {
+          localStorageAuth = JSON.parse(localStorageAuth);
+        } catch (e) {
+          console.warn(`Could not parse auth: ${localStorageAuth}, ${e}`);
+          localStorageAuth = null;
+        }
+      }
+      return localStorageAuth ? { ...auth, ...localStorageAuth } : auth;
+
     case LOGIN:
       if (action.state === SUCCEEDED) {
         const newAuth = { ...metaUpdate, token: action.payload, user: action.user };
@@ -46,10 +58,6 @@ function authReducer(auth, action, metaUpdate) {
         return newAuth;
       }
       return { ...auth, ...metaUpdate };
-
-    case LOGOUT:
-      localStorage.removeItem('auth');
-      return { ...DEFAULT_META };
 
     case SET_UNAUTHENTICATED:
       return { ...auth, didInvalidate: true };
@@ -67,9 +75,6 @@ function currentUserReducer(current_user, action, metaUpdate) {
         return { ...metaUpdate, id: action.payload.id };
       }
       return { ...current_user, ...metaUpdate };
-
-    case LOGOUT:
-      return { ...DEFAULT_META };
 
     default:
       return current_user;
