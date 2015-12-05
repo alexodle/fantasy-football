@@ -1,6 +1,5 @@
 import './setupTests';
 
-import chai from 'chai';
 import metaReducer from '../app/js/reducers/metaReducer';
 import {
   LOAD_DRAFT_ORDER,
@@ -25,8 +24,6 @@ const SUCCESS_META = {
 };
 
 const FAILED_META = { ...DEFAULT_META, didFailFetching: true, statusCode: 401 };
-
-chai.should();
 
 describe('metaReducer', () => {
 

@@ -1,7 +1,6 @@
 import './setupTests';
 
 import _ from 'lodash';
-import chai from 'chai';
 import {
   selectIneligibleDraftPositions,
   selectDraftableFootballPlayers,
@@ -9,8 +8,6 @@ import {
 } from '../app/js/selectors/draftSelectors';
 import {Positions} from '../app/js/Constants';
 import {newDraftPick, newFootballPlayer} from './testUtils';
-
-chai.should();
 
 const TEAM_REQS = {
   [Positions.QB]: 1,

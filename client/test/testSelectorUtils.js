@@ -1,11 +1,8 @@
 import './setupTests';
 
 import _ from 'lodash';
-import chai from 'chai';
 import {createFFSelector, createFFComponentSelector} from '../app/js/selectors/selectorUtils';
 import {IS_LOADING, FAILED_LOADING} from '../app/js/Constants';
-
-chai.should();
 
 // Tests can use this as the "state" objects. This kills two birds with one
 // stone, as it allows us to test that state is being passed through to our

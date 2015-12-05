@@ -1,7 +1,6 @@
 import './setupTests';
 
 import _ from 'lodash';
-import chai from 'chai';
 import entitiesReducer from '../app/js/reducers/entitiesReducer';
 import {
   DRAFT_PLAYER,
@@ -15,8 +14,6 @@ import {
 } from '../app/js/actions/ActionTypes';
 import {ACTIVE, SUCCEEDED} from '../app/js/actions/AsyncActionStates';
 import initialState from '../app/js/initialState';
-
-chai.should();
 
 const FIRST_PICK = {
   fantasy_league_id: 1,

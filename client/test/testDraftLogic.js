@@ -1,12 +1,9 @@
 import './setupTests';
 
 import _ from 'lodash';
-import chai from 'chai';
 import {bucketTeam} from '../app/js/logic/draftLogic';
 import {newDraftPick, newFootballPlayer} from './testUtils';
 import {Positions} from '../app/js/Constants';
-
-chai.should();
 
 const TEAM_REQS = {
   [Positions.QB]: 1,
