@@ -6,11 +6,13 @@
 //
 // IMPORTANT: initialState should NEVER contain any pre-loaded data. This is
 // important because we want to re-use it when we log out, which means it always
-// needs to be free of any actual data. For example, instead of looking for
-// saved auth information in localStorage and using it here, we have a separate
-// ACTION that does that for us, loadFromLocalStorage(). loadFromLocalStorage()
-// is called before rendering the App component, so it is awlays initialized
-// BEFORE rendering the app.
+// needs to be free of any actual data.
+//
+// For example, instead of looking for saved auth information in localStorage
+// and using it here, we have a separate ACTION that does that for us,
+// loadAuthFromLocalStorage(). loadAuthFromLocalStorage() is called before
+// rendering the App component, so it is awlays initialized BEFORE rendering the
+// app.
 //
 
 export const DEFAULT_META = {

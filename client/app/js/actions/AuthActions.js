@@ -3,7 +3,7 @@ import {pushState} from 'redux-router';
 import buildAsyncAction from './buildAsyncAction';
 import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
 
-export function loadFromLocalStorage() {
+export function loadAuthFromLocalStorage() {
   return { type: LOAD_AUTH_FROM_LOCAL_STORAGE };
 }
 
