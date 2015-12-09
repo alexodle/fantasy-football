@@ -1,6 +1,7 @@
 import entitiesReducer from './entitiesReducer';
 import initialState from '../initialState';
 import metaReducer from './metaReducer';
+import clientReducer from './clientReducer';
 import {LOGOUT} from '../actions/ActionTypes';
 import {routerStateReducer} from 'redux-router';
 
@@ -14,7 +15,7 @@ export default function fantasyFootballReducer(state = initialState, action) {
   }
 
   return {
-    client: state.client,
+    client: clientReducer(state.client, action),
     entities: entitiesReducer(state.entities, action),
     meta: metaReducer(state.meta, action),
     router

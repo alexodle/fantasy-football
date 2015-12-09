@@ -2,10 +2,21 @@ import _ from 'lodash';
 import request from 'superagent';
 import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 import {hasLoaded} from '../utils/loadingUtils';
+import {LOGOUT} from './ActionTypes';
+import {pushState} from 'redux-router';
 import {selectAuthMeta} from '../selectors/metaSelectors';
-import {SET_UNAUTHENTICATED} from './ActionTypes';
 
 const DATA_KEY = 'data';
+
+function collectAuth(reason) {
+  return function (dispatch, getState) {
+    const redirectAfterLogin = getState().router.location.pathname;
+    if (redirectAfterLogin !== '/login') {
+      dispatch({ type: LOGOUT, reason: reason });
+      dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
+    }
+  };
+}
 
 export const AUTH_REQUIRED = 'AUTH_REQUIRED';
 
@@ -31,10 +42,11 @@ export default function buildAsyncAction({
   auth = null
 }) {
   return function asyncAction(dispatch, getState) {
-    if (auth === AUTH_REQUIRED) {
+    const authRequired = auth === AUTH_REQUIRED;
+    if (authRequired) {
       const authMeta = selectAuthMeta(getState());
       if (!hasLoaded(authMeta)) {
-        dispatch({ type: SET_UNAUTHENTICATED });
+        dispatch(collectAuth());
         return;
       }
 
@@ -55,12 +67,16 @@ export default function buildAsyncAction({
       .set('X-Requested-With', 'XMLHttpRequest')
       .end(function (err, res) {
         if (err) {
-          dispatch({
-            type: actionType,
-            state: FAILED,
-            statusCode: res.statusCode,
-            ...extraProps
-          });
+          if (authRequired && res.statusCode === 403) {
+            dispatch(collectAuth('Your auth token has expired.'));
+          } else {
+            dispatch({
+              type: actionType,
+              state: FAILED,
+              statusCode: res.statusCode,
+              ...extraProps
+            });
+          }
           return;
         }
 

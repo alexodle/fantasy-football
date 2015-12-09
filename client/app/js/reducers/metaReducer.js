@@ -11,8 +11,7 @@ import {
   LOAD_FOOTBALL_PLAYERS,
   LOAD_MY_LEAGUES,
   LOAD_USER,
-  LOGIN,
-  SET_UNAUTHENTICATED
+  LOGIN
 } from '../actions/ActionTypes';
 
 const DRAFT_ENTITY_MAP = {
@@ -58,9 +57,6 @@ function authReducer(auth, action, metaUpdate) {
         return newAuth;
       }
       return { ...auth, ...metaUpdate };
-
-    case SET_UNAUTHENTICATED:
-      return { ...auth, didInvalidate: true };
 
     default:
       return auth;

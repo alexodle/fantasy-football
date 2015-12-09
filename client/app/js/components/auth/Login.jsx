@@ -4,6 +4,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {login} from '../../actions/AuthActions';
 import {selectAuthMeta} from '../../selectors/metaSelectors';
+import {selectLogoutReason} from '../../selectors/clientSelectors';
 
 const Login = React.createClass({
 
@@ -15,7 +16,8 @@ const Login = React.createClass({
       didFailFetching: PropTypes.bool.isRequired,
       statusCode: PropTypes.number
     }).isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    logoutReason: PropTypes.string
   },
 
   getInitialState() {
@@ -38,7 +40,7 @@ const Login = React.createClass({
   },
 
   render() {
-    const {authMeta} = this.props;
+    const {authMeta, logoutReason} = this.props;
     const {email, password} = this.state;
 
     let body = null;
@@ -54,13 +56,20 @@ const Login = React.createClass({
 
       const formErrorClass = isAuthError ? ' has-error' : '';
 
+      let errorText = null;
+      if (error) {
+        errorText = isAuthError ?
+          'Bad username/password.' :
+          'Failed to connect! Try again.';
+      } else if (logoutReason) {
+        errorText = logoutReason;
+      }
+
       body = (
         <div>
-          {!error ? null : (
+          {!errorText ? null : (
             <div className='alert alert-danger' role='alert'>
-              {isAuthError ?
-                'Bad username/password.' :
-                'Failed to connect! Try again.'}
+              {errorText}
             </div>
           )}
           <form>
@@ -136,7 +145,8 @@ const Login = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    authMeta: selectAuthMeta(state)
+    authMeta: selectAuthMeta(state),
+    logoutReason: selectLogoutReason(state)
   };
 }
 

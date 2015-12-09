@@ -9,4 +9,3 @@ export const LOAD_MY_LEAGUES = 'LOAD_MY_LEAGUES';
 export const LOAD_USER = 'LOAD_USER';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
-export const SET_UNAUTHENTICATED = 'SET_UNAUTHENTICATED';
