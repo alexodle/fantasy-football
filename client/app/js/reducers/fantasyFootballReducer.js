@@ -10,7 +10,6 @@ export default function fantasyFootballReducer(state = initialState, action) {
 
   // Basically just hit the reset button for "LOGOUT"
   if (action.type === LOGOUT) {
-    localStorage.removeItem('auth');
     state = initialState;
   }
 

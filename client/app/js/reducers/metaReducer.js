@@ -39,22 +39,11 @@ function authReducer(auth, action, metaUpdate) {
   switch (action.type) {
 
     case LOAD_AUTH_FROM_LOCAL_STORAGE:
-      let localStorageAuth = localStorage.getItem('auth');
-      if (localStorageAuth) {
-        try {
-          localStorageAuth = JSON.parse(localStorageAuth);
-        } catch (e) {
-          console.warn(`Could not parse auth: ${localStorageAuth}, ${e}`);
-          localStorageAuth = null;
-        }
-      }
-      return localStorageAuth ? { ...auth, ...localStorageAuth } : auth;
+      return action.auth ? { ...auth, ...action.auth } : auth;
 
     case LOGIN:
       if (action.state === SUCCEEDED) {
-        const newAuth = { ...metaUpdate, token: action.payload, user: action.user };
-        localStorage.setItem('auth', JSON.stringify(newAuth));
-        return newAuth;
+        return { ...metaUpdate, token: action.payload, user: action.user };
       }
       return { ...auth, ...metaUpdate };
 
