@@ -37,6 +37,11 @@ var webpackDevServer = new WebpackDevServer(compiler, {
   stats: { colors: true }
 });
 
+// Turn this on to test auth redirect
+/*expressApp.get('/dev_api/league/1/fantasy_teams/', function(req, res) {
+  res.sendStatus(403);
+});*/
+
 expressApp.get('/dev_api/*', function(req, res) {
   var reqPath = req.path.substring(1);
   if (reqPath.endsWith('/')) {

@@ -19,7 +19,7 @@ const LeagueChooser = React.createClass({
     myLeagues: PropTypes.objectOf(ModelShapes.FantasyLeague)
   },
 
-  componentDidMount() {
+  componentWillMount() {
     const {dispatch} = this.props;
     dispatch(loadMyLeagues());
     dispatch(loadUser());

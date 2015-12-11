@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {login} from '../../actions/AuthActions';
 import {selectAuthMeta} from '../../selectors/metaSelectors';
 import {selectLogoutReason} from '../../selectors/clientSelectors';
+import {selectNextPath} from '../../selectors/routeSelectors';
 
 const Login = React.createClass({
 
@@ -17,7 +18,8 @@ const Login = React.createClass({
       statusCode: PropTypes.number
     }).isRequired,
     dispatch: PropTypes.func.isRequired,
-    logoutReason: PropTypes.string
+    logoutReason: PropTypes.string,
+    nextPath: PropTypes.string
   },
 
   getInitialState() {
@@ -135,8 +137,8 @@ const Login = React.createClass({
     ev.preventDefault();
 
     const {email, password} = this.state;
-    const {dispatch} = this.props;
-    dispatch(login(email, password));
+    const {dispatch, nextPath} = this.props;
+    dispatch(login(email, password, nextPath));
 
     this.setState({ password: '' });
   }
@@ -146,7 +148,8 @@ const Login = React.createClass({
 function mapStateToProps(state) {
   return {
     authMeta: selectAuthMeta(state),
-    logoutReason: selectLogoutReason(state)
+    logoutReason: selectLogoutReason(state),
+    nextPath: selectNextPath(state)
   };
 }
 

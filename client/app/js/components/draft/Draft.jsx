@@ -41,7 +41,7 @@ const Draft = React.createClass({
     teamDraftViewProps: PropTypes.any
   },
 
-  componentDidMount() {
+  componentWillMount() {
     const {dispatch, leagueId} = this.props;
     dispatch(loadDraftOrder(leagueId));
     dispatch(loadDraftPicks(leagueId));

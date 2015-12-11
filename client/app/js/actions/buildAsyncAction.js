@@ -2,20 +2,13 @@ import _ from 'lodash';
 import request from 'superagent';
 import {ACTIVE, SUCCEEDED, FAILED} from './AsyncActionStates';
 import {hasLoaded} from '../utils/loadingUtils';
-import {LOGOUT} from './ActionTypes';
-import {pushState} from 'redux-router';
 import {selectAuthMeta} from '../selectors/metaSelectors';
 
 const DATA_KEY = 'data';
 
-function collectAuth(reason) {
-  return function (dispatch, getState) {
-    const redirectAfterLogin = getState().router.location.pathname;
-    if (redirectAfterLogin !== '/login') {
-      dispatch({ type: LOGOUT, reason: reason });
-      dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
-    }
-  };
+function redirectToLogin(reason) {
+  // HACK - lazy-load AuthActions to avoid circular dependency
+  return require('./AuthActions').redirectToLogin(reason);
 }
 
 export const AUTH_REQUIRED = 'AUTH_REQUIRED';
@@ -46,7 +39,7 @@ export default function buildAsyncAction({
     if (authRequired) {
       const authMeta = selectAuthMeta(getState());
       if (!hasLoaded(authMeta)) {
-        dispatch(collectAuth());
+        dispatch(redirectToLogin());
         return;
       }
 
@@ -68,7 +61,7 @@ export default function buildAsyncAction({
       .end(function (err, res) {
         if (err) {
           if (authRequired && res.statusCode === 403) {
-            dispatch(collectAuth('Your auth token has expired.'));
+            dispatch(redirectToLogin('Your auth expired.'));
           } else {
             dispatch({
               type: actionType,

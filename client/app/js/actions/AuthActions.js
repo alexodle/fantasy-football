@@ -25,3 +25,13 @@ export function logout() {
     dispatch(pushState(null, '/login'));
   };
 }
+
+export function redirectToLogin(reason) {
+  return function (dispatch, getState) {
+    const redirectAfterLogin = getState().router.location.pathname;
+    if (redirectAfterLogin !== '/login') {
+      dispatch({ type: LOGOUT, reason: reason });
+      dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
+    }
+  };
+}
