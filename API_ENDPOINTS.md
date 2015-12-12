@@ -48,6 +48,9 @@ authenticated request using **email address** and **password** to the following 
 * **get_token**
   * Endpoint: `/api/token`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/token`
+* **get_current_user**
+  * Endpoint: `/api/current_user`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/current_user`
 
 # Resource Endpoints
 

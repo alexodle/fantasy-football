@@ -76,3 +76,11 @@ def get_token():
         return unauthorized('Invalid credentials')
     return jsonify({'token': g.current_user.generate_auth_token(
         expiration=3600), 'expiration': 3600})
+
+
+@api.route('/current_user')
+def get_current_user():
+    """
+    Route that returns the current user, given authentication credentials.
+    """
+    return jsonify({'data': g.current_user.to_json()})
