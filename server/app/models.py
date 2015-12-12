@@ -1,7 +1,7 @@
 import hashlib
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import current_app, url_for
+from flask import current_app
 from flask.ext.login import UserMixin, AnonymousUserMixin
 from app.exceptions import ValidationError
 from . import db, login_manager
@@ -217,15 +217,11 @@ class FantasyLeague(db.Model):
 
     def to_json(self):
         json_fantasy_league = {
-            'url': url_for('api.get_fantasy_league', id=self.id,
-                           _external=True),
+            'id': self.id,
             'name': self.name,
             'draft_start_date': self.draft_start_date,
-            'commissioner': url_for('api.get_user', id=self.commissioner_id,
-                                    _external=True),
-            'conference': url_for('api.get_football_conference',
-                                  id=self.conference_id,
-                                  _external=True),
+            'commissioner': self.commissioner_id,
+            'conference': self.conference_id,
         }
         return json_fantasy_league
 
@@ -273,14 +269,11 @@ class FantasyTeam(db.Model):
 
     def to_json(self):
         json_fantasy_team = {
-            'url': url_for('api.get_fantasy_team', id=self.id,
-                           _external=True),
+            'id': self.id,
             'name': self.name,
             'short_name': self.short_name,
-            'fantasy_league': url_for('api.get_fantasy_league',
-                                      id=self.fantasy_league_id,
-                                      _external=True),
-            'owner': url_for('api.get_user', id=self.owner_id, _external=True),
+            'fantasy_league': self.fantasy_league_id,
+            'owner': self.owner_id,
         }
         return json_fantasy_team
 
@@ -321,13 +314,10 @@ class FootballPlayer(db.Model):
 
     def to_json(self):
         json_football_player = {
-            'url': url_for('api.get_football_player', id=self.id,
-                           _external=True),
+            'id': self.id,
             'name': self.name,
             'position': self.position,
-            'football_team': url_for('api.get_football_team',
-                                     id=self.football_team_id,
-                                     _external=True),
+            'football_team': self.football_team_id,
         }
         return json_football_player
 
@@ -363,15 +353,9 @@ class FootballTeam(db.Model):
 
     def to_json(self):
         json_football_player = {
-            'url': url_for('api.get_football_team', id=self.id,
-                           _external=True),
+            'id': self.id,
             'name': self.name,
-            'conference': url_for('api.get_football_conference', id=self.id,
-                                  _external=True),
-            'football_players': url_for(
-                'api.get_football_team_football_players',
-                id=self.id, _external=True
-            ),
+            'conference': self.conference_id,
         }
         return json_football_player
 
@@ -421,8 +405,7 @@ class FootballConference(db.Model):
 
     def to_json(self):
         json_football_conference = {
-            'url': url_for('api.get_football_conference', id=self.id,
-                           _external=True),
+            'id': self.id,
             'name': self.name,
         }
         return json_football_conference
@@ -441,11 +424,9 @@ class DraftOrder(db.Model):
 
     def to_json(self):
         json_draft_order = {
-            'url': url_for('api.get_fantasy_league_draft_orders',
-                           id=self.fantasy_league_id,
-                           _external=True),
+            'fantasy_league': self.fantasy_league_id,
             'order': self.order,
-            'user': url_for('api.get_user', id=self.user_id, _external=True),
+            'user': self.user_id,
         }
         return json_draft_order
 
@@ -485,17 +466,10 @@ class DraftPick(db.Model):
 
     def to_json(self):
         json_draft_pick = {
-            'url': url_for('api.get_fantasy_league_draft_picks',
-                           id=self.fantasy_league_id,
-                           _external=True),
+            'fantasy_league': self.fantasy_league_id,
             'pick_number': self.pick_number,
-            'fantasy_league': url_for('api.get_fantasy_league',
-                                      id=self.fantasy_league_id,
-                                      _external=True),
-            'user': url_for('api.get_user', id=self.user_id, _external=True),
-            'football_player': url_for('api.get_football_player',
-                                       id=self.football_player_id,
-                                       _external=True),
+            'user': self.user_id,
+            'football_player': self.football_player_id,
         }
         return json_draft_pick
 
