@@ -165,10 +165,8 @@ class User(UserMixin, db.Model):
 
     def to_json(self):
         json_user = {
-            'url': url_for('api.get_user', id=self.id, _external=True),
+            'id': self.id,
             'username': self.username,
-            'fantasy_leagues': url_for('api.get_user_fantasy_leagues',
-                                       id=self.id, _external=True),
         }
         return json_user
 
