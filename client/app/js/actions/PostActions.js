@@ -20,7 +20,7 @@ export function draftFootballPlayer(fantasyLeagueId, footballPlayerId) {
       data: data
     });
     request
-      .post(`/api/league/${fantasyLeagueId}/draft_picks`)
+      .post(`/dev_api/league/${fantasyLeagueId}/draft_picks`)
       .send(data)
       .set('Accept', 'application/json')
       .end(function (err, _res) {

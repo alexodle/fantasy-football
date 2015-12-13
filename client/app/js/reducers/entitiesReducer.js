@@ -10,7 +10,20 @@ import {
   LOAD_USER
 } from '../actions/ActionTypes';
 import update from 'react-addons-update';
-import {ACTIVE, FAILED} from '../actions/AsyncActionStates';
+import {ACTIVE, FAILED, SUCCEEDED, CLEAR} from '../actions/AsyncActionStates';
+
+function clearStateReducer(entities, action) {
+  switch (action.type) {
+
+    case LOAD_DRAFT_PICKS:
+      return update(entities, {
+        drafts: { [action.league_id]: { picks: { $set: null } } }
+      });
+
+    default:
+      return entities;
+  }
+}
 
 function activeStateReducer(entities, action) {
   switch (action.type) {
@@ -29,13 +42,22 @@ function failedStateReducer(entities, action) {
   switch (action.type) {
 
     case DRAFT_PLAYER:
-      // HIHI TODO
-      // (probably just going to show a global modal that has a refresh button)
+      // TODO: probably just going to show a global modal that has a refresh
+      // button
       return entities;
 
     default:
       return entities;
   }
+}
+
+function successStateReducer(entities, action) {
+  return (
+    loadBasicEntitiesReducer(entities, action) ||
+    loadDraftEntitiesReducer(entities, action) ||
+    loadUserReducer(entities, action) ||
+    entities
+  );
 }
 
 function ensureDraft(entities, action) {
@@ -82,21 +104,17 @@ function loadUserReducer(entities, action) {
   }
 }
 
-function successStateReducer(entities, action) {
-  return (
-    loadBasicEntitiesReducer(entities, action) ||
-    loadDraftEntitiesReducer(entities, action) ||
-    loadUserReducer(entities, action) ||
-    entities
-  );
-}
-
 export default function entitiesReducer(entities, action) {
-  if (action.state === ACTIVE) {
-    return activeStateReducer(entities, action);
-  } else if (action.state === FAILED) {
-    return failedStateReducer(entities, action);
-  } else { // if (action.state === SUCCESS) {
-    return successStateReducer(entities, action);
+  switch (action.state) {
+    case ACTIVE:
+      return activeStateReducer(entities, action);
+    case FAILED:
+      return failedStateReducer(entities, action);
+    case SUCCEEDED:
+      return successStateReducer(entities, action);
+    case CLEAR:
+      return clearStateReducer(entities, action);
+    default:
+      return entities;
   }
 }

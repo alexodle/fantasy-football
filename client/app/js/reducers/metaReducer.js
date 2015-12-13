@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import update from 'react-addons-update';
-import { ACTIVE, SUCCEEDED, FAILED } from '../actions/AsyncActionStates';
-import {DEFAULT_FANTASY_LEAGUE} from '../initialState';
+import {ACTIVE, SUCCEEDED, FAILED, CLEAR, INVALIDATE} from '../actions/AsyncActionStates';
+import {DEFAULT_FANTASY_LEAGUE, DEFAULT_META} from '../initialState';
 import {
   LOAD_AUTH_FROM_LOCAL_STORAGE,
   LOAD_DRAFT_ORDER,
@@ -134,6 +134,11 @@ function getAsyncMetaUpdate(action) {
         didFailFetching: true,
         statusCode: action.statusCode
       };
+    case INVALIDATE:
+      return { didInvalidate: true };
+    case CLEAR:
+      return { ...DEFAULT_META };
+
     default:
       return;
   }

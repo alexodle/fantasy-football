@@ -13,12 +13,7 @@ function redirectToLogin(reason) {
 
 export const AUTH_REQUIRED = 'AUTH_REQUIRED';
 
-/**
- * Builds a standard REST async action
- *
- * TODO: Separate REST/auth/http logic into separate function/file
- */
-export default function buildAsyncAction({
+export function handleAsyncAction(dispatch, getState, {
   actionType,
   url,
   metaSelector,
@@ -34,62 +29,71 @@ export default function buildAsyncAction({
    */
   auth = null
 }) {
-  return function asyncAction(dispatch, getState) {
-    const authRequired = auth === AUTH_REQUIRED;
-    if (authRequired) {
-      const authMeta = selectAuthMeta(getState());
-      if (!hasLoaded(authMeta)) {
-        dispatch(redirectToLogin());
-        return;
+const authRequired = auth === AUTH_REQUIRED;
+if (authRequired) {
+  const authMeta = selectAuthMeta(getState());
+  if (!hasLoaded(authMeta)) {
+    dispatch(redirectToLogin());
+    return;
+  }
+
+  auth = { u: authMeta.user, p: authMeta.token };
+}
+
+const meta = metaSelector(getState());
+if (!shouldFetch(meta)) {
+  return;
+}
+
+dispatch({ type: actionType, state: ACTIVE, ...extraProps });
+
+let req = request.get(url);
+req = (auth ? req.auth(auth.u, auth.p) : req);
+req
+  .set('Accept', 'application/json')
+  .set('X-Requested-With', 'XMLHttpRequest')
+  .end(function (err, res) {
+    if (err) {
+      if (authRequired && res.statusCode === 403) {
+        dispatch(redirectToLogin('Your auth expired.'));
+      } else {
+        dispatch({
+          type: actionType,
+          state: FAILED,
+          statusCode: res.statusCode,
+          ...extraProps
+        });
       }
-
-      auth = { u: authMeta.user, p: authMeta.token };
-    }
-
-    const meta = metaSelector(getState());
-    if (!shouldFetch(meta)) {
       return;
     }
 
-    dispatch({ type: actionType, state: ACTIVE, ...extraProps });
+    let payload = res.body[dataKey];
+    if (_.isArray(payload)) {
+      payload = _.map(payload, parser);
+    } else {
+      payload = parser(payload);
+    }
+    dispatch({
+      type: actionType,
+      state: SUCCEEDED,
+      lastUpdated: Date.now(),
+      statusCode: res.statusCode,
+      payload,
+      ...extraProps
+    });
 
-    let req = request.get(url);
-    req = (auth ? req.auth(auth.u, auth.p) : req);
-    req
-      .set('Accept', 'application/json')
-      .set('X-Requested-With', 'XMLHttpRequest')
-      .end(function (err, res) {
-        if (err) {
-          if (authRequired && res.statusCode === 403) {
-            dispatch(redirectToLogin('Your auth expired.'));
-          } else {
-            dispatch({
-              type: actionType,
-              state: FAILED,
-              statusCode: res.statusCode,
-              ...extraProps
-            });
-          }
-          return;
-        }
+    onSuccess && onSuccess(dispatch, getState);
+  });
+}
 
-        let payload = res.body[dataKey];
-        if (_.isArray(payload)) {
-          payload = _.map(payload, parser);
-        } else {
-          payload = parser(payload);
-        }
-        dispatch({
-          type: actionType,
-          state: SUCCEEDED,
-          lastUpdated: Date.now(),
-          statusCode: res.statusCode,
-          payload,
-          ...extraProps
-        });
-
-        onSuccess && onSuccess(dispatch, getState);
-      });
+/**
+ * Builds a standard REST async action
+ *
+ * TODO: Separate REST/auth/http logic into separate function/file
+ */
+export default function buildAsyncAction(options) {
+  return function asyncAction(dispatch, getState) {
+    return handleAsyncAction(dispatch, getState, options);
   };
 }
 
