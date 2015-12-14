@@ -1,5 +1,6 @@
 from flask import jsonify, current_app
-from ..models import FantasyLeague, FootballTeam, FootballConference
+from ..models import FantasyLeague, FootballTeam, FootballConference, \
+    FootballPlayer
 from . import api
 
 
@@ -64,6 +65,20 @@ def get_fantasy_league_football_conferences(id):
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: {
             'football_conferences': [c.to_json() for c in football_conferences]
+        }
+    })
+
+
+@api.route('/fantasy_leagues/<int:id>/football_players/')
+def get_fantasy_league_football_players(id):
+    fantasy_league = FantasyLeague.query.get_or_404(id)
+    football_players = FootballPlayer.query\
+        .join(FootballTeam)\
+        .filter(FootballTeam.conference_id == fantasy_league.conference_id)\
+        .all()
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: {
+            'football_players': [p.to_json() for p in football_players]
         }
     })
 
