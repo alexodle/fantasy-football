@@ -16,6 +16,7 @@ function clearStateReducer(entities, action) {
   switch (action.type) {
 
     case LOAD_DRAFT_PICKS:
+      if (!entities.drafts[action.league_id]) return entities;
       return update(entities, {
         drafts: { [action.league_id]: { picks: { $set: null } } }
       });
