@@ -1,8 +1,6 @@
 import {Positions} from '../Constants';
 import buildAsyncAction, {AUTH_REQUIRED} from './buildAsyncAction';
 import {
-  LOAD_DRAFT_ORDER,
-  LOAD_DRAFT_PICKS,
   LOAD_FANTASY_PLAYERS,
   LOAD_FANTASY_TEAMS,
   LOAD_FOOTBALL_PLAYERS,
@@ -11,8 +9,6 @@ import {
 } from './ActionTypes';
 import {
   selectCurrentUserMeta,
-  selectLeagueDraftOrderMeta,
-  selectLeagueDraftPicksMeta,
   selectLeagueFantasyPlayersMeta,
   selectLeagueFantasyTeamsMeta,
   selectLeagueFootballPlayersMeta,
@@ -31,30 +27,6 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
     [Positions['D/ST']]: 1
   }
 };
-
-export function loadDraftOrder(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_DRAFT_ORDER,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
-    }
-  });
-}
-
-export function loadDraftPicks(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_DRAFT_PICKS,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
-    }
-  });
-}
 
 export function loadFantasyPlayers(fantasyLeagueId) {
   return buildAsyncAction({

@@ -1,0 +1,13 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "semi": [2, "always"],
+    "no-unused-vars": [2, {"args": "after-used", "argsIgnorePattern": "^_"}],
+    "no-console": false
+  },
+  "env": {
+    "node": true
+  }
+}

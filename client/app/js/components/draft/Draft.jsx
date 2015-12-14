@@ -1,12 +1,16 @@
 import {
-  loadDraftOrder,
-  loadDraftPicks,
   loadFantasyPlayers,
   loadFantasyTeams,
   loadFootballPlayers,
   loadMyLeagues,
   loadUser
 } from '../../actions/LoadActions';
+import {
+  loadDraftOrder,
+  loadDraftPicks,
+  clearDraftPicks,
+  forceLoadDraftPicks
+} from '../../actions/DraftActions';
 import DraftHistory, {draftHistorySelector} from './DraftHistory';
 import DraftOrderView, {draftOrderViewSelector} from './DraftOrderView';
 import DraftStatus, {draftStatusSelector} from './DraftStatus';
@@ -19,6 +23,7 @@ import TeamDraftView, {teamDraftViewSelector} from './TeamDraftView';
 import {connect} from 'react-redux';
 import {createFFComponentSelector} from '../../selectors/selectorUtils';
 import {draftFootballPlayer} from '../../actions/PostActions';
+import socketIO from '../../socketIO';
 import {LoadStateShape} from '../../Constants';
 import {selectCurrentFantasyLeagueId} from '../../selectors/routeSelectors';
 import {selectIsMyPick} from '../../selectors/draftSelectors';
@@ -43,6 +48,7 @@ const Draft = React.createClass({
 
   componentWillMount() {
     const {dispatch, leagueId} = this.props;
+
     dispatch(loadDraftOrder(leagueId));
     dispatch(loadDraftPicks(leagueId));
     dispatch(loadFantasyPlayers(leagueId));
@@ -50,6 +56,14 @@ const Draft = React.createClass({
     dispatch(loadFootballPlayers(leagueId));
     dispatch(loadMyLeagues());
     dispatch(loadUser());
+    socketIO.on(`draft:${leagueId}`, this._onDraftSocketUpdate);
+  },
+
+  componentWillUnmount() {
+    const {dispatch, leagueId} = this.props;
+
+    socketIO.off(`draft:${leagueId}`, this._onDraftSocketUpdate);
+    dispatch(clearDraftPicks(leagueId));
   },
 
   render() {
@@ -114,6 +128,11 @@ const Draft = React.createClass({
   _onPick: function (footballPlayerId) {
     const {dispatch, leagueId} = this.props;
     dispatch(draftFootballPlayer(leagueId, footballPlayerId));
+  },
+
+  _onDraftSocketUpdate() {
+    const {dispatch, leagueId} = this.props;
+    dispatch(forceLoadDraftPicks(leagueId));
   }
 
 });
