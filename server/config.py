@@ -14,6 +14,7 @@ class Config(object):
     MAIL_SUBJECT_PREFIX = '[Fantasy Football]'
     MAIL_SENDER = 'Fantasy Football Admin <admin@fantasy-football.com>'
     DASHBOARD_ADMIN = os.environ.get('DASHBOARD_ADMIN', 'admin@insights.com')
+    RESPONSE_OBJECT_NAME = 'data'
     POSTS_PER_PAGE = 5
     FOLLOWERS_PER_PAGE = 10
     SQLALCHEMY_TRACK_MODIFICATIONS = True

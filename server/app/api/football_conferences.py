@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, current_app
 from ..models import FootballConference
 from . import api
 
@@ -6,11 +6,17 @@ from . import api
 @api.route('/football_conferences/')
 def get_football_conferences():
     football_conferences = FootballConference.query.all()
-    return jsonify({'football_conferences':
-                    [c.to_json() for c in football_conferences]})
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: {
+            'football_conferences': [c.to_json() for c in football_conferences]
+        }
+    })
 
 
 @api.route('/football_conferences/<int:id>')
 def get_football_conference(id):
     football_conference = FootballConference.query.get_or_404(id)
-    return jsonify(football_conference.to_json())
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']:
+            football_conference.to_json()
+    })

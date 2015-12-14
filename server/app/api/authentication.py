@@ -1,4 +1,4 @@
-from flask import g, jsonify
+from flask import g, jsonify, current_app
 from flask.ext.httpauth import HTTPBasicAuth
 from ..models import User, AnonymousUser
 from . import api
@@ -74,8 +74,12 @@ def get_token():
     """
     if g.current_user.is_anonymous or g.token_used:
         return unauthorized('Invalid credentials')
-    return jsonify({'token': g.current_user.generate_auth_token(
-        expiration=3600), 'expiration': 3600})
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: {
+            'token': g.current_user.generate_auth_token(expiration=3600),
+            'expiration': 3600
+        }
+    })
 
 
 @api.route('/current_user')
@@ -83,4 +87,6 @@ def get_current_user():
     """
     Route that returns the current user, given authentication credentials.
     """
-    return jsonify({'data': g.current_user.to_json()})
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: g.current_user.to_json()
+    })
