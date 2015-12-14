@@ -98,6 +98,9 @@ authenticated request using **email address** and **password** to the following 
 * **get_fantasy_league_fantasy_teams**
   * Endpoint: `api/fantasy_leagues/<int:id>/fantasy_teams/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1/fantasy_teams/`
+* **get_fantasy_league_football_teams**
+  * Endpoint: `api/fantasy_leagues/<int:id>/football_teams/`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1/football_teams/`
 * **get_fantasy_league_draft_picks**
   * Endpoint: `/api/fantasy_leagues/<int:id>/draft_picks/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1/draft_picks/`
