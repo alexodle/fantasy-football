@@ -21,6 +21,17 @@ def get_fantasy_league(id):
     })
 
 
+@api.route('/fantasy_leagues/<int:id>/users/')
+def get_fantasy_league_users(id):
+    fantasy_league = FantasyLeague.query.get_or_404(id)
+    users = fantasy_league.users.all()
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: {
+            'users': [u.to_json() for u in users]
+        }
+    })
+
+
 @api.route('/fantasy_leagues/<int:id>/draft_picks/')
 def get_fantasy_league_draft_picks(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
