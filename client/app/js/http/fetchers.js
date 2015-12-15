@@ -32,3 +32,17 @@ export function fetchLeagueFantasyPlayers(fantasyLeagueId, token) {
     token
   });
 }
+
+export function fetchDraftOrder(fantasyLeagueId, token) {
+  return httpGet({
+    url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
+    token
+  });
+}
+
+export function fetchDraftPicks(fantasyLeagueId, token) {
+  return httpGet({
+    url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
+    token
+  });
+}
