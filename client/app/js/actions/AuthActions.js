@@ -1,7 +1,7 @@
-import getToken from '../http/getToken';
 import handleHttpRequest from './utils/handleHttpRequest';
 import preventsRefetch from './utils/preventsRefetch';
 import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
+import {getToken} from '../http/fetchers';
 import {pushState} from 'redux-router';
 import {selectAuthMeta} from '../selectors/metaSelectors';
 

@@ -1,15 +1,23 @@
-import getCurrentUser from '../http/getCurrentUser';
-import getUserLeagues from '../http/getUserLeagues';
-import getLeagueFantasyTeams from '../http/getLeagueFantasyTeams';
 import handleHttpRequest from './utils/handleHttpRequest';
 import preventsRefetchAndRequiresAuth from './utils/preventsRefetchAndRequiresAuth';
-import {LOAD_MY_LEAGUES, LOAD_USER, LOAD_FANTASY_TEAMS} from '../actions/ActionTypes';
 import {Positions} from '../Constants';
 import {
   selectCurrentUserMeta,
   selectMyLeaguesMeta,
-  selectLeagueFantasyTeamsMeta
-  } from '../selectors/metaSelectors';
+  selectLeagueFantasyTeamsMeta,
+  selectLeagueFantasyPlayersMeta
+} from '../selectors/metaSelectors';
+import {
+  LOAD_MY_LEAGUES,
+  LOAD_USER, LOAD_FANTASY_TEAMS,
+  LOAD_FANTASY_PLAYERS
+} from '../actions/ActionTypes';
+import {
+  getCurrentUser,
+  getUserLeagues,
+  getLeagueFantasyTeams,
+  getLeagueFantasyPlayers
+} from '../http/fetchers';
 
 const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
   max_team_size: 11,
@@ -23,6 +31,21 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
     [Positions['D/ST']]: 1
   }
 };
+
+export function loadFantasyPlayers(fantasyLeagueId) {
+  const metaSelector = (state) => {
+    return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = getLeagueFantasyPlayers(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_FANTASY_PLAYERS,
+      extraProps: { league_id: fantasyLeagueId }
+    });
+  });
+}
 
 export function loadFantasyTeams(fantasyLeagueId) {
   const metaSelector = (state) => {
