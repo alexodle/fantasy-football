@@ -1,7 +1,7 @@
 import handleHttpRequest from './utils/handleHttpRequest';
 import preventsRefetch from './utils/preventsRefetch';
 import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
-import {getToken} from '../http/fetchers';
+import {fetchToken} from '../http/fetchers';
 import {pushState} from 'redux-router';
 import {selectAuthMeta} from '../selectors/metaSelectors';
 
@@ -20,7 +20,7 @@ export function loadAuthFromLocalStorage() {
 
 export function login(username, password, nextPath = '/') {
   return preventsRefetch(selectAuthMeta, (dispatch, getState) => {
-    const request = getToken(username, password);
+    const request = fetchToken(username, password);
     handleHttpRequest({
       dispatch,
       request,
