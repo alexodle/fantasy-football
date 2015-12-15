@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 import {ChildrenPropType, LoadStateShape} from './Constants';
 import {connect} from 'react-redux';
 import {createFFComponentSelector} from './selectors/selectorUtils';
-import {loadMyLeagues, loadUser} from './actions/LoadActions';
+import {loadUserAndLeagues} from './actions/LoadActions';
 import {logout, loadAuthFromLocalStorage} from './actions/AuthActions';
 
 const App = React.createClass({
@@ -19,14 +19,8 @@ const App = React.createClass({
 
   componentWillMount() {
     const {dispatch} = this.props;
-
-    // Ensure we load this BEFORE we render this component. It will finish
-    // synchronously, and if it succeeds, we want to ensure we don't redirect to
-    // the login screen.
     dispatch(loadAuthFromLocalStorage());
-
-    dispatch(loadMyLeagues());
-    dispatch(loadUser());
+    dispatch(loadUserAndLeagues());
   },
 
   render() {

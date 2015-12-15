@@ -5,7 +5,7 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {createFFComponentSelector} from '../selectors/selectorUtils';
 import {Link} from 'react-router';
-import {loadMyLeagues, loadUser} from '../actions/LoadActions';
+import {loadUserAndLeagues} from '../actions/LoadActions';
 import {ModelShapes, LoadStateShape} from '../Constants';
 import {selectMyLeagues} from '../selectors/selectors';
 
@@ -21,8 +21,7 @@ const LeagueChooser = React.createClass({
 
   componentWillMount() {
     const {dispatch} = this.props;
-    dispatch(loadMyLeagues());
-    dispatch(loadUser());
+    dispatch(loadUserAndLeagues());
   },
 
   render() {

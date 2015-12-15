@@ -1,5 +1,5 @@
 import {Positions} from '../Constants';
-import buildAsyncAction, {AUTH_REQUIRED} from './buildAsyncAction';
+import buildAsyncAction, {handleAsyncAction, AUTH_REQUIRED} from './buildAsyncAction';
 import {
   LOAD_FANTASY_PLAYERS,
   LOAD_FANTASY_TEAMS,
@@ -65,21 +65,29 @@ export function loadFootballPlayers(fantasyLeagueId) {
 }
 
 export function loadMyLeagues() {
-  return buildAsyncAction({
-    actionType: LOAD_MY_LEAGUES,
-    auth: AUTH_REQUIRED,
-    url: '/dev_api/user/fantasy_leagues/',
-    parser: parseLeague,
-    metaSelector: selectMyLeaguesMeta
-  });
+  return function (dispatch, getState) {
+    const user = selectCurrentUserMeta(getState());
+    if (!user || !user.id) return false;
+
+    return handleAsyncAction(dispatch, getState, {
+      actionType: LOAD_MY_LEAGUES,
+      auth: AUTH_REQUIRED,
+      url: `/api/users/${user.id}/fantasy_leagues/`,
+      parser: parseLeague,
+      metaSelector: selectMyLeaguesMeta
+    });
+  };
 }
 
-export function loadUser() {
+export function loadUserAndLeagues() {
   return buildAsyncAction({
     actionType: LOAD_USER,
     auth: AUTH_REQUIRED,
-    url: '/dev_api/user/',
-    metaSelector: selectCurrentUserMeta
+    url: '/api/current_user',
+    metaSelector: selectCurrentUserMeta,
+    onSuccess: function (dispatch, _getState) {
+      dispatch(loadMyLeagues());
+    }
   });
 }
 

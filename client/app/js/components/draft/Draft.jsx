@@ -2,8 +2,7 @@ import {
   loadFantasyPlayers,
   loadFantasyTeams,
   loadFootballPlayers,
-  loadMyLeagues,
-  loadUser
+  loadUserAndLeagues
 } from '../../actions/LoadActions';
 import {
   loadDraftOrder,
@@ -54,8 +53,7 @@ const Draft = React.createClass({
     dispatch(loadFantasyPlayers(leagueId));
     dispatch(loadFantasyTeams(leagueId));
     dispatch(loadFootballPlayers(leagueId));
-    dispatch(loadMyLeagues());
-    dispatch(loadUser());
+    dispatch(loadUserAndLeagues());
     socketIO.on(`draft:${leagueId}`, this._onDraftSocketUpdate);
   },
 
