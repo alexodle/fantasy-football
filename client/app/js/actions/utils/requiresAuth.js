@@ -1,9 +1,9 @@
 import {selectAuthMeta} from '../../selectors/metaSelectors';
-import {hasLoaded} from '../utils/loadingUtils';
+import {hasLoaded} from '../../utils/loadingUtils';
 
 function redirectToLogin(reason) {
   // HACK - lazy-load AuthActions to avoid circular dependency
-  return require('./AuthActions').redirectToLogin(reason);
+  return require('../AuthActions').redirectToLogin(reason);
 }
 
 export default function requiresAuth(next) {
@@ -13,6 +13,6 @@ export default function requiresAuth(next) {
       dispatch(redirectToLogin());
       return;
     }
-    next(dispatch, getState);
+    next(dispatch, getState, authMeta.token);
   };
 }
