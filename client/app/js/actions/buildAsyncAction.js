@@ -37,7 +37,7 @@ if (authRequired) {
     return;
   }
 
-  auth = { u: authMeta.user, p: authMeta.token };
+  auth = { u: authMeta.token, p: '' };
 }
 
 const meta = metaSelector(getState());

@@ -23,7 +23,6 @@ export function login(username, password, nextPath = '/') {
     url: '/api/token',
     auth: { u: username, p: password },
     metaSelector: selectAuthMeta,
-    dataKey: 'token',
     extraProps: { user: username },
     onSuccess: function (dispatch, getState) {
       const auth = selectAuthMeta(getState());

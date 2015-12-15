@@ -43,7 +43,7 @@ function authReducer(auth, action, metaUpdate) {
 
     case LOGIN:
       if (action.state === SUCCEEDED) {
-        return { ...metaUpdate, token: action.payload, user: action.user };
+        return { ...metaUpdate, token: action.payload.token, user: action.user };
       }
       return { ...auth, ...metaUpdate };
 
