@@ -98,12 +98,9 @@ export default function buildAsyncAction(options) {
 }
 
 function shouldFetch(meta) {
-  if (!meta || !meta.lastUpdated) {
-    return true;
-  } else if (meta.isFetching) {
-    return false;
-  } else {
-    return meta.didInvalidate;
-  }
+  if (!meta) return true;
+  if (meta.isFetching) return false;
+  if (!meta.lastUpdated) return true;
+  return meta.didInvalidate;
 }
 
