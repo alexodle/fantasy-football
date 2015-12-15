@@ -32,7 +32,7 @@ export function loadFantasyPlayers(fantasyLeagueId) {
   return buildAsyncAction({
     actionType: LOAD_FANTASY_PLAYERS,
     auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/fantasy_players/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/users/`,
     extraProps: { league_id: fantasyLeagueId },
     metaSelector: function (state) {
       return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);

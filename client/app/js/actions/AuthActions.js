@@ -1,7 +1,8 @@
-import {selectAuthMeta} from '../selectors/metaSelectors';
 import {pushState} from 'redux-router';
-import buildAsyncAction from './buildAsyncAction';
-import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
+import {LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
+
+// IN PROGRESS OF MOVING ALL THESE FUNCTIONS TO AuthActions2
+export const login = require('./AuthActions2').login;
 
 export function loadAuthFromLocalStorage() {
   let auth = localStorage.getItem('auth');
@@ -15,22 +16,6 @@ export function loadAuthFromLocalStorage() {
   }
 
   return { type: LOAD_AUTH_FROM_LOCAL_STORAGE, auth };
-}
-
-export function login(username, password, nextPath = '/') {
-  return buildAsyncAction({
-    actionType: LOGIN,
-    url: '/api/token',
-    auth: { u: username, p: password },
-    metaSelector: selectAuthMeta,
-    extraProps: { user: username },
-    onSuccess: function (dispatch, getState) {
-      const auth = selectAuthMeta(getState());
-      localStorage.setItem('auth', JSON.stringify(auth));
-
-      dispatch(pushState(null, nextPath));
-    }
-  });
 }
 
 export function logout() {

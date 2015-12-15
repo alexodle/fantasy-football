@@ -22,6 +22,7 @@
     "npm": "3.3.x"
   },
   "dependencies": {
+    "babel-polyfill": "^6.3.14",
     "bootstrap": "^3.3.5",
     "history": "^1.13.1",
     "lodash": "^3.10.1",
