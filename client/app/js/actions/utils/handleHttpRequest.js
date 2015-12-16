@@ -35,7 +35,7 @@ export default function handleHttpRequest({
         ...extraProps
       });
     })
-    .catch(({ res, authFailure }) => {
+    .catch(({ err, res, authFailure }) => {
       if (allowLoginRedirect && authFailure) {
         dispatch(redirectToLogin('Your auth expired.'));
       } else {
@@ -46,5 +46,6 @@ export default function handleHttpRequest({
           ...extraProps
         });
       }
+      throw err;
     });
 }
