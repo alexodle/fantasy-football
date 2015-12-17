@@ -21,28 +21,28 @@ export function fetchLeagueFantasyTeams(fantasyLeagueId, token) {
 
 export function fetchLeagueFootballPlayers(fantasyLeagueId, token) {
   return httpGet({
-    url: `/dev_api/league/${fantasyLeagueId}/football_players/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/football_players/`,
     token
   });
 }
 
 export function fetchLeagueFantasyPlayers(fantasyLeagueId, token) {
   return httpGet({
-    url: `/dev_api/fantasy_leagues/${fantasyLeagueId}/users/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/users/`,
     token
   });
 }
 
 export function fetchDraftOrder(fantasyLeagueId, token) {
   return httpGet({
-    url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/draft_orders/`,
     token
   });
 }
 
 export function fetchDraftPicks(fantasyLeagueId, token) {
   return httpGet({
-    url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/draft_picks/`,
     token
   });
 }
