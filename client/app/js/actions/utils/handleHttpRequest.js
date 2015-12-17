@@ -19,6 +19,19 @@ export default function handleHttpRequest({
 }) {
   dispatch({ type: actionType, state: ACTIVE, ...extraProps });
   return request
+    .catch(({ err, res, authFailure }) => {
+      if (allowLoginRedirect && authFailure) {
+        dispatch(redirectToLogin('Your auth expired.'));
+      } else {
+        dispatch({
+          type: actionType,
+          state: FAILED,
+          statusCode: res.statusCode,
+          ...extraProps
+        });
+      }
+      throw err;
+    })
     .then(({ res }) => {
       let payload = res.body[dataKey];
       if (_.isArray(payload)) {
@@ -34,18 +47,5 @@ export default function handleHttpRequest({
         payload,
         ...extraProps
       });
-    })
-    .catch(({ err, res, authFailure }) => {
-      if (allowLoginRedirect && authFailure) {
-        dispatch(redirectToLogin('Your auth expired.'));
-      } else {
-        dispatch({
-          type: actionType,
-          state: FAILED,
-          statusCode: res.statusCode,
-          ...extraProps
-        });
-      }
-      throw err;
     });
 }
