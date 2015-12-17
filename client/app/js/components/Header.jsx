@@ -27,7 +27,7 @@ export default React.createClass({
     return (
       <div className='page-header'>
         <h1>
-          Fantasy Football <small>{currentUser ? currentUser.name : ''}</small>
+          Fantasy Football <small>{currentUser ? currentUser.username : ''}</small>
           {!currentUser ? null : (
             <div className='pull-right'>
               <small><a href='#' onClick={this._onLogout}>Logout</a></small>

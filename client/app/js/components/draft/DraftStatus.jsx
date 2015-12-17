@@ -30,7 +30,7 @@ export default React.createClass({
       <div>
         <p className='draft-status'>
           On the clock with pick #{currentDraftOrder.order + 1}: <b>
-            {user.team.name} ({user.name})
+            {user.team.name} ({user.username})
           </b>
         </p>
       </div>
