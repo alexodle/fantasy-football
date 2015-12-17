@@ -26,9 +26,7 @@ def get_user_fantasy_leagues(id):
     user = User.query.get_or_404(id)
     fantasy_leagues = user.fantasy_leagues.all()
     return jsonify({
-        current_app.config['RESPONSE_OBJECT_NAME']: {
-            'fantasy_leagues': [l.to_json() for l in fantasy_leagues]
-        }
+        current_app.config['RESPONSE_OBJECT_NAME']: [l.to_json() for l in fantasy_leagues]
     })
 
 
