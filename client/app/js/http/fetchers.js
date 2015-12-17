@@ -14,7 +14,7 @@ export function fetchUserLeagues(userId, token) {
 
 export function fetchLeagueFantasyTeams(fantasyLeagueId, token) {
   return httpGet({
-    url: `/dev_api/league/${fantasyLeagueId}/fantasy_teams/`,
+    url: `/api/fantasy_leagues/${fantasyLeagueId}/fantasy_teams/`,
     token
   });
 }
