@@ -24,7 +24,7 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "bootstrap": "^3.3.5",
-    "history": "^1.13.1",
+    "history": "^1.13.x",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-addons-pure-render-mixin": "^0.14.2",
