@@ -7,6 +7,10 @@ from app.exceptions import ValidationError
 from . import db, login_manager
 
 
+# TODO: Move to constants file?
+POSITIONS = [ 'QB', 'RB', 'WR', 'TE', 'K', 'D/ST' ]
+
+
 fantasy_league_memberships = db.Table(
     'fantasy_league_memberships',
     db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
@@ -167,6 +171,7 @@ class User(UserMixin, db.Model):
         json_user = {
             'id': self.id,
             'username': self.username,
+            'email': self.email
         }
         return json_user
 
@@ -220,8 +225,8 @@ class FantasyLeague(db.Model):
             'id': self.id,
             'name': self.name,
             'draft_start_date': self.draft_start_date,
-            'commissioner': self.commissioner_id,
-            'conference': self.conference_id,
+            'commissioner_id': self.commissioner_id,
+            'conference_id': self.conference_id,
         }
         return json_fantasy_league
 
@@ -239,11 +244,11 @@ class FantasyLeague(db.Model):
 
         seed()
         user_count = User.query.count()
-        user_offset = randint(0, user_count - 1)
         conference_count = FootballConference.query.count()
+        users_per_league = 16
         for i in range(count):
-            users = User.query.offset(user_offset).limit(10).all()
-            commiss = User.query.offset(user_offset).first()
+            users = User.query.offset(users_per_league * i).limit(users_per_league).all()
+            commiss = User.query.offset(users_per_league * i).first()
             con = FootballConference.query.\
                 offset(randint(0, conference_count - 1)).first()
             fl = FantasyLeague(
@@ -272,30 +277,26 @@ class FantasyTeam(db.Model):
             'id': self.id,
             'name': self.name,
             'short_name': self.short_name,
-            'fantasy_league': self.fantasy_league_id,
-            'owner': self.owner_id,
+            'fantasy_league_id': self.fantasy_league_id,
+            'owner_id': self.owner_id,
         }
         return json_fantasy_team
 
     @staticmethod
-    def generate_fake(count=50):
-        from random import seed, randint
+    def generate_fake():
+        from random import seed
         import forgery_py
 
         seed()
-        user_count = User.query.count()
-        league_count = FantasyLeague.query.count()
-        for i in range(count):
-            u = User.query.offset(randint(0, user_count - 1)).first()
-            fl = FantasyLeague.query.\
-                offset(randint(0, league_count - 1)).first()
-            ft = FantasyTeam(
-                name=forgery_py.name.company_name(),
-                short_name=forgery_py.internet.user_name(),
-                fantasy_league=fl,
-                owner=u,
-            )
-            db.session.add(ft)
+        for u in User.query.all():
+            for fl in u.fantasy_leagues:
+                ft = FantasyTeam(
+                    name=forgery_py.name.company_name(),
+                    short_name=forgery_py.internet.user_name(),
+                    fantasy_league=fl,
+                    owner=u
+                )
+                db.session.add(ft)
 
 
 class FootballPlayer(db.Model):
@@ -317,7 +318,7 @@ class FootballPlayer(db.Model):
             'id': self.id,
             'name': self.name,
             'position': self.position,
-            'football_team': self.football_team_id,
+            'football_team_id': self.football_team_id,
         }
         return json_football_player
 
@@ -332,7 +333,7 @@ class FootballPlayer(db.Model):
             ft = FootballTeam.query.offset(randint(0, team_count - 1)).first()
             fp = FootballPlayer(
                 name=forgery_py.name.full_name(),
-                position=forgery_py.name.job_title(),
+                position=POSITIONS[i % len(POSITIONS)],
                 football_team=ft,
             )
             db.session.add(fp)
@@ -355,7 +356,7 @@ class FootballTeam(db.Model):
         json_football_player = {
             'id': self.id,
             'name': self.name,
-            'conference': self.conference_id,
+            'conference_id': self.conference_id,
         }
         return json_football_player
 
@@ -424,9 +425,9 @@ class DraftOrder(db.Model):
 
     def to_json(self):
         json_draft_order = {
-            'fantasy_league': self.fantasy_league_id,
+            'fantasy_league_id': self.fantasy_league_id,
             'order': self.order,
-            'user': self.user_id,
+            'user_id': self.user_id,
         }
         return json_draft_order
 
@@ -452,7 +453,7 @@ class DraftOrder(db.Model):
 
 class DraftPick(db.Model):
     __tablename__ = 'draft_picks'
-    pick_number = db.Column(db.Integer, primary_key=True)
+    order = db.Column(db.Integer, primary_key=True)
 
     # foriegn keys
     fantasy_league_id = db.Column(db.Integer,
@@ -466,10 +467,10 @@ class DraftPick(db.Model):
 
     def to_json(self):
         json_draft_pick = {
-            'fantasy_league': self.fantasy_league_id,
-            'pick_number': self.pick_number,
-            'user': self.user_id,
-            'football_player': self.football_player_id,
+            'fantasy_league_id': self.fantasy_league_id,
+            'order': self.order,
+            'user_id': self.user_id,
+            'football_player_id': self.football_player_id,
         }
         return json_draft_pick
 
@@ -486,10 +487,12 @@ class DraftPick(db.Model):
             players = FootballPlayer.query.join(FootballTeam)\
                 .filter(FootballTeam.conference == league.conference).all()
 
-            for idx, pick in enumerate(draft_orders):
+            # set the draft as being halfway done
+            completed_draft_orders = draft_orders[:-len(draft_orders) / 2]
+            for idx, pick in enumerate(completed_draft_orders):
                 if players:  # check that there are players left in the draft
                     dp = DraftPick(
-                        pick_number=idx+1,
+                        order=idx+1,
                         fantasy_league=league,
                         user=pick.user,
                         football_player=players.pop()

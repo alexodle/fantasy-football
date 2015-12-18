@@ -71,7 +71,7 @@ def db_rebuild():
     FantasyLeague.generate_fake(20)
 
     # insert fake fantasy teams
-    FantasyTeam.generate_fake(100)
+    FantasyTeam.generate_fake()
 
     # insert fake football teams
     FootballTeam.generate_fake(80)
