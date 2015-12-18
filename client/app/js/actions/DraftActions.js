@@ -1,32 +1,43 @@
+import handleHttpRequest from './utils/handleHttpRequest';
+import preventsRefetchAndRequiresAuth from './utils/preventsRefetchAndRequiresAuth';
+import {CLEAR, INVALIDATE} from './AsyncActionStates';
+import {LOAD_DRAFT_ORDER, LOAD_DRAFT_PICKS} from './ActionTypes';
+import {
+  fetchDraftOrder,
+  fetchDraftPicks
+} from '../http/fetchers';
 import {
   selectLeagueDraftOrderMeta,
   selectLeagueDraftPicksMeta
 } from '../selectors/metaSelectors';
-import buildAsyncAction, {AUTH_REQUIRED} from './buildAsyncAction';
-import {CLEAR, INVALIDATE} from './AsyncActionStates';
-import {LOAD_DRAFT_ORDER, LOAD_DRAFT_PICKS} from './ActionTypes';
 
 export function loadDraftOrder(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_DRAFT_ORDER,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/draft_order/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
-    }
+  const metaSelector = (state) => {
+    return selectLeagueDraftOrderMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = fetchDraftOrder(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_DRAFT_ORDER,
+      extraProps: { league_id: fantasyLeagueId }
+    });
   });
 }
 
 export function loadDraftPicks(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_DRAFT_PICKS,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/draft_picks/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
-    }
+  const metaSelector = (state) => {
+    return selectLeagueDraftPicksMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = fetchDraftPicks(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_DRAFT_PICKS,
+      extraProps: { league_id: fantasyLeagueId }
+    });
   });
 }
 

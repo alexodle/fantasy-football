@@ -42,7 +42,7 @@ export const ModelShapes = {
   User: PropTypes.shape({
     id: PropTypes.number.isRequired,
     email: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
 
     // We always include the team for the current league when passing users via
     // selector

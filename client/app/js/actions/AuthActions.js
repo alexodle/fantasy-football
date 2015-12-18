@@ -1,7 +1,9 @@
-import {selectAuthMeta} from '../selectors/metaSelectors';
-import {pushState} from 'redux-router';
-import buildAsyncAction from './buildAsyncAction';
+import handleHttpRequest from './utils/handleHttpRequest';
+import preventsRefetch from './utils/preventsRefetch';
 import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
+import {fetchToken} from '../http/fetchers';
+import {pushState} from 'redux-router';
+import {selectAuthMeta} from '../selectors/metaSelectors';
 
 export function loadAuthFromLocalStorage() {
   let auth = localStorage.getItem('auth');
@@ -9,7 +11,6 @@ export function loadAuthFromLocalStorage() {
     try {
       auth = JSON.parse(auth);
     } catch (e) {
-      console.warn(`Could not parse auth: ${auth}, ${e}`);
       auth = null;
     }
   }
@@ -18,18 +19,23 @@ export function loadAuthFromLocalStorage() {
 }
 
 export function login(username, password, nextPath = '/') {
-  return buildAsyncAction({
-    actionType: LOGIN,
-    url: '/api/token',
-    auth: { u: username, p: password },
-    metaSelector: selectAuthMeta,
-    extraProps: { user: username },
-    onSuccess: function (dispatch, getState) {
+  return preventsRefetch(selectAuthMeta, (dispatch, getState) => {
+    const request = fetchToken(username, password);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOGIN,
+      extraProps: { user: username },
+
+      // We are already at the login page, so no need to force redirect
+      allowLoginRedirect: false
+    })
+    .then(() => {
       const auth = selectAuthMeta(getState());
       localStorage.setItem('auth', JSON.stringify(auth));
 
       dispatch(pushState(null, nextPath));
-    }
+    });
   });
 }
 

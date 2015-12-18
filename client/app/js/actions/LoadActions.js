@@ -1,19 +1,26 @@
+import handleHttpRequest from './utils/handleHttpRequest';
+import preventsRefetchAndRequiresAuth from './utils/preventsRefetchAndRequiresAuth';
 import {Positions} from '../Constants';
-import buildAsyncAction, {handleAsyncAction, AUTH_REQUIRED} from './buildAsyncAction';
-import {
-  LOAD_FANTASY_PLAYERS,
-  LOAD_FANTASY_TEAMS,
-  LOAD_FOOTBALL_PLAYERS,
-  LOAD_MY_LEAGUES,
-  LOAD_USER
-} from './ActionTypes';
 import {
   selectCurrentUserMeta,
-  selectLeagueFantasyPlayersMeta,
+  selectMyLeaguesMeta,
   selectLeagueFantasyTeamsMeta,
-  selectLeagueFootballPlayersMeta,
-  selectMyLeaguesMeta
+  selectLeagueFantasyPlayersMeta,
+  selectLeagueFootballPlayersMeta
 } from '../selectors/metaSelectors';
+import {
+  LOAD_MY_LEAGUES,
+  LOAD_USER, LOAD_FANTASY_TEAMS,
+  LOAD_FANTASY_PLAYERS,
+  LOAD_FOOTBALL_PLAYERS
+} from '../actions/ActionTypes';
+import {
+  fetchCurrentUser,
+  fetchUserLeagues,
+  fetchLeagueFantasyTeams,
+  fetchLeagueFantasyPlayers,
+  fetchLeagueFootballPlayers
+} from '../http/fetchers';
 
 const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
   max_team_size: 11,
@@ -28,66 +35,71 @@ const TEMPTEMP_HARDCODED_LEAGUE_RULES = {
   }
 };
 
+export function loadFootballPlayers(fantasyLeagueId) {
+  const metaSelector = (state) => {
+    return selectLeagueFootballPlayersMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = fetchLeagueFootballPlayers(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_FOOTBALL_PLAYERS,
+      extraProps: { league_id: fantasyLeagueId }
+    });
+  });
+}
+
 export function loadFantasyPlayers(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_FANTASY_PLAYERS,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/fantasy_players/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
-    }
+  const metaSelector = (state) => {
+    return selectLeagueFantasyPlayersMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = fetchLeagueFantasyPlayers(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_FANTASY_PLAYERS,
+      extraProps: { league_id: fantasyLeagueId }
+    });
   });
 }
 
 export function loadFantasyTeams(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_FANTASY_TEAMS,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/fantasy_teams/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueFantasyTeamsMeta(state, fantasyLeagueId);
-    }
-  });
-}
-
-export function loadFootballPlayers(fantasyLeagueId) {
-  return buildAsyncAction({
-    actionType: LOAD_FOOTBALL_PLAYERS,
-    auth: AUTH_REQUIRED,
-    url: `/dev_api/league/${fantasyLeagueId}/football_players/`,
-    extraProps: { league_id: fantasyLeagueId },
-    metaSelector: function (state) {
-      return selectLeagueFootballPlayersMeta(state, fantasyLeagueId);
-    }
+  const metaSelector = (state) => {
+    return selectLeagueFantasyTeamsMeta(state, fantasyLeagueId);
+  };
+  return preventsRefetchAndRequiresAuth(metaSelector, (dispatch, getState, token) => {
+    const request = fetchLeagueFantasyTeams(fantasyLeagueId, token);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: LOAD_FANTASY_TEAMS,
+      extraProps: { league_id: fantasyLeagueId }
+    });
   });
 }
 
 export function loadMyLeagues() {
-  return function (dispatch, getState) {
+  return preventsRefetchAndRequiresAuth(selectMyLeaguesMeta, (dispatch, getState, token) => {
     const user = selectCurrentUserMeta(getState());
     if (!user || !user.id) return false;
 
-    return handleAsyncAction(dispatch, getState, {
+    const request = fetchUserLeagues(user.id, token);
+    handleHttpRequest({
+      dispatch,
+      request,
       actionType: LOAD_MY_LEAGUES,
-      auth: AUTH_REQUIRED,
-      url: `/api/users/${user.id}/fantasy_leagues/`,
-      parser: parseLeague,
-      metaSelector: selectMyLeaguesMeta
+      parser: parseLeague
     });
-  };
+  });
 }
 
 export function loadUserAndLeagues() {
-  return buildAsyncAction({
-    actionType: LOAD_USER,
-    auth: AUTH_REQUIRED,
-    url: '/api/current_user',
-    metaSelector: selectCurrentUserMeta,
-    onSuccess: function (dispatch, _getState) {
-      dispatch(loadMyLeagues());
-    }
+  return preventsRefetchAndRequiresAuth(selectCurrentUserMeta, (dispatch, getState, token) => {
+    const request = fetchCurrentUser(token);
+    handleHttpRequest({ dispatch, request, actionType: LOAD_USER })
+      .then(() => dispatch(loadMyLeagues()));
   });
 }
 
