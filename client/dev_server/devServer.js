@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import bodyParser from 'body-parser';
-import createRedisClient from '../../node_server/createRedisClient';
+import createRedisClient from './createRedisClient';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
