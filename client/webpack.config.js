@@ -1,15 +1,16 @@
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
+
+// definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
+var definePlugin = new webpack.DefinePlugin({
+  __DEV__: process.env.NODE_ENV !== 'production'
+});
 
 module.exports = {
-  entry: path.resolve('./app/js/index.jsx'),
+  entry: path.resolve(__dirname, 'app/js/index.jsx'),
   resolve: {
     extensions: ['', '.js', '.jsx']
-  },
-  output: {
-    path: path.resolve('./dist'),
-    publicPath: 'dist',
-    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -37,8 +38,7 @@ module.exports = {
     reasons: true
   },
   plugins: [
-    new HtmlwebpackPlugin({
-      title: 'Fantasy Football App'
-    })
+    definePlugin,
+    new HtmlwebpackPlugin({ title: 'Fantasy Football App' })
   ]
 };

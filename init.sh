@@ -10,6 +10,7 @@ echo
 pushd $BASEDIR/client
 npm install
 npm install -g mocha # js test framework
+npm install -g webpack
 popd
 
 ## server ##
