@@ -1,9 +1,11 @@
 from flask import jsonify, current_app
 from ..models import FantasyTeam
 from . import api
+from .decorators import block_anonymous
 
 
 @api.route('/fantasy_teams/')
+@block_anonymous
 def get_fantasy_teams():
     fantasy_teams = FantasyTeam.query.all()
     return jsonify({
@@ -14,6 +16,7 @@ def get_fantasy_teams():
 
 
 @api.route('/fantasy_teams/<int:id>')
+@block_anonymous
 def get_fantasy_team(id):
     fantasy_team = FantasyTeam.query.get_or_404(id)
     return jsonify({

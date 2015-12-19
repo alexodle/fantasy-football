@@ -175,6 +175,19 @@ class User(UserMixin, db.Model):
         }
         return json_user
 
+    @classmethod
+    def from_json(cls, json_user):
+        """
+        Convert a json request to a User
+        """
+        email = json_user.get('email')
+        username = json_user.get('username')
+        password = json_user.get('password')
+        if email and username and password:
+            return cls(email=email, username=username, password=password)
+        else:
+            raise ValidationError('insufficient data to create User')
+
     def __repr__(self):
         return '<User %r>' % self.username
 
@@ -229,13 +242,6 @@ class FantasyLeague(db.Model):
             'conference_id': self.conference_id,
         }
         return json_fantasy_league
-
-    @staticmethod
-    def from_json(json_fantasy_league):
-        body = json_fantasy_league.get('body')
-        if body is None or body == '':
-            raise ValidationError('fantasy league does not have a body')
-        return FantasyLeague(body=body)
 
     @staticmethod
     def generate_fake(count=20):

@@ -3,9 +3,11 @@ from ..models import FantasyLeague, FootballTeam, FootballConference, \
     FootballPlayer, DraftPick
 from . import api
 from .. import db
+from .decorators import block_anonymous
 
 
 @api.route('/fantasy_leagues/')
+@block_anonymous
 def get_fantasy_leagues():
     fantasy_leagues = FantasyLeague.query.all()
     return jsonify({
@@ -15,6 +17,7 @@ def get_fantasy_leagues():
 
 
 @api.route('/fantasy_leagues/<int:id>')
+@block_anonymous
 def get_fantasy_league(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     return jsonify({
@@ -23,6 +26,7 @@ def get_fantasy_league(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/users/')
+@block_anonymous
 def get_fantasy_league_users(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     users = fantasy_league.users.all()
@@ -33,6 +37,7 @@ def get_fantasy_league_users(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/fantasy_teams/')
+@block_anonymous
 def get_fantasy_league_fantasy_teams(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     fantasy_teams = fantasy_league.fantasy_teams.all()
@@ -43,6 +48,7 @@ def get_fantasy_league_fantasy_teams(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/football_teams/')
+@block_anonymous
 def get_fantasy_league_football_teams(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     football_teams = FootballTeam.query\
@@ -55,6 +61,7 @@ def get_fantasy_league_football_teams(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/football_conferences/')
+@block_anonymous
 def get_fantasy_league_football_conferences(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     football_conferences = FootballConference.query\
@@ -66,6 +73,7 @@ def get_fantasy_league_football_conferences(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/football_players/')
+@block_anonymous
 def get_fantasy_league_football_players(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     football_players = FootballPlayer.query\
@@ -79,6 +87,7 @@ def get_fantasy_league_football_players(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/draft_picks/')
+@block_anonymous
 def get_fantasy_league_draft_picks(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     draft_picks = fantasy_league.draft_picks.all()
@@ -89,6 +98,7 @@ def get_fantasy_league_draft_picks(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/draft_picks/', methods=['POST'])
+@block_anonymous
 def post_fantasy_league_draft_pick(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     draft_pick = DraftPick.from_json(request.json)
@@ -102,6 +112,7 @@ def post_fantasy_league_draft_pick(id):
 
 
 @api.route('/fantasy_leagues/<int:id>/draft_orders/')
+@block_anonymous
 def get_fantasy_league_draft_orders(id):
     fantasy_league = FantasyLeague.query.get_or_404(id)
     draft_orders = fantasy_league.draft_orders.all()

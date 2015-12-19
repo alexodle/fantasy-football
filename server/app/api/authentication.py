@@ -3,6 +3,7 @@ from flask.ext.httpauth import HTTPBasicAuth
 from ..models import User, AnonymousUser
 from . import api
 from .errors import unauthorized, forbidden
+from .decorators import block_anonymous
 
 # initialize object for basic HTTP authentication
 auth = HTTPBasicAuth()
@@ -63,6 +64,7 @@ def before_request():
 
 
 @api.route('/token')
+@block_anonymous
 def get_token():
     """
     Route that returns authentication tokens to the client.
@@ -72,8 +74,8 @@ def get_token():
     verification. This ensures a client can't generate a new token using an
     expired token.
     """
-    if g.current_user.is_anonymous or g.token_used:
-        return unauthorized('Invalid credentials')
+    if g.token_used:
+        return unauthorized('must provide password to generate token')
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: {
             'token': g.current_user.generate_auth_token(expiration=3600),
@@ -83,6 +85,7 @@ def get_token():
 
 
 @api.route('/current_user')
+@block_anonymous
 def get_current_user():
     """
     Route that returns the current user, given authentication credentials.

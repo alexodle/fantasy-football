@@ -79,6 +79,16 @@ authenticated request using **email address** and **password** to the following 
   * Endpoint: `/api/users/<int:id>/commissioned_leagues/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/1/commissioned_leagues/`
 
+####POST Requests
+* ***post_users***
+  * Endpoint: `/api/users/`
+  * Required Parameters:
+    * `email`
+    * `username`
+    * `password`
+  * HTTPie Request: `http --json POST http://127.0.0.1:5000/api/users/ email=bob@yahoo.com username=bob-1998 password=mypass`
+
+
 ## FantasyTeam
 
 ####GET Requests
