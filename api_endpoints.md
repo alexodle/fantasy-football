@@ -55,6 +55,8 @@ authenticated request using **email address** and **password** to the following 
 # Resource Endpoints
 
 ## User
+
+####GET Requests
 * **get_users**
   * Endpoint: `/api/users/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/`
@@ -78,6 +80,8 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/users/1/commissioned_leagues/`
 
 ## FantasyTeam
+
+####GET Requests
 * **get_fantasy_teams**
   * Endpoint: `/api/fantasy_teams/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_teams/`
@@ -125,6 +129,8 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password POST http://127.0.0.1:5000/api/fantasy_leagues/1/draft_picks/ football_player_id:=1 order:=1`
 
 ## FootballConference
+
+####GET Requests
 * **get_football_conferences**
   * Endpoint: `/api/football_conferences/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_conferences/`
@@ -133,6 +139,8 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_conferences/1`
 
 ## FootballTeam
+
+####GET Requests
 * **get_football_teams**
   * Endpoint: `/api/football_teams/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_teams/`
@@ -144,6 +152,8 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_teams/1/football_players/`
 
 ## FootballPlayer
+
+####GET Requests
 * **get_football_players**
   * Endpoint: `/api/football_conferences/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/football_players/`
