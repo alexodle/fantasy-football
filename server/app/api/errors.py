@@ -29,6 +29,12 @@ def forbidden(message):
     return response
 
 
+def method_not_allowed(message):
+    response = jsonify({'error': 'method not allowed', 'message': message})
+    response.status_code = 405
+    return response
+
+
 def internal_server_error():
     response = jsonify({'error': 'internal server error',
                         'message': 'internal server error'})
@@ -51,6 +57,22 @@ def resource_not_found_error(e):
     Error handler that's called when resource is not found.
     """
     return resource_not_found(e.description)
+
+
+@api.app_errorhandler(400)
+def bad_request_error(e):
+    """
+    Error handler that's called when a 400 error is raised.
+    """
+    return bad_request(e.description)
+
+
+@api.app_errorhandler(405)
+def method_not_allowed_error(e):
+    """
+    Error handler that's called when a 405 error is raised.
+    """
+    return method_not_allowed(e.description)
 
 
 @api.app_errorhandler(500)
