@@ -8,7 +8,7 @@ from . import db, login_manager
 
 
 # TODO: Move to constants file?
-POSITIONS = [ 'QB', 'RB', 'WR', 'TE', 'K', 'D/ST' ]
+POSITIONS = ['QB', 'RB', 'WR', 'TE', 'K', 'D/ST']
 
 
 fantasy_league_memberships = db.Table(
@@ -243,11 +243,11 @@ class FantasyLeague(db.Model):
         import forgery_py
 
         seed()
-        user_count = User.query.count()
         conference_count = FootballConference.query.count()
         users_per_league = 16
         for i in range(count):
-            users = User.query.offset(users_per_league * i).limit(users_per_league).all()
+            users = User.query.offset(users_per_league * i).\
+                limit(users_per_league).all()
             commiss = User.query.offset(users_per_league * i).first()
             con = FootballConference.query.\
                 offset(randint(0, conference_count - 1)).first()
