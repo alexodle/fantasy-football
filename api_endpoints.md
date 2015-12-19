@@ -86,6 +86,8 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_teams/1`
 
 ## FantasyLeague
+
+###GET Requests
 * **get_fantasy_leagues**
   * Endpoint: `/api/fantasy_leagues/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/`
@@ -113,6 +115,14 @@ authenticated request using **email address** and **password** to the following 
 * **get_fantasy_league_draft_orders**
   * Endpoint: `/api/fantasy_leagues/<int:id>/draft_orders/`
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1/draft_orders/`
+
+###POST Requests
+* **post_fantasy_league_draft_pick**
+  * Endpoint: `api/fantasy_leagues/<int:id>/draft_picks/`
+  * Required Parameters:
+    * `order`
+    * `football_player_id`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password POST http://127.0.0.1:5000/api/fantasy_leagues/1/draft_picks/ football_player_id:=1 order:=1`
 
 ## FootballConference
 * **get_football_conferences**

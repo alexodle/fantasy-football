@@ -474,6 +474,18 @@ class DraftPick(db.Model):
         }
         return json_draft_pick
 
+    @classmethod
+    def from_json(cls, json_draft_pick):
+        """
+        Convert a json request to a DraftPick
+        """
+        football_player_id = json_draft_pick.get('football_player_id')
+        order = json_draft_pick.get('order')
+        if football_player_id and order:
+            return cls(football_player_id=football_player_id, order=order)
+        else:
+            raise ValidationError('insufficient data to create DraftPick')
+
     @staticmethod
     def generate_fake():
         # loop through every league, then every team and assign draft order

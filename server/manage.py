@@ -83,7 +83,8 @@ def db_rebuild():
     DraftOrder.generate_fake(rounds=5)
 
     # complete draft
-    DraftPick.generate_fake()
+    # do not complete the draft when creating fake data
+    # DraftPick.generate_fake()
 
     # print results
     inspector = db.inspect(db.engine)
