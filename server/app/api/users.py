@@ -3,6 +3,7 @@ from . import api
 from ..models import User
 from .. import db
 from .decorators import block_anonymous
+from sqlalchemy.exc import IntegrityError
 
 
 @api.route('/users/')
@@ -21,7 +22,11 @@ def post_users():
     user = User.from_json(request.json)
     user.confirmed = False
     db.session.add(user)
-    db.session.commit()
+    try:
+        db.session.commit()
+    except IntegrityError as e:
+        db.session.rollback()
+        raise e
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: user.to_json()
     }), 201

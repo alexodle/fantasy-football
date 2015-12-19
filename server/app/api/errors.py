@@ -1,4 +1,5 @@
 from flask import jsonify
+from sqlalchemy.exc import IntegrityError
 from app.exceptions import ValidationError
 from . import api
 
@@ -12,6 +13,12 @@ def resource_not_found(message):
 def bad_request(message):
     response = jsonify({'error': 'bad request', 'message': message})
     response.status_code = 400
+    return response
+
+
+def data_conflict(message):
+    response = jsonify({'error': 'data conflict', 'message': message})
+    response.status_code = 409
     return response
 
 
@@ -40,6 +47,15 @@ def internal_server_error():
                         'message': 'internal server error'})
     response.status_code = 500
     return response
+
+
+@api.app_errorhandler(IntegrityError)
+def data_conflict_error(e):
+    """
+    Error handler that's called when views raise the SqlAlchemy
+    'IntegrityError' exception.
+    """
+    return data_conflict(e.args[0])
 
 
 @api.app_errorhandler(ValidationError)

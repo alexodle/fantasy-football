@@ -4,6 +4,7 @@ from ..models import FantasyLeague, FootballTeam, FootballConference, \
 from . import api
 from .. import db
 from .decorators import block_anonymous
+from sqlalchemy.exc import IntegrityError
 
 
 @api.route('/fantasy_leagues/')
@@ -105,7 +106,11 @@ def post_fantasy_league_draft_pick(id):
     draft_pick.user_id = g.current_user.id
     draft_pick.fantasy_league_id = fantasy_league.id
     db.session.add(draft_pick)
-    db.session.commit()
+    try:
+        db.session.commit()
+    except IntegrityError as e:
+        db.session.rollback()
+        raise e
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: draft_pick.to_json()
     }), 201
