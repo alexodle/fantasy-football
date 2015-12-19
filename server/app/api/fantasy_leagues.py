@@ -1,4 +1,4 @@
-from flask import jsonify, current_app, request, url_for, g
+from flask import jsonify, current_app, request, g
 from ..models import FantasyLeague, FootballTeam, FootballConference, \
     FootballPlayer, DraftPick
 from . import api
@@ -96,11 +96,9 @@ def post_fantasy_league_draft_pick(id):
     draft_pick.fantasy_league_id = fantasy_league.id
     db.session.add(draft_pick)
     db.session.commit()
-    # TODO: change the Location header to endpoint for the specific draft pick
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: draft_pick.to_json()
-    }), 201, {'Location': url_for('api.get_fantasy_league_draft_picks',
-                                  id=fantasy_league.id, _external=True)}
+    }), 201
 
 
 @api.route('/fantasy_leagues/<int:id>/draft_orders/')
