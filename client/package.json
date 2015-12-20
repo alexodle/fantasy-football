@@ -5,7 +5,8 @@
   "main": "app/js/index.jsx",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "start": "node dev_server/index.js"
+    "start": "node dev_server/index.js",
+    "deploy": "../scripts/deploy-prod-client.sh"
   },
   "repository": {
     "type": "git",

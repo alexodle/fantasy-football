@@ -5,7 +5,7 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
-import webpackConfig from '../webpack.config.js';
+import webpackConfig from '../webpack.config.dev.js';
 import WebpackDevServer from 'webpack-dev-server';
 
 const FILES_DIR = __dirname;

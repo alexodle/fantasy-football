@@ -9,6 +9,11 @@ var definePlugin = new webpack.DefinePlugin({
 
 module.exports = {
   entry: path.resolve(__dirname, 'app/js/index.jsx'),
+  output: {
+    path: path.resolve(__dirname, '../server/static/bundle/'),
+    filename: 'bundle.[hash].js',
+    publicPath: 'static/bundle/'
+  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
