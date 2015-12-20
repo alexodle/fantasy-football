@@ -4,7 +4,7 @@ var webpack = require('webpack');
 
 // definePlugin takes raw strings and inserts them, so you can put strings of JS if you want.
 var definePlugin = new webpack.DefinePlugin({
-  __DEV__: process.env.NODE_ENV !== 'production'
+  __DEV__: false
 });
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../server/static/bundle/'),
     filename: 'bundle.[hash].js',
-    publicPath: 'static/bundle/'
+    publicPath: '/static/bundle/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

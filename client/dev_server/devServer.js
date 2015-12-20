@@ -3,19 +3,20 @@ import bodyParser from 'body-parser';
 import createRedisClient from './createRedisClient';
 import express from 'express';
 import fs from 'fs';
+import MemoryFS from 'memory-fs';
 import path from 'path';
+import proxy from 'express-http-proxy';
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config.dev.js';
-import WebpackDevServer from 'webpack-dev-server';
 
 const FILES_DIR = __dirname;
 const ARTIFICIAL_DELAY_LOW = 1;
 const ARTIFICIAL_DELAY_HIGH = 400;
 const PORTS = {
-  webpack: 4000,
-  devApi: 4001,
+  devApi: 4000,
   prodApi: 5000
 };
+const INDEX_FILE = path.resolve(__dirname, '../app/static/index.html');
 
 function getArtificialDelay() {
   return _.random(ARTIFICIAL_DELAY_LOW, ARTIFICIAL_DELAY_HIGH);
@@ -26,34 +27,44 @@ expressApp.use(bodyParser.json());
 
 const redisClient = createRedisClient();
 
+expressApp.use('/api', proxy(`http://localhost:${PORTS.prodApi}`, {
+  forwardPath: function(req, _res) {
+    const path = `/api${req.path}`;
+    console.log('Forwarding: ' + path);
+    return path;
+  }
+}));
+
+const memoryFs = new MemoryFS();
 const compiler = webpack(webpackConfig);
-const webpackDevServer = new WebpackDevServer(compiler, {
-  contentBase: path.resolve(`${__dirname}/../app/static/`),
-  publicPath: '/dist/',
-  proxy: {
-    '/api/*': `http://localhost:${PORTS.prodApi}/`,
-    '/dev_api/*': `http://localhost:${PORTS.devApi}/`
-  },
-  hot: true,
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000
-  },
-  stats: { colors: true }
+compiler.outputFileSystem = memoryFs;
+compiler.watch({ // watch options:
+    aggregateTimeout: 300, // wait so long for more changes
+    poll: true // use polling instead of native watchers
+}, function(err, stats) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.dir(stats);
 });
 
-// Turn this on to test auth redirect
-/*expressApp.get('/dev_api/league/1/fantasy_teams/', function(req, res) {
-  res.sendStatus(403);
-});*/
+function serveIndex(req, res) {
+  fs.readFile(INDEX_FILE, 'utf8', function (err, data) {
+    if (err) {
+      console.error('Index file not found: ' + INDEX_FILE);
+      return;
+    }
+    res.send(data);
+  });
+}
+expressApp.get('/', serveIndex);
+expressApp.get('/login', serveIndex);
+expressApp.get('/draft/:draftId', serveIndex);
 
-const extraPicks = [];
-expressApp.post('/dev_api/league/:leagueId/draft_picks', function (req, res) {
-  extraPicks.push(req.body);
-  res.sendStatus(200);
-  redisClient.publish('draft:updates', JSON.stringify({
-    league_id: req.params.leagueId
-  }));
+expressApp.get('/dist/*', function (req, res) {
+  console.log('Fetching: ' + req.path);
+  res.send(memoryFs.readFileSync(req.path).toString('utf8'));
 });
 
 expressApp.get('/dev_api/*', function (req, res) {
@@ -78,5 +89,13 @@ expressApp.get('/dev_api/*', function (req, res) {
   });
 });
 
-webpackDevServer.listen(PORTS.webpack, 'localhost', _.noop);
+const extraPicks = [];
+expressApp.post('/dev_api/league/:leagueId/draft_picks', function (req, res) {
+  extraPicks.push(req.body);
+  res.sendStatus(200);
+  redisClient.publish('draft:updates', JSON.stringify({
+    league_id: req.params.leagueId
+  }));
+});
+
 expressApp.listen(PORTS.devApi, _.noop);
