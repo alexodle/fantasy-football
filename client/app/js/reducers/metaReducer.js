@@ -102,7 +102,15 @@ function leagueEntityReducer(leagues, action, metaUpdate) {
 function draftEntityReducer(leagues, action, metaUpdate) {
   const draftEntity = DRAFT_ENTITY_MAP[action.type];
   if (draftEntity) {
-   return update(leagues, {
+
+    // Special case - if we were going to clear the draft meta, and it doesn't
+    // exist anymore, our job is done. This happens when we realize our auth is
+    // expired while we're on the draft page.
+    if (!leagues[action.league_id] && metaUpdate === DEFAULT_META) {
+      return leagues;
+    }
+
+    return update(leagues, {
       [action.league_id]: { draft: { [draftEntity]: { $merge: metaUpdate } } }
     });
   }
@@ -137,7 +145,10 @@ function getAsyncMetaUpdate(action) {
     case INVALIDATE:
       return { didInvalidate: true };
     case CLEAR:
-      return { ...DEFAULT_META };
+      // IMPORTANT: Return the actual DEFAULT_META instead of a copy of it.
+      // Reason being, we will sometimes special case reducers that use the
+      // DEFAULT_META value.
+      return DEFAULT_META;
 
     default:
       return;
