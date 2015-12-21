@@ -12,4 +12,4 @@
   * ES6
 
 # Alex
-* Changes to client code
+* ~~Changes to client code~~
