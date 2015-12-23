@@ -1,9 +1,9 @@
 # Salim
 * Serve the static content and index page
-* Create gmail account and AWS Account
-* Setup deployment to elastic beanstalk
-  * Setup RDS
-  * Setup one alpha
+* ~~Create gmail account and AWS Account~~
+* ~~Setup deployment to elastic beanstalk~~
+  * ~~Setup RDS~~
+  * ~~Setup one alpha environment~~
 * Create tests one existing endpoints
 * Client side research
   * React.js
@@ -12,4 +12,4 @@
   * ES6
 
 # Alex
-* ~~(DONE) Changes to client code~~
+* ~~Changes to client code~~
