@@ -6,17 +6,7 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY', 'hard to guess string')
     SSL_DISABLE = True
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True  # enable auto commit after request
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    MAIL_SUBJECT_PREFIX = '[Fantasy Football]'
-    MAIL_SENDER = 'Fantasy Football Admin <admin@fantasy-football.com>'
-    DASHBOARD_ADMIN = os.environ.get('DASHBOARD_ADMIN', 'admin@insights.com')
     RESPONSE_OBJECT_NAME = 'data'
-    POSTS_PER_PAGE = 5
-    FOLLOWERS_PER_PAGE = 10
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
     @staticmethod
@@ -64,23 +54,23 @@ class ProductionConfig(Config):
         Config.init_app(app)
 
         # email errors to the administrators
-        import logging
-        from logging.handlers import SMTPHandler
-        credentials = None
-        secure = None
-        if getattr(cls, 'MAIL_USERNAME', None) is not None:
-            credentials = (cls.MAIL_USERNAME, cls.MAIL_PASSWORD)
-            if getattr(cls, 'MAIL_USE_TLS', None):
-                secure = ()
-        mail_handler = SMTPHandler(
-            mailhost=(cls.MAIL_SERVER, cls.MAIL_PORT),
-            fromaddr=cls.MAIL_SENDER,
-            toaddrs=[cls.DASHBOARD_ADMIN],
-            subject=cls.MAIL_SUBJECT_PREFIX + ' Application Error',
-            credentials=credentials,
-            secure=secure)
-        mail_handler.setLevel(logging.ERROR)
-        app.logger.addHandler(mail_handler)
+        # import logging
+        # from logging.handlers import SMTPHandler
+        # credentials = None
+        # secure = None
+        # if getattr(cls, 'MAIL_USERNAME', None) is not None:
+        #     credentials = (cls.MAIL_USERNAME, cls.MAIL_PASSWORD)
+        #     if getattr(cls, 'MAIL_USE_TLS', None):
+        #         secure = ()
+        # mail_handler = SMTPHandler(
+        #     mailhost=(cls.MAIL_SERVER, cls.MAIL_PORT),
+        #     fromaddr=cls.MAIL_SENDER,
+        #     toaddrs=[cls.DASHBOARD_ADMIN],
+        #     subject=cls.MAIL_SUBJECT_PREFIX + ' Application Error',
+        #     credentials=credentials,
+        #     secure=secure)
+        # mail_handler.setLevel(logging.ERROR)
+        # app.logger.addHandler(mail_handler)
 
 
 config = {
