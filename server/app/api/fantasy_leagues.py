@@ -17,6 +17,22 @@ def get_fantasy_leagues():
     })
 
 
+@api.route('/fantasy_leagues/', methods=['POST'])
+@block_anonymous
+def post_fantasy_league():
+    fantasy_league = FantasyLeague.from_json(request.json)
+    fantasy_league.commissioner_id = g.current_user.id
+    db.session.add(fantasy_league)
+    try:
+        db.session.commit()
+    except IntegrityError as e:
+        db.session.rollback()
+        raise e
+    return jsonify({
+        current_app.config['RESPONSE_OBJECT_NAME']: fantasy_league.to_json()
+    }), 201
+
+
 @api.route('/fantasy_leagues/<int:id>')
 @block_anonymous
 def get_fantasy_league(id):

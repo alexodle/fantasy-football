@@ -1,4 +1,5 @@
 import hashlib
+from dateutil.parser import parse
 from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app
@@ -242,6 +243,17 @@ class FantasyLeague(db.Model):
             'conference_id': self.conference_id,
         }
         return json_fantasy_league
+
+    @classmethod
+    def from_json(cls, json_fantasy_league):
+        name = json_fantasy_league.get('name')
+        draft_start_date = parse(json_fantasy_league.get('draft_start_date'))
+        conference_id = json_fantasy_league.get('conference_id')
+        if name and draft_start_date and conference_id:
+            return cls(name=name, draft_start_date=draft_start_date,
+                       conference_id=conference_id)
+        else:
+            raise ValidationError('insufficient data to create FantasyLeague')
 
     @staticmethod
     def generate_fake(count=20):

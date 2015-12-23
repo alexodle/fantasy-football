@@ -131,6 +131,13 @@ authenticated request using **email address** and **password** to the following 
   * HTTPie Request: `http --json --auth salim@gmail.com:password GET http://127.0.0.1:5000/api/fantasy_leagues/1/draft_orders/`
 
 ####POST Requests
+* **post_fantasy_league**
+  * Endpoint: `api/fantasy_leagues/`
+  * Required Parameters:
+    * `name`
+    * `draft_start_date` (ISO 8601 date format)
+    * `conference_id`
+  * HTTPie Request: `http --json --auth salim@gmail.com:password POST http://127.0.0.1:5000/api/fantasy_leagues/ name="My Test League" draft_start_date="2015-12-30" conference_id:=1`
 * **post_fantasy_league_draft_pick**
   * Endpoint: `api/fantasy_leagues/<int:id>/draft_picks/`
   * Required Parameters:
