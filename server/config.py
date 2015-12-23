@@ -33,7 +33,7 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    SSL_DISABLE = False
+    SSL_DISABLE = True
     DEBUG = False
 
     if 'RDS_DB_NAME' in os.environ:
