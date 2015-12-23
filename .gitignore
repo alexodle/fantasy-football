@@ -68,3 +68,8 @@ node_modules/
 
 # Sqlite databases
 *.sqlite
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
