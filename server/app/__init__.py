@@ -33,6 +33,10 @@ def create_app(config_name):
         from flask.ext.sslify import SSLify
         sslify = SSLify(app)
 
+    # register 'main' blueprint with Flask application
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
     # register 'api' blueprint with Flask application
     from .api import api as api_blueprint
     app.register_blueprint(api_blueprint, url_prefix='/api')
