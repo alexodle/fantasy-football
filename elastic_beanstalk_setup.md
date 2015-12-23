@@ -17,7 +17,9 @@ aws_secret_access_key = xxxxxxxxxxxxx
 2. Select "fantasy-football" as the application to use
 
 ### Deploy the application
-`eb deploy`
+```
+eb deploy
+```
 
 # Resources
 * https://realpython.com/blog/python/deploying-a-django-app-to-aws-elastic-beanstalk/
