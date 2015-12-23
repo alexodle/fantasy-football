@@ -1,0 +1,639 @@
+{
+  "data": [
+    {
+      "number": null,
+      "name": "Trevor Mcgirr",
+      "pos": "?"
+    },
+    {
+      "number": 1,
+      "name": "Cayleb Jones",
+      "pos": "WR"
+    },
+    {
+      "number": 1,
+      "name": "Tellas Jones",
+      "pos": "S"
+    },
+    {
+      "number": 2,
+      "name": "Connor Brewer",
+      "pos": "QB"
+    },
+    {
+      "number": 2,
+      "name": "Tyrell Johnson",
+      "pos": "WR"
+    },
+    {
+      "number": 2,
+      "name": "Marquis Ware",
+      "pos": "LB"
+    },
+    {
+      "number": 3,
+      "name": "Cam Denson",
+      "pos": "CB"
+    },
+    {
+      "number": 4,
+      "name": "David Richards",
+      "pos": "WR"
+    },
+    {
+      "number": 4,
+      "name": "Antonio Smothers Jr.",
+      "pos": "LB"
+    },
+    {
+      "number": 5,
+      "name": "Trey Griffey",
+      "pos": "WR"
+    },
+    {
+      "number": 6,
+      "name": "Nate Phillips",
+      "pos": "WR"
+    },
+    {
+      "number": 7,
+      "name": "Jamar Allah",
+      "pos": "S"
+    },
+    {
+      "number": 7,
+      "name": "Jonathan Haden",
+      "pos": "RB"
+    },
+    {
+      "number": 8,
+      "name": "Reggie Gilbert",
+      "pos": "DL"
+    },
+    {
+      "number": 8,
+      "name": "Jerrard Randall",
+      "pos": "QB"
+    },
+    {
+      "number": 9,
+      "name": "Dane Cruikshank",
+      "pos": "CB"
+    },
+    {
+      "number": 9,
+      "name": "Tony Ellison",
+      "pos": "WR"
+    },
+    {
+      "number": 9,
+      "name": "Josh Pollack",
+      "pos": "PK"
+    },
+    {
+      "number": 9,
+      "name": "Yamen Sanders",
+      "pos": "S"
+    },
+    {
+      "number": 10,
+      "name": "Samajie Grant",
+      "pos": "WR"
+    },
+    {
+      "number": 10,
+      "name": "Malcolm Holland",
+      "pos": "CB"
+    },
+    {
+      "number": 11,
+      "name": "Will Parks",
+      "pos": "S"
+    },
+    {
+      "number": 12,
+      "name": "Demetrius Flannigan-Fowles",
+      "pos": "S"
+    },
+    {
+      "number": 12,
+      "name": "Anu Solomon",
+      "pos": "QB"
+    },
+    {
+      "number": 13,
+      "name": "Brandon Dawkins",
+      "pos": "QB"
+    },
+    {
+      "number": 13,
+      "name": "Devin Holiday",
+      "pos": "CB"
+    },
+    {
+      "number": 14,
+      "name": "Paul Magloire Jr.",
+      "pos": "S"
+    },
+    {
+      "number": 14,
+      "name": "Zach Werlinger",
+      "pos": "QB"
+    },
+    {
+      "number": 15,
+      "name": "Kwesi Mashack",
+      "pos": "CB"
+    },
+    {
+      "number": 15,
+      "name": "Matt Morin",
+      "pos": "TE"
+    },
+    {
+      "number": 16,
+      "name": "Shun Brown",
+      "pos": "WR"
+    },
+    {
+      "number": 17,
+      "name": "Jonah Huff",
+      "pos": "RB"
+    },
+    {
+      "number": 17,
+      "name": "Josh Kern",
+      "pos": "TE"
+    },
+    {
+      "number": 17,
+      "name": "Jace Whittaker",
+      "pos": "CB"
+    },
+    {
+      "number": 18,
+      "name": "Cedric Peterson",
+      "pos": "WR"
+    },
+    {
+      "number": 18,
+      "name": "Brandon Rutt",
+      "pos": "LB"
+    },
+    {
+      "number": 19,
+      "name": "DaVonte' Neal",
+      "pos": "CB"
+    },
+    {
+      "number": 20,
+      "name": "Jarek Hilgers",
+      "pos": "S"
+    },
+    {
+      "number": 21,
+      "name": "Orlando Bradford",
+      "pos": "RB"
+    },
+    {
+      "number": 23,
+      "name": "Jared Baker",
+      "pos": "RB"
+    },
+    {
+      "number": 23,
+      "name": "Devon Brewer",
+      "pos": "CB"
+    },
+    {
+      "number": 24,
+      "name": "Darick Holmes",
+      "pos": "WR"
+    },
+    {
+      "number": 24,
+      "name": "RJ Morgan",
+      "pos": "LB"
+    },
+    {
+      "number": 25,
+      "name": "Jamardre Cobb",
+      "pos": "RB"
+    },
+    {
+      "number": 25,
+      "name": "Anthony Mariscal",
+      "pos": "S"
+    },
+    {
+      "number": 26,
+      "name": "Matt Aragon",
+      "pos": "P"
+    },
+    {
+      "number": 26,
+      "name": "Nick Fadelli",
+      "pos": "S"
+    },
+    {
+      "number": 27,
+      "name": "Sammy Morrison",
+      "pos": "CB"
+    },
+    {
+      "number": 28,
+      "name": "Anthony Lopez",
+      "pos": "S"
+    },
+    {
+      "number": 28,
+      "name": "Nick Wilson",
+      "pos": "RB"
+    },
+    {
+      "number": 29,
+      "name": "Jarvis McCall Jr.",
+      "pos": "CB"
+    },
+    {
+      "number": 30,
+      "name": "Johnny Jackson",
+      "pos": "S"
+    },
+    {
+      "number": 31,
+      "name": "Weston Barlow",
+      "pos": "RB"
+    },
+    {
+      "number": 31,
+      "name": "Patrick Stevens",
+      "pos": "S"
+    },
+    {
+      "number": 32,
+      "name": "DeAndre' Miller",
+      "pos": "LB"
+    },
+    {
+      "number": 32,
+      "name": "Khaylub Thompson",
+      "pos": "RB"
+    },
+    {
+      "number": 33,
+      "name": "Scooby Wright III",
+      "pos": "LB"
+    },
+    {
+      "number": 34,
+      "name": "Zach Green",
+      "pos": "RB"
+    },
+    {
+      "number": 34,
+      "name": "Thomas Sawyer",
+      "pos": "S"
+    },
+    {
+      "number": 35,
+      "name": "Isaiah Strong",
+      "pos": "CB"
+    },
+    {
+      "number": 36,
+      "name": "Ollie Graybar",
+      "pos": "PK"
+    },
+    {
+      "number": 36,
+      "name": "Samir Hinn",
+      "pos": "S"
+    },
+    {
+      "number": 37,
+      "name": "Carter Hehr",
+      "pos": "S"
+    },
+    {
+      "number": 38,
+      "name": "Branden Leon",
+      "pos": "RB"
+    },
+    {
+      "number": 38,
+      "name": "Trevor Niemann",
+      "pos": "S"
+    },
+    {
+      "number": 39,
+      "name": "Drew Riggleman",
+      "pos": "P"
+    },
+    {
+      "number": 40,
+      "name": "Jarrett Mitchell",
+      "pos": "RB"
+    },
+    {
+      "number": 40,
+      "name": "Malik Moody",
+      "pos": "CB"
+    },
+    {
+      "number": 41,
+      "name": "Francisco Dicochea III",
+      "pos": "S"
+    },
+    {
+      "number": 41,
+      "name": "Casey Skowron",
+      "pos": "PK"
+    },
+    {
+      "number": 42,
+      "name": "Anthony Fotu",
+      "pos": "DL"
+    },
+    {
+      "number": 43,
+      "name": "Kendal Franklin",
+      "pos": "LB"
+    },
+    {
+      "number": 44,
+      "name": "Aaron Almond",
+      "pos": "CB"
+    },
+    {
+      "number": 45,
+      "name": "Derrick Turituri",
+      "pos": "LB"
+    },
+    {
+      "number": 46,
+      "name": "Albert Green",
+      "pos": "S"
+    },
+    {
+      "number": 47,
+      "name": "John Kenny",
+      "pos": "LB"
+    },
+    {
+      "number": 47,
+      "name": "Jake Matthews",
+      "pos": "LB"
+    },
+    {
+      "number": 48,
+      "name": "Brion Anduze",
+      "pos": "TE"
+    },
+    {
+      "number": 48,
+      "name": "Kevin Hamlett Jr.",
+      "pos": "LB"
+    },
+    {
+      "number": 49,
+      "name": "Haden Gregory",
+      "pos": "LB"
+    },
+    {
+      "number": 50,
+      "name": "Carrington Vaughn",
+      "pos": "LB"
+    },
+    {
+      "number": 51,
+      "name": "Jason Sweet",
+      "pos": "LB"
+    },
+    {
+      "number": 52,
+      "name": "Alex King",
+      "pos": "LB"
+    },
+    {
+      "number": 53,
+      "name": "Chase Hanlon",
+      "pos": "OL"
+    },
+    {
+      "number": 53,
+      "name": "Sir Thomas Jackson",
+      "pos": "LB"
+    },
+    {
+      "number": 54,
+      "name": "Rob Kleifield",
+      "pos": "LB"
+    },
+    {
+      "number": 54,
+      "name": "Jose Romero",
+      "pos": "LS"
+    },
+    {
+      "number": 55,
+      "name": "Levi Walton",
+      "pos": "OL"
+    },
+    {
+      "number": 55,
+      "name": "Jeff Worthy",
+      "pos": "DL"
+    },
+    {
+      "number": 56,
+      "name": "Nick Reinhardt",
+      "pos": "LS"
+    },
+    {
+      "number": 57,
+      "name": "Cody Ippolito",
+      "pos": "LB"
+    },
+    {
+      "number": 58,
+      "name": "Layth Friekh",
+      "pos": "OL"
+    },
+    {
+      "number": 58,
+      "name": "Tre Tyler",
+      "pos": "LB"
+    },
+    {
+      "number": 59,
+      "name": "Christian Lopez",
+      "pos": "OL"
+    },
+    {
+      "number": 59,
+      "name": "Matthew Stagg",
+      "pos": "LB"
+    },
+    {
+      "number": 60,
+      "name": "Luca Bruno",
+      "pos": "DL"
+    },
+    {
+      "number": 61,
+      "name": "Cayman Bundage",
+      "pos": "OL"
+    },
+    {
+      "number": 62,
+      "name": "Aiulua Fanene",
+      "pos": "OL"
+    },
+    {
+      "number": 63,
+      "name": "Griffin Goudreau",
+      "pos": "LS"
+    },
+    {
+      "number": 64,
+      "name": "Nathan Eldridge",
+      "pos": "OL"
+    },
+    {
+      "number": 65,
+      "name": "Zach Hemmila",
+      "pos": "OL"
+    },
+    {
+      "number": 67,
+      "name": "Gerhard de Beer",
+      "pos": "OL"
+    },
+    {
+      "number": 68,
+      "name": "David Catalano",
+      "pos": "OL"
+    },
+    {
+      "number": 69,
+      "name": "Christian Boettcher",
+      "pos": "OL"
+    },
+    {
+      "number": 70,
+      "name": "T.D. Gross",
+      "pos": "OL"
+    },
+    {
+      "number": 72,
+      "name": "Freddie Tagaloa",
+      "pos": "OL"
+    },
+    {
+      "number": 74,
+      "name": "Alex Kosinski",
+      "pos": "OL"
+    },
+    {
+      "number": 75,
+      "name": "Kaige Lawrence",
+      "pos": "OL"
+    },
+    {
+      "number": 76,
+      "name": "Cody Creason",
+      "pos": "OL"
+    },
+    {
+      "number": 77,
+      "name": "Lene Maiava",
+      "pos": "OL"
+    },
+    {
+      "number": 78,
+      "name": "Jacob Alsadek",
+      "pos": "OL"
+    },
+    {
+      "number": 81,
+      "name": "Mo Mohamed",
+      "pos": "WR"
+    },
+    {
+      "number": 82,
+      "name": "Bryant O'Georgia",
+      "pos": "WR"
+    },
+    {
+      "number": 84,
+      "name": "Abraham Mendivil",
+      "pos": "WR"
+    },
+    {
+      "number": 86,
+      "name": "Justin Belknap",
+      "pos": "DL"
+    },
+    {
+      "number": 86,
+      "name": "Darrell Cloy Jr.",
+      "pos": "TE"
+    },
+    {
+      "number": 87,
+      "name": "Jordan Morgan",
+      "pos": "WR"
+    },
+    {
+      "number": 88,
+      "name": "Trevor Wood",
+      "pos": "TE"
+    },
+    {
+      "number": 89,
+      "name": "Gabe Vasquez",
+      "pos": "WR"
+    },
+    {
+      "number": 90,
+      "name": "Sharif Williams",
+      "pos": "DL"
+    },
+    {
+      "number": 91,
+      "name": "Finton Connolly",
+      "pos": "DL"
+    },
+    {
+      "number": 92,
+      "name": "Jack Banda",
+      "pos": "DL"
+    },
+    {
+      "number": 93,
+      "name": "Parker Zellers",
+      "pos": "DL"
+    },
+    {
+      "number": 94,
+      "name": "Calvin Allen",
+      "pos": "DL"
+    },
+    {
+      "number": 96,
+      "name": "Marcus Griffin",
+      "pos": "DL"
+    },
+    {
+      "number": 98,
+      "name": "Roc Russell",
+      "pos": "DL"
+    },
+    {
+      "number": 99,
+      "name": "Sani Fuimaono",
+      "pos": "DL"
+    }
+  ]
+}

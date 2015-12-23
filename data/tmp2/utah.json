@@ -1,0 +1,624 @@
+{
+  "data": [
+    {
+      "number": null,
+      "name": "Logan Bateman",
+      "pos": "QB"
+    },
+    {
+      "number": null,
+      "name": "Gage Cook",
+      "pos": "WR"
+    },
+    {
+      "number": null,
+      "name": "Damian Greene",
+      "pos": "DB"
+    },
+    {
+      "number": null,
+      "name": "Tim Hiller",
+      "pos": "LS"
+    },
+    {
+      "number": null,
+      "name": "Jonathan Hockman",
+      "pos": "WR"
+    },
+    {
+      "number": null,
+      "name": "Sio Kautai",
+      "pos": "LB"
+    },
+    {
+      "number": null,
+      "name": "Kyle Lanterman",
+      "pos": "OL"
+    },
+    {
+      "number": null,
+      "name": "Noah Palega",
+      "pos": "LB"
+    },
+    {
+      "number": null,
+      "name": "Lucas Rydalch",
+      "pos": "DE"
+    },
+    {
+      "number": null,
+      "name": "Albert Semeatu",
+      "pos": "RB"
+    },
+    {
+      "number": null,
+      "name": "Hunter Smith",
+      "pos": "OL"
+    },
+    {
+      "number": 1,
+      "name": "Boobie Hobbs",
+      "pos": "DB"
+    },
+    {
+      "number": 1,
+      "name": "Kendal Thompson",
+      "pos": "QB"
+    },
+    {
+      "number": 2,
+      "name": "Philip Afia",
+      "pos": "DB"
+    },
+    {
+      "number": 2,
+      "name": "Kenneth Scott",
+      "pos": "WR"
+    },
+    {
+      "number": 3,
+      "name": "Jason Thompson",
+      "pos": "DB"
+    },
+    {
+      "number": 4,
+      "name": "Austin Lee",
+      "pos": "DB"
+    },
+    {
+      "number": 4,
+      "name": "Troy McCormick",
+      "pos": "RB"
+    },
+    {
+      "number": 5,
+      "name": "Brandon Cox",
+      "pos": "QB"
+    },
+    {
+      "number": 5,
+      "name": "Tavaris Williams",
+      "pos": "DB"
+    },
+    {
+      "number": 6,
+      "name": "Tyson Cisrow",
+      "pos": "DB"
+    },
+    {
+      "number": 6,
+      "name": "Kyle Fulks",
+      "pos": "WR"
+    },
+    {
+      "number": 6,
+      "name": "Charles Henderson",
+      "pos": "WR"
+    },
+    {
+      "number": 7,
+      "name": "Andre Godfrey",
+      "pos": "DB"
+    },
+    {
+      "number": 7,
+      "name": "Travis Wilson",
+      "pos": "QB"
+    },
+    {
+      "number": 8,
+      "name": "Bubba Poole",
+      "pos": "WR"
+    },
+    {
+      "number": 9,
+      "name": "Tevin Carter",
+      "pos": "DB"
+    },
+    {
+      "number": 9,
+      "name": "Donovan Isom",
+      "pos": "QB"
+    },
+    {
+      "number": 9,
+      "name": "Tim Patrick",
+      "pos": "WR"
+    },
+    {
+      "number": 10,
+      "name": "Delshawn McClellon",
+      "pos": "WR"
+    },
+    {
+      "number": 11,
+      "name": "Kylie Fitts",
+      "pos": "DE"
+    },
+    {
+      "number": 11,
+      "name": "Raelon Singleton",
+      "pos": "WR"
+    },
+    {
+      "number": 12,
+      "name": "Adam Schulz",
+      "pos": "QB"
+    },
+    {
+      "number": 12,
+      "name": "Justin Thomas",
+      "pos": "DB"
+    },
+    {
+      "number": 13,
+      "name": "Gionni Paul",
+      "pos": "LB"
+    },
+    {
+      "number": 13,
+      "name": "Monte Seabrook",
+      "pos": "RB"
+    },
+    {
+      "number": 14,
+      "name": "Brian Allen",
+      "pos": "DB"
+    },
+    {
+      "number": 15,
+      "name": "Dominique Hatfield",
+      "pos": "DB"
+    },
+    {
+      "number": 16,
+      "name": "Cory Butler-Byrd",
+      "pos": "DB"
+    },
+    {
+      "number": 17,
+      "name": "Conner Charles",
+      "pos": "DB"
+    },
+    {
+      "number": 17,
+      "name": "Conner Manning",
+      "pos": "QB"
+    },
+    {
+      "number": 18,
+      "name": "Britain Covey",
+      "pos": "WR"
+    },
+    {
+      "number": 19,
+      "name": "Tyler Cooperwood",
+      "pos": "WR"
+    },
+    {
+      "number": 19,
+      "name": "Sunia Tauteoli",
+      "pos": "LB"
+    },
+    {
+      "number": 20,
+      "name": "Marcus Williams",
+      "pos": "DB"
+    },
+    {
+      "number": 21,
+      "name": "Ahmad Christian",
+      "pos": "DB"
+    },
+    {
+      "number": 21,
+      "name": "A.J. Semeatu",
+      "pos": "RB"
+    },
+    {
+      "number": 22,
+      "name": "Chase Hansen",
+      "pos": "QB"
+    },
+    {
+      "number": 22,
+      "name": "Dre'Vian Young",
+      "pos": "RB"
+    },
+    {
+      "number": 23,
+      "name": "Devontae Booker",
+      "pos": "RB"
+    },
+    {
+      "number": 24,
+      "name": "Kenric Young",
+      "pos": "WR"
+    },
+    {
+      "number": 25,
+      "name": "Casey Hughes",
+      "pos": "DB"
+    },
+    {
+      "number": 26,
+      "name": "Jordan Fogal",
+      "pos": "DB"
+    },
+    {
+      "number": 26,
+      "name": "Jordan Howard",
+      "pos": "RB"
+    },
+    {
+      "number": 27,
+      "name": "Marcel Brooks-Brown",
+      "pos": "RB"
+    },
+    {
+      "number": 27,
+      "name": "Taylor Loomis",
+      "pos": "DB"
+    },
+    {
+      "number": 28,
+      "name": "Joe Williams",
+      "pos": "RB"
+    },
+    {
+      "number": 29,
+      "name": "Reginald Porter",
+      "pos": "DB"
+    },
+    {
+      "number": 30,
+      "name": "Cody Barton",
+      "pos": "LB"
+    },
+    {
+      "number": 31,
+      "name": "Evan Eggiman",
+      "pos": "DB"
+    },
+    {
+      "number": 32,
+      "name": "Sharrieff Shah Jr.",
+      "pos": "LB"
+    },
+    {
+      "number": 33,
+      "name": "Tom Hackett",
+      "pos": "P"
+    },
+    {
+      "number": 34,
+      "name": "Alex Whittingham",
+      "pos": "LB"
+    },
+    {
+      "number": 35,
+      "name": "Clarence Smith",
+      "pos": "LB"
+    },
+    {
+      "number": 36,
+      "name": "Dylan Calhoun",
+      "pos": "DB"
+    },
+    {
+      "number": 37,
+      "name": "Christian Drews",
+      "pos": "LB"
+    },
+    {
+      "number": 38,
+      "name": "Sam Whittingham",
+      "pos": "LB"
+    },
+    {
+      "number": 39,
+      "name": "Andy Phillips",
+      "pos": "PK"
+    },
+    {
+      "number": 40,
+      "name": "Kendall Huey",
+      "pos": "DE"
+    },
+    {
+      "number": 41,
+      "name": "Jared Norris",
+      "pos": "LB"
+    },
+    {
+      "number": 42,
+      "name": "Marcus Sanders-Williams",
+      "pos": "RB"
+    },
+    {
+      "number": 43,
+      "name": "Uaea Masina",
+      "pos": "LB"
+    },
+    {
+      "number": 44,
+      "name": "Jake Jackson",
+      "pos": "LB"
+    },
+    {
+      "number": 45,
+      "name": "Andrew Fletcher",
+      "pos": "RB"
+    },
+    {
+      "number": 45,
+      "name": "Filipo Mokofisi",
+      "pos": "DT"
+    },
+    {
+      "number": 46,
+      "name": "Tyler Bell",
+      "pos": "TE"
+    },
+    {
+      "number": 47,
+      "name": "Caleb Repp",
+      "pos": "TE"
+    },
+    {
+      "number": 48,
+      "name": "Chris Van Orden",
+      "pos": "P"
+    },
+    {
+      "number": 49,
+      "name": "Hunter Dimick",
+      "pos": "DE"
+    },
+    {
+      "number": 50,
+      "name": "Pita Taumoepenu",
+      "pos": "DE"
+    },
+    {
+      "number": 51,
+      "name": "Jason Fanaika",
+      "pos": "DE"
+    },
+    {
+      "number": 52,
+      "name": "Hayden Clegg",
+      "pos": "DE"
+    },
+    {
+      "number": 52,
+      "name": "Sam Tevi",
+      "pos": "OT"
+    },
+    {
+      "number": 53,
+      "name": "Jason Whittingham",
+      "pos": "LB"
+    },
+    {
+      "number": 54,
+      "name": "Isaac Asiata",
+      "pos": "OL"
+    },
+    {
+      "number": 55,
+      "name": "Hiva Lutui",
+      "pos": "OL"
+    },
+    {
+      "number": 56,
+      "name": "Chris Hart",
+      "pos": "DE"
+    },
+    {
+      "number": 57,
+      "name": "Justin Tatola",
+      "pos": "LB"
+    },
+    {
+      "number": 58,
+      "name": "Braden Pelly",
+      "pos": "LB"
+    },
+    {
+      "number": 59,
+      "name": "Pasoni Tasini",
+      "pos": "DT"
+    },
+    {
+      "number": 60,
+      "name": "Siaosi Aiono",
+      "pos": "OL"
+    },
+    {
+      "number": 61,
+      "name": "Jake Kane",
+      "pos": "PK"
+    },
+    {
+      "number": 62,
+      "name": "Aaron Amaama",
+      "pos": "OL"
+    },
+    {
+      "number": 65,
+      "name": "Leki Taumoepeau",
+      "pos": "OL"
+    },
+    {
+      "number": 66,
+      "name": "Kyle Christiansen",
+      "pos": "DT"
+    },
+    {
+      "number": 67,
+      "name": "Nick Carman",
+      "pos": "OL"
+    },
+    {
+      "number": 68,
+      "name": "J.J. Dielman",
+      "pos": "OL"
+    },
+    {
+      "number": 70,
+      "name": "Jackson Barton",
+      "pos": "OL"
+    },
+    {
+      "number": 71,
+      "name": "Daniel Heller",
+      "pos": "OL"
+    },
+    {
+      "number": 72,
+      "name": "Andrew Albers",
+      "pos": "OT"
+    },
+    {
+      "number": 73,
+      "name": "Johnny Capra",
+      "pos": "OL"
+    },
+    {
+      "number": 74,
+      "name": "Salesi Uhatafe",
+      "pos": "OL"
+    },
+    {
+      "number": 75,
+      "name": "Nick Nowakowski",
+      "pos": "OL"
+    },
+    {
+      "number": 77,
+      "name": "Darrin Paulo",
+      "pos": "OL"
+    },
+    {
+      "number": 79,
+      "name": "Keven Dixon",
+      "pos": "OL"
+    },
+    {
+      "number": 80,
+      "name": "Siaosi Wilson",
+      "pos": "WR"
+    },
+    {
+      "number": 81,
+      "name": "Tyrone Smith",
+      "pos": "WR"
+    },
+    {
+      "number": 82,
+      "name": "Ken Hampel",
+      "pos": "TE"
+    },
+    {
+      "number": 83,
+      "name": "Jameson Field",
+      "pos": "WR"
+    },
+    {
+      "number": 84,
+      "name": "Evan Moeai",
+      "pos": "TE"
+    },
+    {
+      "number": 85,
+      "name": "Andrew Santiago",
+      "pos": "WR"
+    },
+    {
+      "number": 86,
+      "name": "Wallace Gonzalez",
+      "pos": "TE"
+    },
+    {
+      "number": 87,
+      "name": "Siale Fakailoatonga",
+      "pos": "TE"
+    },
+    {
+      "number": 88,
+      "name": "Harrison Handley",
+      "pos": "TE"
+    },
+    {
+      "number": 90,
+      "name": "Stevie Tu'ikolovatu",
+      "pos": "DT"
+    },
+    {
+      "number": 91,
+      "name": "Pena Fitisemanu",
+      "pos": "DT"
+    },
+    {
+      "number": 92,
+      "name": "Hayes Hicken",
+      "pos": "PK"
+    },
+    {
+      "number": 93,
+      "name": "Lowell Lotulelei",
+      "pos": "DT"
+    },
+    {
+      "number": 94,
+      "name": "Chase Dominguez",
+      "pos": "LS"
+    },
+    {
+      "number": 95,
+      "name": "Alani Havili-Katoa",
+      "pos": "DT"
+    },
+    {
+      "number": 96,
+      "name": "Jon Halliday",
+      "pos": "PK"
+    },
+    {
+      "number": 98,
+      "name": "Viliseni Fauonuku",
+      "pos": "DT"
+    },
+    {
+      "number": 99,
+      "name": "Lo Falemaka",
+      "pos": "TE"
+    },
+    {
+      "number": 99,
+      "name": "Vaha Vainuku",
+      "pos": "DT"
+    }
+  ]
+}

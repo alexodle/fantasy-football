@@ -96,7 +96,7 @@ function main() {
 }
 
 if (require.main === module) {
-    main();
+  main();
 }
 
 module.exports = run;
