@@ -16,7 +16,6 @@ const PORTS = {
   devApi: 4000,
   prodApi: 5000
 };
-const INDEX_FILE = path.resolve(__dirname, '../app/static/index.html');
 
 function getArtificialDelay() {
   return _.random(ARTIFICIAL_DELAY_LOW, ARTIFICIAL_DELAY_HIGH);
@@ -50,13 +49,7 @@ compiler.watch({ // watch options:
 });
 
 function serveIndex(req, res) {
-  fs.readFile(INDEX_FILE, 'utf8', function (err, data) {
-    if (err) {
-      console.error('Index file not found: ' + INDEX_FILE);
-      return;
-    }
-    res.send(data);
-  });
+  res.send(memoryFs.readFileSync('/dist/index.html').toString('utf8'));
 }
 expressApp.get('/', serveIndex);
 expressApp.get('/login', serveIndex);

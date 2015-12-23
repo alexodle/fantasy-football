@@ -44,6 +44,9 @@ module.exports = {
   },
   plugins: [
     definePlugin,
-    new HtmlwebpackPlugin({ title: 'Fantasy Football App' })
+    new HtmlwebpackPlugin({
+      template: path.resolve(__dirname, 'app/static/index.html'),
+      inject: 'body'
+    })
   ]
 };
