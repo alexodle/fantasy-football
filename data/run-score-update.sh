@@ -2,7 +2,7 @@
 
 BOX_SCORE_BASE_URL=http://www.sports-reference.com
 
-BASEDIR=$(dirname $0)/..; pushd $BASEDIR; BASEDIR=$(pwd)
+BASEDIR=$(dirname $0); pushd $BASEDIR; BASEDIR=$(pwd)
 
 
 # === TODO: take from args ===

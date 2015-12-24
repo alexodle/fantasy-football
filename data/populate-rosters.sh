@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASEDIR=$(dirname $0)/..; pushd $BASEDIR; BASEDIR=$(pwd)
+BASEDIR=$(dirname $0); pushd $BASEDIR; BASEDIR=$(pwd)
 
 #
 # TODO: Solution for downloading roster html (doesn't have to be pretty since it
