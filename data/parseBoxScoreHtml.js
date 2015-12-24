@@ -29,6 +29,18 @@ const REC_ROW = {
   TDS: 9
 };
 
+const KICK_ROW = {
+  XPM: 2,
+  XPA: 3,
+  FGM: 5,
+  FGA: 6
+};
+
+const PUNT_ROW = {
+  PUNTS: 9,
+  YDS: 10
+};
+
 const DEFAULTS = {
   // Passing
   pass_completions: 0,
@@ -45,20 +57,53 @@ const DEFAULTS = {
   // Receiving
   rec_rec: 0,
   rec_yds: 0,
-  rec_tds: 0
+  rec_tds: 0,
+
+  // Kicking
+  kick_xpm: 0,
+  kick_xpa: 0,
+  kick_fgm: 0,
+  kick_fga: 0,
+
+  // Punting
+  punt_punts: 0,
+  punt_yds: 0
 };
 
 function parseStatInt(str) {
   return _.isEmpty(str) ? 0 : _.parseInt(str);
 }
 
-function parsePassingRow($, $row) {
-  const tds = $('td', $row).get();
+function parseTdInt($, tds, i) {
+   return parseStatInt($(tds[i]).text());
+}
+
+function parseKickPuntRow($, tds) {
+  const kick_xpm = parseTdInt($, tds, KICK_ROW.XPM);
+  const kick_xpa = parseTdInt($, tds, KICK_ROW.XPA);
+  const kick_fgm = parseTdInt($, tds, KICK_ROW.FGM);
+  const kick_fga = parseTdInt($, tds, KICK_ROW.FGA);
+
+  const punt_punts = parseTdInt($, tds, PUNT_ROW.PUNTS);
+  const punt_yds = parseTdInt($, tds, PUNT_ROW.YDS);
+
+  return {
+    kick_xpm,
+    kick_xpa,
+    kick_fgm,
+    kick_fga,
+    punt_punts,
+    punt_yds
+  };
+}
+
+function parsePassingRow($, tds) {
   const pass_completions = parseStatInt($(tds[PASSING_ROW.CMP]).text());
   const pass_attempts = parseStatInt($(tds[PASSING_ROW.ATT]).text());
   const pass_yds = parseStatInt($(tds[PASSING_ROW.YDS]).text());
   const pass_tds = parseStatInt($(tds[PASSING_ROW.TDS]).text());
   const pass_ints = parseStatInt($(tds[PASSING_ROW.INTS]).text());
+
   return {
     pass_completions,
     pass_attempts,
@@ -68,9 +113,7 @@ function parsePassingRow($, $row) {
   };
 }
 
-function parseRushRecRow($, $row) {
-  const tds = $('td', $row).get();
-
+function parseRushRecRow($, tds) {
   const rush_attempts = parseStatInt($(tds[RUSH_ROW.ATT]).text());
   const rush_yds = parseStatInt($(tds[RUSH_ROW.YDS]).text());
   const rush_tds = parseStatInt($(tds[RUSH_ROW.TDS]).text());
@@ -89,10 +132,10 @@ function parseRushRecRow($, $row) {
   };
 }
 
-function commonParseRow($, $row) {
-  const tds = $('td', $row).get();
+function commonParseRow($, tds) {
   const name = $(tds[COMMON_ROW.NAME]).text();
   const team = $(tds[COMMON_ROW.TEAM]).text();
+
   return { name, team };
 }
 
@@ -100,8 +143,8 @@ function parseBoxScoreHtml(html) {
   const $ = cheerio.load(html);
   const players = {};
 
-  function ensurePlayer($row) {
-    const testPlayer = commonParseRow($, $row);
+  function ensurePlayer(tds) {
+    const testPlayer = commonParseRow($, tds);
     const playerKey = utils.hashPlayer(testPlayer.name, testPlayer.team);
 
     const p = players[playerKey] || _.extend({}, testPlayer, DEFAULTS);
@@ -110,8 +153,8 @@ function parseBoxScoreHtml(html) {
     return p;
   }
 
-  function addStats(newStats, $row) {
-    const fbPlayer = ensurePlayer($row);
+  function addStats(newStats, tds) {
+    const fbPlayer = ensurePlayer(tds);
 
     // ensurePlayer makes sure this player is in our map, so just edit in place
     _.extend(fbPlayer, newStats);
@@ -119,14 +162,15 @@ function parseBoxScoreHtml(html) {
 
   function parseRows(query, parser) {
     $(query).not('.thead').each((i, row) => {
-      const $row = $(row);
-      const newStats = parser($, $row);
-      addStats(newStats, $row);
+      const tds = $('td', $(row)).get();
+      const newStats = parser($, tds);
+      addStats(newStats, tds);
     });
   }
 
   parseRows('#passing tbody tr', parsePassingRow);
   parseRows('#rushing_and_receiving tbody tr', parseRushRecRow);
+  parseRows('#kicking_and_punting tbody tr', parseKickPuntRow);
 
   return _.values(players);
 }

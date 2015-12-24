@@ -13,7 +13,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Russell Bellomy",
@@ -28,7 +34,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Anu Solomon",
@@ -43,7 +55,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jarveon Williams",
@@ -58,7 +76,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jalen Rhodes",
@@ -73,7 +97,13 @@
       "rush_tds": 1,
       "rec_rec": 1,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tyrell Clay",
@@ -88,7 +118,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Brady Jones",
@@ -103,7 +139,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kerry Thomas",
@@ -118,7 +160,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 80,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Aaron Grubb",
@@ -133,7 +181,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 36,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "David Morgan",
@@ -148,7 +202,13 @@
       "rush_tds": 0,
       "rec_rec": 9,
       "rec_yds": 109,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kenny Bias",
@@ -163,7 +223,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 52,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Aron Taylor",
@@ -178,7 +244,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 32,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jabryce Taylor",
@@ -193,7 +265,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Nick Wilson",
@@ -208,7 +286,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jared Baker",
@@ -223,7 +307,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 8,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Johnny Jackson",
@@ -238,7 +328,13 @@
       "rush_tds": 0,
       "rec_rec": 8,
       "rec_yds": 101,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Cayleb Jones",
@@ -253,7 +349,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 49,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "David Richards",
@@ -268,7 +370,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 31,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Nate Phillips",
@@ -283,7 +391,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 28,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Josh Kern",
@@ -298,7 +412,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Shun Brown",
@@ -313,7 +433,97 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Daniel Portillo",
+      "team": "Texas-San Antonio",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 3,
+      "kick_fgm": 2,
+      "kick_fga": 4,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Yannis Routsas",
+      "team": "Texas-San Antonio",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 3,
+      "punt_yds": 121
+    },
+    {
+      "name": "Casey Skowron",
+      "team": "Arizona",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 6,
+      "kick_xpa": 6,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Drew Riggleman",
+      "team": "Arizona",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 4,
+      "punt_yds": 161
     },
     {
       "name": "Jake Browning",
@@ -328,7 +538,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ryan Finley",
@@ -343,7 +559,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Thomas Sperbeck",
@@ -358,7 +580,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 28,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dwayne Washington",
@@ -373,7 +601,13 @@
       "rush_tds": 0,
       "rec_rec": 7,
       "rec_yds": 53,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Myles Gaskin",
@@ -388,7 +622,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": -1,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Chico McClatcher",
@@ -403,7 +643,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jaydon Mickens",
@@ -418,7 +664,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 16,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Lavon Coleman",
@@ -433,7 +685,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Brayden Lenius",
@@ -448,7 +706,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 37,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dante Pettis",
@@ -463,7 +727,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 24,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Joshua Perkins",
@@ -478,7 +748,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 18,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jeremy McNichols",
@@ -493,7 +769,13 @@
       "rush_tds": 2,
       "rec_rec": 3,
       "rec_yds": 24,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kelsey Young",
@@ -508,7 +790,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 26,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devan Demas",
@@ -523,7 +811,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jake Roh",
@@ -538,7 +832,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 23,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Holden Huff",
@@ -553,7 +853,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 28,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Shane Williams-Rhodes",
@@ -568,7 +874,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 16,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Chaz Anderson",
@@ -583,7 +895,97 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 7,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Cameron Van Winkle",
+      "team": "Washington",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 1,
+      "kick_xpa": 1,
+      "kick_fgm": 2,
+      "kick_fga": 3,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Korey Durkee",
+      "team": "Washington",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 8,
+      "punt_yds": 325
+    },
+    {
+      "name": "Tyler Rausa",
+      "team": "Boise State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 1,
+      "kick_xpa": 2,
+      "kick_fgm": 1,
+      "kick_fga": 1,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Sean Wale",
+      "team": "Boise State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 6,
+      "punt_yds": 246
     },
     {
       "name": "Jared Goff",
@@ -598,7 +1000,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Chase Forrest",
@@ -613,7 +1021,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Khalfani Muhammad",
@@ -628,7 +1042,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 7,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tre Watson",
@@ -643,7 +1063,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Fabiano Hale",
@@ -658,7 +1084,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Vic Enwere",
@@ -673,7 +1105,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Daniel Lasco",
@@ -688,7 +1126,13 @@
       "rush_tds": 1,
       "rec_rec": 1,
       "rec_yds": 20,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jeffery Coprich",
@@ -703,7 +1147,13 @@
       "rush_tds": 1,
       "rec_rec": 3,
       "rec_yds": 35,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kenny Lawler",
@@ -718,7 +1168,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 69,
-      "rec_tds": 3
+      "rec_tds": 3,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bryce Treggs",
@@ -733,7 +1189,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 81,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kanawai Noa",
@@ -748,7 +1210,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 48,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Maurice Harris",
@@ -763,7 +1231,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 39,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Patrick Worstell",
@@ -778,7 +1252,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 25,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bug Rivera",
@@ -793,7 +1273,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 92,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Chad Hansen",
@@ -808,7 +1294,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 11,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Darius Powe",
@@ -823,7 +1315,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 9,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Trevor Davis",
@@ -838,7 +1336,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 32,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Stephen Anderson",
@@ -853,7 +1357,97 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Matt Anderson",
+      "team": "California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 7,
+      "kick_xpa": 7,
+      "kick_fgm": 1,
+      "kick_fga": 1,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Noah Beito",
+      "team": "California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 2,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Robbie McInerny",
+      "team": "California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 1,
+      "kick_xpa": 1,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Cole Leininger",
+      "team": "California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 3,
+      "punt_yds": 126
     },
     {
       "name": "Sefo Liufau",
@@ -868,7 +1462,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Max Wittek",
@@ -883,7 +1483,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Michael Adkins II",
@@ -898,7 +1504,13 @@
       "rush_tds": 2,
       "rec_rec": 2,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Phillip Lindsay",
@@ -913,7 +1525,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 2,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Christian Powell",
@@ -928,7 +1546,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Nelson Spruce",
@@ -943,7 +1567,13 @@
       "rush_tds": 0,
       "rec_rec": 8,
       "rec_yds": 69,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Shay Fields",
@@ -958,7 +1588,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 60,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devin Ross",
@@ -973,7 +1609,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 18,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Sean Irwin",
@@ -988,7 +1630,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 4,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Paul Harris",
@@ -1003,7 +1651,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": -1,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Steven Lakalaka",
@@ -1018,7 +1672,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Quinton Pedroza",
@@ -1033,7 +1693,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 41,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Marcus Kemp",
@@ -1048,7 +1714,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 116,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dylan Collie",
@@ -1063,7 +1735,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 21,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Metuisela 'Unga",
@@ -1078,7 +1756,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 19,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Isaiah Bernard",
@@ -1093,7 +1777,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 4,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Vasquez Haynes",
@@ -1108,7 +1798,76 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 2,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Diego Gonzalez",
+      "team": "Colorado",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 0,
+      "kick_fgm": 2,
+      "kick_fga": 2,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Alex Kinney",
+      "team": "Colorado",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 7,
+      "punt_yds": 252
+    },
+    {
+      "name": "Rigoberto Sanchez",
+      "team": "Hawaii",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 0,
+      "kick_fgm": 2,
+      "kick_fga": 2,
+      "punt_punts": 9,
+      "punt_yds": 400
     },
     {
       "name": "Kevin Hogan",
@@ -1123,7 +1882,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Clayton Thorson",
@@ -1138,7 +1903,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Andrew Scanlan",
@@ -1153,7 +1924,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Christian McCaffrey",
@@ -1168,7 +1945,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 23,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Remound Wright",
@@ -1183,7 +1966,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 10,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Barry Sanders",
@@ -1198,7 +1987,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Francis Owusu",
@@ -1213,7 +2008,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bryce Love",
@@ -1228,7 +2029,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Austin Hooper",
@@ -1243,7 +2050,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 45,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devon Cajuste",
@@ -1258,7 +2071,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 39,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Rollins Stallworth",
@@ -1273,7 +2092,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 17,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Michael Rector",
@@ -1288,7 +2113,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 10,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dalton Schultz",
@@ -1303,7 +2134,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Justin Jackson",
@@ -1318,7 +2155,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Warren Long",
@@ -1333,7 +2176,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Solomon Vault",
@@ -1348,7 +2197,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jalani Roberts",
@@ -1363,7 +2218,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Christian Jones",
@@ -1378,7 +2239,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 52,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Miles Shuler",
@@ -1393,7 +2260,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 33,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Garrett Dickerson",
@@ -1408,7 +2281,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dan Vitale",
@@ -1423,7 +2302,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 2,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Mike McHugh",
@@ -1438,7 +2323,97 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 1,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Conrad Ukropina",
+      "team": "Stanford",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 2,
+      "kick_fga": 2,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Alex Robinson",
+      "team": "Stanford",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 7,
+      "punt_yds": 322
+    },
+    {
+      "name": "Jack Mitchell",
+      "team": "Northwestern",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 1,
+      "kick_xpa": 1,
+      "kick_fgm": 3,
+      "kick_fga": 4,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Hunter Niswander",
+      "team": "Northwestern",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 5,
+      "punt_yds": 194
     },
     {
       "name": "Seth Collins",
@@ -1453,7 +2428,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Marcus McMaryion",
@@ -1468,7 +2449,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Storm Woods",
@@ -1483,7 +2470,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 25,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Chris Brown",
@@ -1498,7 +2491,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Victor Bolden",
@@ -1513,7 +2512,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 6,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ryan Nall",
@@ -1528,7 +2533,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Rahmel Dockery",
@@ -1543,7 +2554,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jordan Villamin",
@@ -1558,7 +2575,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 70,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Deltron Sands",
@@ -1573,7 +2596,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kellen Clute",
@@ -1588,7 +2617,55 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Garrett Owens",
+      "team": "Oregon State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 2,
+      "kick_fgm": 4,
+      "kick_fga": 4,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Nick Porebski",
+      "team": "Oregon State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 6,
+      "punt_yds": 226
     },
     {
       "name": "Vernon Adams",
@@ -1603,7 +2680,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Royce Freeman",
@@ -1618,7 +2701,13 @@
       "rush_tds": 3,
       "rec_rec": 2,
       "rec_yds": 18,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kani Benoit",
@@ -1633,7 +2722,13 @@
       "rush_tds": 1,
       "rec_rec": 1,
       "rec_yds": 19,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tony Brooks-James",
@@ -1648,7 +2743,13 @@
       "rush_tds": 2,
       "rec_rec": 2,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Taj Griffin",
@@ -1663,7 +2764,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bralon Addison",
@@ -1678,7 +2785,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 24,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Byron Marshall",
@@ -1693,7 +2806,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 69,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dwayne Stanford",
@@ -1708,7 +2827,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 90,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "John Mundt",
@@ -1723,7 +2848,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Evan Baylis",
@@ -1738,7 +2869,34 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 11,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Aidan Schneider",
+      "team": "Oregon",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 7,
+      "kick_xpa": 7,
+      "kick_fgm": 2,
+      "kick_fga": 2,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Luke Falk",
@@ -1753,7 +2911,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Peyton Bender",
@@ -1768,7 +2932,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Gerard Wicks",
@@ -1783,7 +2953,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jamal Morrow",
@@ -1798,7 +2974,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Gabe Marks",
@@ -1813,7 +2995,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 76,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dom Williams",
@@ -1828,7 +3016,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 86,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "John Thompson",
@@ -1843,7 +3037,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 33,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tyler Baker",
@@ -1858,7 +3058,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 20,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kyrin Priester",
@@ -1873,7 +3079,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 16,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "River Cracraft",
@@ -1888,7 +3100,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 26,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Keith Harrington",
@@ -1903,7 +3121,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 25,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Robert Lewis",
@@ -1918,7 +3142,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Daniel Lilienthal",
@@ -1933,7 +3163,55 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 7,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Erik Powell",
+      "team": "Washington State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 2,
+      "kick_fgm": 1,
+      "kick_fga": 2,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Zach Charme",
+      "team": "Washington State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 2,
+      "punt_yds": 104
     },
     {
       "name": "Fredi Knighten",
@@ -1948,7 +3226,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "James Tabary",
@@ -1963,7 +3247,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Cameron Birse",
@@ -1978,7 +3268,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tres Houston",
@@ -1993,7 +3289,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 54,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Cody Kessler",
@@ -2008,7 +3310,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Max Browne",
@@ -2023,7 +3331,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jalen Greene",
@@ -2038,7 +3352,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 25,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Michael Gordon",
@@ -2053,7 +3373,13 @@
       "rush_tds": 1,
       "rec_rec": 1,
       "rec_yds": 11,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Warren Wand",
@@ -2068,7 +3394,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 10,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Johnston White",
@@ -2083,7 +3415,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Logan Moragne",
@@ -2098,7 +3436,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tyler Trosin",
@@ -2113,7 +3457,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Booker Mays",
@@ -2128,7 +3478,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 13,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "J.D. McKissic",
@@ -2143,7 +3499,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 36,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dijon Paschal",
@@ -2158,7 +3520,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 15,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Darion Griswold",
@@ -2173,7 +3541,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 46,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Blake Mack",
@@ -2188,7 +3562,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tre Madden",
@@ -2203,7 +3583,13 @@
       "rush_tds": 1,
       "rec_rec": 2,
       "rec_yds": 15,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ronald Jones",
@@ -2218,7 +3604,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Aca'Cedric Ware",
@@ -2233,7 +3625,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Soma Vainuku",
@@ -2248,7 +3646,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Dominic Davis",
@@ -2263,7 +3667,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 53,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "JuJu Smith-Schuster",
@@ -2278,7 +3688,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 89,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Steven Mitchell",
@@ -2293,7 +3709,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 32,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Issac Whitney",
@@ -2308,7 +3730,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 38,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "De'Quan Hampton",
@@ -2323,7 +3751,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 35,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Darreus Rogers",
@@ -2338,7 +3772,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 24,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Christian Tober",
@@ -2353,7 +3793,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tyler Petite",
@@ -2368,7 +3814,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Taylor McNamara",
@@ -2383,7 +3835,76 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 2,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Luke Ferguson",
+      "team": "Arkansas State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 7,
+      "punt_yds": 315
+    },
+    {
+      "name": "Alex Wood",
+      "team": "Southern California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 7,
+      "kick_xpa": 8,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Kris Albarado",
+      "team": "Southern California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 6,
+      "punt_yds": 244
     },
     {
       "name": "Mike Bercovici",
@@ -2398,7 +3919,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kyle Allen",
@@ -2413,7 +3940,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kyler Murray",
@@ -2428,7 +3961,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Demario Richard",
@@ -2443,7 +3982,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 27,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "De'Chavon Hayes",
@@ -2458,7 +4003,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 13,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "D.J. Foster",
@@ -2473,7 +4024,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 48,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ellis Jefferson",
@@ -2488,7 +4045,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 69,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devin Lucien",
@@ -2503,7 +4066,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 25,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kody Kohl",
@@ -2518,7 +4087,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 8,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Gary Chambers",
@@ -2533,7 +4108,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 9,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tra Carson",
@@ -2548,7 +4129,13 @@
       "rush_tds": 1,
       "rec_rec": 1,
       "rec_yds": 9,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "James White",
@@ -2563,7 +4150,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Christian Kirk",
@@ -2578,7 +4171,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 106,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ricky Seals-Jones",
@@ -2593,7 +4192,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 29,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Josh Reynolds",
@@ -2608,7 +4213,13 @@
       "rush_tds": 0,
       "rec_rec": 4,
       "rec_yds": 78,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Speedy Noil",
@@ -2623,7 +4234,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 15,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Damion Ratley",
@@ -2638,7 +4255,97 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 10,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Zane Gonzalez",
+      "team": "Arizona State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 2,
+      "kick_fgm": 1,
+      "kick_fga": 1,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Matt Haack",
+      "team": "Arizona State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 10,
+      "punt_yds": 420
+    },
+    {
+      "name": "Taylor Bertolet",
+      "team": "Texas A&M",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 5,
+      "kick_xpa": 5,
+      "kick_fgm": 1,
+      "kick_fga": 1,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Drew Kaser",
+      "team": "Texas A&M",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 6,
+      "punt_yds": 317
     },
     {
       "name": "Matt Johns",
@@ -2653,7 +4360,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Josh Rosen",
@@ -2668,7 +4381,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jerry Neuheisel",
@@ -2683,7 +4402,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Taquan Mizzell",
@@ -2698,7 +4423,13 @@
       "rush_tds": 0,
       "rec_rec": 8,
       "rec_yds": 100,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Albert Reid",
@@ -2713,7 +4444,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Vincent Croce",
@@ -2728,7 +4465,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Nicholas Conte",
@@ -2743,7 +4486,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 4,
+      "punt_yds": 202
     },
     {
       "name": "Canaan Severin",
@@ -2758,7 +4507,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 58,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Evan Butts",
@@ -2773,7 +4528,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 42,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Andre Levrone",
@@ -2788,7 +4549,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 16,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Charlie Hopkins",
@@ -2803,7 +4570,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 8,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Olamide Zaccheaus",
@@ -2818,7 +4591,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Paul Perkins",
@@ -2833,7 +4612,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 58,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Soso Jamabo",
@@ -2848,7 +4633,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bolu Olorunfunmi",
@@ -2863,7 +4654,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Myles Jack",
@@ -2878,7 +4675,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devin Fuller",
@@ -2893,7 +4696,13 @@
       "rush_tds": 0,
       "rec_rec": 6,
       "rec_yds": 44,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jordan Payton",
@@ -2908,7 +4717,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 54,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Thomas Duarte",
@@ -2923,7 +4738,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 51,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Nate Iese",
@@ -2938,7 +4759,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 43,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Eldridge Massington",
@@ -2953,7 +4780,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 31,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Logan Sweet",
@@ -2968,7 +4801,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 21,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Mossi Johnson",
@@ -2983,7 +4822,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kenneth Walker III",
@@ -2998,7 +4843,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 35,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Darren Andrews",
@@ -3013,7 +4864,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kenneth Clark",
@@ -3028,7 +4885,76 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Ian Frye",
+      "team": "Virginia",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 1,
+      "kick_xpa": 1,
+      "kick_fgm": 3,
+      "kick_fga": 3,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Ka'Imi Fairbairn",
+      "team": "UCLA",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 4,
+      "kick_xpa": 4,
+      "kick_fgm": 2,
+      "kick_fga": 3,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Matt Mengel",
+      "team": "UCLA",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 3,
+      "punt_yds": 113
     },
     {
       "name": "Jake Rudock",
@@ -3043,7 +4969,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Travis Wilson",
@@ -3058,7 +4990,13 @@
       "rush_tds": 1,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "De'Veon Smith",
@@ -3073,7 +5011,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 6,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ty Isaac",
@@ -3088,7 +5032,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 3,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Derrick Green",
@@ -3103,7 +5053,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Joe Kerridge",
@@ -3118,7 +5074,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Amara Darboh",
@@ -3133,7 +5095,13 @@
       "rush_tds": 0,
       "rec_rec": 8,
       "rec_yds": 101,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jake Butt",
@@ -3148,7 +5116,13 @@
       "rush_tds": 0,
       "rec_rec": 8,
       "rec_yds": 93,
-      "rec_tds": 1
+      "rec_tds": 1,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Grant Perry",
@@ -3163,7 +5137,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 41,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Jehu Chesson",
@@ -3178,7 +5158,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 22,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Ian Bunting",
@@ -3193,7 +5179,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 12,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "A.J. Williams",
@@ -3208,7 +5200,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 2,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Brian Cole",
@@ -3223,7 +5221,13 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": -1,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Devontae Booker",
@@ -3238,7 +5242,13 @@
       "rush_tds": 1,
       "rec_rec": 7,
       "rec_yds": 55,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Joe Williams",
@@ -3253,7 +5263,13 @@
       "rush_tds": 0,
       "rec_rec": 0,
       "rec_yds": 0,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Britain Covey",
@@ -3268,7 +5284,13 @@
       "rush_tds": 0,
       "rec_rec": 5,
       "rec_yds": 58,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Bubba Poole",
@@ -3283,7 +5305,13 @@
       "rush_tds": 0,
       "rec_rec": 3,
       "rec_yds": 22,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Harrison Handley",
@@ -3298,7 +5326,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 25,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Siale Fakailoatonga",
@@ -3313,7 +5347,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 17,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Kenneth Scott",
@@ -3328,7 +5368,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 15,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Tyrone Smith",
@@ -3343,7 +5389,13 @@
       "rush_tds": 0,
       "rec_rec": 2,
       "rec_yds": 11,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
     },
     {
       "name": "Evan Moeai",
@@ -3358,7 +5410,97 @@
       "rush_tds": 0,
       "rec_rec": 1,
       "rec_yds": 5,
-      "rec_tds": 0
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Kenneth Allen",
+      "team": "Michigan",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 2,
+      "kick_xpa": 2,
+      "kick_fgm": 1,
+      "kick_fga": 2,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Blake O'Neill",
+      "team": "Michigan",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 3,
+      "punt_yds": 130
+    },
+    {
+      "name": "Andy Phillips",
+      "team": "Utah",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 3,
+      "kick_xpa": 3,
+      "kick_fgm": 1,
+      "kick_fga": 3,
+      "punt_punts": 0,
+      "punt_yds": 0
+    },
+    {
+      "name": "Tom Hackett",
+      "team": "Utah",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 4,
+      "punt_yds": 192
     }
   ]
 }
