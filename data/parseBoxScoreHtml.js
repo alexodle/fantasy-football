@@ -9,6 +9,8 @@ const COMMON_ROW = {
   TEAM: 1
 };
 
+// TODO: What about offensive fumbles???!!!
+
 /**
  * Maps stat categories to their corresponding table/column in the html
  *
