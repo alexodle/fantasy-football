@@ -8,7 +8,7 @@ BASEDIR=$(dirname $0); pushd $BASEDIR; BASEDIR=$(pwd)
 # === TODO: take from args ===
 week=1
 config=$BASEDIR/node_scripts/data_config.js
-stash_dir=$BASEDIR/temp_stash
+stash_dir=/tmp/ffdata
 # ===
 
 
@@ -45,3 +45,4 @@ popd
 popd
 
 echo "DONE: $(date +"%m%d%Y-%H%M%S")"
+echo "Contents in: ${stash_dir}"
