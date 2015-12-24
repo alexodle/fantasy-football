@@ -31,6 +31,12 @@ node ./parseBoxScoreLinksHtml.js -i $box_score_links_html -o $box_score_links_js
 box_score_html_dir=$data_dir/box_score_html
 node ./downloadBoxScoresHtml.js -i $box_score_links_json -d $box_score_html_dir -w $week -c $config
 
+# parse box scores
+fb_player_stats_json=$data_dir/fb_player_stats.json
+node ./parseBoxScoreHtml.js -d $box_score_html_dir -o $fb_player_stats_json
+
+# TODO: Push player stats to postgres
+
 popd
 
 echo "DONE: $(date +"%m%d%Y-%H%M%S")"
