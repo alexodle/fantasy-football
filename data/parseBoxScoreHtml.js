@@ -98,11 +98,11 @@ function parseKickPuntRow($, tds) {
 }
 
 function parsePassingRow($, tds) {
-  const pass_completions = parseStatInt($(tds[PASSING_ROW.CMP]).text());
-  const pass_attempts = parseStatInt($(tds[PASSING_ROW.ATT]).text());
-  const pass_yds = parseStatInt($(tds[PASSING_ROW.YDS]).text());
-  const pass_tds = parseStatInt($(tds[PASSING_ROW.TDS]).text());
-  const pass_ints = parseStatInt($(tds[PASSING_ROW.INTS]).text());
+  const pass_completions = parseTdInt($, tds, PASSING_ROW.CMP);
+  const pass_attempts = parseTdInt($, tds, PASSING_ROW.ATT);
+  const pass_yds = parseTdInt($, tds, PASSING_ROW.YDS);
+  const pass_tds = parseTdInt($, tds, PASSING_ROW.TDS);
+  const pass_ints = parseTdInt($, tds, PASSING_ROW.INTS);
 
   return {
     pass_completions,
@@ -114,13 +114,13 @@ function parsePassingRow($, tds) {
 }
 
 function parseRushRecRow($, tds) {
-  const rush_attempts = parseStatInt($(tds[RUSH_ROW.ATT]).text());
-  const rush_yds = parseStatInt($(tds[RUSH_ROW.YDS]).text());
-  const rush_tds = parseStatInt($(tds[RUSH_ROW.TDS]).text());
+  const rush_attempts = parseTdInt($, tds, RUSH_ROW.ATT);
+  const rush_yds = parseTdInt($, tds, RUSH_ROW.YDS);
+  const rush_tds = parseTdInt($, tds, RUSH_ROW.TDS);
 
-  const rec_rec = parseStatInt($(tds[REC_ROW.REC]).text());
-  const rec_yds = parseStatInt($(tds[REC_ROW.YDS]).text());
-  const rec_tds = parseStatInt($(tds[REC_ROW.TDS]).text());
+  const rec_rec = parseTdInt($, tds, REC_ROW.REC);
+  const rec_yds = parseTdInt($, tds, REC_ROW.YDS);
+  const rec_tds = parseTdInt($, tds, REC_ROW.TDS);
 
   return {
     rush_attempts,
