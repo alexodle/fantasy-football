@@ -9,6 +9,11 @@ const COMMON_ROW = {
   TEAM: 1
 };
 
+/**
+ * Maps stat categories to their corresponding table/column in the html
+ *
+ * key: html table column
+ */
 const CONFIG = {
   '#passing': {
     cols: {
@@ -47,6 +52,22 @@ const CONFIG = {
       puntret_ret: 6,
       puntret_yds: 7,
       puntret_tds: 9
+    }
+  },
+  '#defense': {
+    cols: {
+      tackle_solo: 2,
+      tackle_ast: 3,
+      tackle_tfl: 5,
+      tackle_sk: 6,
+      int_ints: 7,
+      int_yds: 8,
+      int_tds: 10,
+      int_pd: 11, // passes defended
+      fumbledef_rec: 12,
+      fumbledef_yds: 13,
+      fumbledef_tds: 14,
+      fumbledef_ff: 15
     }
   }
 };
