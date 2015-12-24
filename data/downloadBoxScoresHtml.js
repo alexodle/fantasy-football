@@ -31,39 +31,31 @@ function downloadBoxScore(outputDir, game) {
   });
 }
 
-function run(allGamesFile, outputDir, week, config) {
-  console.log('downloadBoxScores.run:');
-  console.log('\tallGamesFile: ' + allGamesFile);
+function run(boxScoreLinksFile, outputDir, week, config) {
+  console.log('downloadBoxScoresHtml.run:');
+  console.log('\tboxScoreLinksFile: ' + boxScoreLinksFile);
   console.log('\toutputDir: ' + outputDir);
   console.log('');
-  return new Promise((fulfill, reject) => {
-    fs.readFile(allGamesFile, 'utf8', (err, data) => {
-      if (err) {
-        reject(err);
-        return;
-      }
 
-      const allGames = JSON.parse(data).data;
-      fulfill(allGames);
-    });
-  })
-  .then((allGames) => {
-    const filtered = _(allGames)
-      .filter(g => g.week === week)
-      .reject(g => _.isEmpty(_.intersection(config.team_filter, g.teams)))
-      .value();
+  return utils.readFile(boxScoreLinksFile, 'utf8')
+    .then(data => {
+      return JSON.parse(data).data;
+    })
+    .then((allGames) => {
+      const filtered = _(allGames)
+        .filter(g => g.week === week)
+        .reject(g => _.isEmpty(_.intersection(config.team_filter, g.teams)))
+        .value();
 
-    return Promise.all(_.map(filtered, g => downloadBoxScore(outputDir, g)));
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+      return Promise.all(_.map(filtered, g => downloadBoxScore(outputDir, g)));
+    })
+    .catch(err => console.error(err));
 }
 
 function main() {
   const argv = require('yargs')
     .usage('Usage: $0 -i -d -w [num] -c')
-    .describe('i', 'input all-games json file')
+    .describe('i', 'box score links json file')
     .describe('d', 'output directory')
     .describe('w', 'week')
     .describe('c', 'config')
