@@ -2,6 +2,7 @@ var _ = require('lodash');
 var fs = require('fs');
 var http = require('http');
 var path = require('path');
+var Promise = require('promise');
 var utils = require('./utils/utils');
 
 function getFilePath(outputDir, game) {
@@ -22,13 +23,11 @@ function downloadBoxScore(outputDir, game) {
       }
 
       resp
-        .on('data', data => file.write(data))
-        .on('end', () => {
-          file.end();
-          fulfill();
-        });
+        .on('data', file.write)
+        .on('end', fulfill);
     });
-  });
+  })
+  .finally(file.end);
 }
 
 function run(boxScoreLinksFile, outputDir, week, config) {
@@ -43,7 +42,11 @@ function run(boxScoreLinksFile, outputDir, week, config) {
     })
     .then((allGames) => {
       const filtered = _(allGames)
+
+        // Filter for a single week
         .filter(g => g.week === week)
+
+        // At least one of the teams must be in out team_filter
         .reject(g => _.isEmpty(_.intersection(config.team_filter, g.teams)))
         .value();
 
