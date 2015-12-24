@@ -25,6 +25,11 @@ function parseRosterHtml(html) {
 }
 
 function run(rosterDir, outputDir, config) {
+  console.log('parseRosterHtml.run:');
+  console.log('\trosterDir: ' + rosterDir);
+  console.log('\toutputDir: ' + outputDir);
+  console.log('\tconfig: ' + config);
+  console.log('');
   return Promise.all(_.map(config.team_filter, (teamName) => {
     const htmlFile = path.resolve(rosterDir, utils.sanitizeFileName(teamName + '.html'));
     return utils.readFile(htmlFile, 'utf8')

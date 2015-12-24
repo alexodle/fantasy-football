@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const cheerio = require('cheerio');
-const fs = require('fs');
 const url = require('url');
+const utils = require('./utils/utils');
 
 const SCHED_ROWS = {
   WEEK: 1,
@@ -41,18 +41,14 @@ function parseScheduleRow($, $row, baseUrl) {
 }
 
 function run(inFilePath, outFilePath, baseUrl) {
-  console.log('parseAllGames.run:');
+  console.log('parseAllGamesHtml.run:');
   console.log('\tinFilePath: ' + inFilePath);
   console.log('\toutFilePath: ' + outFilePath);
   console.log('\tbaseUrl: ' + baseUrl);
   console.log('');
-  return new Promise((fulfull, reject) => {
-    fs.readFile(inFilePath, 'utf8', (err, data) => {
-      if (err) {
-        reject(err);
-        return;
-      }
 
+  return utils.readFile(inFilePath, 'utf8')
+    .then(data => {
       const $ = cheerio.load(data);
       var parsed = [];
       $('#schedule tbody tr')
@@ -61,26 +57,16 @@ function run(inFilePath, outFilePath, baseUrl) {
           parsed.push(parseScheduleRow($, $(elem), baseUrl));
         });
 
+      // Remove invalid rows (skipped games, etc.)
       parsed = _.compact(parsed);
-      fulfull(parsed);
-    });
-  })
-  .then((parsed) => {
-    const json = JSON.stringify({ data: parsed }, null, 2);
-    return new Promise((fulfull, reject) => {
-      fs.writeFile(outFilePath, json, (err) => {
-        if (err) {
-          reject(err);
-          return;
-        }
 
-        fulfull();
-      });
-    });
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+      return parsed;
+    })
+    .then(parsed => {
+      const json = JSON.stringify({ data: parsed }, null, 2);
+      return utils.writeFile(outFilePath, json);
+    })
+    .catch(err => console.error(err));
 }
 
 function main() {
