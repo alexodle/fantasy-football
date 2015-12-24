@@ -19,7 +19,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Russell Bellomy",
@@ -40,7 +46,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Anu Solomon",
@@ -61,7 +73,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jarveon Williams",
@@ -82,7 +100,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jalen Rhodes",
@@ -103,7 +127,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tyrell Clay",
@@ -124,7 +154,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Brady Jones",
@@ -145,7 +181,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kerry Thomas",
@@ -166,7 +208,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Aaron Grubb",
@@ -187,7 +235,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "David Morgan",
@@ -208,7 +262,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenny Bias",
@@ -229,7 +289,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Aron Taylor",
@@ -250,7 +316,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jabryce Taylor",
@@ -271,7 +343,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nick Wilson",
@@ -292,7 +370,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jared Baker",
@@ -313,7 +397,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 18,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Johnny Jackson",
@@ -334,7 +424,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Cayleb Jones",
@@ -355,7 +451,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "David Richards",
@@ -376,7 +478,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nate Phillips",
@@ -397,7 +505,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 21,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Josh Kern",
@@ -418,7 +532,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Shun Brown",
@@ -439,7 +559,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Daniel Portillo",
@@ -460,7 +586,13 @@
       "kick_fgm": 2,
       "kick_fga": 4,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Yannis Routsas",
@@ -481,7 +613,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 3,
-      "punt_yds": 121
+      "punt_yds": 121,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Casey Skowron",
@@ -502,7 +640,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Drew Riggleman",
@@ -523,7 +667,67 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 4,
-      "punt_yds": 161
+      "punt_yds": 161,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Brett Winnegan",
+      "team": "Texas-San Antonio",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 5,
+      "kickret_yds": 96,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Derrick Dick",
+      "team": "Texas-San Antonio",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jake Browning",
@@ -544,7 +748,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ryan Finley",
@@ -565,7 +775,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Thomas Sperbeck",
@@ -586,7 +802,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dwayne Washington",
@@ -607,7 +829,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 2,
+      "kickret_yds": 22,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Myles Gaskin",
@@ -628,7 +856,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Chico McClatcher",
@@ -649,7 +883,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jaydon Mickens",
@@ -670,7 +910,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Lavon Coleman",
@@ -691,7 +937,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Brayden Lenius",
@@ -712,7 +964,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dante Pettis",
@@ -733,7 +991,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 93,
+      "puntret_tds": 1
     },
     {
       "name": "Joshua Perkins",
@@ -754,7 +1018,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jeremy McNichols",
@@ -775,7 +1045,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 21,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kelsey Young",
@@ -796,7 +1072,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Devan Demas",
@@ -817,7 +1099,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jake Roh",
@@ -838,7 +1126,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Holden Huff",
@@ -859,7 +1153,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Shane Williams-Rhodes",
@@ -880,7 +1180,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Chaz Anderson",
@@ -901,7 +1207,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Cameron Van Winkle",
@@ -922,7 +1234,13 @@
       "kick_fgm": 2,
       "kick_fga": 3,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Korey Durkee",
@@ -943,7 +1261,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 8,
-      "punt_yds": 325
+      "punt_yds": 325,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tyler Rausa",
@@ -964,7 +1288,13 @@
       "kick_fgm": 1,
       "kick_fga": 1,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Sean Wale",
@@ -985,7 +1315,40 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 6,
-      "punt_yds": 246
+      "punt_yds": 246,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Donte Deayon",
+      "team": "Boise State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 2,
+      "puntret_tds": 0
     },
     {
       "name": "Jared Goff",
@@ -1006,7 +1369,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Chase Forrest",
@@ -1027,7 +1396,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Khalfani Muhammad",
@@ -1048,7 +1423,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tre Watson",
@@ -1069,7 +1450,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 18,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Fabiano Hale",
@@ -1090,7 +1477,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Vic Enwere",
@@ -1111,7 +1504,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Daniel Lasco",
@@ -1132,7 +1531,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jeffery Coprich",
@@ -1153,7 +1558,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenny Lawler",
@@ -1174,7 +1585,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Bryce Treggs",
@@ -1195,7 +1612,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kanawai Noa",
@@ -1216,7 +1639,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Maurice Harris",
@@ -1237,7 +1666,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Patrick Worstell",
@@ -1258,7 +1693,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Bug Rivera",
@@ -1279,7 +1720,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Chad Hansen",
@@ -1300,7 +1747,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Darius Powe",
@@ -1321,7 +1774,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Trevor Davis",
@@ -1342,7 +1801,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": -4,
+      "puntret_tds": 0
     },
     {
       "name": "Stephen Anderson",
@@ -1363,7 +1828,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Matt Anderson",
@@ -1384,7 +1855,13 @@
       "kick_fgm": 1,
       "kick_fga": 1,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Noah Beito",
@@ -1405,7 +1882,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Robbie McInerny",
@@ -1426,7 +1909,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Cole Leininger",
@@ -1447,7 +1936,40 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 3,
-      "punt_yds": 126
+      "punt_yds": 126,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Brandon Singleton",
+      "team": "California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 11,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Sefo Liufau",
@@ -1468,7 +1990,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Max Wittek",
@@ -1489,7 +2017,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Michael Adkins II",
@@ -1510,7 +2044,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Phillip Lindsay",
@@ -1531,7 +2071,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 2,
+      "kickret_yds": 64,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Christian Powell",
@@ -1552,7 +2098,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nelson Spruce",
@@ -1573,7 +2125,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 4,
+      "puntret_yds": 14,
+      "puntret_tds": 0
     },
     {
       "name": "Shay Fields",
@@ -1594,7 +2152,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 1,
+      "puntret_tds": 0
     },
     {
       "name": "Devin Ross",
@@ -1615,7 +2179,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Sean Irwin",
@@ -1636,7 +2206,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Paul Harris",
@@ -1657,7 +2233,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 4,
+      "kickret_yds": 72,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Steven Lakalaka",
@@ -1678,7 +2260,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Quinton Pedroza",
@@ -1699,7 +2287,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 3,
+      "puntret_tds": 0
     },
     {
       "name": "Marcus Kemp",
@@ -1720,7 +2314,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dylan Collie",
@@ -1741,7 +2341,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Metuisela 'Unga",
@@ -1762,7 +2368,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Isaiah Bernard",
@@ -1783,7 +2395,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Vasquez Haynes",
@@ -1804,7 +2422,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Diego Gonzalez",
@@ -1825,7 +2449,13 @@
       "kick_fgm": 2,
       "kick_fga": 2,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Alex Kinney",
@@ -1846,7 +2476,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 7,
-      "punt_yds": 252
+      "punt_yds": 252,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Rigoberto Sanchez",
@@ -1867,7 +2503,40 @@
       "kick_fgm": 2,
       "kick_fga": 2,
       "punt_punts": 9,
-      "punt_yds": 400
+      "punt_yds": 400,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Keelan Ewaliko",
+      "team": "Hawaii",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 15,
+      "puntret_tds": 0
     },
     {
       "name": "Kevin Hogan",
@@ -1888,7 +2557,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Clayton Thorson",
@@ -1909,7 +2584,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Andrew Scanlan",
@@ -1930,7 +2611,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Christian McCaffrey",
@@ -1951,7 +2638,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 4,
+      "kickret_yds": 90,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": -8,
+      "puntret_tds": 0
     },
     {
       "name": "Remound Wright",
@@ -1972,7 +2665,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Barry Sanders",
@@ -1993,7 +2692,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Francis Owusu",
@@ -2014,7 +2719,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Bryce Love",
@@ -2035,7 +2746,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Austin Hooper",
@@ -2056,7 +2773,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Devon Cajuste",
@@ -2077,7 +2800,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Rollins Stallworth",
@@ -2098,7 +2827,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Michael Rector",
@@ -2119,7 +2854,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dalton Schultz",
@@ -2140,7 +2881,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Justin Jackson",
@@ -2161,7 +2908,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Warren Long",
@@ -2182,7 +2935,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Solomon Vault",
@@ -2203,7 +2962,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 19,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jalani Roberts",
@@ -2224,7 +2989,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Christian Jones",
@@ -2245,7 +3016,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Miles Shuler",
@@ -2266,7 +3043,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 7,
+      "puntret_tds": 0
     },
     {
       "name": "Garrett Dickerson",
@@ -2287,7 +3070,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dan Vitale",
@@ -2308,7 +3097,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Mike McHugh",
@@ -2329,7 +3124,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Conrad Ukropina",
@@ -2350,7 +3151,13 @@
       "kick_fgm": 2,
       "kick_fga": 2,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Alex Robinson",
@@ -2371,7 +3178,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 7,
-      "punt_yds": 322
+      "punt_yds": 322,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jack Mitchell",
@@ -2392,7 +3205,13 @@
       "kick_fgm": 3,
       "kick_fga": 4,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Hunter Niswander",
@@ -2413,7 +3232,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 5,
-      "punt_yds": 194
+      "punt_yds": 194,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Seth Collins",
@@ -2434,7 +3259,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Marcus McMaryion",
@@ -2455,7 +3286,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Storm Woods",
@@ -2476,7 +3313,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Chris Brown",
@@ -2497,7 +3340,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Victor Bolden",
@@ -2518,7 +3367,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ryan Nall",
@@ -2539,7 +3394,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Rahmel Dockery",
@@ -2560,7 +3421,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 3,
+      "puntret_yds": 23,
+      "puntret_tds": 0
     },
     {
       "name": "Jordan Villamin",
@@ -2581,7 +3448,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Deltron Sands",
@@ -2602,7 +3475,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kellen Clute",
@@ -2623,7 +3502,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Garrett Owens",
@@ -2644,7 +3529,13 @@
       "kick_fgm": 4,
       "kick_fga": 4,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nick Porebski",
@@ -2665,7 +3556,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 6,
-      "punt_yds": 226
+      "punt_yds": 226,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Vernon Adams",
@@ -2686,7 +3583,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Royce Freeman",
@@ -2707,7 +3610,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kani Benoit",
@@ -2728,7 +3637,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tony Brooks-James",
@@ -2749,7 +3664,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Taj Griffin",
@@ -2770,7 +3691,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Bralon Addison",
@@ -2791,7 +3718,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 14,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 6,
+      "puntret_tds": 0
     },
     {
       "name": "Byron Marshall",
@@ -2812,7 +3745,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 3,
+      "kickret_yds": 99,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dwayne Stanford",
@@ -2833,7 +3772,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "John Mundt",
@@ -2854,7 +3799,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Evan Baylis",
@@ -2875,7 +3826,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Aidan Schneider",
@@ -2896,7 +3853,40 @@
       "kick_fgm": 2,
       "kick_fga": 2,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Khalil Oliver",
+      "team": "Oregon",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Luke Falk",
@@ -2917,7 +3907,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Peyton Bender",
@@ -2938,7 +3934,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Gerard Wicks",
@@ -2959,7 +3961,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jamal Morrow",
@@ -2980,7 +3988,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Gabe Marks",
@@ -3001,7 +4015,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dom Williams",
@@ -3022,7 +4042,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "John Thompson",
@@ -3043,7 +4069,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tyler Baker",
@@ -3064,7 +4096,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kyrin Priester",
@@ -3085,7 +4123,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 6,
+      "puntret_tds": 0
     },
     {
       "name": "River Cracraft",
@@ -3106,7 +4150,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Keith Harrington",
@@ -3127,7 +4177,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Robert Lewis",
@@ -3148,7 +4204,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Daniel Lilienthal",
@@ -3169,7 +4231,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Erik Powell",
@@ -3190,7 +4258,13 @@
       "kick_fgm": 1,
       "kick_fga": 2,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Zach Charme",
@@ -3211,7 +4285,67 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 2,
-      "punt_yds": 104
+      "punt_yds": 104,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Tavares Martin Jr",
+      "team": "Washington State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 3,
+      "kickret_yds": 85,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "B.J. Salmonson",
+      "team": "Washington State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 7,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Fredi Knighten",
@@ -3232,7 +4366,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "James Tabary",
@@ -3253,7 +4393,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Cameron Birse",
@@ -3274,7 +4420,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tres Houston",
@@ -3295,7 +4447,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Cody Kessler",
@@ -3316,7 +4474,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Max Browne",
@@ -3337,7 +4501,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jalen Greene",
@@ -3358,7 +4528,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Michael Gordon",
@@ -3379,7 +4555,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 2,
+      "kickret_yds": 32,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Warren Wand",
@@ -3400,7 +4582,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Johnston White",
@@ -3421,7 +4609,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Logan Moragne",
@@ -3442,7 +4636,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tyler Trosin",
@@ -3463,7 +4663,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Booker Mays",
@@ -3484,7 +4690,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "J.D. McKissic",
@@ -3505,7 +4717,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 4,
+      "kickret_yds": 90,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dijon Paschal",
@@ -3526,7 +4744,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Darion Griswold",
@@ -3547,7 +4771,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Blake Mack",
@@ -3568,7 +4798,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tre Madden",
@@ -3589,7 +4825,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ronald Jones",
@@ -3610,7 +4852,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Aca'Cedric Ware",
@@ -3631,7 +4879,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Soma Vainuku",
@@ -3652,7 +4906,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Dominic Davis",
@@ -3673,7 +4933,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 2,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "JuJu Smith-Schuster",
@@ -3694,7 +4960,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Steven Mitchell",
@@ -3715,7 +4987,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Issac Whitney",
@@ -3736,7 +5014,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "De'Quan Hampton",
@@ -3757,7 +5041,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Darreus Rogers",
@@ -3778,7 +5068,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Christian Tober",
@@ -3799,7 +5095,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": -2,
+      "puntret_tds": 0
     },
     {
       "name": "Tyler Petite",
@@ -3820,7 +5122,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Taylor McNamara",
@@ -3841,7 +5149,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Luke Ferguson",
@@ -3862,7 +5176,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 7,
-      "punt_yds": 315
+      "punt_yds": 315,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Alex Wood",
@@ -3883,7 +5203,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kris Albarado",
@@ -3904,7 +5230,94 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 6,
-      "punt_yds": 244
+      "punt_yds": 244,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Blaise Taylor",
+      "team": "Arkansas State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 6,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Chris Murray",
+      "team": "Arkansas State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Adoree Jackson",
+      "team": "Southern California",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 23,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 40,
+      "puntret_tds": 0
     },
     {
       "name": "Mike Bercovici",
@@ -3925,7 +5338,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kyle Allen",
@@ -3946,7 +5365,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kyler Murray",
@@ -3967,7 +5392,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Demario Richard",
@@ -3988,7 +5419,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "De'Chavon Hayes",
@@ -4009,7 +5446,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 4,
+      "kickret_yds": 73,
+      "kickret_tds": 0,
+      "puntret_ret": 3,
+      "puntret_yds": 21,
+      "puntret_tds": 0
     },
     {
       "name": "D.J. Foster",
@@ -4030,7 +5473,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ellis Jefferson",
@@ -4051,7 +5500,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Devin Lucien",
@@ -4072,7 +5527,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kody Kohl",
@@ -4093,7 +5554,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Gary Chambers",
@@ -4114,7 +5581,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tra Carson",
@@ -4135,7 +5608,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "James White",
@@ -4156,7 +5635,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Christian Kirk",
@@ -4177,7 +5662,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 2,
+      "kickret_yds": 36,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 82,
+      "puntret_tds": 1
     },
     {
       "name": "Ricky Seals-Jones",
@@ -4198,7 +5689,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Josh Reynolds",
@@ -4219,7 +5716,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Speedy Noil",
@@ -4240,7 +5743,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Damion Ratley",
@@ -4261,7 +5770,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Zane Gonzalez",
@@ -4282,7 +5797,13 @@
       "kick_fgm": 1,
       "kick_fga": 1,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Matt Haack",
@@ -4303,7 +5824,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 10,
-      "punt_yds": 420
+      "punt_yds": 420,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Taylor Bertolet",
@@ -4324,7 +5851,13 @@
       "kick_fgm": 1,
       "kick_fga": 1,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Drew Kaser",
@@ -4345,7 +5878,40 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 6,
-      "punt_yds": 317
+      "punt_yds": 317,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Alani Latu",
+      "team": "Arizona State",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 9,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Matt Johns",
@@ -4366,7 +5932,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Josh Rosen",
@@ -4387,7 +5959,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jerry Neuheisel",
@@ -4408,7 +5986,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Taquan Mizzell",
@@ -4429,7 +6013,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 10,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Albert Reid",
@@ -4450,7 +6040,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 15,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Vincent Croce",
@@ -4471,7 +6067,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nicholas Conte",
@@ -4492,7 +6094,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 4,
-      "punt_yds": 202
+      "punt_yds": 202,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Canaan Severin",
@@ -4513,7 +6121,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Evan Butts",
@@ -4534,7 +6148,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Andre Levrone",
@@ -4555,7 +6175,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Charlie Hopkins",
@@ -4576,7 +6202,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Olamide Zaccheaus",
@@ -4597,7 +6229,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Paul Perkins",
@@ -4618,7 +6256,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Soso Jamabo",
@@ -4639,7 +6283,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Bolu Olorunfunmi",
@@ -4660,7 +6310,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Myles Jack",
@@ -4681,7 +6337,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Devin Fuller",
@@ -4702,7 +6364,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jordan Payton",
@@ -4723,7 +6391,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Thomas Duarte",
@@ -4744,7 +6418,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Nate Iese",
@@ -4765,7 +6445,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Eldridge Massington",
@@ -4786,7 +6472,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Logan Sweet",
@@ -4807,7 +6499,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Mossi Johnson",
@@ -4828,7 +6526,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 16,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenneth Walker III",
@@ -4849,7 +6553,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Darren Andrews",
@@ -4870,7 +6580,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenneth Clark",
@@ -4891,7 +6607,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ian Frye",
@@ -4912,7 +6634,13 @@
       "kick_fgm": 3,
       "kick_fga": 3,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ka'Imi Fairbairn",
@@ -4933,7 +6661,13 @@
       "kick_fgm": 2,
       "kick_fga": 3,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Matt Mengel",
@@ -4954,7 +6688,40 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 3,
-      "punt_yds": 113
+      "punt_yds": 113,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Randall Goforth",
+      "team": "UCLA",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 2,
+      "puntret_yds": 28,
+      "puntret_tds": 0
     },
     {
       "name": "Jake Rudock",
@@ -4975,7 +6742,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Travis Wilson",
@@ -4996,7 +6769,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "De'Veon Smith",
@@ -5017,7 +6796,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ty Isaac",
@@ -5038,7 +6823,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Derrick Green",
@@ -5059,7 +6850,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Joe Kerridge",
@@ -5080,7 +6877,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Amara Darboh",
@@ -5101,7 +6904,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jake Butt",
@@ -5122,7 +6931,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Grant Perry",
@@ -5143,7 +6958,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Jehu Chesson",
@@ -5164,7 +6985,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Ian Bunting",
@@ -5185,7 +7012,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "A.J. Williams",
@@ -5206,7 +7039,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Brian Cole",
@@ -5227,7 +7066,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Devontae Booker",
@@ -5248,7 +7093,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Joe Williams",
@@ -5269,7 +7120,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Britain Covey",
@@ -5290,7 +7147,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 1,
+      "puntret_yds": 14,
+      "puntret_tds": 0
     },
     {
       "name": "Bubba Poole",
@@ -5311,7 +7174,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Harrison Handley",
@@ -5332,7 +7201,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Siale Fakailoatonga",
@@ -5353,7 +7228,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenneth Scott",
@@ -5374,7 +7255,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tyrone Smith",
@@ -5395,7 +7282,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Evan Moeai",
@@ -5416,7 +7309,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Kenneth Allen",
@@ -5437,7 +7336,13 @@
       "kick_fgm": 1,
       "kick_fga": 2,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Blake O'Neill",
@@ -5458,7 +7363,13 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 3,
-      "punt_yds": 130
+      "punt_yds": 130,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Andy Phillips",
@@ -5479,7 +7390,13 @@
       "kick_fgm": 1,
       "kick_fga": 3,
       "punt_punts": 0,
-      "punt_yds": 0
+      "punt_yds": 0,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     },
     {
       "name": "Tom Hackett",
@@ -5500,7 +7417,40 @@
       "kick_fgm": 0,
       "kick_fga": 0,
       "punt_punts": 4,
-      "punt_yds": 192
+      "punt_yds": 192,
+      "kickret_ret": 0,
+      "kickret_yds": 0,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
+    },
+    {
+      "name": "Jabrill Peppers",
+      "team": "Michigan",
+      "pass_completions": 0,
+      "pass_attempts": 0,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0,
+      "rush_attempts": 0,
+      "rush_yds": 0,
+      "rush_tds": 0,
+      "rec_rec": 0,
+      "rec_yds": 0,
+      "rec_tds": 0,
+      "kick_xpm": 0,
+      "kick_xpa": 0,
+      "kick_fgm": 0,
+      "kick_fga": 0,
+      "punt_punts": 0,
+      "punt_yds": 0,
+      "kickret_ret": 1,
+      "kickret_yds": 36,
+      "kickret_tds": 0,
+      "puntret_ret": 0,
+      "puntret_yds": 0,
+      "puntret_tds": 0
     }
   ]
 }

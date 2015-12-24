@@ -41,6 +41,18 @@ const PUNT_ROW = {
   YDS: 10
 };
 
+const KICKRET_ROW = {
+  RET: 2,
+  YDS: 3,
+  TDS: 5
+};
+
+const PUNTRET_ROW = {
+  RET: 6,
+  YDS: 7,
+  TDS: 9
+};
+
 const DEFAULTS = {
   // Passing
   pass_completions: 0,
@@ -67,7 +79,17 @@ const DEFAULTS = {
 
   // Punting
   punt_punts: 0,
-  punt_yds: 0
+  punt_yds: 0,
+
+  // Kick Returns
+  kickret_ret: 0,
+  kickret_yds: 0,
+  kickret_tds: 0,
+
+  // Punt Returns
+  puntret_ret: 0,
+  puntret_yds: 0,
+  puntret_tds: 0
 };
 
 function parseStatInt(str) {
@@ -76,6 +98,25 @@ function parseStatInt(str) {
 
 function parseTdInt($, tds, i) {
    return parseStatInt($(tds[i]).text());
+}
+
+function parseKickPuntRetRow($, tds) {
+  const kickret_ret = parseTdInt($, tds, KICKRET_ROW.RET);
+  const kickret_yds = parseTdInt($, tds, KICKRET_ROW.YDS);
+  const kickret_tds = parseTdInt($, tds, KICKRET_ROW.TDS);
+
+  const puntret_ret = parseTdInt($, tds, PUNTRET_ROW.RET);
+  const puntret_yds = parseTdInt($, tds, PUNTRET_ROW.YDS);
+  const puntret_tds = parseTdInt($, tds, PUNTRET_ROW.TDS);
+
+  return {
+    kickret_ret,
+    kickret_yds,
+    kickret_tds,
+    puntret_ret,
+    puntret_yds,
+    puntret_tds
+  };
 }
 
 function parseKickPuntRow($, tds) {
@@ -171,6 +212,7 @@ function parseBoxScoreHtml(html) {
   parseRows('#passing tbody tr', parsePassingRow);
   parseRows('#rushing_and_receiving tbody tr', parseRushRecRow);
   parseRows('#kicking_and_punting tbody tr', parseKickPuntRow);
+  parseRows('#returns tbody tr', parseKickPuntRetRow);
 
   return _.values(players);
 }
