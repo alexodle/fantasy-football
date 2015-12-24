@@ -26,6 +26,8 @@ echo "START: ${date}"
 roster_json=$data_dir/roster-$date.json
 node ./parseRosterHtml.js -d $roster_html_dir -o $roster_json -c $config
 
+# TODO: Push to postgres
+
 popd
 
 echo "DONE: $(date +"%m%d%Y-%H%M%S")"
