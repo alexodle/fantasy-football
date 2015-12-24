@@ -12,7 +12,8 @@ function sanitizeFileName(fileName) {
     .toLowerCase();
 }
 
-// TODO: Is this enough?
+// TODO: Is this enough? Do we need to include player position maybe? Maybe rely
+// on a unique id from the source?
 function hashPlayer(name, team) {
   return `${name}::${team}`;
 }
