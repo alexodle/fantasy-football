@@ -41,7 +41,7 @@ function parseScheduleRow($, $row, baseUrl) {
 }
 
 function run(inFilePath, outFilePath, baseUrl) {
-  console.log('parseAllGamesHtml.run:');
+  console.log('parseBoxScoreLinksHtml.run:');
   console.log('\tinFilePath: ' + inFilePath);
   console.log('\toutFilePath: ' + outFilePath);
   console.log('\tbaseUrl: ' + baseUrl);
