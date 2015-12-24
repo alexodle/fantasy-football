@@ -1,0 +1,301 @@
+{
+  "data": [
+    {
+      "name": "Blake Bogenschutz",
+      "team": "Texas-San Antonio",
+      "pass_completions": 25,
+      "pass_attempts": 43,
+      "pass_yds": 332,
+      "pass_tds": 2,
+      "pass_ints": 1
+    },
+    {
+      "name": "Russell Bellomy",
+      "team": "Texas-San Antonio",
+      "pass_completions": 0,
+      "pass_attempts": 2,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Anu Solomon",
+      "team": "Arizona",
+      "pass_completions": 22,
+      "pass_attempts": 36,
+      "pass_yds": 229,
+      "pass_tds": 4,
+      "pass_ints": 0
+    },
+    {
+      "name": "Jake Browning",
+      "team": "Washington",
+      "pass_completions": 20,
+      "pass_attempts": 35,
+      "pass_yds": 150,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Ryan Finley",
+      "team": "Boise State",
+      "pass_completions": 16,
+      "pass_attempts": 26,
+      "pass_yds": 129,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Thomas Sperbeck",
+      "team": "Boise State",
+      "pass_completions": 1,
+      "pass_attempts": 1,
+      "pass_yds": 23,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Jared Goff",
+      "team": "California",
+      "pass_completions": 24,
+      "pass_attempts": 32,
+      "pass_yds": 309,
+      "pass_tds": 3,
+      "pass_ints": 1
+    },
+    {
+      "name": "Chase Forrest",
+      "team": "California",
+      "pass_completions": 10,
+      "pass_attempts": 17,
+      "pass_yds": 162,
+      "pass_tds": 1,
+      "pass_ints": 1
+    },
+    {
+      "name": "Sefo Liufau",
+      "team": "Colorado",
+      "pass_completions": 23,
+      "pass_attempts": 40,
+      "pass_yds": 156,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Max Wittek",
+      "team": "Hawaii",
+      "pass_completions": 19,
+      "pass_attempts": 38,
+      "pass_yds": 202,
+      "pass_tds": 3,
+      "pass_ints": 2
+    },
+    {
+      "name": "Kevin Hogan",
+      "team": "Stanford",
+      "pass_completions": 20,
+      "pass_attempts": 35,
+      "pass_yds": 155,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Clayton Thorson",
+      "team": "Northwestern",
+      "pass_completions": 12,
+      "pass_attempts": 24,
+      "pass_yds": 105,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Andrew Scanlan",
+      "team": "Northwestern",
+      "pass_completions": 0,
+      "pass_attempts": 1,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Seth Collins",
+      "team": "Oregon State",
+      "pass_completions": 10,
+      "pass_attempts": 18,
+      "pass_yds": 92,
+      "pass_tds": 2,
+      "pass_ints": 0
+    },
+    {
+      "name": "Marcus McMaryion",
+      "team": "Oregon State",
+      "pass_completions": 2,
+      "pass_attempts": 4,
+      "pass_yds": 18,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Vernon Adams",
+      "team": "Oregon",
+      "pass_completions": 19,
+      "pass_attempts": 25,
+      "pass_yds": 246,
+      "pass_tds": 2,
+      "pass_ints": 0
+    },
+    {
+      "name": "Luke Falk",
+      "team": "Washington State",
+      "pass_completions": 27,
+      "pass_attempts": 41,
+      "pass_yds": 289,
+      "pass_tds": 2,
+      "pass_ints": 0
+    },
+    {
+      "name": "Peyton Bender",
+      "team": "Washington State",
+      "pass_completions": 1,
+      "pass_attempts": 4,
+      "pass_yds": 18,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Fredi Knighten",
+      "team": "Arkansas State",
+      "pass_completions": 8,
+      "pass_attempts": 23,
+      "pass_yds": 86,
+      "pass_tds": 0,
+      "pass_ints": 2
+    },
+    {
+      "name": "James Tabary",
+      "team": "Arkansas State",
+      "pass_completions": 7,
+      "pass_attempts": 11,
+      "pass_yds": 95,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Cameron Birse",
+      "team": "Arkansas State",
+      "pass_completions": 2,
+      "pass_attempts": 2,
+      "pass_yds": 12,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Tres Houston",
+      "team": "Arkansas State",
+      "pass_completions": 0,
+      "pass_attempts": 1,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Cody Kessler",
+      "team": "Southern California",
+      "pass_completions": 19,
+      "pass_attempts": 26,
+      "pass_yds": 240,
+      "pass_tds": 4,
+      "pass_ints": 0
+    },
+    {
+      "name": "Max Browne",
+      "team": "Southern California",
+      "pass_completions": 3,
+      "pass_attempts": 5,
+      "pass_yds": 66,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Jalen Greene",
+      "team": "Southern California",
+      "pass_completions": 1,
+      "pass_attempts": 1,
+      "pass_yds": 18,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Mike Bercovici",
+      "team": "Arizona State",
+      "pass_completions": 25,
+      "pass_attempts": 41,
+      "pass_yds": 199,
+      "pass_tds": 1,
+      "pass_ints": 0
+    },
+    {
+      "name": "Kyle Allen",
+      "team": "Texas A&M",
+      "pass_completions": 15,
+      "pass_attempts": 26,
+      "pass_yds": 198,
+      "pass_tds": 2,
+      "pass_ints": 1
+    },
+    {
+      "name": "Kyler Murray",
+      "team": "Texas A&M",
+      "pass_completions": 4,
+      "pass_attempts": 9,
+      "pass_yds": 49,
+      "pass_tds": 0,
+      "pass_ints": 1
+    },
+    {
+      "name": "Matt Johns",
+      "team": "Virginia",
+      "pass_completions": 21,
+      "pass_attempts": 35,
+      "pass_yds": 238,
+      "pass_tds": 1,
+      "pass_ints": 1
+    },
+    {
+      "name": "Josh Rosen",
+      "team": "UCLA",
+      "pass_completions": 28,
+      "pass_attempts": 35,
+      "pass_yds": 351,
+      "pass_tds": 3,
+      "pass_ints": 0
+    },
+    {
+      "name": "Jerry Neuheisel",
+      "team": "UCLA",
+      "pass_completions": 0,
+      "pass_attempts": 2,
+      "pass_yds": 0,
+      "pass_tds": 0,
+      "pass_ints": 0
+    },
+    {
+      "name": "Jake Rudock",
+      "team": "Michigan",
+      "pass_completions": 27,
+      "pass_attempts": 43,
+      "pass_yds": 279,
+      "pass_tds": 2,
+      "pass_ints": 3
+    },
+    {
+      "name": "Travis Wilson",
+      "team": "Utah",
+      "pass_completions": 24,
+      "pass_attempts": 33,
+      "pass_yds": 208,
+      "pass_tds": 0,
+      "pass_ints": 1
+    }
+  ]
+}

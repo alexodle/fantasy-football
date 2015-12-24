@@ -4,6 +4,7 @@ const fs = require('fs');
 // Turns these functions in to promise-returners
 const readFile = Promise.denodeify(fs.readFile);
 const writeFile = Promise.denodeify(fs.writeFile);
+const readdir = Promise.denodeify(fs.readdir);
 
 function sanitizeFileName(fileName) {
   return fileName
@@ -11,8 +12,15 @@ function sanitizeFileName(fileName) {
     .toLowerCase();
 }
 
+// TODO: Is this enough?
+function hashPlayer(name, team) {
+  return `${name}::${team}`;
+}
+
 module.exports = {
   sanitizeFileName,
   readFile,
-  writeFile
+  writeFile,
+  readdir,
+  hashPlayer
 };
