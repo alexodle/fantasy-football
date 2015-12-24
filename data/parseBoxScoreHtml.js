@@ -9,88 +9,55 @@ const COMMON_ROW = {
   TEAM: 1
 };
 
-const PASSING_ROW = {
-  CMP: 2,
-  ATT: 3,
-  YDS: 5,
-  TDS: 8,
-  INTS: 9
+const CONFIG = {
+  '#passing': {
+    cols: {
+      pass_completions: 2,
+      pass_attempts: 3,
+      pass_yds: 5,
+      pass_tds: 8,
+      pass_ints: 9
+    }
+  },
+  '#rushing_and_receiving': {
+    cols: {
+      rush_attempts: 2,
+      rush_yds: 3,
+      rush_tds: 5,
+      rec_rec: 6,
+      rec_yds: 7,
+      rec_tds: 9
+    }
+  },
+  '#kicking_and_punting': {
+    cols: {
+      kick_xpm: 2,
+      kick_xpa: 3,
+      kick_fgm: 5,
+      kick_fga: 6,
+      punt_punt: 9,
+      punt_yds: 10
+    }
+  },
+  '#returns': {
+    cols: {
+      kickret_ret: 2,
+      kickret_yds: 3,
+      kickret_tds: 5,
+      puntret_ret: 6,
+      puntret_yds: 7,
+      puntret_tds: 9
+    }
+  }
 };
 
-const RUSH_ROW = {
-  ATT: 2,
-  YDS: 3,
-  TDS: 5
-};
-
-const REC_ROW = {
-  REC: 6,
-  YDS: 7,
-  TDS: 9
-};
-
-const KICK_ROW = {
-  XPM: 2,
-  XPA: 3,
-  FGM: 5,
-  FGA: 6
-};
-
-const PUNT_ROW = {
-  PUNTS: 9,
-  YDS: 10
-};
-
-const KICKRET_ROW = {
-  RET: 2,
-  YDS: 3,
-  TDS: 5
-};
-
-const PUNTRET_ROW = {
-  RET: 6,
-  YDS: 7,
-  TDS: 9
-};
-
-const DEFAULTS = {
-  // Passing
-  pass_completions: 0,
-  pass_attempts: 0,
-  pass_yds: 0,
-  pass_tds: 0,
-  pass_ints: 0,
-
-  // Rushing
-  rush_attempts: 0,
-  rush_yds: 0,
-  rush_tds: 0,
-
-  // Receiving
-  rec_rec: 0,
-  rec_yds: 0,
-  rec_tds: 0,
-
-  // Kicking
-  kick_xpm: 0,
-  kick_xpa: 0,
-  kick_fgm: 0,
-  kick_fga: 0,
-
-  // Punting
-  punt_punts: 0,
-  punt_yds: 0,
-
-  // Kick Returns
-  kickret_ret: 0,
-  kickret_yds: 0,
-  kickret_tds: 0,
-
-  // Punt Returns
-  puntret_ret: 0,
-  puntret_yds: 0,
-  puntret_tds: 0
-};
+// Default is every possible col mapped to 0
+const DEFAULTS = _(CONFIG)
+  .map(cfg => _.keys(cfg.cols))
+  .flatten()
+  .map(col => [col, 0])
+  .object()
+  .value();
 
 function parseStatInt(str) {
   return _.isEmpty(str) ? 0 : _.parseInt(str);
@@ -98,79 +65,6 @@ function parseStatInt(str) {
 
 function parseTdInt($, tds, i) {
    return parseStatInt($(tds[i]).text());
-}
-
-function parseKickPuntRetRow($, tds) {
-  const kickret_ret = parseTdInt($, tds, KICKRET_ROW.RET);
-  const kickret_yds = parseTdInt($, tds, KICKRET_ROW.YDS);
-  const kickret_tds = parseTdInt($, tds, KICKRET_ROW.TDS);
-
-  const puntret_ret = parseTdInt($, tds, PUNTRET_ROW.RET);
-  const puntret_yds = parseTdInt($, tds, PUNTRET_ROW.YDS);
-  const puntret_tds = parseTdInt($, tds, PUNTRET_ROW.TDS);
-
-  return {
-    kickret_ret,
-    kickret_yds,
-    kickret_tds,
-    puntret_ret,
-    puntret_yds,
-    puntret_tds
-  };
-}
-
-function parseKickPuntRow($, tds) {
-  const kick_xpm = parseTdInt($, tds, KICK_ROW.XPM);
-  const kick_xpa = parseTdInt($, tds, KICK_ROW.XPA);
-  const kick_fgm = parseTdInt($, tds, KICK_ROW.FGM);
-  const kick_fga = parseTdInt($, tds, KICK_ROW.FGA);
-
-  const punt_punts = parseTdInt($, tds, PUNT_ROW.PUNTS);
-  const punt_yds = parseTdInt($, tds, PUNT_ROW.YDS);
-
-  return {
-    kick_xpm,
-    kick_xpa,
-    kick_fgm,
-    kick_fga,
-    punt_punts,
-    punt_yds
-  };
-}
-
-function parsePassingRow($, tds) {
-  const pass_completions = parseTdInt($, tds, PASSING_ROW.CMP);
-  const pass_attempts = parseTdInt($, tds, PASSING_ROW.ATT);
-  const pass_yds = parseTdInt($, tds, PASSING_ROW.YDS);
-  const pass_tds = parseTdInt($, tds, PASSING_ROW.TDS);
-  const pass_ints = parseTdInt($, tds, PASSING_ROW.INTS);
-
-  return {
-    pass_completions,
-    pass_attempts,
-    pass_yds,
-    pass_tds,
-    pass_ints
-  };
-}
-
-function parseRushRecRow($, tds) {
-  const rush_attempts = parseTdInt($, tds, RUSH_ROW.ATT);
-  const rush_yds = parseTdInt($, tds, RUSH_ROW.YDS);
-  const rush_tds = parseTdInt($, tds, RUSH_ROW.TDS);
-
-  const rec_rec = parseTdInt($, tds, REC_ROW.REC);
-  const rec_yds = parseTdInt($, tds, REC_ROW.YDS);
-  const rec_tds = parseTdInt($, tds, REC_ROW.TDS);
-
-  return {
-    rush_attempts,
-    rush_yds,
-    rush_tds,
-    rec_rec,
-    rec_yds,
-    rec_tds
-  };
 }
 
 function commonParseRow($, tds) {
@@ -201,18 +95,19 @@ function parseBoxScoreHtml(html) {
     _.extend(fbPlayer, newStats);
   }
 
-  function parseRows(query, parser) {
-    $(query).not('.thead').each((i, row) => {
+  function fillValues($, tds, cols) {
+    return _.mapValues(cols, colIndex => parseTdInt($, tds, colIndex));
+  }
+
+  function parseRows(cols, domId) {
+    $(`${domId} tbody tr`).not('.thead').each((i, row) => {
       const tds = $('td', $(row)).get();
-      const newStats = parser($, tds);
+      const newStats = fillValues($, tds, cols);
       addStats(newStats, tds);
     });
   }
 
-  parseRows('#passing tbody tr', parsePassingRow);
-  parseRows('#rushing_and_receiving tbody tr', parseRushRecRow);
-  parseRows('#kicking_and_punting tbody tr', parseKickPuntRow);
-  parseRows('#returns tbody tr', parseKickPuntRetRow);
+  _.each(CONFIG, (config, domId) => parseRows(config.cols, domId));
 
   return _.values(players);
 }
