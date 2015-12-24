@@ -1,8 +1,8 @@
 const _ = require('lodash');
-const utils = require('./utils/utils');
+const cheerio = require('cheerio');
 const path = require('path');
 const Promise = require('promise');
-const cheerio = require('cheerio');
+const utils = require('./utils/utils');
 
 const COMMON_ROW = {
   NAME: 0,

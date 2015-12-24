@@ -1,5 +1,5 @@
-const Promise = require('promise');
 const fs = require('fs');
+const Promise = require('promise');
 
 // Turns these functions in to promise-returners
 const readFile = Promise.denodeify(fs.readFile);
