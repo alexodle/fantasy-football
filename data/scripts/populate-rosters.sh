@@ -12,7 +12,7 @@ BASEDIR=$(dirname $0)/..; pushd $BASEDIR; BASEDIR=$(pwd)
 
 
 # === TODO: take from args ===
-config=$BASEDIR/data_config.js
+config=$BASEDIR/node_scripts/data_config.js
 stash_dir=$BASEDIR/temp_roster_stash
 roster_html_dir=$BASEDIR/roster_html
 # ===
@@ -23,8 +23,10 @@ date=$(date +"%m%d%Y-%H%M%S")
 echo "START: ${date}"
 
 # Parse roster html
+pushd $BASEDIR/node_scripts
 roster_json=$data_dir/roster-$date.json
 node ./parseRosterHtml.js -d $roster_html_dir -o $roster_json -c $config
+popd
 
 # TODO: Push to postgres
 

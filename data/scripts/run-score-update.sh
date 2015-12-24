@@ -7,7 +7,7 @@ BASEDIR=$(dirname $0)/..; pushd $BASEDIR; BASEDIR=$(pwd)
 
 # === TODO: take from args ===
 week=1
-config=$BASEDIR/data_config.js
+config=$BASEDIR/node_scripts/data_config.js
 stash_dir=$BASEDIR/temp_stash
 # ===
 
@@ -24,6 +24,8 @@ parsed_dir=$data_dir/parsed; mkdir $parsed_dir
 box_score_links_html=$raw_dir/box_score_links.html
 wget -O $box_score_links_html http://www.sports-reference.com/cfb/years/2015-schedule.html
 
+pushd $BASEDIR/node_scripts
+
 # box score links html -> box score links json
 box_score_links_json=$parsed_dir/box_score_links.json
 node ./parseBoxScoreLinksHtml.js -i $box_score_links_html -o $box_score_links_json -b $BOX_SCORE_BASE_URL
@@ -35,6 +37,8 @@ node ./downloadBoxScoresHtml.js -i $box_score_links_json -d $box_score_html_dir 
 # parse box scores
 fb_player_stats_json=$parsed_dir/fb_player_stats.json
 node ./parseBoxScoreHtml.js -d $box_score_html_dir -o $fb_player_stats_json
+
+popd
 
 # TODO: Push player stats to postgres
 
