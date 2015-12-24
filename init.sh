@@ -23,5 +23,10 @@ echo "Preparing git hooks..."
 echo
 $BASEDIR/scripts/install-hooks.sh
 
+## data ingestion ##
+pushd $BASEDIR/data/node_scripts
+npm install
+popd
+
 echo "DONE! You're all set. See README for more instructions."
 echo
