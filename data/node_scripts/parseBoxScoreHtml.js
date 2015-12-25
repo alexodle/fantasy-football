@@ -132,7 +132,8 @@ function parseBoxScoreHtml(html) {
 
   _.each(CONFIG, (config, domId) => parseRows(config.cols, domId));
 
-  return _.values(players);
+  const playerValues = _.values(players);
+  return playerValues;
 }
 
 function run(boxScoreHtmlDir, outputFile) {
@@ -144,8 +145,9 @@ function run(boxScoreHtmlDir, outputFile) {
     .then(files => {
       return Promise.all(_.map(files, f => {
         const htmlFile = path.join(boxScoreHtmlDir, f);
-        return utils.readFile(htmlFile, 'utf8')
-          .then(parseBoxScoreHtml);
+        return utils
+          .readFile(htmlFile, 'utf8')
+          .then(data => parseBoxScoreHtml(data));
       }));
     })
     .then(results => {
