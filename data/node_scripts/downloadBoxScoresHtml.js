@@ -1,26 +1,31 @@
 const _ = require('lodash');
+const createScheduler = require('./utils/createScheduler');
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const Promise = require('promise');
 const utils = require('./utils/utils');
 
-const FETCH_THROTTLE = 5000; // 1 fetch per second max
+const FETCH_THROTTLE_LOW = 500;
+const FETCH_THROTTLE_HIGH = 1500;
 
-// Throttle our fetches to be nice to the server
-const throttledFetch = _.throttle((fulfill, reject, url) => {
-  http.get(url, (resp) => {
-    if (resp.statusCode !== 200) {
-      console.error(`Bad response (${resp.statusCode}) for url: "${url}"`);
-      reject(new Error(resp.statusCode));
-      return;
-    }
-    fulfill(resp);
+const scheduler = createScheduler(FETCH_THROTTLE_LOW, FETCH_THROTTLE_HIGH);
+
+function scheduleFetch(fulfill, reject, url) {
+  scheduler.schedule(() => {
+    http.get(url, (resp) => {
+      if (resp.statusCode !== 200) {
+        console.error(`Bad response (${resp.statusCode}) for url: "${url}"`);
+        reject(new Error(resp.statusCode));
+        return;
+      }
+      fulfill(resp);
+    });
   });
-}, FETCH_THROTTLE);
+}
 
 function getFilePath(outputDir, game) {
-  const name = `wk${game.week}_${game.teams[0]}_${game.teams[1]}.html`;
+  var name = `wk${game.week}_${game.teams[0]}_${game.teams[1]}.html`;
   name = utils.sanitizeFileName(name);
   return path.resolve(outputDir, name);
 }
@@ -29,16 +34,22 @@ function downloadBoxScore(outputDir, game) {
   const filePath = getFilePath(outputDir, game);
   const file = fs.createWriteStream(filePath);
   return new Promise((fulfill, reject) => {
-    throttledFetch(fulfill, reject, game.boxScoreUrl);
+    scheduleFetch(fulfill, reject, game.boxScoreUrl);
+  })
+  .catch(err => {
+    file.end();
+    throw err;
   })
   .then(resp => {
     return new Promise((fulfill, _reject) => {
       resp
-        .on('data', file.write)
-        .on('end', fulfill);
+        .on('data', data => file.write(data))
+        .on('end', () => {
+          file.end();
+          fulfill();
+        });
     });
-  })
-  .finally(file.end);
+  });
 }
 
 function run(boxScoreLinksFile, outputDir, week, config) {
