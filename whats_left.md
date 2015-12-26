@@ -13,5 +13,5 @@
 
 # Alex
 * ~~Changes to client code~~
-* Change precomiple assets scripts to reflect new directory structure
-* Modify the generated index.html file to include the favicon links
+* ~~Change precomiple assets scripts to reflect new directory structure~~
+* ~~Modify the generated index.html file to include the favicon links~~
