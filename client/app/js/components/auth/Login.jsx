@@ -2,7 +2,8 @@ import FFPanel from '../FFPanel';
 import Loading from '../Loading';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {login} from '../../actions/AuthActions';
+import {hasLoaded} from '../../utils/loadingUtils';
+import {login, redirectToNextPath} from '../../actions/AuthActions';
 import {selectAuthMeta} from '../../selectors/metaSelectors';
 import {selectLogoutReason} from '../../selectors/clientSelectors';
 import {selectNextPath} from '../../selectors/routeSelectors';
@@ -15,7 +16,8 @@ const Login = React.createClass({
     authMeta: PropTypes.shape({
       isFetching: PropTypes.bool.isRequired,
       didFailFetching: PropTypes.bool.isRequired,
-      statusCode: PropTypes.number
+      statusCode: PropTypes.number,
+      lastUpdated: PropTypes.number
     }).isRequired,
     dispatch: PropTypes.func.isRequired,
     logoutReason: PropTypes.string,
@@ -29,8 +31,16 @@ const Login = React.createClass({
     };
   },
 
+  componentWillMount() {
+    this._ensureLoggedOut();
+  },
+
   componentDidMount() {
     this.refs.usernameInput.focus();
+  },
+
+  componentWillUpdate(nextProps) {
+    this._ensureLoggedOut(nextProps);
   },
 
   componentDidUpdate(prevProps) {
@@ -141,6 +151,14 @@ const Login = React.createClass({
     dispatch(login(email, password, nextPath));
 
     this.setState({ password: '' });
+  },
+
+  _ensureLoggedOut(props=null) {
+    props = props || this.props;
+    const {authMeta, dispatch, nextPath} = props;
+    if (hasLoaded(authMeta)) {
+      dispatch(redirectToNextPath(nextPath));
+    }
   }
 
 });

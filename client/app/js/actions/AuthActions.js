@@ -1,9 +1,13 @@
 import handleHttpRequest from './utils/handleHttpRequest';
 import preventsRefetch from './utils/preventsRefetch';
-import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
 import {fetchToken} from '../http/fetchers';
+import {LOGIN, LOGOUT, LOAD_AUTH_FROM_LOCAL_STORAGE} from './ActionTypes';
 import {pushState} from 'redux-router';
 import {selectAuthMeta} from '../selectors/metaSelectors';
+
+function isLogoutRoute(route) {
+  return route.toLowerCase().startsWith('/login');
+}
 
 export function loadAuthFromLocalStorage() {
   let auth = localStorage.getItem('auth');
@@ -34,7 +38,7 @@ export function login(username, password, nextPath = '/') {
       const auth = selectAuthMeta(getState());
       localStorage.setItem('auth', JSON.stringify(auth));
 
-      dispatch(pushState(null, nextPath));
+      dispatch(redirectToNextPath(nextPath));
     });
   });
 }
@@ -50,10 +54,20 @@ export function logout() {
 export function redirectToLogin(reason) {
   return function (dispatch, getState) {
     const redirectAfterLogin = getState().router.location.pathname;
-    if (redirectAfterLogin !== '/login') {
+    if (!isLogoutRoute(redirectAfterLogin)) {
       localStorage.removeItem('auth');
       dispatch({ type: LOGOUT, reason: reason });
       dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
     }
+  };
+}
+
+export function redirectToNextPath(nextPath) {
+  return function (dispatch, _getState) {
+    if (!nextPath || isLogoutRoute(nextPath)) {
+      nextPath = '/';
+    }
+
+    dispatch(pushState(null, nextPath));
   };
 }
