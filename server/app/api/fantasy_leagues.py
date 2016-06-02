@@ -3,6 +3,7 @@ from ..models import FantasyLeague, FootballTeam, FootballConference, \
     FootballPlayer, DraftPick
 from . import api
 from .. import db
+from .. import pubsub
 from .decorators import block_anonymous
 from sqlalchemy.exc import IntegrityError
 
@@ -127,6 +128,10 @@ def post_fantasy_league_draft_pick(id):
     except IntegrityError as e:
         db.session.rollback()
         raise e
+
+    # Alert clients
+    pubsub.publish_draft_pick(id)
+
     return jsonify({
         current_app.config['RESPONSE_OBJECT_NAME']: draft_pick.to_json()
     }), 201
