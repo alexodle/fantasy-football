@@ -8,7 +8,8 @@ import {
   loadDraftOrder,
   loadDraftPicks,
   clearDraftPicks,
-  forceLoadDraftPicks
+  forceLoadDraftPicks,
+  draftFootballPlayer
 } from '../../actions/DraftActions';
 import DraftHistory, {draftHistorySelector} from './DraftHistory';
 import DraftOrderView, {draftOrderViewSelector} from './DraftOrderView';
@@ -21,7 +22,6 @@ import React, {PropTypes} from 'react';
 import TeamDraftView, {teamDraftViewSelector} from './TeamDraftView';
 import {connect} from 'react-redux';
 import {createFFComponentSelector} from '../../selectors/selectorUtils';
-import {draftFootballPlayer} from '../../actions/PostActions';
 import socketIO from '../../socketIO';
 import {LoadStateShape} from '../../Constants';
 import {selectCurrentFantasyLeagueId} from '../../selectors/routeSelectors';

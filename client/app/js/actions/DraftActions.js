@@ -1,11 +1,15 @@
 import handleHttpRequest from './utils/handleHttpRequest';
 import preventsRefetchAndRequiresAuth from './utils/preventsRefetchAndRequiresAuth';
+import requiresAuth from './utils/requiresAuth';
 import {CLEAR, INVALIDATE} from './AsyncActionStates';
-import {LOAD_DRAFT_ORDER, LOAD_DRAFT_PICKS} from './ActionTypes';
+import {LOAD_DRAFT_ORDER, LOAD_DRAFT_PICKS, DRAFT_PLAYER} from './ActionTypes';
 import {
   fetchDraftOrder,
   fetchDraftPicks
 } from '../http/fetchers';
+import {
+  postDraftPick
+} from '../http/posters';
 import {
   selectLeagueDraftOrderMeta,
   selectLeagueDraftPicksMeta
@@ -55,4 +59,26 @@ export function forceLoadDraftPicks(fantasyLeagueId) {
     dispatch(invalidateDraftPicks(fantasyLeagueId));
     loadDraftPicksAction(dispatch, getState);
   };
+}
+
+export function draftFootballPlayer(fantasyLeagueId, footballPlayerId) {
+  return requiresAuth((dispatch, getState, token) => {
+    const state = getState();
+    const pickNumber = state.entities.drafts[fantasyLeagueId].picks.length;
+    const currentUserId = state.meta.current_user.id;
+    const data = {
+      fantasy_league_id: fantasyLeagueId,
+      user_id: currentUserId,
+      football_player_id: footballPlayerId,
+      order: pickNumber
+    };
+
+    const request = postDraftPick(fantasyLeagueId, token, data);
+    handleHttpRequest({
+      dispatch,
+      request,
+      actionType: DRAFT_PLAYER,
+      extraProps: { league_id: fantasyLeagueId, data: data }
+    });
+  });
 }
