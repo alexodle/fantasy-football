@@ -1,5 +1,5 @@
 const cfg = {
-  redis_url: process.env.REDISTOGO_URL || "redis://:@localhost:6379/0",
+  redis_url: process.env.REDIS_URL,
   socketio_port: process.env.SOCKET_IO_PORT || 4005
 };
 
